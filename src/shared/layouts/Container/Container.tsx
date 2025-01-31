@@ -1,13 +1,11 @@
 import cls from "./styles.module.scss";
 
-interface Props{
-    children:React.ReactNode
+interface Props {
+  children: React.ReactNode;
 }
 
-const Container = (props: Props) => {
-    const { children } = props;
+export default function Container(props: Props) {
+  const { children } = props;
 
-    return (<div className={cls.container}>{children}</div>)
+  return <div className={cls.container}>{children}</div>;
 }
-
-export default Container;

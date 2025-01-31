@@ -1,0 +1,72 @@
+.wrapper {
+  @media (max-width: 786px) {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  @media (max-width: 550px) {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  @media (max-width: 989px) {
+    gap: 12px;
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 39px;
+  border-radius: 46px;
+  border: 2px solid var(--purple-secondary);
+  transition: background-color var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    background-color: var(--light-purple);
+    box-shadow: var(--purple-shadow);
+  }
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 39px;
+  padding: 0 15px;
+  border-radius: 55px;
+  border: 2px solid var(--purple-secondary);
+  transition: background-color var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    background-color: var(--light-purple);
+    box-shadow: var(--purple-shadow);
+  }
+
+   @media (max-width: 1240px) {
+       padding: 0 10px;
+   }
+
+  @media (max-width: 932px) {
+    width: 40px;
+  }
+}
+
+.name {
+  color: var(--purple-secondary);
+
+  @media (max-width: 932px) {
+    display: none;
+  }
+}
