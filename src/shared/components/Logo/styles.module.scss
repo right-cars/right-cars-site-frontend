@@ -22,16 +22,13 @@
 .footerLogo {
   fill: #7230ff;
   width: 464px;
-  height: 144px;
 
   @media (max-width: 989px) {
     width: 424px;
-    height: 132px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 908px) {
     width: 336px;
-    height: 105px;
   }
 
   @media (max-width: 550px) {

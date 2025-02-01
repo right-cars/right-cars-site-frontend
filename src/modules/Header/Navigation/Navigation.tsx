@@ -3,22 +3,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import cls from "./styles.module.scss";
-
-const navLinks = [
-  { name: "showroom", href: "/showroom" },
-  { name: "Auction", href: "/auction" },
-  { name: "about us", href: "/#about" },
-  { name: "services", href: "#" },
-  { name: "FaQ", href: "/faq" },
-  { name: "contact us", href: "/#contacts" },
-];
-
-const dropdownLinks = [
-  { name: "book a car service", href: "/car-service" },
-  { name: "book a test drive", href: "/test-drive" },
-  { name: "finance", href: "/finance" },
-  { name: "delivery", href: "/delivery" },
-];
+import { dropdownLinks, headerNavLinks } from "@/shared/utils/routes";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -27,7 +12,7 @@ export default function Navigation() {
   return (
     <nav>
       <ul className={cls.linksList}>
-        {navLinks.map(({ name, href }, index) => {
+        {headerNavLinks.map(({ name, href }, index) => {
           const isActive = pathname === href;
           return name === "services" ? (
             <li

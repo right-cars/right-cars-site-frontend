@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Metrophobic, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/modules/Header/Header";
+import Footer from "@/modules/Footer/Footer";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
       >
         <Header />
         <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );

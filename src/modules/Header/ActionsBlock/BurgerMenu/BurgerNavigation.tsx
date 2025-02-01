@@ -1,18 +1,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import cls from "./styles.module.scss";
-
-const navLinks = [
-  { name: "showroom", href: "/showroom" },
-  { name: "Auction", href: "/auction" },
-  { name: "about us", href: "/#about" },
-  { name: "book a car service", href: "/car-service" },
-  { name: "book a test drive", href: "/test-drive" },
-  { name: "finance", href: "/finance" },
-  { name: "delivery", href: "/delivery" },
-  { name: "FaQ", href: "/faq" },
-  { name: "contact us", href: "/#contacts" },
-];
+import { navLinks } from "@/shared/utils/routes";
 
 export default function BurgerNavigation({handleClick}:{handleClick:()=>void}) {
   const pathname = usePathname();
