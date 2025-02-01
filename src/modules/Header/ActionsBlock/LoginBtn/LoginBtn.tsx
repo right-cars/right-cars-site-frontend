@@ -2,7 +2,7 @@ import Image from "next/image";
 import cls from "../styles.module.scss";
 
 export default function LoginBtn() {
-    const signIn = true;
+    const signIn = false;
     const userName="temp name"
 
   return (

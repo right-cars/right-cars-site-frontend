@@ -1,7 +1,10 @@
 import Link from "next/link";
 import LogoSvg from "../../../../public/icons/logo.svg";
-import { LogoProps } from "@/shared/types/logo";
 import cls from "./styles.module.scss";
+
+interface LogoProps {
+  variant: "header" | "footer" | "burger";
+}
 
 export default function Logo(props: LogoProps) {
   const { variant } = props;

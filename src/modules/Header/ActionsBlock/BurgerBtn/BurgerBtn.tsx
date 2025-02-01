@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-// import BurgerMenu from "../BurgerMenu";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import cls from "./styles.module.scss";
 
 export default function BurgerBtn() {
@@ -8,10 +8,6 @@ export default function BurgerBtn() {
 
   const handleMenuClick = () => {
     setMenuOpen(!isMenuOpen);
-  };
-
-  const handleBackdropClick = () => {
-    setMenuOpen(false);
   };
 
   return (
@@ -24,10 +20,7 @@ export default function BurgerBtn() {
         <Image src="/icons/menu.svg" alt="menu icon" width={40} height={40} />
       </button>
       {isMenuOpen && (
-        <>
-          <div className={cls.overlay} onClick={handleBackdropClick} />
-          {/* <BurgerMenu setIsMenuOpen={setMenuOpen} /> */}
-        </>
+          <BurgerMenu setIsMenuOpen={setMenuOpen} />
       )}
     </>
   );
