@@ -87,12 +87,20 @@ h2 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: -0.96px;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 550px) {
   h2 {
     font-size: 24px;
     letter-spacing: -0.72px;
+    margin-bottom: 54px;
+  }
+}
+
+@media (max-width: 360px) {
+  h2 {
+    margin-bottom: 48px;
   }
 }
 

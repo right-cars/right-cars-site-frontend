@@ -11,7 +11,7 @@ const imgs = [
 export default function AddBlock() {
   return (
     <div className={cls.addBlock}>
-      <Link href={"/"} className={cls.allCars}>
+      <Link href={"/showroom"} className={cls.allCars}>
         <Image
           src="/images/home/banner/absolute-img.png"
           alt="scotch tape"
@@ -35,7 +35,7 @@ export default function AddBlock() {
         <p className={cls.title}>vehicles</p>
       </Link>
       <div className={cls.typeCars}>
-        <Link href={"/"} className={cls.imgWrapp}>
+        <Link href={"/showroom"} className={cls.imgWrapp}>
           <Image
             src="/images/home/banner/absolute-img.png"
             alt="scotch tape"
@@ -52,7 +52,7 @@ export default function AddBlock() {
           />
           <p className={`${cls.title} ${cls.titleSecond}`}>bakkie</p>
         </Link>
-        <Link href={"/"} className={cls.imgWrappSecond}>
+        <Link href={"/showroom"} className={cls.imgWrappSecond}>
           <Image
             src="/images/home/banner/absolute-img.png"
             alt="scotch tape"
