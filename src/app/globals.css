@@ -131,7 +131,6 @@ h6 {
 .textLarge {
   font-family: "Metrophobic", sans-serif;
   font-size: 18px;
-  line-height: 1.55;
 }
 
 @media (max-width: 989px) {
@@ -197,4 +196,9 @@ h6 {
   .section {
     padding-bottom: 72px;
   }
+}
+
+.img {
+  width: 100%;
+  height: auto;
 }
