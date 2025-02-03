@@ -43,4 +43,15 @@ export const temporaryData = [
     transmission: "manual",
     href: "/",
   },
+  {
+    id: "5",
+    img: "/images/car-card/img1.png",
+    year: 2012,
+    make: "Volkswagen",
+    model: "Polo Hatch",
+    price: "R\u00A0109,900",
+    mileage: "27200km",
+    transmission: "manual",
+    href: "/",
+  },
 ];

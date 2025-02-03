@@ -15,7 +15,7 @@ export default function NewestArrivals() {
       <Slider data={temporaryData} />
 
       <div className={cls.mobGallery}>
-        {temporaryData.map(
+        {temporaryData.slice(0, 3).map(
           ({
             href,
             img,

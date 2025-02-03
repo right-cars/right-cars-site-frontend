@@ -28,7 +28,7 @@ export default function Slider({ data }: { data: CarProps[] }) {
       }}
       className={cls.slider}
     >
-      {data.map(
+      {data.slice(0, 4).map(
         ({
           href,
           img,
