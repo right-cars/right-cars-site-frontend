@@ -3,6 +3,7 @@ import Button from "@/shared/components/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
 import { temporaryData } from "./temporaryData";
 import cls from "./styles.module.scss";
+import Slider from "./Slider";
 
 export default function NewestArrivals() {
   return (
@@ -10,11 +11,22 @@ export default function NewestArrivals() {
       <div className="container">
         <h2>Discover Our Newest Arrivals!</h2>
       </div>
-      <div className={cls.slider}>
+
+      <Slider data={temporaryData} />
+
+      <div className={cls.mobGallery}>
         {temporaryData.map(
-          (
-            { href, img, year, make, model, price, mileage, transmission, id }
-          ) => (
+          ({
+            href,
+            img,
+            year,
+            make,
+            model,
+            price,
+            mileage,
+            transmission,
+            id,
+          }) => (
             <CarCard
               key={id}
               href={href}
@@ -30,6 +42,7 @@ export default function NewestArrivals() {
           )
         )}
       </div>
+
       <div className="container">
         <Link href="/showroom" className={cls.btnWrapp}>
           <Button text="view all vehicles" />

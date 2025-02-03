@@ -53,6 +53,7 @@
 
   @media (max-width: 989px) {
     padding: 12px;
+    padding-bottom: 28px;
   }
 }
 
@@ -67,6 +68,10 @@
 
 .arr {
   margin-right: -8px;
+
+  @media (max-width: 1360px) {
+    margin-right: 0;
+  }
 }
 
 .secondInfo {
