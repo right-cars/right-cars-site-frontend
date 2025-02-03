@@ -11,7 +11,7 @@ export default function TeamList() {
 
   useEffect(() => {
     const updateItemsToShow = () => {
-      if (window.innerWidth <= 550) {
+      if (window.innerWidth <= 660) {
         setItemsToShow(3);
       } else if (window.innerWidth <= 1068) {
         setItemsToShow(4);
