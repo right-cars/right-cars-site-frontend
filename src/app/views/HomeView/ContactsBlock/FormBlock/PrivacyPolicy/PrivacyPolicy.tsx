@@ -24,7 +24,7 @@ export default function PrivacyPolicy({
               onChange={handleChange}
               checked={privacyPolicyChecked}
             />
-            <label className="textSmall" htmlFor="cloudSyncing">
+            <label className="textSmall" htmlFor="privacyPolicy">
               I agree to the privacy policy
             </label>
           </div>

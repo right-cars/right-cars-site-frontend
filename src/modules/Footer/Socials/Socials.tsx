@@ -5,7 +5,7 @@ import cls from "./styles.module.scss";
 const data = [
   {
     img: "/icons/socials/whatsapp.svg",
-    href: "https://web.whatsapp.com/",
+    href: "https://wa.me/0114629045",
   },
   {
     img: "/icons/socials/facebook.svg",
@@ -13,32 +13,29 @@ const data = [
   },
   {
     img: "/icons/socials/email.svg",
-    href: "test.mail@gmail.com",
+    href: "mailto:info@right-cars.co.za",
   },
   {
-    img: "/icons/socials/viber.svg",
-    href: "https://www.viber.com/ua/",
+    img: "/icons/socials/phone.svg",
+    href: "tel:0114629045",
   },
 ];
 
 export default function Socials() {
   return (
     <ul className={cls.socList}>
-      {data.map(({ img, href }, index) => {
-        const isEmail = href.includes("@");
-        return (
-          <li key={index}>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={isEmail ? `mailto:${href}` : href}
-              className={cls.link}
-            >
-              <Image src={img} alt="social icon" width={36} height={36} />
-            </Link>
-          </li>
-        );
-      })}
+      {data.map(({ img, href }, index) => (
+        <li key={index}>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={href}
+            className={cls.link}
+          >
+            <Image src={img} alt="social icon" width={36} height={36} />
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }
