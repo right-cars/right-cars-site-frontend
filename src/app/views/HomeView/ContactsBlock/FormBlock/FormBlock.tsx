@@ -1,6 +1,8 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
 import Button from "@/shared/components/Button/Button";
+import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
+import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import cls from "./styles.module.scss";
@@ -18,6 +20,7 @@ export default function FormBlock() {
   });
 
   const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -38,20 +41,28 @@ export default function FormBlock() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    setIsModalOpen(true);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FeedbackForm formData={formData} handleChange={handleChange} />
-      <div className={cls.privacyPolicyBlock}>
-        <PrivacyPolicy
-          handleChange={handleChange}
-          privacyPolicyChecked={privacyPolicyChecked}
-        />
-        <div className={cls.btnWrapp}>
-          <Button text="submit" type="submit" />
+    <>
+      <form onSubmit={handleSubmit}>
+        <FeedbackForm formData={formData} handleChange={handleChange} />
+        <div className={cls.privacyPolicyBlock}>
+          <PrivacyPolicy
+            handleChange={handleChange}
+            privacyPolicyChecked={privacyPolicyChecked}
+          />
+          <div className={cls.btnWrapp}>
+            <Button text="submit" type="submit" />
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+      {isModalOpen && (
+        <ModalWindow closeBtn setIsModalOpen={setIsModalOpen}>
+          <ThanksPopup text="Your message has been sent successfully!"/>
+        </ModalWindow>
+      )}
+    </>
   );
 }
