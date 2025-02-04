@@ -22,6 +22,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .privacyPolicyBlock {
@@ -40,6 +44,7 @@
 
   @media (max-width: 550px) {
     flex-direction: column;
+    align-items: start;
   }
 }
 
@@ -52,31 +57,29 @@
   }
 }
 
-.checkBoxWrapp{
-    display: flex;
-    padding: 8px;
-    gap:8px;
-    align-items: center;
+.checkBoxWrapp {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  align-items: center;
 }
 
 .checkBox {
-    appearance: none;
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-    background-image: url(../../../../../../public/icons/checkbox.svg);
-    background-size: 16px 16px;
-    border: none;
-    background-position: center;
-    background-repeat: no-repeat;
-
+  appearance: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../../../../../public/icons/checkbox.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .checkBox:checked {
-    background-image: url(../../../../../../public/icons/checkbox-active.svg);
-    background-size: 16px 16px;
-    border: none;
-    background-position: center;
-    background-repeat: no-repeat;
-
+  background-image: url(../../../../../../public/icons/checkbox-active.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
 }
