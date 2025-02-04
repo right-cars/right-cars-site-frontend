@@ -24,6 +24,7 @@ export default function Slider({ data }: { data: CarProps[] }) {
         1101: {
           slidesOffsetBefore: 0,
           slidesPerView: 4,
+          loop:false
         },
       }}
       className={cls.slider}

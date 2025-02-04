@@ -1,0 +1,26 @@
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  color: var(--grey-600);
+}
+
+.input {
+  width: 100%;
+  padding: 4px 12px;
+  border: none;
+  border-bottom: 2px solid var(--grey-200);
+  box-shadow: var(--input-shadow);
+  background-color: transparent;
+  outline: none;
+
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  color:#11181C;
+}

@@ -1,0 +1,32 @@
+export const fields = [
+  { id: "firstName", label: "first name (required)", type: "input" },
+  { id: "surname", label: "surname (required)", type: "input" },
+  { id: "contactNumber", label: "contact number (required)", type: "input" },
+  { id: "email", label: "email address (required)", type: "input" },
+  {
+    id: "subject",
+    label: "subject (required)",
+    type: "select",
+    options: ["General Inquiry", "Compliments", "Register a complaint"],
+    placeholder: "please select a Province",
+  },
+  {
+    id: "province",
+    label: "province (required)",
+    type: "select",
+    options: [
+      "Eastern Cape",
+      "Free State",
+      "Gauteng",
+      "KwaZulu-Natal",
+      "Limpopo",
+      "Mpumalanga",
+      "Northern Cape",
+      "North West",
+      "Western Cape",
+    ],
+    placeholder: "please select a subject",
+  },
+  { id: "city", label: "city / town / suburb (required)", type: "input" },
+  { id: "message", label: "message", type: "textarea" },
+];
