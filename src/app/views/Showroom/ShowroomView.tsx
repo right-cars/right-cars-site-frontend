@@ -6,7 +6,7 @@ import Tabs from "./Tabs/Tabs";
 import { temporaryData } from "./Gallery/temporaryData";
 import cls from "./styles.module.scss";
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 12;
 
 export default function ShowroomView() {
   const [activeTab, setActiveTab] = useState("all");
