@@ -1,0 +1,44 @@
+.container {
+  margin: 0 232px;
+
+  @media (max-width: 1360px) {
+    margin: 0 48px;
+  }
+
+  @media (max-width: 786px) {
+    margin: 0 40px;
+  }
+
+  @media (max-width: 660px) {
+    margin: 0;
+  }
+}
+
+.tabsWrapp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background-color: var(--white);
+  color: var(--purple);
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+
+  @media (max-width: 660px) {
+    border-radius: 0;
+  }
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.active {
+  background-color: var(--purple);
+  color: var(--white);
+}

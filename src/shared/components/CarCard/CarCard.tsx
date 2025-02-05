@@ -1,10 +1,10 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CarProps } from "@/shared/types/car";
 import LikeSvg from "../../../../public/icons/home/car-card/like.svg";
 import cls from "./styles.module.scss";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function CarCard(props: CarProps) {
   const { href, img, year, make, model, price, mileage, transmission, id } =
