@@ -19,6 +19,10 @@
   margin-left: 288px;
   gap: 16px;
 
+  @media (max-width: 1068px) {
+    margin-left: 238px;
+  }
+
   @media (max-width: 989px) {
     margin-top: 24px;
     margin-bottom: 40px;

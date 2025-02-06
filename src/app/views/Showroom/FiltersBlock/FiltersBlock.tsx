@@ -1,7 +1,7 @@
-import Image from "next/image";
-import cls from "./styles.module.scss";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Filters from "./Filters";
+import cls from "./styles.module.scss";
 
 export default function FiltersBlock() {
   const [isFiltersVisible, setIsFilterVisible] = useState(true);
@@ -43,7 +43,7 @@ export default function FiltersBlock() {
           height={24}
         />
       </button>
-      {isFiltersVisible && <Filters />}
+      {isFiltersVisible && <Filters setIsFilterVisible={setIsFilterVisible} isTablet={isTablet}/>}
     </div>
   );
 }

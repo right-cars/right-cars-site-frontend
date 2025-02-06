@@ -1,5 +1,5 @@
 .wrapper {
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 80px;
@@ -14,13 +14,13 @@ position: relative;
   }
 }
 
-.filterBtn{
-    position: relative;
+.filterBtn {
+  position: relative;
 }
 
-.filtersWrapp{
+.container {
   position: absolute;
-  top:80px;
+  top: 80px;
   left: 0;
   width: 272px;
   background-color: var(--white);
@@ -28,17 +28,81 @@ position: relative;
   padding: 32px 16px;
   border-radius: 16px;
 
-  @media (max-width:550px) {
+  @media (max-width: 1068px) {
+    width: 230px;
+  }
+
+  @media (max-width: 989px) {
+    width: 90vw;
+    z-index: 2;
+    height: 72vh;
+    top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
+
+  @media (max-width: 550px) {
     padding: 24px 16px;
+    width: 92vw;
   }
 }
 
-.filtersWrapp{
+.filtersWrapp {
   display: flex;
   flex-direction: column;
-  gap:20px;
+  gap: 20px;
 
-  @media (max-width:989px) {
-    gap:8px;
+  @media (max-width: 989px) {
+    gap: 8px;
+    height: 83%;
+    overflow-y: scroll;
+
+    padding-right: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) #bbb;
+  }
+
+  @media (max-width: 768px) {
+    height: 75%;
+  }
+
+  @media (max-width: 550px) {
+    height: 62%;
+  }
+}
+
+.filtersWrapp::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filtersWrapp::-webkit-scrollbar-track {
+  background-color: #bbb;
+  border-radius: 10px;
+}
+
+.filtersWrapp::-webkit-scrollbar-thumb {
+  background-color: var(--purple);
+  width: 4px;
+  border-radius: 10px;
+}
+
+.btnsWrapp {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+}
+
+.btnWrapp {
+  display: none;
+
+  @media (max-width: 989px) {
+    display: block;
+    width: 100%;
   }
 }

@@ -17,7 +17,7 @@ export default function Checkbox({ label, checked, onToggle }: CheckboxProps) {
         className={cls.hiddenInput}
         onClick={onToggle}
       />
-      <label htmlFor={label} className="textSmall">
+      <label htmlFor={label} className="textSmall" style={{cursor:"pointer"}}>
         {label}
       </label>
     </div>
