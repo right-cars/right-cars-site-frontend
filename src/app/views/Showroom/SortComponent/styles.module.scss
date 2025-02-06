@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sortBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  background-color: transparent;
+  border: none;
+}
+
+.txt {
+  color: var(--purple);
+
+  @media (max-width: 550px) {
+    display: none;
+  }
+}

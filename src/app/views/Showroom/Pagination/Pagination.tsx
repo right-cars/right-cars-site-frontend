@@ -21,7 +21,7 @@ export default function Pagination({
         disabled={currentPage === 1}
       >
         <Image
-          src="/icons/arr-left.svg"
+          src="/icons/showroom/arr-left.svg"
           alt="prev icon"
           width={16}
           height={16}
@@ -72,7 +72,7 @@ export default function Pagination({
           Next
         </h5>
         <Image
-          src="/icons/arr-left.svg"
+          src="/icons/showroom/arr-left.svg"
           alt="next icon"
           width={16}
           height={16}
