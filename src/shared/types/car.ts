@@ -9,4 +9,5 @@ export interface CarProps {
   transmission: string;
   href: string;
   type?: string;
+  reserved?:boolean
 }

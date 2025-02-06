@@ -10,6 +10,7 @@ export const temporaryData = [
     transmission: "manual",
     href: "/",
     type: "cars",
+    reserved: true
   },
   {
     id: "2",

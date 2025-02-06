@@ -7,8 +7,18 @@ import LikeSvg from "../../../../public/icons/home/car-card/like.svg";
 import cls from "./styles.module.scss";
 
 export default function CarCard(props: CarProps) {
-  const { href, img, year, make, model, price, mileage, transmission, id } =
-    props;
+  const {
+    href,
+    img,
+    year,
+    make,
+    model,
+    price,
+    mileage,
+    transmission,
+    id,
+    reserved,
+  } = props;
 
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -34,10 +44,22 @@ export default function CarCard(props: CarProps) {
   return (
     <div className={cls.wrapp}>
       <button onClick={toggleFavorite} className={cls.favoriteBtn}>
-        <LikeSvg
-          className={cls.absoluteSvg}
-          style={{ fill: isFavorite ? "var(--purple)" : "transparent" }}
-        />
+        {!reserved && (
+          <LikeSvg
+            className={cls.absoluteSvg}
+            style={{ fill: isFavorite ? "var(--purple)" : "transparent" }}
+          />
+        )}
+
+        {reserved && (
+          <Image
+            src="/icons/home/car-card/reserved.svg"
+            alt="reserved icon"
+            width={72}
+            height={16}
+            className={cls.reserved}
+          />
+        )}
       </button>
       <div className={cls.imgBlock}>
         <Image

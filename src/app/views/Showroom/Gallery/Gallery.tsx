@@ -20,6 +20,7 @@ export default function Gallery({ data }: GalleryProps) {
           mileage,
           transmission,
           href,
+          reserved
         }) => (
           <CarCard
             key={id}
@@ -32,6 +33,7 @@ export default function Gallery({ data }: GalleryProps) {
             mileage={mileage}
             transmission={transmission}
             href={href}
+            reserved={reserved}
           />
         )
       )}
