@@ -1,5 +1,5 @@
 import { useRef, useEffect, useCallback } from "react";
-import Image from "next/image";
+import ClearBtn from "../Buttons/ClearBtn/ClearBtn";
 import cls from "./styles.module.scss";
 
 interface MultiRangeSliderProps {
@@ -53,15 +53,7 @@ export default function MultiRangeSlider({
       <div className={cls.titleAndBtnWrapp}>
         <h5 className={cls.title}>{title}</h5>
         {(value.min !== min || value.max !== max) && (
-          <button className={cls.clearBtn} onClick={handleClear}>
-            <p className="textSmall">clear</p>
-            <Image
-              src="/icons/closeDark.svg"
-              alt="close icon"
-              width={12}
-              height={12}
-            />
-          </button>
+         <ClearBtn handleClear={handleClear}/>
         )}
       </div>
 

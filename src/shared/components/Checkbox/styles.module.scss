@@ -1,0 +1,25 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hiddenInput {
+  appearance: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../../public/icons/showroom/circle.svg);
+  background-size: 24px 24px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hiddenInput:checked {
+  background-image: url(../../../../public/icons/showroom/circle-checked.svg);
+  background-size: 24px 24px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}

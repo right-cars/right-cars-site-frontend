@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Button from "@/shared/components/Button/Button";
+import Button from "@/shared/components/Buttons/Button/Button";
 import { data } from "./data";
 import TeamCard from "./TeamCard";
 import cls from "./styles.module.scss";

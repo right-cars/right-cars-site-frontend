@@ -1,6 +1,6 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
-import Button from "@/shared/components/Button/Button";
+import Button from "@/shared/components/Buttons/Button/Button";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";

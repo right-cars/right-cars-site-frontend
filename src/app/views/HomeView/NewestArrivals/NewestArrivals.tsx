@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "@/shared/components/Button/Button";
+import Button from "@/shared/components/Buttons/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
 import { temporaryData } from "./temporaryData";
 import cls from "./styles.module.scss";

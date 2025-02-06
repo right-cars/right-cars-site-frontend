@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/shared/components/Button/Button";
+import Button from "@/shared/components/Buttons/Button/Button";
 import cls from "./styles.module.scss";
 
 export default function MainBlock() {

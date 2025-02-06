@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  text-transform: none;
+}
+
+.searchBox {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 7.5px 16px;
+  border-radius: 34px;
+  border: 1px solid #bbb;
+  outline: none;
+
+  &::placeholder {
+    color: #bbb;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+}
+
+.optionsList {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  height: 168px;
+  overflow: scroll;
+}
+
+.selectedList {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selectedItem {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--purple);
+  padding: 4px 16px;
+  border-radius: 34px;
+  color: var(--purple);
+}
+
+.selectedItemTxt {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 12px;
+  line-height: 0.75;
+  text-transform: lowercase;
+}
+
+.svg {
+  stroke: var(--purple);
+  width: 8px;
+  height: 7px;
+  cursor: pointer;
+}
