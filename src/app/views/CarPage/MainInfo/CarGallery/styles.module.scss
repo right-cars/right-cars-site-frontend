@@ -3,6 +3,21 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  width: 47vw;
+  max-width: 752px;
+
+  @media (max-width: 1470px) {
+    width: 42vw;
+  }
+
+  @media (max-width: 1360px) {
+    width: 57vw;
+  }
+
+  @media (max-width: 989px) {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .thumbnail {
@@ -46,7 +61,7 @@
   display: flex;
   overflow-x: auto;
   gap: 16px;
-  width: 752px;
+  width: 100%;
   padding-bottom: 10px;
   overflow-x: auto;
   overflow-y: hidden;
