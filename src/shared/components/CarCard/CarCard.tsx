@@ -1,9 +1,7 @@
-"use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CarProps } from "@/shared/types/car";
-import LikeSvg from "../../../../public/icons/home/car-card/like.svg";
+import FavoriteBtn from "../Buttons/FavoriteBtn/FavoriteBtn";
 import cls from "./styles.module.scss";
 
 export default function CarCard(props: CarProps) {
@@ -20,47 +18,9 @@ export default function CarCard(props: CarProps) {
     reserved,
   } = props;
 
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setIsFavorite(favorites.includes(id));
-  }, [id]);
-
-  const toggleFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    let updatedFavorites;
-
-    if (favorites.includes(id)) {
-      updatedFavorites = favorites.filter((favId: string) => favId !== id);
-    } else {
-      updatedFavorites = [...favorites, id];
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    setIsFavorite(!isFavorite);
-  };
-
   return (
     <div className={cls.wrapp}>
-      <button onClick={toggleFavorite} className={cls.favoriteBtn}>
-        {!reserved && (
-          <LikeSvg
-            className={cls.absoluteSvg}
-            style={{ fill: isFavorite ? "var(--purple)" : "transparent" }}
-          />
-        )}
-
-        {reserved && (
-          <Image
-            src="/icons/home/car-card/reserved.svg"
-            alt="reserved icon"
-            width={72}
-            height={16}
-            className={cls.reserved}
-          />
-        )}
-      </button>
+    <FavoriteBtn id={id} reserved={reserved}/>
       <div className={cls.imgBlock}>
         <Image
           src={img}

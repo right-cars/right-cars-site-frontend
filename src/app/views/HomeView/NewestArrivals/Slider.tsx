@@ -31,7 +31,7 @@ export default function Slider({ data }: { data: CarProps[] }) {
     >
       {data.slice(0, 4).map(
         ({
-          href,
+          // href,
           img,
           year,
           make,
@@ -43,7 +43,8 @@ export default function Slider({ data }: { data: CarProps[] }) {
         }) => (
           <SwiperSlide key={id}>
             <CarCard
-              href={href}
+              // href={href}
+              href={`/showroom/${id}`}
               img={img}
               year={year}
               price={price}

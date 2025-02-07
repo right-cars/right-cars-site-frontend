@@ -1,0 +1,32 @@
+.wrapper {
+  margin-top: 99px;
+  padding-top: 64px;
+
+  @media (max-width: 989px) {
+    margin-top: 95px;
+    padding-top: 60px;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: 84px;
+    padding-top: 40px;
+  }
+}
+
+.contentWrapp {
+  margin-top: 36px;
+  margin-bottom: 60px;
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 989px) {
+    flex-direction: column;
+    gap:40px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 550px) {
+    margin: 32px 0;
+    gap:32px;
+  }
+}

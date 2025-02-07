@@ -19,7 +19,7 @@ export default function Gallery({ data }: GalleryProps) {
           price,
           mileage,
           transmission,
-          href,
+          // href,
           reserved
         }) => (
           <CarCard
@@ -32,7 +32,8 @@ export default function Gallery({ data }: GalleryProps) {
             price={price}
             mileage={mileage}
             transmission={transmission}
-            href={href}
+            // href={href}
+            href={`/showroom/${id}`}
             reserved={reserved}
           />
         )

@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4;
+  z-index: 10;
   overflow-x: hidden;
 }
 
@@ -22,8 +22,8 @@
   background-color: var(--white);
   border-radius: 16px;
 
-  @media (max-width:550px) {
-   margin: 0 36px; 
+  @media (max-width: 550px) {
+    margin: 0 36px;
   }
 }
 
@@ -33,4 +33,3 @@
   top: 40px;
   right: 32px;
 }
-

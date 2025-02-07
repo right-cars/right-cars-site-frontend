@@ -14,22 +14,6 @@
   }
 }
 
-.favoriteBtn {
-  background-color: transparent;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
-
-.absoluteSvg {
-  stroke: var(--purple);
-  transition: fill var(--transition);
-
-  &:hover {
-    fill: #5120b8;
-  }
-}
-
 .imgBlock {
   width: 100%;
   height: 204px;
@@ -101,12 +85,4 @@
   padding: 4px 16px;
   justify-content: center;
   align-items: center;
-}
-
-.reserved{
-  width: 100px;
-  height: auto;
-  position: absolute;
-  top: -16px;
-  right: -16px;
 }

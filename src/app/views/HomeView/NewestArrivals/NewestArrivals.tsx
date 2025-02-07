@@ -17,7 +17,7 @@ export default function NewestArrivals() {
       <div className={cls.mobGallery}>
         {temporaryData.slice(0, 3).map(
           ({
-            href,
+            // href,
             img,
             year,
             make,
@@ -29,7 +29,8 @@ export default function NewestArrivals() {
           }) => (
             <CarCard
               key={id}
-              href={href}
+              // href={href}
+              href={`/showroom/${id}`}
               img={img}
               year={year}
               price={price}
