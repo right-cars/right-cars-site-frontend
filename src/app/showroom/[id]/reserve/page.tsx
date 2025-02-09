@@ -1,4 +1,5 @@
 import Container from "@/shared/layouts/Container/Container";
+import Reserve from "@/app/views/Reserve/Reserve";
 
 export default async function ReservePage({
   params,
@@ -8,7 +9,7 @@ export default async function ReservePage({
   const { id } = await params;
   return (
     <Container>
-      <h1>reserve page {id}</h1>
+      <Reserve id={id} />
     </Container>
   );
 }
