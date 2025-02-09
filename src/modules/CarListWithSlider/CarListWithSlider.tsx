@@ -1,21 +1,26 @@
 import Link from "next/link";
+import { CarProps } from "@/shared/types/car";
 import Button from "@/shared/components/Buttons/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
-import { temporaryData } from "./temporaryData";
-import cls from "./styles.module.scss";
 import Slider from "./Slider";
+import cls from "./styles.module.scss";
 
-export default function NewestArrivals() {
+interface CarListProps{
+  title: string;
+  carsData: CarProps[]
+}
+
+export default function CarListWithSlider({title, carsData }:CarListProps) {
   return (
     <section className="section">
       <div className="container">
-        <h2>Discover Our Newest Arrivals!</h2>
+        <h2>{title}</h2>
       </div>
 
-      <Slider data={temporaryData} />
+      <Slider data={carsData} />
 
       <div className={cls.mobGallery}>
-        {temporaryData.slice(0, 3).map(
+        {carsData.slice(0, 3).map(
           ({
             // href,
             img,
