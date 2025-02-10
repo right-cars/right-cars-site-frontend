@@ -10,4 +10,5 @@ export interface CustomInputProps {
   ) => void;
   options?: string[];
   placeholder?: string;
+  type?: string;
 }
