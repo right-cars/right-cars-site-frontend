@@ -1,31 +1,47 @@
 "use client";
 import { ChangeEvent, FormEvent, useState } from "react";
 // import { useParams } from "next/navigation";
+import Button from "@/shared/components/Buttons/Button/Button";
 import Container from "@/shared/layouts/Container/Container";
-import cls from "./styles.module.scss";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
 import FormFieldsBlock from "@/modules/FormFieldsBlock/FormField";
 import { fieldsBlock } from "./fieldsData";
-import Button from "@/shared/components/Buttons/Button/Button";
 import { initialFormData } from "./initialState";
+import Permission from "@/app/views/FinancePage/Permission";
+import cls from "./styles.module.scss";
 
 export default function FinancePage() {
   // const { id } = useParams();
   // console.log("🚀 ~ FinancePage ~ id:", id)
 
   const [formData, setFormData] = useState(initialFormData);
+  const [checkboxes, setCheckboxes] = useState({
+    permission: false,
+    sharingPreference: null,
+  });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
+
+  const resetForm = () => {
+    setFormData(initialFormData);
+    setCheckboxes({
+      permission: false,
+      sharingPreference: null,
+    });
+  };
 
   const handleChange = <T extends keyof typeof formData>(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
 
-    if (type === "checkbox") {
-      setPrivacyPolicyChecked((prev) => !prev);
+    if (type === "checkbox" || type === "radio") {
+      const { checked } = e.target as HTMLInputElement;
+      setCheckboxes((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
     } else {
       setFormData((prev) => {
         for (const key in prev) {
@@ -47,7 +63,10 @@ export default function FinancePage() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    console.log("Checkboxes Data:", checkboxes);
     setIsModalOpen(true);
+
+    resetForm();
   };
 
   return (
@@ -73,7 +92,25 @@ export default function FinancePage() {
                 );
               })}
             </div>
-            <Button type="submit" text="submit" />
+            <div className={cls.saveBtnWrapp}>
+              <Button
+                text="save and continue later"
+                color="transparent"
+                onClick={() => {
+                  console.log("🍾");
+                }}
+              />
+            </div>
+            <div className={cls.permissionWrapp}>
+              <Permission
+                handleChange={handleChange}
+                permissionChecked={checkboxes.permission}
+                sharingPreference={checkboxes.sharingPreference}
+              />
+              <div className={cls.submitBtnWrapp}>
+                <Button type="submit" text="submit" />
+              </div>
+            </div>
           </form>
         </section>
       </Container>

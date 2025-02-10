@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import Checkbox from "@/shared/components/Checkbox/Checkbox";
 import cls from "../styles.module.scss";
 
 interface PrivacyPolicyProps {
@@ -15,19 +16,13 @@ export default function PrivacyPolicy({
       <div className={cls.titleBlock}>
         <p className="btnText">Privacy Policy (Required)</p>
         <div>
-          <div className={cls.checkBoxWrapp}>
-            <input
-              id="privacyPolicy"
-              className={cls.checkBox}
-              type="checkbox"
-              name="privacyPolicy"
-              onChange={handleChange}
-              checked={privacyPolicyChecked}
-            />
-            <label className="textSmall" htmlFor="privacyPolicy">
-              I agree to the privacy policy
-            </label>
-          </div>
+          <Checkbox
+            variant="square"
+            id="privacyPolicy"
+            label=" I agree to the privacy policy"
+            checked={privacyPolicyChecked}
+            onToggle={handleChange}
+          />
         </div>
       </div>
       <p className="textSmall">

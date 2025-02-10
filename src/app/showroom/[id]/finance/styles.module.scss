@@ -26,3 +26,34 @@
     gap: 40px;
   }
 }
+
+.saveBtnWrapp {
+  margin-top: 40px;
+  width: 271px;
+  margin-bottom: 80px;
+  margin-left: auto;
+
+  @media (max-width: 989px) {
+    margin-bottom: 54px;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.permissionWrapp {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: 24px 16px;
+}
+
+.submitBtnWrapp {
+  width: 219px;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}

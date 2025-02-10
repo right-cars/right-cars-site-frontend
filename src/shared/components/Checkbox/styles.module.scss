@@ -23,3 +23,23 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.squareCheckbox{
+appearance: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../../../public/icons/checkbox.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.squareCheckbox:checked {
+  background-image: url(../../../../public/icons/checkbox-active.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}
