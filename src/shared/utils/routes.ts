@@ -4,7 +4,7 @@ export const navLinks = [
   { name: "about us", href: "/#about" },
   { name: "book a car service", href: "/car-service" },
   { name: "book a test drive", href: "/test-drive" },
-  { name: "finance", href: "/finance" },
+  { name: "finance", href: "/vehicle-finance" },
   { name: "delivery", href: "/delivery" },
   { name: "FaQ", href: "/faq" },
   { name: "contact us", href: "/#contacts" },
@@ -22,13 +22,13 @@ export const headerNavLinks = [
 export const dropdownLinks = [
   { name: "book a car service", href: "/car-service" },
   { name: "book a test drive", href: "/test-drive" },
-  { name: "finance", href: "/finance" },
+  { name: "finance", href: "/vehicle-finance" },
   { name: "delivery", href: "/delivery" },
 ];
 
 export const footerNavLinks = [
     { name: "showroom", href: "/showroom" },
-    { name: "finance", href: "/finance" },
+    { name: "finance", href: "/vehicle-finance" },
     { name: "book a car service", href: "/car-service" },
   { name: "Auction", href: "/auction" },
   { name: "delivery", href: "/delivery" },
