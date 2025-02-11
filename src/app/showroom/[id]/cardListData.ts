@@ -1,4 +1,4 @@
-export const data = [
+export const cardListData = [
   {
     title: "Reserve the vehicle online",
     descr:

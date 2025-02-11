@@ -11,6 +11,7 @@
     margin-top: 95px;
     padding-top: 80px;
     grid-template-columns: 1fr;
+    align-items: flex-start;
   }
 
   @media (max-width: 550px) {
@@ -51,18 +52,11 @@
 }
 
 .imgBlock {
+  position: relative;
   overflow: hidden;
   display: flex;
   width: 100%;
   border-radius: 16px;
-
-  @media (max-width: 989px) {
-    height: 75%;
-  }
-
-  @media (max-width: 550px) {
-    height: 100%;
-  }
 }
 
 .img {
@@ -71,4 +65,12 @@
   border-radius: 16px;
   object-fit: cover;
   object-position: top;
+
+  @media (max-width: 989px) {
+    height: revert-layer;
+  }
+
+  @media (max-width: 550px) {
+    height: auto;
+  }
 }
