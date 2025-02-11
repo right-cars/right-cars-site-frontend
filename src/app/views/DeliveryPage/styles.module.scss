@@ -1,0 +1,31 @@
+.wrapper {
+  @media (max-width: 989px) {
+    display: none;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 2px solid var(--black);
+}
+
+.descrWrapp {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -8,6 +8,7 @@ interface ServicesPageBannerProps {
   txt: string;
   btn?: boolean;
   img: string;
+  delivery?:boolean
 }
 
 export default function ServicesPageBanner({
@@ -15,6 +16,7 @@ export default function ServicesPageBanner({
   txt,
   btn,
   img,
+  delivery
 }: ServicesPageBannerProps) {
   return (
     <section className={`${"container"} ${cls.wrapper}`}>
@@ -34,6 +36,7 @@ export default function ServicesPageBanner({
           width={560}
           height={342}
           className={cls.img}
+          style={{objectPosition:delivery? "left center":"top"}}
         />
       </div>
     </section>
