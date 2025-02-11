@@ -32,7 +32,7 @@ export default function ServicesPageBanner({
           src={img}
           alt="image"
           width={560}
-          height={374}
+          height={342}
           className={cls.img}
         />
       </div>

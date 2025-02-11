@@ -33,6 +33,7 @@ export default function FormFieldsBlock({
               required={required}
               value={formData[id]}
               handleChange={handleChange}
+              placeholder={placeholder}
             />
           ) : (
             <CustomSelect

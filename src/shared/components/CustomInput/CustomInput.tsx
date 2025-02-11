@@ -2,7 +2,7 @@ import { CustomInputProps } from "@/shared/types/customInput";
 import cls from "./styles.module.scss";
 
 export default function CustomInput(props: CustomInputProps) {
-  const { value, handleChange, id, label, required } = props;
+  const { value, handleChange, id, label, required, placeholder } = props;
 
   return (
     <div className={cls.inputContainer}>
@@ -22,6 +22,7 @@ export default function CustomInput(props: CustomInputProps) {
         name={id}
         value={value}
         autoComplete="off"
+        placeholder={placeholder}
       />
     </div>
   );

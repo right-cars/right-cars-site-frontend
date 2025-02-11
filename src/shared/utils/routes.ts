@@ -27,9 +27,9 @@ export const dropdownLinks = [
 ];
 
 export const footerNavLinks = [
-    { name: "showroom", href: "/showroom" },
-    { name: "finance", href: "/vehicle-finance" },
-    { name: "book a car service", href: "/car-service" },
+  { name: "showroom", href: "/showroom" },
+  { name: "finance", href: "/vehicle-finance" },
+  { name: "book a car service", href: "/car-service" },
   { name: "Auction", href: "/auction" },
   { name: "delivery", href: "/delivery" },
   { name: "book a test drive", href: "/test-drive" },
