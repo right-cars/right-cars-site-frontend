@@ -7,10 +7,11 @@ import cls from "./styles.module.scss";
 interface FavoriteButtonProps {
   id: string;
     reserved?: boolean;
-    isCarPage?:boolean
+  isCarPage?: boolean;
+  onRemoveFavorite?: (id: string) => void 
 }
 
-export default function FavoriteBtn({ id, reserved, isCarPage }: FavoriteButtonProps) {
+export default function FavoriteBtn({ id, reserved, isCarPage, onRemoveFavorite }: FavoriteButtonProps )  {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -18,16 +19,18 @@ export default function FavoriteBtn({ id, reserved, isCarPage }: FavoriteButtonP
     setIsFavorite(favorites.includes(id));
   }, [id]);
 
-    const toggleFavorite = (e: React.MouseEvent) => {
+  const toggleFavorite = (e: React.MouseEvent) => {
     e.stopPropagation();
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     let updatedFavorites;
 
     if (favorites.includes(id)) {
       updatedFavorites = favorites.filter((favId: string) => favId !== id);
+      onRemoveFavorite?.(id); 
     } else {
       updatedFavorites = [...favorites, id];
     }
+
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     setIsFavorite(!isFavorite);
   };
@@ -52,3 +55,4 @@ export default function FavoriteBtn({ id, reserved, isCarPage }: FavoriteButtonP
     </button>
   );
 }
+

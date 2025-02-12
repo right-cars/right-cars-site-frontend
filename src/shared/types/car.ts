@@ -9,5 +9,6 @@ export interface CarProps {
   transmission: string;
   href: string;
   type?: string;
-  reserved?:boolean
+  reserved?: boolean;
+  onRemoveFavorite?: (id: string) => void;
 }

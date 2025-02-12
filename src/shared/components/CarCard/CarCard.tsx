@@ -16,11 +16,12 @@ export default function CarCard(props: CarProps) {
     transmission,
     id,
     reserved,
+    onRemoveFavorite
   } = props;
 
   return (
     <div className={cls.wrapp}>
-    <FavoriteBtn id={id} reserved={reserved}/>
+    <FavoriteBtn id={id} reserved={reserved} onRemoveFavorite={onRemoveFavorite}/>
       <div className={cls.imgBlock}>
         <Image
           src={img}
