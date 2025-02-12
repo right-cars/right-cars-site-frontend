@@ -24,7 +24,7 @@ export default function FormFieldsBlock({
     <div className={cls.container}>
       <h4 style={{ marginBottom: 32 }}>{title}</h4>
       <div className={cls.inputsWrapp}>
-        {fields.map(({ id, label, type, options, placeholder, required }) => {
+        {fields.map(({ id, label, type, options, placeholder, required, phone }) => {
           return type === "input" ? (
             <CustomInput
               key={id}
@@ -34,6 +34,7 @@ export default function FormFieldsBlock({
               value={formData[id]}
               handleChange={handleChange}
               placeholder={placeholder}
+              phone={phone}
             />
           ) : (
             <CustomSelect

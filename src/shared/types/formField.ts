@@ -4,5 +4,6 @@ export type FormFields = {
     type: string;
     options?: string[],
     placeholder?: string,
-    required?: boolean
+    required?: boolean,
+    phone?:boolean
 }

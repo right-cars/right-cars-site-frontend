@@ -87,6 +87,7 @@ export const fieldsBlock = [
           label: "mobile number",
           type: "input",
           required: true,
+          phone:true
         },
 
         {
@@ -97,7 +98,7 @@ export const fieldsBlock = [
           placeholder: "Not Selected",
         },
 
-        { id: "phoneNumberH", label: "phone number (h)", type: "input" },
+        { id: "phoneNumberH", label: "phone number (h)", type: "input", phone:true },
 
         {
           id: "graduate",
@@ -770,6 +771,7 @@ export const fieldsBlock = [
           id: "contactNumberRelative",
           label: "Contact Number",
           type: "input",
+          phone:true
         },
         {
           id: "relativeAddress1",

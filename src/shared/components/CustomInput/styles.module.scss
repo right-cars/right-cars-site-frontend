@@ -1,4 +1,5 @@
 .inputContainer {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -24,4 +25,11 @@
   font-weight: 500;
   letter-spacing: -0.48px;
   color:#11181C;
+}
+
+.togglePassword{
+  position: absolute;
+  top:50%;
+  right: 16px;
+  transform: translateY(-50%);
 }

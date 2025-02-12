@@ -6,6 +6,7 @@ export const fieldsData = [
     label: "Contact Number",
     type: "input",
     required: true,
+    phone:true
   },
   { id: "email", label: "email", type: "input", required: true },
   { id: "vehicleYear", label: "Vehicle Year", type: "input", required: true },
