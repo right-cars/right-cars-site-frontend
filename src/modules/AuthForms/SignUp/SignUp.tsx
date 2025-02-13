@@ -4,7 +4,17 @@ import CustomInput from "@/shared/components/CustomInput/CustomInput";
 import Tooltip from "./Tooltip/Tooltip";
 import cls from "../styles.module.scss";
 
-export default function SignUp({ toggleForm }: { toggleForm: () => void }) {
+interface SignupProps {
+  toggleForm: () => void;
+  setPopupOpen: (isOpen: string) => void;
+  setSignUpOpen: (isOpen: boolean) => void;
+}
+
+export default function SignUp({
+  toggleForm,
+  setPopupOpen,
+  setSignUpOpen,
+}: SignupProps) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -30,6 +40,8 @@ export default function SignUp({ toggleForm }: { toggleForm: () => void }) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    setSignUpOpen(false);
+    setPopupOpen(formData.email ? formData.email : "test@mail");
   };
 
   return (
@@ -66,7 +78,8 @@ export default function SignUp({ toggleForm }: { toggleForm: () => void }) {
             id="email"
             handleChange={handleChange}
           />
-          <div style={{position:"relative"}}
+          <div
+            style={{ position: "relative" }}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
@@ -78,7 +91,7 @@ export default function SignUp({ toggleForm }: { toggleForm: () => void }) {
               id="password"
               handleChange={handleChange}
             />
-            {showTooltip && <Tooltip/>}
+            {showTooltip && <Tooltip />}
           </div>
           <CustomInput
             password

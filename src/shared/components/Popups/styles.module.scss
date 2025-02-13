@@ -1,0 +1,16 @@
+.wrapper {
+  padding: 40px 32px;
+  width: 568px;
+  max-width: 90vw;
+
+  @media (max-width: 550px) {
+    padding: 24px 16px;
+  }
+}
+
+.titleWrapp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}

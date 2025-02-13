@@ -4,7 +4,17 @@ import CustomInput from "@/shared/components/CustomInput/CustomInput";
 import GoogleBtn from "./GoogleBtn/GoogleBtn";
 import cls from "../styles.module.scss";
 
-export default function SignIn({toggleForm}:{toggleForm:()=>void}) {
+interface SigninProps {
+  toggleForm: () => void;
+  setPasswordPopupOpen: (isOpen: boolean) => void;
+  setSigninOpen: (isOpen: boolean) => void;
+}
+
+export default function SignIn({
+  toggleForm,
+  setSigninOpen,
+  setPasswordPopupOpen,
+}: SigninProps) {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (
@@ -44,7 +54,15 @@ export default function SignIn({toggleForm}:{toggleForm:()=>void}) {
             handleChange={handleChange}
           />
         </div>
-        <p className={cls.forgotTxt}>forgot password</p>
+        <p
+          className={cls.forgotTxt}
+          onClick={() => {
+            setSigninOpen(false);
+            setPasswordPopupOpen(true);
+          }}
+        >
+          forgot password
+        </p>
         <Button type="submit" text="log in" />
       </form>
       <div style={{ marginTop: 12, marginBottom: 32 }}>
@@ -53,7 +71,7 @@ export default function SignIn({toggleForm}:{toggleForm:()=>void}) {
       <p className="btnText" style={{ marginBottom: 32 }}>
         DONʼT HAVE AN ACCOUNT?
       </p>
-      <Button text="sign up" color="transparent" onClick={toggleForm}/>
+      <Button text="sign up" color="transparent" onClick={toggleForm} />
     </div>
   );
 }
