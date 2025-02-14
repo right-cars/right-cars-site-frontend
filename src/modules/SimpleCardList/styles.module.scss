@@ -1,0 +1,29 @@
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch;
+
+  @media (max-width: 989px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 32px 16px;
+
+  @media (max-width: 550px) {
+    padding: 24px 16px;
+  }
+}
+
+.title {
+  margin: 12px 0 24px;
+}

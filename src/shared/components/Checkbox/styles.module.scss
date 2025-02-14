@@ -1,0 +1,47 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hiddenInput {
+  cursor: pointer;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../../public/icons/showroom/circle.svg);
+  background-size: 24px 24px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.hiddenInput:checked {
+  background-image: url(../../../../public/icons/showroom/circle-checked.svg);
+  background-size: 24px 24px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.squareCheckbox{
+appearance: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../../../public/icons/checkbox.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.squareCheckbox:checked {
+  background-image: url(../../../../public/icons/checkbox-active.svg);
+  background-size: 16px 16px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+}

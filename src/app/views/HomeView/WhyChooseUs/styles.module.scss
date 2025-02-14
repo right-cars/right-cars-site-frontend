@@ -1,0 +1,131 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 24% 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+  align-items: stretch;
+
+  @media (max-width: 989px) {
+    grid-template-columns: 28.7% 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 31.8% 1fr;
+  }
+
+  @media (max-width: 668px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leftBlock {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 44px 16px 0px 16px;
+  border-radius: 16px;
+  box-shadow: var(--purple-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 989px) {
+    padding-top: 45px;
+  }
+
+  @media (max-width: 668px) {
+    padding: 32px 16px;
+    height: 174px;
+  }
+}
+
+.rightBlock {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  gap: 16px;
+
+  @media (max-width: 989px) {
+    grid-template-columns: 41.4% 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: var(--white);
+  padding: 44px 16px 16px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  @media (max-width: 989px) {
+    padding-top: 32px;
+  }
+
+  @media (max-width: 550px) {
+    padding: 32px 16px;
+    height: 218px;
+  }
+}
+
+.card:last-child {
+  grid-column: span 2;
+  height: 208px;
+
+  @media (max-width: 550px) {
+    grid-column: auto;
+    height: 218px;
+  }
+}
+
+.card:first-child {
+  @media (max-width: 550px) {
+    height: 174px;
+  }
+}
+
+.leftTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: 668px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.titleBlock {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @media (max-width: 723px) {
+    gap: 6px;
+  }
+
+  @media (max-width: 668px) {
+    justify-content: space-between;
+  }
+}
+
+.card:first-child .titleBlock {
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  color: var(--purple);
+}
+
+.svg {
+  @media (max-width: 723px) {
+    width: 40px;
+    height: 40px;
+  }
+}

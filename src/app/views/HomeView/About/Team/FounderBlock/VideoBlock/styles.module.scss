@@ -1,0 +1,55 @@
+.videoContainer {
+  position: relative;
+  width: 40%;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 193px;
+  }
+
+  @media (max-width: 550px) {
+    height: 202px;
+  }
+
+  @media (max-width: 360px) {
+    height: 242px;
+  }
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #000;
+}
+
+.videoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+
+  @media (max-width: 768px) {
+    object-position: left 20%;
+  }
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.absoluteSvg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}

@@ -1,0 +1,25 @@
+.documentsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  row-gap: 12px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap:12px
+  }
+}
+
+.link {
+  color: var(--white);
+  transition: color var(--transition);
+
+  @media (max-width: 550px) {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: var(--yellow);
+  }
+}
+

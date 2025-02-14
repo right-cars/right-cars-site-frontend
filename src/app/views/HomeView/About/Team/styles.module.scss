@@ -1,0 +1,24 @@
+.txtBlock {
+  background-color: var(--purple);
+  box-shadow: var(--purple-shadow);
+  border-radius: 16px;
+  padding: 32px;
+  color: var(--white);
+  margin-bottom: 40px;
+
+  @media (max-width: 989px) {
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
+
+.title {
+  margin-bottom: 32px;
+
+  @media (max-width: 550px) {
+    margin-bottom: 24px;
+  }
+}

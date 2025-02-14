@@ -1,0 +1,174 @@
+.addBlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-grow: 1;
+  gap: 16px;
+  align-items: stretch;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 100%);
+    overflow-y: scroll;
+  }
+
+  @media (max-width: 550px) {
+    display: none;
+  }
+}
+
+.allCars {
+  position: relative;
+  height: 100%;
+  padding: 28px 18px 16px 16px;
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+
+  @media (max-width: 989px) {
+    padding: 15px 16px 19px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 9px;
+  }
+}
+
+.imgsBlock {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: 989px) {
+    padding: 0;
+    gap: 4px;
+  }
+}
+
+.title {
+  font-family: "Blatant", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  text-transform: uppercase;
+  margin-top: 25px;
+
+  @media (max-width: 989px) {
+    font-size: 24px;
+    letter-spacing: -0.72px;
+    margin-top: 20px;
+  }
+}
+
+.typeCars {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imgWrapp {
+  position: relative;
+
+  border-radius: 16px;
+  background-color: var(--purple);
+  box-shadow: var(--purple-shadow);
+  padding: 26px 34px 16px 32px;
+
+  @media (max-width: 989px) {
+    padding: 0 15px 19px;
+  }
+}
+
+.imgWrappSecond {
+  position: relative;
+  border-radius: 16px;
+  background-color: var(--purple);
+  box-shadow: var(--purple-shadow);
+  padding: 32px 9px 16px 10px;
+
+  @media (max-width: 989px) {
+    padding: 30px 8px 19px;
+  }
+}
+
+.titleSecond {
+  color: var(--white);
+  margin-top: 18px;
+
+  @media (max-width: 989px) {
+    margin-top: 14px;
+  }
+}
+
+.titleThird {
+  color: var(--white);
+  padding-left: 6px;
+  margin-top: 22px;
+
+  @media (max-width: 989px) {
+    padding-left: 2px;
+    margin-top: 13px;
+  }
+}
+
+.absoluteImg {
+  position: absolute;
+  top: -17%;
+  left: -24%;
+  width: 164px;
+  height: 164px;
+
+  @media (max-width: 1360px) {
+    top: -18%;
+    left: -42%;
+    width: 135px;
+    height: 135px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.absoluteImgSecond {
+  position: absolute;
+  top: -36%;
+  left: -31%;
+  width: 164px;
+  height: 164px;
+  rotate: 341deg;
+
+  @media (max-width: 1360px) {
+    top: -36%;
+    left: -36%;
+    width: 135px;
+    height: 135px;
+    rotate: 341deg;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.absoluteImgThird {
+  position: absolute;
+  top: -33%;
+  left: -28%;
+  width: 164px;
+  height: 164px;
+  rotate: 162deg;
+
+  @media (max-width: 1360px) {
+    top: -36%;
+    left: -34%;
+    width: 135px;
+    height: 135px;
+    rotate: 162deg;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

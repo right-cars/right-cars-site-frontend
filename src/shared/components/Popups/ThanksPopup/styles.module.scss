@@ -1,0 +1,12 @@
+.wrapper{
+    margin: 40px 32px;
+    padding-right: 32px;
+
+    @media (max-width:550px) {
+        padding-right: 0;
+    }
+}
+
+.txt{
+    max-width:461px
+}

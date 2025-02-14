@@ -1,0 +1,68 @@
+.mainMedia {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  height: 546px;
+
+  @media (max-width: 989px) {
+    height: 499px;
+  }
+
+  @media (max-width: 550px) {
+    height: 243px;
+  }
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.videoImgBlock {
+  position: relative;
+  height: 100%;
+}
+
+.mainVideoSvgBlock {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1;
+  border-radius: 8px;
+  background: rgba(35, 35, 35, 0.5);
+  color: var(--white);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prevBtn {
+  left: 16px;
+}
+
+.nextBtn {
+  right: 16px;
+}
+
+.numeration {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1;
+  border-radius: 8px;
+  background: rgba(35, 35, 35, 0.5);
+  color: var(--white);
+  padding: 8px;
+}

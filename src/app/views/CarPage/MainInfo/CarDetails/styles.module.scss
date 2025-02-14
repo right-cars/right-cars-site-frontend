@@ -1,0 +1,56 @@
+.detailsContainer {
+  width: 47vw;
+  max-width: 752px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 1470px) {
+    width: 42vw;
+  }
+
+  @media (max-width: 1360px) {
+    width: 57vw;
+  }
+
+  @media (max-width: 989px) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailsWrapper {
+  background-color: var(--purple);
+  padding: 24px 16px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.itemName {
+  width: 60%;
+  text-transform: none;
+}
+
+.valueWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 38%;
+}

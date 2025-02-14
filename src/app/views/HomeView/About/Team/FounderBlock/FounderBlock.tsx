@@ -1,0 +1,34 @@
+import Image from "next/image";
+import cls from "./styles.module.scss";
+import VideoBlock from "./VideoBlock/VideoBlock";
+
+export default function FounderBlock() {
+  return (
+    <div className={cls.wrapper}>
+      <div className={cls.infoBlock}>
+        <div className={cls.imgBlock}>
+          <Image
+            src="/images/home/about/default.png"
+            alt="founder photo"
+            width={238}
+            height={246}
+            className={cls.img}
+          />
+        </div>
+        <div className={cls.txtBlock}>
+          <h3 className={`${"btnText"} ${cls.title}`}>
+            Founder and CEO{" "}
+            <span style={{ color: "var(--purple)" }}>Eugene&nbsp;Vulakh</span>
+          </h3>
+          <p className="textMedium">
+            Eugene, the founder of the company, combines his deep-rooted passion
+            for cars with a commitment to exceptional customer service. He leads
+            the team with a focus on integrity, excellence, and a relentless
+            drive to deliver the best experience for every customer
+          </p>
+        </div>
+      </div>
+      <VideoBlock />
+    </div>
+  );
+}

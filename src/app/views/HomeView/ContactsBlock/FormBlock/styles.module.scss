@@ -1,0 +1,47 @@
+.form {
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  @media (max-width: 989px) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 550px) {
+    padding: 24px 16px;
+  }
+}
+
+.inputAndSelectWrapp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.privacyPolicyBlock {
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 24px 16px;
+  border-radius: 16px;
+}
+
+.btnWrapp {
+  width: 110px;
+  margin-top: 40px;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+

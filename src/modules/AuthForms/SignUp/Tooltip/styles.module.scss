@@ -1,0 +1,38 @@
+.passwordTooltip {
+  position: absolute;
+  right: 12%;
+  bottom: -10%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background-color: var(--light-grey);
+  padding: 16px;
+
+  @media (max-width: 660px) {
+    right: 3%;
+    padding: 8px;
+  }
+}
+
+.list {
+  width: 304px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  row-gap: 8px;
+
+  @media (max-width: 660px) {
+    width: 192px;
+  }
+}
+
+.item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  min-width: 110px;
+}
+
+.txt {
+  text-transform: lowercase;
+  text-wrap: nowrap;
+}

@@ -1,0 +1,93 @@
+.overlay {
+  position: fixed;
+  top: -16px;
+  right: -14px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+
+  @media (max-width: 550px) {
+    right: 0;
+  }
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--purple);
+  padding: 56px 64px 46px;
+
+  @media (max-width: 550px) {
+    padding: 56px 48px 32px;
+    align-items: center;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+
+  @media (max-width: 550px) {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--white);
+  transition: stroke var(--transition);
+
+  &:hover {
+    stroke: var(--yellow);
+  }
+}
+
+.logoWrapp {
+  display: none;
+
+  @media (max-width: 550px) {
+    display: flex;
+  }
+}
+
+.linksList {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.78px;
+  text-transform: uppercase;
+
+  @media (max-width: 550px) {
+    gap: 24px;
+    align-items: center;
+  }
+
+  @media (max-width: 359px) {
+    font-size: 22px;
+    gap: 16px;
+  }
+}
+
+.item {
+  display: flex;
+  width: fit-content;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--yellow);
+  }
+}
+
+.isActive {
+  color: var(--yellow);
+}
