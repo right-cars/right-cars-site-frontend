@@ -1,0 +1,81 @@
+.aside {
+    width: 100%;
+}
+
+.tabAside {
+  @media (max-width: 989px) {
+    display: none;
+  }
+}
+
+.titleBlock {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeSvg {
+  display: none;
+
+  @media (max-width: 989px) {
+    display: block;
+    width: 24px;
+    height: 24px;
+    stroke: #52525b;
+  }
+}
+
+.nawWrapp {
+  border-radius: 16px;
+  background-color: var(--purple);
+  box-shadow: var(--purple-shadow);
+  padding: 16px 0;
+  color: var(--white);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin: 0 16px;
+  border-bottom: 2px solid var(--white);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--yellow);
+  }
+}
+
+.active {
+  padding: 12px 28px;
+  margin: 0;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 4px;
+}
+
+.disabled {
+  color:#FFFFFF80;
+   &:hover {
+    color: #ffffff80;
+  }
+}
+
+.svg {
+  width: 24px;
+  height: 24px;
+}
+
+.logOutBtn {
+  width: 100%;
+  color: var(--white);
+}

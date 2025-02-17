@@ -6,7 +6,7 @@ import Button from "@/shared/components/Buttons/Button/Button";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import CheckboxBlock from "@/app/views/ServiceCar/CheckboxBlock";
+import CheckboxBlock from "@/views/ServiceCar/CheckboxBlock";
 import { checkboxData } from "./checkboxesData";
 import cls from "./styles.module.scss";
 

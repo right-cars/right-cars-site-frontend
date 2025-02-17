@@ -1,0 +1,29 @@
+.wrapper {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.title {
+    margin-bottom: 32px;
+
+    @media (max-width: 550px) {
+        margin-bottom: 24px;
+    }
+}
+
+.btn {
+  margin-top: 40px;
+  margin-left: auto;
+  width: 91px;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.checkboxWrapp{
+    padding: 0 8px;
+    margin-top: 24px;
+}

@@ -1,0 +1,131 @@
+.wrapper {
+  position: relative;
+  padding: 16px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.docTitleBlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+}
+
+.label {
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.yellowLabel {
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+  transition: background-color var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    box-shadow: var(--yellow-shadow);
+  }
+
+  &:active {
+    background-color: var(--dark-yellow);
+  }
+}
+
+.transparentLabel {
+  background-color: transparent;
+  border: 2px solid var(--black);
+  transition: background-color var(--transition), border var(--transition),
+    box-shadow var(--transition);
+
+  &:hover {
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow);
+    box-shadow: var(--yellow-shadow);
+  }
+
+  &:active {
+    background-color: var(--dark-yellow);
+  }
+}
+
+.input {
+  display: none;
+}
+
+.inputWithTooltip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.tooltipWrapp {
+  position: absolute;
+  z-index: 2;
+  top: 86%;
+  right: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--light-purple);
+  width: 320px;
+
+  @media (max-width: 989px) {
+    width: 100%;
+  }
+}
+
+.tooltipTitleBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeBtn {
+  display: none;
+
+  @media (max-width: 989px) {
+    display: block;
+  }
+}
+
+.closeSvg {
+  width: 24px;
+  height: 24px;
+  stroke: #52525b;
+}
+
+.tooltipList {
+  margin-top: 12px;
+  list-style-type: disc;
+  padding-left: 16px;
+}

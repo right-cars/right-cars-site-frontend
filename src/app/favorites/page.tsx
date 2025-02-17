@@ -5,7 +5,7 @@ import Button from "@/shared/components/Buttons/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
 import Container from "@/shared/layouts/Container/Container";
 import { CarProps } from "@/shared/types/car";
-import { temporaryData } from "../views/Showroom/Gallery/temporaryData";
+import { temporaryData } from "@/views/Showroom/Gallery/temporaryData";
 import cls from "./styles.module.scss";
 
 export default function Favorites() {

@@ -2,7 +2,7 @@ import Container from "@/shared/layouts/Container/Container";
 import ServicesPageBanner from "@/modules/ServicesPageBanner/ServicesPageBanner";
 import SimpleCardList from "@/modules/SimpleCardList/SimpleCardList";
 import { cardListData } from "./cardListData";
-import DeliveryList from "../views/DeliveryPage/DeliveryList";
+import DeliveryList from "@/views/DeliveryPage/DeliveryList";
 
 export default function DeliveryPage() {
   return (

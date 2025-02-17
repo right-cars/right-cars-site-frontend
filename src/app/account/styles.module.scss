@@ -1,0 +1,26 @@
+.wrapper {
+  position: relative;
+  margin-top: 99px;
+  padding-top: 64px;
+  display: grid;
+  grid-template-columns: 31% auto;
+  gap: 32px;
+
+  @media (max-width: 989px) {
+    margin-top: 95px;
+grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: 84px;
+    padding-top: 54px;
+  }
+}
+
+.main{
+    margin-top: 55px;
+
+    @media (max-width:989px) {
+        margin-top: 0;
+    }
+}
