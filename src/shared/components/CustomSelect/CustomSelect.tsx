@@ -11,6 +11,7 @@ export default function CustomSelect({
   handleChange,
   options,
   placeholder,
+  bordered
 }: CustomInputProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +34,7 @@ export default function CustomSelect({
           </span>
         )}
       </p>
-      <div onClick={() => setIsOpen(!isOpen)} className={cls.select}>
+      <div onClick={() => setIsOpen(!isOpen)} className={`${cls.select} ${bordered && cls.borderedSelect}`}>
         <div className={cls.selected}>
           {value || (
             <p style={{ color: "rgba(17, 24, 28, 0.5)" }}>{placeholder}</p>

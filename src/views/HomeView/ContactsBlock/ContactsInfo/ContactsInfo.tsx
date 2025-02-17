@@ -1,8 +1,8 @@
 import cls from "../styles.module.scss";
-import Phone from "../../../../../../public/icons/contacts/phone.svg";
-import WhatsApp from "../../../../../../public/icons/contacts/whatsapp.svg";
-import Email from "../../../../../../public/icons/contacts/email.svg";
-import Address from "../../../../../../public/icons/contacts/address-marker.svg";
+import Phone from "../../../../../public/icons/contacts/phone.svg";
+import WhatsApp from "../../../../../public/icons/contacts/whatsapp.svg";
+import Email from "../../../../../public/icons/contacts/email.svg";
+import Address from "../../../../../public/icons/contacts/address-marker.svg";
 import Link from "next/link";
 
 const data = [

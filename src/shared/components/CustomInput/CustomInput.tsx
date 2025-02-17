@@ -5,8 +5,17 @@ import { CustomInputProps } from "@/shared/types/customInput";
 import cls from "./styles.module.scss";
 
 export default function CustomInput(props: CustomInputProps) {
-  const { value, handleChange, id, label, required, placeholder, password, phone } =
-    props;
+  const {
+    value,
+    handleChange,
+    id,
+    label,
+    required,
+    placeholder,
+    password,
+    phone,
+    bordered,
+  } = props;
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -23,21 +32,11 @@ export default function CustomInput(props: CustomInputProps) {
           </span>
         )}
       </label>
-      {/* <input
-        className={cls.input}
-        onChange={handleChange}
-        id={id}
-        type={password && !showPassword ? "password" : "text"}
-        name={id}
-        value={value}
-        autoComplete="off"
-        placeholder={placeholder}
-      /> */}
       {phone ? (
         <InputMask
           mask="+38 (0__) ___-__-__"
           replacement={{ _: /\d/ }}
-          className={cls.input}
+          className={`${cls.input} ${bordered && cls.borderedInput}`}
           onChange={handleChange}
           id={id}
           name={id}
@@ -47,7 +46,7 @@ export default function CustomInput(props: CustomInputProps) {
         />
       ) : (
         <input
-          className={cls.input}
+          className={`${cls.input} ${bordered && cls.borderedInput}`}
           onChange={handleChange}
           id={id}
           type={password && !showPassword ? "password" : "text"}

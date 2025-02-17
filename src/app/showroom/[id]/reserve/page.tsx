@@ -1,5 +1,5 @@
 import Container from "@/shared/layouts/Container/Container";
-import Reserve from "@/app/views/Reserve/Reserve";
+import Reserve from "@/views/Reserve/Reserve";
 
 export default async function ReservePage({
   params,

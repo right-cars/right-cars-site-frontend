@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 import GoogleBtn from "./GoogleBtn/GoogleBtn";
@@ -16,6 +17,7 @@ export default function SignIn({
   setPasswordPopupOpen,
 }: SigninProps) {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const router = useRouter()
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -31,6 +33,8 @@ export default function SignIn({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+    router.push("/account")
+    setSigninOpen(false)
   };
 
   return (

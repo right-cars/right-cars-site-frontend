@@ -24,12 +24,26 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.48px;
-  color:#11181C;
+  color: #11181c;
 }
 
-.togglePassword{
+.borderedInput {
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 2px solid var(--grey-200);
+
+  @media (max-width: 989px) {
+    padding: 10px 20px;
+  }
+}
+
+.togglePassword {
   position: absolute;
-  top:50%;
+  top: 50%;
   right: 16px;
   transform: translateY(-50%);
+}
+
+.borderedSelect .togglePassword {
+  right: 20px;
 }

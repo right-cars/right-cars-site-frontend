@@ -6,7 +6,7 @@ import cls from "./styles.module.scss";
 
 export default function ContactsBlock() {
   return (
-    <section className="container section">
+    <section className="container section" id="contacts">
       <h2>Have Questions? </h2>
       <div className={cls.wrapper}>
         <FormBlock />

@@ -1,5 +1,5 @@
 import Container from "@/shared/layouts/Container/Container";
-import DetailsBlock from "../views/Faq/DetailsBlock";
+import DetailsBlock from "@/views/Faq/DetailsBlock";
 import { data } from "./data";
 import cls from "./styles.module.scss";
 

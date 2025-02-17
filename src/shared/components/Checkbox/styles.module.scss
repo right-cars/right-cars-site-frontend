@@ -36,6 +36,7 @@ appearance: none;
   border: none;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .squareCheckbox:checked {
@@ -44,4 +45,5 @@ appearance: none;
   border: none;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }

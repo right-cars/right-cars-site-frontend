@@ -12,5 +12,6 @@ export interface CustomInputProps {
   placeholder?: string;
   type?: string;
   password?: boolean;
-  phone?:boolean
+  phone?: boolean;
+  bordered?:boolean
 }
