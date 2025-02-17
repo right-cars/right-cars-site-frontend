@@ -10,6 +10,7 @@
 }
 
 .slider {
+  max-width: 71%;
   margin: 0 232px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -17,10 +18,12 @@
 
   @media (max-width: 1360px) {
     margin: 0 48px;
+    max-width: 93%;
   }
 
   @media (max-width: 1100px) {
     margin: 0;
+    max-width: 100%;
   }
 
   @media (max-width: 550px) {
