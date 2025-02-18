@@ -14,7 +14,7 @@
     margin-bottom: 11px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     height: 430px;
     margin-bottom: 44px;
   }

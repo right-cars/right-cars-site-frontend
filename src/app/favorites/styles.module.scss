@@ -26,7 +26,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -30,7 +30,7 @@
     width: 40.8%;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     width: 55.8%;
   }
 

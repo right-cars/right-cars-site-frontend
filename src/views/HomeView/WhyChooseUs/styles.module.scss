@@ -12,7 +12,7 @@
     grid-template-columns: 28.7% 1fr;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: 31.8% 1fr;
   }
 
@@ -50,7 +50,7 @@
     grid-template-columns: 41.4% 1fr;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

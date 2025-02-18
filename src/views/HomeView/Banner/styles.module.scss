@@ -39,7 +39,7 @@
   }
 }
 .br {
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }

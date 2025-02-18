@@ -8,7 +8,7 @@
   gap: 16px;
   align-items: stretch;
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: repeat(1, 100%);
     overflow-y: scroll;
   }
@@ -30,7 +30,7 @@
     padding: 15px 16px 19px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     padding-top: 9px;
   }
 }
@@ -129,7 +129,7 @@
     height: 135px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
@@ -150,7 +150,7 @@
     rotate: 341deg;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
@@ -171,7 +171,7 @@
     rotate: 162deg;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }

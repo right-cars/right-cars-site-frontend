@@ -42,7 +42,7 @@
     top: 50px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     height: 80vh;
   }
 
@@ -67,7 +67,7 @@
     scrollbar-color: v.$primary #bbb;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     height: 75%;
   }
 

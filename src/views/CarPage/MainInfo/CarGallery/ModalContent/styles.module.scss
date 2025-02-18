@@ -14,7 +14,7 @@
     height: 443px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     width: 90vw;
     height: 443px;
   }
