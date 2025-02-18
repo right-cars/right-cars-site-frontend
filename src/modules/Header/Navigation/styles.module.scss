@@ -1,8 +1,11 @@
+@import "@/shared/styles/mixins";
+@import "@/shared/styles/variables";
+
 .linksList {
   display: flex;
   gap: 24px;
 
-  @media (max-width: 989px) {
+  @include large-tablet {
     gap: 16px;
   }
 
@@ -10,16 +13,16 @@
     gap: 10px;
   }
 
-  @media (max-width: 768px) {
+  @include tablet {
     display: none;
   }
 }
 
 .link {
-  transition: color var(--transition);
+  transition: color $transition;
 
   &:hover {
-    color: var(--purple);
+    color: $primary;
   }
 
   @media (max-width: 868px) {
@@ -28,7 +31,7 @@
 }
 
 .isActive {
-  color: var(--purple);
+  color: $primary;
 }
 
 .dropdown {

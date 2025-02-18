@@ -1,3 +1,6 @@
+@import "@/shared/styles/mixins";
+@import "@/shared/styles/variables";
+
 .overlay {
   position: fixed;
   top: -16px;
@@ -6,7 +9,7 @@
   height: 100vh;
   z-index: 4;
 
-  @media (max-width: 550px) {
+  @include mobile {
     right: 0;
   }
 }
@@ -17,10 +20,10 @@
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: var(--purple);
+  background-color: $primary;
   padding: 56px 64px 46px;
 
-  @media (max-width: 550px) {
+  @include mobile {
     padding: 56px 48px 32px;
     align-items: center;
   }
@@ -31,7 +34,7 @@
   top: 40px;
   right: 40px;
 
-  @media (max-width: 550px) {
+  @include mobile {
     top: 24px;
     right: 24px;
   }
@@ -40,18 +43,18 @@
 .svg {
   width: 24px;
   height: 24px;
-  stroke: var(--white);
-  transition: stroke var(--transition);
+  stroke: $pure;
+  transition: stroke $transition;
 
   &:hover {
-    stroke: var(--yellow);
+    stroke: $accent;
   }
 }
 
 .logoWrapp {
   display: none;
 
-  @media (max-width: 550px) {
+  @include mobile {
     display: flex;
   }
 }
@@ -67,7 +70,7 @@
   letter-spacing: -0.78px;
   text-transform: uppercase;
 
-  @media (max-width: 550px) {
+  @include mobile {
     gap: 24px;
     align-items: center;
   }
@@ -81,13 +84,13 @@
 .item {
   display: flex;
   width: fit-content;
-  transition: color var(--transition);
+  transition: color $transition;
 
   &:hover {
-    color: var(--yellow);
+    color: $accent;
   }
 }
 
 .isActive {
-  color: var(--yellow);
+  color: $accent;
 }
