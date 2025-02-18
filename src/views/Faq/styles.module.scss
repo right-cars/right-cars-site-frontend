@@ -1,8 +1,8 @@
 @import "@/shared/styles/variables";
 
 .detailsContainer {
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: $pure;
+  box-shadow: $shadow;
   border-radius: 16px;
   padding: 24px 16px;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .svg {
-  transition: transform var(--transition);
+  transition: transform $transition;
 }
 
 .details[open] > .questionBlock > .svg {

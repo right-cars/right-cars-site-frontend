@@ -20,7 +20,7 @@ export default function TeamCard({
         <h6 style={{ marginBottom: 4 }}>{position}</h6>
         <p
           className="btnText"
-          style={{ color: "var(--purple)", marginBottom: 24 }}
+          style={{ color: "$primary", marginBottom: 24 }}
         >
           {name}
         </p>

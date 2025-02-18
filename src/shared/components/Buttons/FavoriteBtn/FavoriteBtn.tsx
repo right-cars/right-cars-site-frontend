@@ -40,7 +40,7 @@ export default function FavoriteBtn({ id, reserved, isCarPage, onRemoveFavorite 
       {!reserved && (
         <LikeSvg
           className={cls.absoluteSvg}
-          style={{ fill: isFavorite ? "var(--purple)" : "transparent" }}
+          style={{ fill: isFavorite ? "$primary" : "transparent" }}
         />
       )}
       {reserved && (

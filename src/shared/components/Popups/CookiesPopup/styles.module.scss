@@ -14,9 +14,9 @@
   width: 100%;
   padding: 24px 32px;
   padding-right: 67px;
-  background-color: var(--white);
+  background-color: $pure;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: $shadow;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -62,7 +62,7 @@ cursor: pointer;
 }
 
 .link{
-    color:var(--purple);
+    color:$primary;
     text-decoration: underline;
 }
 

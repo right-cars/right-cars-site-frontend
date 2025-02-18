@@ -12,8 +12,8 @@
   flex-direction: column;
   gap: 32px;
   padding: 32px;
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: $pure;
+  box-shadow: $shadow;
   border-radius: 16px;
 }
 
@@ -23,7 +23,7 @@
   gap: 20px;
   justify-content: space-between;
   padding: 12px;
-  border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid $text;
 }
 
 .descrWrapp {

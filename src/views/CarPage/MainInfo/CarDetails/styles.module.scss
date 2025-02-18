@@ -27,11 +27,11 @@
 }
 
 .detailsWrapper {
-  background-color: var(--purple);
+  background-color: $primary;
   padding: 24px 16px;
   border-radius: 16px;
-  box-shadow: var(--shadow);
-  color: var(--white);
+  box-shadow: $shadow;
+  color: $pure;
 }
 
 .detailsList {

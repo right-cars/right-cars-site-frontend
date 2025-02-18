@@ -41,8 +41,8 @@
 .pageBtn {
   padding: 8px 12px;
   border-radius: 8px;
-  transition: color var(--transition), background-color var(--transition),
-    border var(--transition);
+  transition: color $transition, background-color $transition,
+    border $transition;
   border: 1px solid transparent;
 
   @media (max-width: 550px) {
@@ -50,8 +50,8 @@
   }
 
   &:hover {
-    background-color: var(--light-purple);
-    border: 1px solid var(--purple);
+    background-color: $primary-light;
+    border: 1px solid $primary;
   }
 }
 
@@ -59,7 +59,7 @@
   padding: 8px 12px;
   border-radius: 8px;
   background-color: #6200ea;
-  color: var(--white);
+  color: $pure;
   border: 1px solid transparent;
 
   @media (max-width: 550px) {

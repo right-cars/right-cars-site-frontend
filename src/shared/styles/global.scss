@@ -37,8 +37,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: var(--black);
-  background-color: var(--bg);
+  color: $text;
+  background-color: $bg;
   scroll-behavior: smooth;
 }
 

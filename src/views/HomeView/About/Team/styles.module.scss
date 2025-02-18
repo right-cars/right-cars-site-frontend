@@ -2,11 +2,11 @@
 @import "@/shared/styles/variables";
 
 .txtBlock {
-  background-color: var(--purple);
-  box-shadow: var(--purple-shadow);
+  background-color: $primary;
+  box-shadow: $primary-shadow;
   border-radius: 16px;
   padding: 32px;
-  color: var(--white);
+  color: $pure;
   margin-bottom: 40px;
 
   @media (max-width: 989px) {

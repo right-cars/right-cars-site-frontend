@@ -7,9 +7,9 @@
 .infoBlock {
   padding: 24px 16px;
   border-radius: 16px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  color: var(--purple);
+  background: $pure;
+  box-shadow: $shadow;
+  color: $primary;
 }
 
 .titleBlock {
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  color: var(--black);
+  color: $text;
 }
 
 .detailsItem {

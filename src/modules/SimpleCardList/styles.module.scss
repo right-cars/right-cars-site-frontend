@@ -18,8 +18,8 @@
 
 .card {
   border-radius: 16px;
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: $pure;
+  box-shadow: $shadow;
   padding: 32px 16px;
 
   @media (max-width: 550px) {

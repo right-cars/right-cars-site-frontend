@@ -8,7 +8,7 @@ export default function DeliveryList() {
       <ul className={cls.list}>
         {data.map(({ title, descr }, index) => (
           <li key={index} className={cls.item}>
-            <h4 style={{ color: "var(--purple)",width:"224px" }}>{title}</h4>
+            <h4 style={{ color: "$primary",width:"224px" }}>{title}</h4>
             <div className={cls.descrWrapp}>
               <p className="textMedium">{descr}</p>
               <Image

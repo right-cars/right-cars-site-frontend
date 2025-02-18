@@ -31,10 +31,10 @@
 
 .nawWrapp {
   border-radius: 16px;
-  background-color: var(--purple);
-  box-shadow: var(--purple-shadow);
+  background-color: $primary;
+  box-shadow: $primary-shadow;
   padding: 16px 0;
-  color: var(--white);
+  color: $pure;
 }
 
 .nav {
@@ -50,19 +50,19 @@
   gap: 12px;
   padding: 12px;
   margin: 0 16px;
-  border-bottom: 2px solid var(--white);
-  transition: color var(--transition);
+  border-bottom: 2px solid $pure;
+  transition: color $transition;
 
   &:hover {
-    color: var(--yellow);
+    color: $accent;
   }
 }
 
 .active {
   padding: 12px 28px;
   margin: 0;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: $pure;
+  color: $text;
   border-radius: 4px;
 }
 
@@ -80,5 +80,5 @@
 
 .logOutBtn {
   width: 100%;
-  color: var(--white);
+  color: $pure;
 }

@@ -14,15 +14,15 @@
 }
 
 .link {
-  color: var(--white);
-  transition: color var(--transition);
+  color: $pure;
+  transition: color $transition;
 
   @media (max-width: 550px) {
     text-decoration: underline;
   }
 
   &:hover {
-    color: var(--yellow);
+    color: $accent;
   }
 }
 

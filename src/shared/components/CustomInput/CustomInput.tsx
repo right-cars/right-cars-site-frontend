@@ -27,7 +27,7 @@ export default function CustomInput(props: CustomInputProps) {
       <label htmlFor={id} className={`${"textTiny"} ${cls.label}`}>
         {label}{" "}
         {required && (
-          <span className="textTiny" style={{ color: "var(--error)" }}>
+          <span className="textTiny" style={{ color: "$error" }}>
             *
           </span>
         )}

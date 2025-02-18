@@ -29,7 +29,7 @@ export default function CustomSelect({
       <p className={`${"textTiny"} ${cls.label}`}>
         {label}{" "}
         {required && (
-          <span className="textTiny" style={{ color: "var(--error)" }}>
+          <span className="textTiny" style={{ color: "$error" }}>
             *
           </span>
         )}

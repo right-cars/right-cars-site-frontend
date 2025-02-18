@@ -18,7 +18,7 @@ export default function FounderBlock() {
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
             Founder and CEO{" "}
-            <span style={{ color: "var(--purple)" }}>Eugene&nbsp;Vulakh</span>
+            <span style={{ color: "$primary" }}>Eugene&nbsp;Vulakh</span>
           </h3>
           <p className="textMedium">
             Eugene, the founder of the company, combines his deep-rooted passion

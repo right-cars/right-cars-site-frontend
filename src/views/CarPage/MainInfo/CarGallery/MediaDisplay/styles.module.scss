@@ -36,7 +36,7 @@
   z-index: 1;
   border-radius: 8px;
   background: rgba(35, 35, 35, 0.5);
-  color: var(--white);
+  color: $pure;
   padding: 8px;
   display: flex;
   align-items: center;
@@ -66,6 +66,6 @@
   z-index: 1;
   border-radius: 8px;
   background: rgba(35, 35, 35, 0.5);
-  color: var(--white);
+  color: $pure;
   padding: 8px;
 }

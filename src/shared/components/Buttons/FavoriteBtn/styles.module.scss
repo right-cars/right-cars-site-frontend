@@ -14,8 +14,8 @@
 }
 
 .absoluteSvg {
-  stroke: var(--purple);
-  transition: fill var(--transition);
+  stroke: $primary;
+  transition: fill $transition;
 
   &:hover {
     fill: #5120b8;

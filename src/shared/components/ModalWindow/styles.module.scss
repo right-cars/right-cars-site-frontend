@@ -3,7 +3,7 @@
 
 .overlay {
   position: fixed;
-  background-color: var(--overlay);
+  background-color: $overlay;
   backdrop-filter: blur(3px);
   top: -16px;
   left: 50%;
@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: $pure;
   border-radius: 16px;
   margin: 0 36px;
 }

@@ -2,7 +2,7 @@
 @import "@/shared/styles/variables";
 
 .linksList {
-  color: var(--white);
+  color: $pure;
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 12px 56px;
@@ -29,10 +29,10 @@
 }
 
 .item {
-  transition: color var(--transition);
+  transition: color $transition;
 
   &:hover {
-    color: var(--yellow);
+    color: $accent;
   }
 }
 

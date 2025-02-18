@@ -3,7 +3,7 @@
 .btnWrapp {
   width: 100%;
   height: 48px;
-  color: var(--black);
+  color: $text;
 }
 
 .btn {
@@ -17,32 +17,32 @@
 }
 
 .yellow {
-  background-color: var(--yellow);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  background-color: $accent;
+  transition: background-color $transition, box-shadow $transition;
 
   &:hover {
-    box-shadow: var(--yellow-shadow);
+    box-shadow: $accent-shadow;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: $accent-dark;
   }
 }
 
 .transparent {
   background-color: transparent;
-  border: 2px solid var(--black);
-  transition: background-color var(--transition), border var(--transition),
-    box-shadow var(--transition);
+  border: 2px solid $text;
+  transition: background-color $transition, border $transition,
+    box-shadow $transition;
 
   &:hover {
-    background-color: var(--yellow);
-    box-shadow: var(--yellow-shadow);
+    background-color: $accent;
+    box-shadow: $accent-shadow;
     border: none;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: $accent-dark;
     border: none;
   }
 }

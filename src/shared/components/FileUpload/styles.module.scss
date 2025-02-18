@@ -5,7 +5,7 @@
   position: relative;
   padding: 16px;
   background-color: white;
-  box-shadow: var(--shadow);
+  box-shadow: $shadow;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -48,33 +48,33 @@
 }
 
 .yellowLabel {
-  background-color: var(--yellow);
-  border: 2px solid var(--yellow);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  background-color: $accent;
+  border: 2px solid $accent;
+  transition: background-color $transition, box-shadow $transition;
 
   &:hover {
-    box-shadow: var(--yellow-shadow);
+    box-shadow: $accent-shadow;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: $accent-dark;
   }
 }
 
 .transparentLabel {
   background-color: transparent;
-  border: 2px solid var(--black);
-  transition: background-color var(--transition), border var(--transition),
-    box-shadow var(--transition);
+  border: 2px solid $text;
+  transition: background-color $transition, border $transition,
+    box-shadow $transition;
 
   &:hover {
-    background-color: var(--yellow);
-    border: 2px solid var(--yellow);
-    box-shadow: var(--yellow-shadow);
+    background-color: $accent;
+    border: 2px solid $accent;
+    box-shadow: $accent-shadow;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: $accent-dark;
   }
 }
 
@@ -99,7 +99,7 @@
   right: 0;
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-purple);
+  background-color: $primary-light;
   width: 320px;
 
   @media (max-width: 989px) {

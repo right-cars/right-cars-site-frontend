@@ -26,9 +26,9 @@
 
 .txtBlock {
   border-radius: 16px;
-  background-color: var(--purple);
+  background-color: $primary;
   padding: 40px 32px;
-  color: var(--white);
+  color: $pure;
 
   @media (max-width: 550px) {
     padding: 32px 16px;

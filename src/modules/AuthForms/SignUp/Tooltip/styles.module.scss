@@ -6,8 +6,8 @@
   right: 12%;
   bottom: -10%;
   border-radius: 8px;
-  box-shadow: var(--shadow);
-  background-color: var(--light-grey);
+  box-shadow: $shadow;
+  background-color: $neutral-light;
   padding: 16px;
 
   @media (max-width: 660px) {

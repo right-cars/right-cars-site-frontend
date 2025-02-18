@@ -19,7 +19,7 @@
 }
 
 .svg {
-  transition: transform var(--transition);
+  transition: transform $transition;
 }
 
 .openSvg {

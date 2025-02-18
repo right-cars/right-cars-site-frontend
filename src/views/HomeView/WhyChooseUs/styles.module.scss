@@ -22,11 +22,11 @@
 }
 
 .leftBlock {
-  background-color: var(--purple);
-  color: var(--white);
+  background-color: $primary;
+  color: $pure;
   padding: 44px 16px 0px 16px;
   border-radius: 16px;
-  box-shadow: var(--purple-shadow);
+  box-shadow: $primary-shadow;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -60,10 +60,10 @@
 }
 
 .card {
-  background-color: var(--white);
+  background-color: $pure;
   padding: 44px 16px 16px;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: $shadow;
 
   @media (max-width: 989px) {
     padding-top: 32px;
@@ -123,7 +123,7 @@
 }
 
 .cardTitle {
-  color: var(--purple);
+  color: $primary;
 }
 
 .svg {

@@ -10,15 +10,15 @@
 .link {
   width: 52px;
   height: 52px;
-  background-color: var(--white);
+  background-color: $pure;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition: background-color $transition, box-shadow $transition;
 
   &:hover {
-    background-color: var(--light-purple);
+    background-color: $primary-light;
     box-shadow: 0px 2px 6px 1px rgba(225, 225, 225, 0.55);
   }
 }
