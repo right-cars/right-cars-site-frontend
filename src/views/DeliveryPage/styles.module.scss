@@ -1,3 +1,6 @@
+@import "@/shared/styles/mixins";
+@import "@/shared/styles/variables";
+
 .wrapper {
   @media (max-width: 989px) {
     display: none;

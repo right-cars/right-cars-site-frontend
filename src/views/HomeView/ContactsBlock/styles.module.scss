@@ -1,3 +1,6 @@
+@import "@/shared/styles/mixins";
+@import "@/shared/styles/variables";
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
