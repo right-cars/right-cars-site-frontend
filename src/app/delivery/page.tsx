@@ -1,4 +1,3 @@
-import Container from "@/shared/layouts/Container/Container";
 import ServicesPageBanner from "@/modules/ServicesPageBanner/ServicesPageBanner";
 import SimpleCardList from "@/modules/SimpleCardList/SimpleCardList";
 import { cardListData } from "./cardListData";
@@ -6,7 +5,7 @@ import DeliveryList from "@/views/DeliveryPage/DeliveryList";
 
 export default function DeliveryPage() {
   return (
-    <Container>
+    <>
       <ServicesPageBanner
         delivery
         title="Delivery Across South Africa"
@@ -15,6 +14,6 @@ export default function DeliveryPage() {
       />
       <SimpleCardList title="How It Works" data={cardListData} minHeight={260} delivery />
       <DeliveryList/>
-    </Container>
+    </>
   );
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Metrophobic, Work_Sans } from "next/font/google";
-import "./globals.css";
 import Header from "@/modules/Header/Header";
 import Footer from "@/modules/Footer/Footer";
+import "@/shared/styles/global.scss"
 
 const workSans = Work_Sans({
   subsets: ["latin"],

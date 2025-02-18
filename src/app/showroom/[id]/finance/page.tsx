@@ -2,7 +2,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 // import { useParams } from "next/navigation";
 import Button from "@/shared/components/Buttons/Button/Button";
-import Container from "@/shared/layouts/Container/Container";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
 import FormFieldsBlock from "@/modules/FormFieldsBlock/FormField";
@@ -71,49 +70,47 @@ export default function FinancePage() {
 
   return (
     <>
-      <Container>
-        <section className={`${"section container"} ${cls.pageWrapp}`}>
-          <h2>APPLY FOR FINANCE</h2>
-          <form onSubmit={handleSubmit}>
-            <div className={cls.formBlocksWrapp}>
-              {fieldsBlock.map(({ fieldsBlock }, index) => {
-                const formDataKey = Object.keys(formData)[
-                  index
-                ] as keyof typeof formData;
+      <section className={`${"section container"} ${cls.pageWrapp}`}>
+        <h2>APPLY FOR FINANCE</h2>
+        <form onSubmit={handleSubmit}>
+          <div className={cls.formBlocksWrapp}>
+            {fieldsBlock.map(({ fieldsBlock }, index) => {
+              const formDataKey = Object.keys(formData)[
+                index
+              ] as keyof typeof formData;
 
-                return (
-                  <FormFieldsBlock
-                    key={index}
-                    title={fieldsBlock.title}
-                    handleChange={handleChange}
-                    formData={formData[formDataKey]}
-                    fields={fieldsBlock.fields}
-                  />
-                );
-              })}
+              return (
+                <FormFieldsBlock
+                  key={index}
+                  title={fieldsBlock.title}
+                  handleChange={handleChange}
+                  formData={formData[formDataKey]}
+                  fields={fieldsBlock.fields}
+                />
+              );
+            })}
+          </div>
+          <div className={cls.saveBtnWrapp}>
+            <Button
+              text="save and continue later"
+              color="transparent"
+              onClick={() => {
+                console.log("🍾");
+              }}
+            />
+          </div>
+          <div className={cls.permissionWrapp}>
+            <Permission
+              handleChange={handleChange}
+              permissionChecked={checkboxes.permission}
+              sharingPreference={checkboxes.sharingPreference}
+            />
+            <div className={cls.submitBtnWrapp}>
+              <Button type="submit" text="submit" />
             </div>
-            <div className={cls.saveBtnWrapp}>
-              <Button
-                text="save and continue later"
-                color="transparent"
-                onClick={() => {
-                  console.log("🍾");
-                }}
-              />
-            </div>
-            <div className={cls.permissionWrapp}>
-              <Permission
-                handleChange={handleChange}
-                permissionChecked={checkboxes.permission}
-                sharingPreference={checkboxes.sharingPreference}
-              />
-              <div className={cls.submitBtnWrapp}>
-                <Button type="submit" text="submit" />
-              </div>
-            </div>
-          </form>
-        </section>
-      </Container>
+          </div>
+        </form>
+      </section>
       {isModalOpen && (
         <ModalWindow closeBtn setIsModalOpen={setIsModalOpen}>
           <ThanksPopup text="Thank you! We have received your application and our team will contact you with further details" />
