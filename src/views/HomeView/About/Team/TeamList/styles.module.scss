@@ -7,7 +7,7 @@
   gap: 16px;
   margin-bottom: 40px;
 
-  @media (max-width: 1068px) {
+  @include m.large-tablet {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 32px;
   }
@@ -35,7 +35,7 @@
     width: 80%;
   }
 
-  @media (max-width: 1068px) {
+  @include m.large-tablet {
     width: 62%;
   }
 

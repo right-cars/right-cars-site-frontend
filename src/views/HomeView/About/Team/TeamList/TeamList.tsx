@@ -13,7 +13,7 @@ export default function TeamList() {
     const updateItemsToShow = () => {
       if (window.innerWidth <= 660) {
         setItemsToShow(3);
-      } else if (window.innerWidth <= 1068) {
+      } else if (window.innerWidth <= 1024) {
         setItemsToShow(4);
       } else {
         setItemsToShow(data.length);

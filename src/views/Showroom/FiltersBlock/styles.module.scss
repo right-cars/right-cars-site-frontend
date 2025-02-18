@@ -31,10 +31,6 @@
   padding: 32px 16px;
   border-radius: 16px;
 
-  @media (max-width: 1068px) {
-    width: 230px;
-  }
-
   @include m.large-tablet {
     width: 90vw;
     z-index: 2;

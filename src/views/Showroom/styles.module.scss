@@ -21,7 +21,7 @@
   margin-left: 288px;
   gap: 16px;
 
-  @media (max-width: 1068px) {
+  @include m.large-tablet {
     margin-left: 238px;
   }
 
