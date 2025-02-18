@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .wrapper {
   display: grid;
@@ -7,12 +7,12 @@
   grid-template-rows: auto;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     grid-template-columns: 1fr;
     gap: 54px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     gap: 56px;
   }
 }
@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 16px;
   }
 }
@@ -32,7 +32,7 @@
   grid-template-columns: 1fr;
   gap: 24px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
 grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
@@ -43,13 +43,13 @@ grid-template-columns: 1fr;
 }
 
 .blockWrapp {
-  background-color: $primary;
-  color:$pure;
+  background-color: v.$primary;
+  color:v.$pure;
   border-radius: 16px;
   padding: 40px 32px;
-  box-shadow: $primary-shadow;
+  box-shadow: v.$primary-shadow;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 32px 24px;
   }
 }
@@ -65,7 +65,7 @@ grid-template-columns: 1fr;
     height: 40px;
     flex-shrink: 0;
 
-    @media (max-width:989px) {
+    @include m.large-tablet {
         width: 32px;
         height: 32px;
     }
@@ -85,10 +85,10 @@ grid-template-columns: 1fr;
 }
 
 .link{
-transition: color $transition;
+transition: color v.$transition;
 
 &:hover{
-    color: $accent
+    color: v.$accent
 }
 }
 
@@ -101,7 +101,7 @@ transition: color $transition;
     height: 100%;
     border-radius: 16px;
 
-    @media (max-width:989px) {
+    @include m.large-tablet {
         height: 222px;
     }
 }

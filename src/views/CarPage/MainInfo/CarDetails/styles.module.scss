@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .detailsContainer {
   width: 47vw;
@@ -12,11 +12,11 @@
     width: 42vw;
   }
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     width: 57vw;
   }
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 100%;
     max-width: 100%;
   }
@@ -27,11 +27,11 @@
 }
 
 .detailsWrapper {
-  background-color: $primary;
+  background-color: v.$primary;
   padding: 24px 16px;
   border-radius: 16px;
-  box-shadow: $shadow;
-  color: $pure;
+  box-shadow: v.$shadow;
+  color: v.$pure;
 }
 
 .detailsList {

@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .wrapper {
   display: flex;
@@ -18,13 +18,13 @@
 .infoBlock {
   width: 57.7%;
   border-radius: 16px;
-  background-color: $pure;
+  background-color: v.$pure;
   display: flex;
   align-items: center;
   gap: 16px;
-  box-shadow: $shadow;
+  box-shadow: v.$shadow;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 77.5%;
   }
 
@@ -41,13 +41,13 @@
 
 .imgBlock {
   border-radius: 16px;
-  background-color: $pure;
+  background-color: v.$pure;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto 1px 0;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin: auto 0 0 8px;
   }
 
@@ -57,7 +57,7 @@
 
   @media (max-width: 660px) {
     width: 100%;
-    box-shadow: $shadow;
+    box-shadow: v.$shadow;
     margin: auto auto 0;
   }
 }
@@ -76,7 +76,7 @@
 }
 
 .txtBlock {
-  background-color: $pure;
+  background-color: v.$pure;
   border-radius: 16px;
   padding: 42px 26px;
   margin-right: 48px;
@@ -87,7 +87,7 @@
   }
 
   @media (max-width: 660px) {
-    box-shadow: $shadow;
+    box-shadow: v.$shadow;
   }
 }
 

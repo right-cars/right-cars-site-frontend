@@ -1,13 +1,13 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .passwordTooltip {
   position: absolute;
   right: 12%;
   bottom: -10%;
   border-radius: 8px;
-  box-shadow: $shadow;
-  background-color: $neutral-light;
+  box-shadow: v.$shadow;
+  background-color: v.$neutral-light;
   padding: 16px;
 
   @media (max-width: 660px) {

@@ -1,12 +1,12 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .btnWrapp {
   display: flex;
   width: 207px;
   margin-top: 60px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
     margin-top: 40px;
   }
@@ -19,7 +19,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     margin: 0 48px;
     max-width: 93%;
   }
@@ -29,7 +29,7 @@
     max-width: 100%;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     display: none;
   }
 }
@@ -37,7 +37,7 @@
 .mobGallery {
   display: none;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     display: flex;
     flex-direction: column;
     gap: 16px;

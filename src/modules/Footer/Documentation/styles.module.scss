@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .documentsList {
   display: flex;
@@ -7,22 +7,22 @@
   gap: 16px;
   row-gap: 12px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     flex-direction: column;
     gap:12px
   }
 }
 
 .link {
-  color: $pure;
-  transition: color $transition;
+  color: v.$pure;
+  transition: color v.$transition;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     text-decoration: underline;
   }
 
   &:hover {
-    color: $accent;
+    color: v.$accent;
   }
 }
 

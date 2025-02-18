@@ -1,4 +1,4 @@
-@import "@/shared/styles/variables";
+@use "@/shared/styles/variables" as v;
 
 .header {
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 .svg {
-  transition: transform $transition;
+  transition: transform v.$transition;
 }
 
 .openSvg {

@@ -24,7 +24,7 @@ export default function VerifyingPopup({ email, setPopupOpen }: Props) {
       <h2 style={{ marginBottom: 32 }}>verifying your email addres</h2>
       <h6 className={`${cls.txt}`}>a verification email was sent to </h6>
       <h4
-        style={{ color: "$primary", fontWeight: 700, display: "inline" }}
+        style={{ color: "v.$primary", fontWeight: 700, display: "inline" }}
       >
         {email}
       </h4>

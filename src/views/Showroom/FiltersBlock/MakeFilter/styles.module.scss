@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .header {
   display: flex;
@@ -46,7 +46,7 @@
   overflow-y: scroll;
 
   scrollbar-width: thin;
-  scrollbar-color: $primary #bbb;
+  scrollbar-color: v.$primary #bbb;
 }
 
 .optionsList::-webkit-scrollbar {
@@ -59,7 +59,7 @@
 }
 
 .optionsList::-webkit-scrollbar-thumb {
-  background-color: $primary;
+  background-color: v.$primary;
   width: 8px;
   border-radius: 10px;
 }
@@ -76,10 +76,10 @@
   gap: 4px;
   align-items: center;
   justify-content: center;
-  border: 1px solid $primary;
+  border: 1px solid v.$primary;
   padding: 4px 16px;
   border-radius: 34px;
-  color: $primary;
+  color: v.$primary;
 }
 
 .selectedItemTxt {
@@ -90,7 +90,7 @@
 }
 
 .svg {
-  stroke: $primary;
+  stroke: v.$primary;
   width: 8px;
   height: 7px;
   cursor: pointer;

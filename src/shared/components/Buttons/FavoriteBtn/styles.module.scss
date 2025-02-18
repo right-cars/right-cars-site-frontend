@@ -1,4 +1,4 @@
-@import "@/shared/styles/variables";
+@use "@/shared/styles/variables" as v;
 
 .favoriteBtn {
   background-color: transparent;
@@ -14,8 +14,8 @@
 }
 
 .absoluteSvg {
-  stroke: $primary;
-  transition: fill $transition;
+  stroke: v.$primary;
+  transition: fill v.$transition;
 
   &:hover {
     fill: #5120b8;

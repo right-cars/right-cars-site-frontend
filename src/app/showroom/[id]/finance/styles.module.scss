@@ -1,16 +1,16 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .pageWrapp {
   margin-top: 99px;
   padding-top: 120px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 80px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 72px;
   }
@@ -21,11 +21,11 @@
   flex-direction: column;
   gap: 80px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 54px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     gap: 40px;
   }
 }
@@ -36,19 +36,19 @@
   margin-bottom: 80px;
   margin-left: auto;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-bottom: 54px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
     margin-bottom: 40px;
   }
 }
 
 .permissionWrapp {
-  background-color: $pure;
-  box-shadow: $shadow;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
   border-radius: 16px;
   padding: 24px 16px;
 }
@@ -56,7 +56,7 @@
 .submitBtnWrapp {
   width: 219px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }

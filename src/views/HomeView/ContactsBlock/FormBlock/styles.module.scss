@@ -1,10 +1,10 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .form {
   width: 100%;
-  background-color: $pure;
-  box-shadow: $shadow;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
   border-radius: 16px;
   padding: 40px 16px;
   display: flex;
@@ -12,11 +12,11 @@
   gap: 12px;
   margin-bottom: 24px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-bottom: 16px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 24px 16px;
   }
 }
@@ -26,15 +26,15 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     grid-template-columns: 1fr;
   }
 }
 
 .privacyPolicyBlock {
   width: 100%;
-  background-color: $pure;
-  box-shadow: $shadow;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
   padding: 24px 16px;
   border-radius: 16px;
 }
@@ -43,7 +43,7 @@
   width: 110px;
   margin-top: 40px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }

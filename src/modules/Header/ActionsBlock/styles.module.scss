@@ -1,14 +1,14 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .wrapper {
-  @include tablet {
+  @include m.tablet {
     display: flex;
     gap: 28px;
     align-items: center;
   }
 
-  @include mobile {
+  @include m.mobile {
     display: flex;
     gap: 16px;
     align-items: center;
@@ -20,7 +20,7 @@
   gap: 16px;
   align-items: center;
 
-  @include large-tablet {
+  @include m.large-tablet {
     gap: 12px;
   }
 }
@@ -32,12 +32,12 @@
   width: 40px;
   height: 39px;
   border-radius: 46px;
-  border: 2px solid $primary-accent;
-  transition: background-color $transition, box-shadow $transition;
+  border: 2px solid v.$primary-accent;
+  transition: background-color v.$transition, box-shadow v.$transition;
 
   &:hover {
-    background-color: $primary-light;
-    box-shadow: $primary-shadow;
+    background-color: v.$primary-light;
+    box-shadow: v.$primary-shadow;
   }
 }
 
@@ -49,15 +49,15 @@
   height: 39px;
   padding: 0 15px;
   border-radius: 55px;
-  border: 2px solid $primary-accent;
-  transition: background-color $transition, box-shadow $transition;
+  border: 2px solid v.$primary-accent;
+  transition: background-color v.$transition, box-shadow v.$transition;
 
   &:hover {
-    background-color: $primary-light;
-    box-shadow: $primary-shadow;
+    background-color: v.$primary-light;
+    box-shadow: v.$primary-shadow;
   }
 
-  @include small-desktop {
+  @include m.small-desktop {
     padding: 0 10px;
   }
 
@@ -67,7 +67,7 @@
 }
 
 .name {
-  color: $primary-accent;
+  color: v.$primary-accent;
 
   @media (max-width: 932px) {
     display: none;

@@ -17,7 +17,7 @@ export default function FirstInfoBlock({ price }: { price: string }) {
           width={32}
           height={32}
         />
-        <h4 style={{ color: "$primary" }}>
+        <h4 style={{ color: "v.$primary" }}>
           Pay&nbsp;R&nbsp;5,000&nbsp;to reserve this vehicle
         </h4>
       </div>

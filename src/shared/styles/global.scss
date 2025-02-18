@@ -1,5 +1,5 @@
-@import "./mixins";
-@import "./variables";
+@use "./mixins" as m;
+@use "./variables" as v;
 
 * {
   box-sizing: border-box;
@@ -37,8 +37,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: $text;
-  background-color: $bg;
+  color: v.$text;
+  background-color: v.$bg;
   scroll-behavior: smooth;
 }
 
@@ -64,15 +64,15 @@ a {
   margin: 0 auto;
   max-width: 1170px;
 
-  @include large-tablet {
+  @include m.large-tablet {
     max-width: 860px;
   }
 
-  @include tablet {
+  @include m.tablet {
     max-width: 688px;
   }
 
-  @include mobile {
+  @include m.mobile {
     width: 100%;
   }
 }
@@ -86,7 +86,7 @@ h2 {
   letter-spacing: -0.96px;
   margin-bottom: 80px;
 
-  @include mobile {
+  @include m.mobile {
     font-size: 24px;
     letter-spacing: -0.72px;
     margin-bottom: 48px;
@@ -128,11 +128,11 @@ h6 {
   font-family: "Metrophobic", sans-serif;
   font-size: 18px;
 
-  @include large-tablet {
+  @include m.large-tablet {
     font-size: 17px;
   }
 
-  @include mobile {
+  @include m.mobile {
     font-size: 16px;
   }
 }
@@ -142,11 +142,11 @@ h6 {
   font-size: 16px;
   line-height: 1.5;
 
-  @include large-tablet {
+  @include m.large-tablet {
     line-height: 1.375;
   }
 
-  @include mobile {
+  @include m.mobile {
     line-height: normal;
   }
 }
@@ -173,11 +173,11 @@ h6 {
 .section {
   padding-bottom: 120px;
 
-  @include large-tablet {
+  @include m.large-tablet {
     padding-bottom: 100px;
   }
 
-  @include mobile {
+  @include m.mobile {
     padding-bottom: 72px;
   }
 }

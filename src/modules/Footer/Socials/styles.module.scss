@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .socList {
   display: flex;
@@ -10,15 +10,15 @@
 .link {
   width: 52px;
   height: 52px;
-  background-color: $pure;
+  background-color: v.$pure;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color $transition, box-shadow $transition;
+  transition: background-color v.$transition, box-shadow v.$transition;
 
   &:hover {
-    background-color: $primary-light;
+    background-color: v.$primary-light;
     box-shadow: 0px 2px 6px 1px rgba(225, 225, 225, 0.55);
   }
 }

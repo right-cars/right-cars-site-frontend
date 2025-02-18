@@ -1,17 +1,17 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .wrapper {
   padding: 16px;
   border-radius: 16px;
-  background-color: $pure;
-  box-shadow: $shadow;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
 }
 
 .title {
   margin-bottom: 32px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-bottom: 24px;
   }
 }
@@ -21,7 +21,7 @@
   margin-left: auto;
   width: 91px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }

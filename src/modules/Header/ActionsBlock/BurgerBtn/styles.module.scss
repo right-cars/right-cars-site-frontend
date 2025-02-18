@@ -1,9 +1,9 @@
-@import "@/shared/styles/mixins";
+@use "@/shared/styles/mixins" as m;
 
 .burgerBox {
   display: none;
 
-  @include tablet {
+  @include m.tablet {
     display: flex;
   }
 }

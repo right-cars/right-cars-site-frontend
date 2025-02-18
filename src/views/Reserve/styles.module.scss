@@ -1,4 +1,4 @@
-@import "@/shared/styles/mixins";
+@use "@/shared/styles/mixins" as m;
 
 .wrapper {
   margin-top: 99px;
@@ -7,7 +7,7 @@
   align-items: stretch;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 100px;
     flex-direction: column;
@@ -15,7 +15,7 @@
     align-items: center;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 72px;
     gap: 32px;
@@ -26,7 +26,7 @@
   width: 66.2%;
   border-radius: 8px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 100%;
   }
 }
@@ -44,7 +44,7 @@
   gap: 16px;
   width: 32.4%;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 100%;
   }
 }

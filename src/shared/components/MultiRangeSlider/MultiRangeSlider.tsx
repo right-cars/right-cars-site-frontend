@@ -36,7 +36,7 @@ export default function MultiRangeSlider({
   const getGradient = useCallback(() => {
     const minPercent = getPercent(value.min);
     const maxPercent = getPercent(value.max);
-    return `linear-gradient(to right, #D4D4D8 ${minPercent}%, $primary ${minPercent}%, $primary ${maxPercent}%, #D4D4D8 ${maxPercent}%)`;
+    return `linear-gradient(to right, #D4D4D8 ${minPercent}%, v.$primary ${minPercent}%, v.$primary ${maxPercent}%, #D4D4D8 ${maxPercent}%)`;
   }, [value, getPercent]);
 
   useEffect(() => {

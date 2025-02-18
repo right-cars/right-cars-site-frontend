@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .privacyPolecyWrapp {
   margin-top: 32px;
@@ -10,14 +10,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     grid-template-columns: 1fr;
   }
 }
 
 .blockWrapp {
-  background-color: $pure;
-  box-shadow: $shadow;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
   padding: 24px 16px;
   border-radius: 16px;
 }
@@ -26,7 +26,7 @@
   margin-top: 40px;
   width: 155px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }
@@ -36,13 +36,13 @@
   justify-content: space-between;
   gap: 6px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 16px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     gap: 16px;
   }
 }

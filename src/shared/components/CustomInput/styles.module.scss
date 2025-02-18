@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .inputContainer {
   position: relative;
@@ -10,7 +10,7 @@
 }
 
 .label {
-  color: $neutral-dark;
+  color: v.$neutral-dark;
   text-transform: lowercase;
 }
 
@@ -18,8 +18,8 @@
   width: 100%;
   padding: 4px 12px;
   border: none;
-  border-bottom: 2px solid $neutral-medium;
-  box-shadow: $input-shadow;
+  border-bottom: 2px solid v.$neutral-medium;
+  box-shadow: v.$input-shadow;
   background-color: transparent;
   outline: none;
 
@@ -33,9 +33,9 @@
 .borderedInput {
   padding: 8px 20px;
   border-radius: 9999px;
-  border: 2px solid $neutral-medium;
+  border: 2px solid v.$neutral-medium;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 10px 20px;
   }
 }

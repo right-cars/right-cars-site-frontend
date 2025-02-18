@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .videoContainer {
   position: relative;
@@ -12,7 +12,7 @@
     height: 193px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     height: 202px;
   }
 

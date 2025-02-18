@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .pagination {
   display: flex;
@@ -7,11 +7,11 @@
   align-items: center;
   gap: 20px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 8px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     gap: 12px;
   }
 }
@@ -41,17 +41,17 @@
 .pageBtn {
   padding: 8px 12px;
   border-radius: 8px;
-  transition: color $transition, background-color $transition,
-    border $transition;
+  transition: color v.$transition, background-color v.$transition,
+    border v.$transition;
   border: 1px solid transparent;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 4px 8px;
   }
 
   &:hover {
-    background-color: $primary-light;
-    border: 1px solid $primary;
+    background-color: v.$primary-light;
+    border: 1px solid v.$primary;
   }
 }
 
@@ -59,10 +59,10 @@
   padding: 8px 12px;
   border-radius: 8px;
   background-color: #6200ea;
-  color: $pure;
+  color: v.$pure;
   border: 1px solid transparent;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 4px 8px;
   }
 }
@@ -72,7 +72,7 @@
 }
 
 .txt {
-  @media (max-width: 550px) {
+  @include m.mobile {
     display: none;
   }
 }

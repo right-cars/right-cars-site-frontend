@@ -1,15 +1,15 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .txtBlock {
-  background-color: $primary;
-  box-shadow: $primary-shadow;
+  background-color: v.$primary;
+  box-shadow: v.$primary-shadow;
   border-radius: 16px;
   padding: 32px;
-  color: $pure;
+  color: v.$pure;
   margin-bottom: 40px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-bottom: 32px;
   }
 
@@ -21,7 +21,7 @@
 .title {
   margin-bottom: 32px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-bottom: 24px;
   }
 }

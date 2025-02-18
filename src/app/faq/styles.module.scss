@@ -1,15 +1,15 @@
-@import "@/shared/styles/mixins";
+@use "@/shared/styles/mixins" as m;
 
 .wrapper {
   margin-top: 99px;
   padding-top: 100px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 80px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 60px;
   }

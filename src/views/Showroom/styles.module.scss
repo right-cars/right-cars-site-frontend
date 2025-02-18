@@ -1,15 +1,15 @@
-@import "@/shared/styles/mixins";
+@use "@/shared/styles/mixins" as m;
 
 .wrapper {
   margin-top: 99px;
   padding-top: 80px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 60px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 54px;
   }
@@ -25,14 +25,14 @@
     margin-left: 238px;
   }
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 24px;
     margin-bottom: 40px;
     display: block;
     margin-left: 0;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-bottom: 48px;
   }
 }
@@ -44,7 +44,7 @@
   align-items: center;
   margin-top: 40px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 32px;
   }
 }

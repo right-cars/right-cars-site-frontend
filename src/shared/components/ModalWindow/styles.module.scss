@@ -1,9 +1,9 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .overlay {
   position: fixed;
-  background-color: $overlay;
+  background-color: v.$overlay;
   backdrop-filter: blur(3px);
   top: -16px;
   left: 50%;
@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $pure;
+  background-color: v.$pure;
   border-radius: 16px;
   margin: 0 36px;
 }

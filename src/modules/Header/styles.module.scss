@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .header {
   position: fixed;
@@ -11,7 +11,7 @@
   width: 100%;
   transform: translateY(0);
   opacity: 1;
-  transition: transform $transition, opacity $transition;
+  transition: transform v.$transition, opacity v.$transition;
 }
 
 .none {
@@ -23,7 +23,7 @@
 
   transform: translateY(-100%);
   opacity: 0;
-  transition: transform $transition, opacity $transition;
+  transition: transform v.$transition, opacity v.$transition;
 
 }
 
@@ -42,7 +42,7 @@
   padding: 12px 136px;
   margin: 16px 12px 0 12px;
 
-  @include small-desktop {
+  @include m.small-desktop {
     padding: 12px 36px;
   }
 
@@ -50,7 +50,7 @@
     padding: 12px 28px;
   }
 
-  @include mobile {
+  @include m.mobile {
     padding: 12px 16px;
     border: none;
     border-top: 2px solid #e0e0e0;

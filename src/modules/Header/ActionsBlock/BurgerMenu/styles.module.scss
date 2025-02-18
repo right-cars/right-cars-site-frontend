@@ -1,5 +1,5 @@
-@import "@/shared/styles/mixins";
-@import "@/shared/styles/variables";
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
 .overlay {
   position: fixed;
@@ -9,7 +9,7 @@
   height: 100vh;
   z-index: 4;
 
-  @include mobile {
+  @include m.mobile {
     right: 0;
   }
 }
@@ -20,10 +20,10 @@
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: $primary;
+  background-color: v.$primary;
   padding: 56px 64px 46px;
 
-  @include mobile {
+  @include m.mobile {
     padding: 56px 48px 32px;
     align-items: center;
   }
@@ -34,7 +34,7 @@
   top: 40px;
   right: 40px;
 
-  @include mobile {
+  @include m.mobile {
     top: 24px;
     right: 24px;
   }
@@ -43,24 +43,24 @@
 .svg {
   width: 24px;
   height: 24px;
-  stroke: $pure;
-  transition: stroke $transition;
+  stroke: v.$pure;
+  transition: stroke v.$transition;
 
   &:hover {
-    stroke: $accent;
+    stroke: v.$accent;
   }
 }
 
 .logoWrapp {
   display: none;
 
-  @include mobile {
+  @include m.mobile {
     display: flex;
   }
 }
 
 .linksList {
-  color: $pure;
+  color: v.$pure;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -70,7 +70,7 @@
   letter-spacing: -0.78px;
   text-transform: uppercase;
 
-  @include mobile {
+  @include m.mobile {
     gap: 24px;
     align-items: center;
   }
@@ -84,13 +84,13 @@
 .item {
   display: flex;
   width: fit-content;
-  transition: color $transition;
+  transition: color v.$transition;
 
   &:hover {
-    color: $accent;
+    color: v.$accent;
   }
 }
 
 .isActive {
-  color: $accent;
+  color: v.$accent;
 }
