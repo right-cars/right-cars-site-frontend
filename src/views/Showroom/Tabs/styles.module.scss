@@ -2,18 +2,20 @@
 @use "@/shared/styles/variables" as v;
 
 .container {
-  margin: 0 232px;
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1170px;
 
-  @include m.small-desktop {
-    margin: 0 48px;
+  @include m.large-tablet {
+    max-width: 860px;
   }
 
-  @media (max-width: 786px) {
-    margin: 0 40px;
+  @include m.tablet {
+    max-width: 688px;
   }
 
   @media (max-width: 660px) {
-    margin: 0;
+    padding: 0;
   }
 }
 

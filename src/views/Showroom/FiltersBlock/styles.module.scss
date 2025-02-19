@@ -32,19 +32,20 @@
   border-radius: 16px;
 
   @include m.large-tablet {
-    width: 90vw;
+    width: 94vw;
+    max-width: 860px;
     z-index: 2;
     height: 72vh;
     top: 50px;
   }
-
+  
   @include m.tablet {
+    max-width: 688px;
     height: 80vh;
   }
 
   @include m.mobile {
     padding: 24px 16px;
-    width: 92vw;
   }
 }
 

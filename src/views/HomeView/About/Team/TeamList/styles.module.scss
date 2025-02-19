@@ -46,6 +46,10 @@
   @media (max-width: 660px) {
     width: 66%;
   }
+
+  @media (max-width: 340px) {
+    padding-left: 8px;
+  }
 }
 
 .imgBlock {

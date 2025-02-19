@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -14,7 +14,7 @@ import SignUp from "@/modules/AuthForms/SignUp/SignUp";
 
 import cls from "../styles.module.scss";
 
-export default function LoginBtn() {
+export default function LoginBtn({isLoggedIn}:{isLoggedIn:boolean}) {
   const userName = "temp name";
 
   const router = useRouter()
@@ -25,14 +25,6 @@ export default function LoginBtn() {
   const [popupPasswordRequest, setPopupPasswordRequest] = useState(false);
   const [successResetPopup, setSuccessResetPopup] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(true);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-    // const user = localStorage.getItem("user");
-    //   setIsLoggedIn(!!user); 
-      setIsLoggedIn(true)
-  }, []); //тимчасова дічь
 
   const toggleForm = () => {
     setIsSignInOpen((prev) => !prev);
