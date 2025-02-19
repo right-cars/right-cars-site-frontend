@@ -1,5 +1,7 @@
 import { ChangeEvent } from "react";
+
 import Checkbox from "@/shared/components/Checkbox/Checkbox";
+
 import cls from "./styles.module.scss";
 
 interface PrivacyPolicyProps {

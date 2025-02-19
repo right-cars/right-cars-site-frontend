@@ -1,7 +1,12 @@
+"use client"
+
 import { ChangeEvent, FormEvent, useState } from "react";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
+
 import Tooltip from "./Tooltip/Tooltip";
+
 import cls from "../styles.module.scss";
 
 interface SignupProps {

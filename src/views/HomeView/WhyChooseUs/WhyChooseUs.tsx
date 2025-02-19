@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import { data } from "./data";
+
 import cls from "./styles.module.scss";
 
 export default function WhyChooseUs() {

@@ -1,5 +1,7 @@
 import Image from "next/image";
-import Button from "../Buttons/Button/Button";
+
+import Button from "@/shared/components/Buttons/Button/Button";
+
 import cls from "./styles.module.scss";
 
 interface Props {

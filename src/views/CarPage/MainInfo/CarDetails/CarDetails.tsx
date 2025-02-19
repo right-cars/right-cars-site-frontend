@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { temporary } from "./temporary";
 import cls from "./styles.module.scss";
 

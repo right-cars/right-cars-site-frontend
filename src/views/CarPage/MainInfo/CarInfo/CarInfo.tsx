@@ -1,6 +1,7 @@
 import FirstInfoBlock from "./FirstInfoBlock";
 import SecondInfoBlock from "./SecondInfoBlock";
 import { temporaryData } from "./temporaryData";
+
 import cls from "./styles.module.scss";
 
 export default function CarInfo({ pageId }: { pageId: string }) {

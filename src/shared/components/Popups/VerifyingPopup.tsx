@@ -1,7 +1,11 @@
+"use client"
+
 import { useEffect } from "react";
-import Button from "../Buttons/Button/Button";
-import cls from "./styles.module.scss";
 import { useRouter } from "next/navigation";
+
+import Button from "@/shared/components/Buttons/Button/Button";
+
+import cls from "./styles.module.scss";
 
 interface Props {
   setPopupOpen: (isOpen: string | null) => void;
@@ -24,7 +28,7 @@ export default function VerifyingPopup({ email, setPopupOpen }: Props) {
       <h2 style={{ marginBottom: 32 }}>verifying your email addres</h2>
       <h6 className={`${cls.txt}`}>a verification email was sent to </h6>
       <h4
-        style={{ color: "v.$primary", fontWeight: 700, display: "inline" }}
+        style={{ color: "#5120B8", fontWeight: 700, display: "inline" }}
       >
         {email}
       </h4>

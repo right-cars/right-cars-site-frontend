@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import { Media } from "@/shared/types/media";
+
 import cls from "./styles.module.scss";
 
 export default function ModalContent({

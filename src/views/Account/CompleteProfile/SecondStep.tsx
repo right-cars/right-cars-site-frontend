@@ -1,5 +1,6 @@
 import { StepProps } from "@/shared/types/account";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
+
 import cls from "./styles.module.scss";
 
 export default function SecondStep(props: StepProps & { required: boolean }) {

@@ -1,8 +1,13 @@
+"use client"
+
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
+
 import GoogleBtn from "./GoogleBtn/GoogleBtn";
+
 import cls from "../styles.module.scss";
 
 interface SigninProps {

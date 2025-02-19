@@ -1,4 +1,6 @@
 import Image from "next/image";
+import classNames from "classnames";
+
 import cls from "./styles.module.scss";
 
 export interface ButtonProps {
@@ -21,19 +23,16 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   return (
-    <div className={`${cls.btnWrapp} ${styles}`}>
+    <div className={classNames(cls.btnWrapp, styles)}>
       <button
         type={type}
-        className={`${cls.btn} ${
-          color === "yellow" ? cls.yellow : cls.transparent
-        } `}
+        className={classNames(cls.btn, {
+          [cls.yellow]: color === "yellow",
+          [cls.transparent]: color === "transparent",
+        })}
         onClick={onClick}
       >
-        <div
-          className={`${cls.txtWrapp} ${
-            color === "transparent" && cls.reverse
-          }`}
-        >
+        <div className={classNames(cls.txtWrapp, { [cls.reverse]: color === "transparent" })}>
           <p className="btnText">{text}</p>
           {img && <Image src={img} alt="icon" width={20} height={20} />}
         </div>

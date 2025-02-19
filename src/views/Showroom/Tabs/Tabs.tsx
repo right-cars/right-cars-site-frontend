@@ -1,6 +1,8 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+
 import cls from "./styles.module.scss";
 
 const tabsData = [

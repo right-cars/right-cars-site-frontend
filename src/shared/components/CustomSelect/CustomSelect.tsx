@@ -1,7 +1,11 @@
-import { CustomInputProps } from "@/shared/types/customInput";
-import cls from "./styles.module.scss";
+"useclient"
+
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
+
+import { CustomInputProps } from "@/shared/types/customInput";
+
+import cls from "./styles.module.scss";
 
 export default function CustomSelect({
   label,
@@ -29,7 +33,7 @@ export default function CustomSelect({
       <p className={`${"textTiny"} ${cls.label}`}>
         {label}{" "}
         {required && (
-          <span className="textTiny" style={{ color: "v.$error" }}>
+          <span className="textTiny" style={{ color: "#EC531C" }}>
             *
           </span>
         )}

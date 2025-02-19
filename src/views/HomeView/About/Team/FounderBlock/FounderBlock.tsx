@@ -1,6 +1,8 @@
 import Image from "next/image";
-import cls from "./styles.module.scss";
+
 import VideoBlock from "./VideoBlock/VideoBlock";
+
+import cls from "./styles.module.scss";
 
 export default function FounderBlock() {
   return (
@@ -18,7 +20,7 @@ export default function FounderBlock() {
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
             Founder and CEO{" "}
-            <span style={{ color: "v.$primary" }}>Eugene&nbsp;Vulakh</span>
+            <span style={{ color: "#5120B8" }}>Eugene&nbsp;Vulakh</span>
           </h3>
           <p className="textMedium">
             Eugene, the founder of the company, combines his deep-rooted passion

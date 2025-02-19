@@ -1,11 +1,15 @@
 "use client";
-import Link from "next/link";
+
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import CloseSvg from "../../../public/icons/close.svg";
+import Link from "next/link";
+
+import CloseSvg from "@icons/close.svg";
+
 import LogOutBtn from "./LogOutBtn";
 import { menuItems } from "./menuItems";
+
 import cls from "./styles.module.scss";
-import { useEffect, useState } from "react";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

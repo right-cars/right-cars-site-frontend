@@ -1,6 +1,7 @@
 import Link from "next/link";
-import cls from "./styles.module.scss";
 import Image from "next/image";
+
+import cls from "./styles.module.scss";
 
 export default function BackBtn() {
   return (

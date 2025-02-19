@@ -1,4 +1,5 @@
-import Svg5 from "../../../public/icons/account/svg5.svg";
+import Svg5 from "@icons/account/svg5.svg";
+
 import cls from "./styles.module.scss";
 
 export default function LogOutBtn() {

@@ -1,4 +1,5 @@
 import { CustomInputProps } from "@/shared/types/customInput";
+
 import cls from "./styles.module.scss";
 
 export default function CustomTextarea(props: CustomInputProps) {

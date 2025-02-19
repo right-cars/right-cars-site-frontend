@@ -1,6 +1,10 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
+
 import Filters from "./Filters";
+
 import cls from "./styles.module.scss";
 
 export default function FiltersBlock() {

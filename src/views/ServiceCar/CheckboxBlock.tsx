@@ -1,4 +1,5 @@
 import Checkbox from "@/shared/components/Checkbox/Checkbox";
+
 import cls from "./styles.module.scss";
 
 interface Props {

@@ -1,15 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
-import SignIn from "@/modules/AuthForms/SignIn/SignIn";
-import SignUp from "@/modules/AuthForms/SignUp/SignUp";
-import VerifyingPopup from "@/shared/components/Popups/VerifyingPopup";
+
 import ForgotPasswordPopup from "@/shared/components/Popups/ForgotPasswordPopup";
+import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import PasswordRequest from "@/shared/components/Popups/PasswordRequest";
 import SuccessResetPassword from "@/shared/components/Popups/SuccessReaetPassword";
+import VerifyingPopup from "@/shared/components/Popups/VerifyingPopup";
+
+import SignIn from "@/modules/AuthForms/SignIn/SignIn";
+import SignUp from "@/modules/AuthForms/SignUp/SignUp";
+
 import cls from "../styles.module.scss";
-import { useRouter } from "next/navigation";
 
 export default function LoginBtn() {
   const userName = "temp name";

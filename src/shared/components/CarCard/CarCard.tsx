@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { CarProps } from "@/shared/types/car";
-import FavoriteBtn from "../Buttons/FavoriteBtn/FavoriteBtn";
+import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
+
 import cls from "./styles.module.scss";
 
 export default function CarCard(props: CarProps) {

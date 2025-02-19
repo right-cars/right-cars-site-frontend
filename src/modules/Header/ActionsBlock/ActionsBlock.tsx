@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import BurgerBtn from "./BurgerBtn/BurgerBtn";
 import LoginBtn from "./LoginBtn/LoginBtn";
+
 import cls from "./styles.module.scss";
 
 export default function ActionsBlock() {

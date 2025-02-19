@@ -1,5 +1,6 @@
 import { CarProps } from "@/shared/types/car";
 import CarCard from "@/shared/components/CarCard/CarCard";
+
 import cls from "./styles.module.scss";
 
 interface GalleryProps {

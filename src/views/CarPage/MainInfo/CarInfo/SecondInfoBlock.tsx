@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import Button from "@/shared/components/Buttons/Button/Button";
+
 import cls from "./styles.module.scss";
 
 interface SecondInfoProps {

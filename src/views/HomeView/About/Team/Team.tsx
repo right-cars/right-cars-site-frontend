@@ -1,5 +1,6 @@
 import FounderBlock from "./FounderBlock/FounderBlock";
 import TeamList from "./TeamList/TeamList";
+
 import cls from "./styles.module.scss";
 
 export default function Team() {

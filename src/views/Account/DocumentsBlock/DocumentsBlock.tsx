@@ -1,7 +1,11 @@
-import FileUpload from "@/shared/components/FileUpload/FileUpload";
-import cls from "./styles.module.scss";
+"use client"
+
 import { useState } from "react";
+
+import FileUpload from "@/shared/components/FileUpload/FileUpload";
 import { UploadTooltipType } from "@/shared/types/uploadTooltipType";
+
+import cls from "./styles.module.scss";
 
 interface Props {
   legalEntityType: string;

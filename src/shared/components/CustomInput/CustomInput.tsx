@@ -1,7 +1,11 @@
+"use client"
+
 import { useState } from "react";
 import Image from "next/image";
 import { InputMask } from "@react-input/mask";
+
 import { CustomInputProps } from "@/shared/types/customInput";
+
 import cls from "./styles.module.scss";
 
 export default function CustomInput(props: CustomInputProps) {
@@ -27,7 +31,7 @@ export default function CustomInput(props: CustomInputProps) {
       <label htmlFor={id} className={`${"textTiny"} ${cls.label}`}>
         {label}{" "}
         {required && (
-          <span className="textTiny" style={{ color: "v.$error" }}>
+          <span className="textTiny" style={{ color: "#EC531C" }}>
             *
           </span>
         )}

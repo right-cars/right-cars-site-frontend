@@ -1,7 +1,9 @@
 import { temporaryData } from "@/modules/CarListWithSlider/temporaryData";
 import CarListWithSlider from "@/modules/CarListWithSlider/CarListWithSlider";
 import SimpleCardList from "@/modules/SimpleCardList/SimpleCardList";
+
 import MainInfo from "@/views/CarPage/MainInfo/MainInfo";
+
 import { cardListData } from "./cardListData";
 
 export default async function CarPage({

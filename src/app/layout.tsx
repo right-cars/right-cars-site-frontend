@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Metrophobic, Work_Sans } from "next/font/google";
+
 import Header from "@/modules/Header/Header";
 import Footer from "@/modules/Footer/Footer";
-import "@/shared/styles/global.scss"
+
+import "@/shared/styles/global.scss";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -53,12 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{overflowX:"hidden"}}
+      <body
         className={`${workSans.className} ${metrophobic.className} ${blatant.className}`}
       >
         <Header />
         <main>{children}</main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

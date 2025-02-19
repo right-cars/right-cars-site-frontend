@@ -1,13 +1,17 @@
+"use client";
+
 import { useState } from "react";
 import Image from "next/image";
+
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+
 import cls from "./styles.module.scss";
 
 export default function BurgerBtn() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
-    setMenuOpen(!isMenuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   return (
@@ -19,9 +23,7 @@ export default function BurgerBtn() {
       >
         <Image src="/icons/menu.svg" alt="menu icon" width={40} height={40} />
       </button>
-      {isMenuOpen && (
-          <BurgerMenu setIsMenuOpen={setMenuOpen} />
-      )}
+      {isMenuOpen && <BurgerMenu setIsMenuOpen={setMenuOpen} />}
     </>
   );
 }

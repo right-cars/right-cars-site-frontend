@@ -1,6 +1,8 @@
 "use client";
+
 import { useEffect } from "react";
 import Image from "next/image";
+
 import cls from "./styles.module.scss";
 
 interface ModalProps {

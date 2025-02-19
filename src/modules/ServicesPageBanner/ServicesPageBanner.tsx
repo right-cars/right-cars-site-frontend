@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import Button from "@/shared/components/Buttons/Button/Button";
+
 import cls from "./style.module.scss";
 
 interface ServicesPageBannerProps {

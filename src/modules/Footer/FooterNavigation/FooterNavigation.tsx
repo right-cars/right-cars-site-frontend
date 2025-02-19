@@ -1,5 +1,7 @@
-import { footerNavLinks} from "@/shared/utils/routes";
 import Link from "next/link";
+
+import { footerNavLinks } from "@/shared/utils/routes";
+
 import cls from "./styles.module.scss";
 
 export default function FooterNavigation() {

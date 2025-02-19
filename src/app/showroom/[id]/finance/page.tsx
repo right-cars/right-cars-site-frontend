@@ -1,13 +1,19 @@
 "use client";
+
 import { ChangeEvent, FormEvent, useState } from "react";
 // import { useParams } from "next/navigation";
+
+import FormFieldsBlock from "@/modules/FormFieldsBlock/FormField";
+
+import Permission from "@/views/FinancePage/Permission";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
-import FormFieldsBlock from "@/modules/FormFieldsBlock/FormField";
+
 import { fieldsBlock } from "./fieldsData";
 import { initialFormData } from "./initialState";
-import Permission from "@/views/FinancePage/Permission";
+
 import cls from "./styles.module.scss";
 
 export default function FinancePage() {

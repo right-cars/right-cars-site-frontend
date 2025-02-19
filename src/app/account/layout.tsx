@@ -1,4 +1,5 @@
 import Sidebar from "@/modules/Sidebar/Sidebar";
+
 import cls from "./styles.module.scss";
 
 export default function AccountLayout({

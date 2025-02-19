@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "../Buttons/Button/Button";
-import CustomInput from "../CustomInput/CustomInput";
+
+import Button from "@/shared/components/Buttons/Button/Button";
+import CustomInput from "@/shared/components/CustomInput/CustomInput";
+
 import cls from "./styles.module.scss";
 
 interface Props {

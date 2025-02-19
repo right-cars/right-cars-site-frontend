@@ -1,7 +1,8 @@
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 import CustomSelect from "@/shared/components/CustomSelect/CustomSelect";
-import cls from "./styles.module.scss";
 import { FormFields } from "@/shared/types/formField";
+
+import cls from "./styles.module.scss";
 
 interface FormFieldsBlockProps {
   title?: string;

@@ -2,6 +2,7 @@ import BusinessHours from "./BusinessHours/BusinessHours";
 import ContactsInfo from "./ContactsInfo/ContactsInfo";
 import FormBlock from "./FormBlock/FormBlock";
 import Map from "./Map/Map";
+
 import cls from "./styles.module.scss";
 
 export default function ContactsBlock() {

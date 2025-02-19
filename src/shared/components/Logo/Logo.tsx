@@ -1,28 +1,27 @@
 import Link from "next/link";
-import LogoSvg from "../../../../public/icons/logo.svg";
+import classNames from "classnames";
+
+import LogoSvg from "@icons/logo.svg";
+
 import cls from "./styles.module.scss";
 
 interface LogoProps {
   variant: "header" | "footer" | "burger";
 }
 
-export default function Logo(props: LogoProps) {
-  const { variant } = props;
-
+export default function Logo({ variant }: LogoProps) {
   return (
     <Link
       aria-label="go to home page"
       href="/"
-      className={`${cls.link} ${variant !== "header" && cls.foolWidthLink}`}
+      className={classNames(cls.link, { [cls.foolWidthLink]: variant !== "header" })}
     >
       <LogoSvg
-        className={
-          variant === "header"
-            ? cls.headerLogo
-            : variant === "footer"
-            ? cls.footerLogo
-            : cls.burgerLogo
-        }
+        className={classNames({
+          [cls.headerLogo]: variant === "header",
+          [cls.footerLogo]: variant === "footer",
+          [cls.burgerLogo]: variant === "burger",
+        })}
       />
     </Link>
   );

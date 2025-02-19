@@ -1,5 +1,7 @@
 import DetailsBlock from "@/views/Faq/DetailsBlock";
+
 import { data } from "./data";
+
 import cls from "./styles.module.scss";
 
 export default function Faq() {

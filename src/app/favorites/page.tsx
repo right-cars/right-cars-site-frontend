@@ -1,10 +1,14 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
 import { CarProps } from "@/shared/types/car";
+
 import { temporaryData } from "@/views/Showroom/Gallery/temporaryData";
+
 import cls from "./styles.module.scss";
 
 export default function Favorites() {

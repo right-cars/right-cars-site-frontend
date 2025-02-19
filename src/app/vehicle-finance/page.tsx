@@ -1,5 +1,6 @@
 import ServicesPageBanner from "@/modules/ServicesPageBanner/ServicesPageBanner";
 import SimpleCardList from "@/modules/SimpleCardList/SimpleCardList";
+
 import { cardListData } from "./cardListData";
 
 export default function VehicleFinancePage() {

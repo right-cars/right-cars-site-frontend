@@ -1,8 +1,10 @@
 import Logo from "@/shared/components/Logo/Logo";
+
 import Copyright from "./Copyright/Copyright";
 import Documentation from "./Documentation/Documentation";
 import FooterNavigation from "./FooterNavigation/FooterNavigation";
 import Socials from "./Socials/Socials";
+
 import cls from "./styles.module.scss";
 
 export default function Footer() {

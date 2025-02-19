@@ -1,7 +1,12 @@
+"use client"
+
 import { useState } from "react";
 import Image from "next/image";
+
 import { UploadTooltipType } from "@/shared/types/uploadTooltipType";
-import CloseSvg from "../../../../public/icons/close.svg";
+
+import CloseSvg from "@icons/close.svg";
+
 import { tooltipList } from "./tooltipList";
 import cls from "./styles.module.scss";
 
@@ -10,7 +15,6 @@ interface TooltipProps {
 }
 
 export default function Tooltip({ tooltipVariant }: TooltipProps) {
-  console.log("🚀 ~ Tooltip ~ tooltipVariant:", tooltipVariant);
   const [showTooltip, setShowTooltip] = useState(false);
   return (
     <>
