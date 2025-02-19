@@ -10,7 +10,7 @@ export default function LogOutBtn() {
     <button className={cls.logOutBtn} onClick={handleLogOut}>
       <div className={cls.item}>
         <Svg5 className={cls.svg} />
-        <h5 style={{ textTransform: "none" }}>Log Out</h5>
+        <p className="titleTiny" style={{ textTransform: "none" }}>Log Out</p>
       </div>
     </button>
   );

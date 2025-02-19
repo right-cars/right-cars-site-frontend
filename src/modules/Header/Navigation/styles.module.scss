@@ -19,6 +19,11 @@
 }
 
 .link {
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.42px;
   transition: color v.$transition;
 
   &:hover {

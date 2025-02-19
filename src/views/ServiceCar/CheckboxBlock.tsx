@@ -25,7 +25,7 @@ export default function CheckboxBlock({
 
   return (
     <div>
-      <h4 style={{ marginBottom: 16 }}>{title}</h4>
+      <p className="titleSmall" style={{ marginBottom: 16 }}>{title}</p>
       <ul className={cls.options}>
         {options.map((option) => (
           <li key={option} className={cls.option}>

@@ -37,7 +37,7 @@ export default function FiltersBlock() {
   return (
     <div className={cls.wrapper}>
       <button className={cls.btn}>
-        <h4>filter my search</h4>
+        <p className="titleSmall">filter my search</p>
       </button>
       <button className={cls.filterBtn} onClick={handleFilterClick}>
         <Image

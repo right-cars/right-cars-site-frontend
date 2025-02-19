@@ -27,9 +27,9 @@ export default function Pagination({
           width={16}
           height={16}
         />
-        <h5 style={{ textTransform: "none" }} className={cls.txt}>
+        <p className={cls.txt}>
           Previous
-        </h5>
+        </p>
       </button>
       <div className={cls.mainWrapp}>
         {Array.from({ length: totalPages }, (_, index) => (
@@ -69,9 +69,9 @@ export default function Pagination({
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        <h5 style={{ textTransform: "none" }} className={cls.txt}>
+        <p className={cls.txt}>
           Next
-        </h5>
+        </p>
         <Image
           src="/icons/showroom/arr-left.svg"
           alt="next icon"

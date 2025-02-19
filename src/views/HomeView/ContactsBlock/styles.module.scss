@@ -33,18 +33,18 @@
   gap: 24px;
 
   @include m.large-tablet {
-grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
 
   @media (max-width: 640px) {
-grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 .blockWrapp {
   background-color: v.$primary;
-  color:v.$pure;
+  color: v.$pure;
   border-radius: 16px;
   padding: 40px 32px;
   box-shadow: v.$primary-shadow;
@@ -54,61 +54,64 @@ grid-template-columns: 1fr;
   }
 }
 
-.iconWithTextBlock{
-    display: flex;
-    align-items: center;
-    gap:8px;
+.iconWithTextBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.svg{
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
+.svg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 
-    @include m.large-tablet {
-        width: 32px;
-        height: 32px;
-    }
+  @include m.large-tablet {
+    width: 32px;
+    height: 32px;
+  }
 }
 
-.hours{
-    display: flex;
-    flex-direction: column;
-    gap:8px;
-    margin-top: 16px;
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
 }
 
-.contactsList{
-    display: flex;
-        flex-direction: column;
-        gap: 8px;
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.link{
-transition: color v.$transition;
+.link {
+  transition: color v.$transition;
 
-&:hover{
-    color: v.$accent
-}
-}
-
-.txt{
-    text-transform: none;
+  &:hover {
+    color: v.$accent;
+  }
 }
 
-.mapWrapp{
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-
-    @include m.large-tablet {
-        height: 222px;
-    }
+.txt {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
 }
 
-.map{
-    width: 100%;
-    height: 100%;
-    border: none;
-        border-radius: 16px;
+.mapWrapp {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+
+  @include m.large-tablet {
+    height: 222px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
 }

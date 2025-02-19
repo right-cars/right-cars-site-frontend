@@ -11,7 +11,7 @@ export default function FirstStep({
 }: StepProps) {
   return (
     <>
-      <h4>Complete your profile</h4>
+      <h4 className="titleSmall">Complete your profile</h4>
       <div className={cls.wrapp}>
         <CustomSelect
           bordered

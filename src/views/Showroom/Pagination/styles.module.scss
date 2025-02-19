@@ -72,6 +72,12 @@
 }
 
 .txt {
+  font-family: "Work Sans", sans-serif;
+  width: 60%;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+
   @include m.mobile {
     display: none;
   }

@@ -43,7 +43,7 @@ export default function ContactsInfo() {
               className={`${cls.iconWithTextBlock} ${cls.link}`}
             >
               {img}
-              <h5 className={cls.txt}>{txt}</h5>
+              <p className={cls.txt}>{txt}</p>
             </Link>
           </li>
         ))}

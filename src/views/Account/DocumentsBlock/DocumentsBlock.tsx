@@ -75,7 +75,7 @@ export default function DocumentsBlock({ legalEntityType }: Props) {
 
   return (
     <section>
-      <h4 className={cls.title}>help us verify your identity</h4>
+      <h4 className={`${"titleSmall"} ${cls.title}`}>help us verify your identity</h4>
       <div className={cls.uploadBlock}>
         {documentLabels.map(({ label, tooltip, tooltipVariant }) => (
           <FileUpload

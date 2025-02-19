@@ -26,12 +26,12 @@ export default function VerifyingPopup({ email, setPopupOpen }: Props) {
   return (
     <div className={cls.wrapper}>
       <h2 style={{ marginBottom: 32 }}>verifying your email addres</h2>
-      <h6 className={`${cls.txt}`}>a verification email was sent to </h6>
-      <h4
+      <p className={`${"text"} ${cls.txt}`}>a verification email was sent to </p>
+      <p className="titleSmall"
         style={{ color: "#5120B8", fontWeight: 700, display: "inline" }}
       >
         {email}
-      </h4>
+      </p>
       <p className="textMedium" style={{ marginTop: 8, marginBottom: 32 }}>
         Click on the link sent to your email to verify your account
       </p>

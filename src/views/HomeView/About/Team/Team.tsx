@@ -7,7 +7,7 @@ export default function Team() {
   return (
     <>
       <div className={cls.txtBlock}>
-        <h3 className={cls.title}>Meet Our Team</h3>
+        <h3 className={`${"titleMedium"} ${cls.title}`}>Meet Our Team</h3>
         <p className="textMedium">
           our dedicated team of automotive professionals is passionate about
           helping you find the perfect vehicle. with years of experience in the

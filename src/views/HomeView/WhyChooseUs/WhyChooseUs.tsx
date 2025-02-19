@@ -18,11 +18,11 @@ export default function WhyChooseUs() {
               height={55}
               className={cls.svg}
             />
-            <h3>
+            <p className="titleMedium">
               Transparent
               <br />
               Pricing
-            </h3>
+            </p>
           </div>
 
           <p className="textMedium">
@@ -34,8 +34,8 @@ export default function WhyChooseUs() {
           {data.map(({ svg, title, descr, width, height }, index) => (
             <li key={index} className={cls.card}>
               <div className={cls.titleBlock}>
-                <h3
-                  className={cls.cardTitle}
+                <p
+                  className={`${"titleMedium"} ${cls.cardTitle}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
                 <Image

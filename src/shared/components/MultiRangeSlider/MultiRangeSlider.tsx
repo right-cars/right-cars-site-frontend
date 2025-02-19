@@ -53,7 +53,7 @@ export default function MultiRangeSlider({
   return (
     <div>
       <div className={cls.titleAndBtnWrapp}>
-        <h5 className={cls.title}>{title}</h5>
+        <h5 className={`${"titleTiny"} ${cls.title}`}>{title}</h5>
         {(value.min !== min || value.max !== max) && (
           <ClearBtn handleClear={handleClear} />
         )}

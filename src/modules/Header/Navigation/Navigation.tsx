@@ -32,13 +32,13 @@ export default function Navigation() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <h6 className={cls.link}>{name}</h6>
+              <p className={cls.link}>{name}</p>
               {dropdownOpen && (
                 <ul className={cls.dropdownMenu}>
                   {subLinks.map(({ name, href }, subIndex) => (
                     <li key={subIndex} className={isActive ? cls.isActive : ""}>
                       <Link href={href}>
-                        <h6 className={cls.link}>{name}</h6>
+                        <p className={cls.link}>{name}</p>
                       </Link>
                     </li>
                   ))}
@@ -48,7 +48,7 @@ export default function Navigation() {
           ) : (
             <li key={index} className={isActive ? cls.isActive : ""}>
               <Link href={href}>
-                <h6 className={cls.link}> {name}</h6>
+                <p className={cls.link}> {name}</p>
               </Link>
             </li>
           );

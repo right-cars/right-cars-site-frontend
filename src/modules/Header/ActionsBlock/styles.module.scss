@@ -67,6 +67,11 @@
 }
 
 .name {
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.42px;
   color: v.$primary-accent;
 
   @media (max-width: 932px) {

@@ -14,7 +14,7 @@ export default function SortComponent({
   return (
     <div className={cls.wrapper}>
       <button className={cls.sortBtn} onClick={onSort}>
-        <h4>sort by price</h4>
+        <p className="titleSmall">sort by price</p>
         <Image
           src="/icons/showroom/sortSvg.svg"
           alt="sort icon"

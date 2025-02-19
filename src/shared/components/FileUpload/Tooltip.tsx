@@ -33,13 +33,13 @@ export default function Tooltip({ tooltipVariant }: TooltipProps) {
         <div className={cls.tooltipWrapp}>
           <div className={cls.tooltipTitleBlock}>
             {tooltipVariant === "withList" ? (
-              <h6>What is accepted as proof of address?</h6>
+              <p className="text">What is accepted as proof of address?</p>
             ) : (
-              <h6>
+              <p className="text">
                 A letter that is written and signed by the person whose address
                 was uploaded, acknowledging that you are a resident of the same
                 address
-              </h6>
+              </p>
             )}
             <button
               onClick={() => {

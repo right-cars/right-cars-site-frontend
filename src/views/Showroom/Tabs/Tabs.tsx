@@ -37,7 +37,7 @@ export default function Tabs({
             className={`${cls.tab} ${activeTab === type ? cls.active : ""}`}
             onClick={() => setActiveTab(type)}
           >
-            <h4>{name}</h4>
+            <p className="titleSmall">{name}</p>
           </SwiperSlide>
         ))}
       </Swiper>

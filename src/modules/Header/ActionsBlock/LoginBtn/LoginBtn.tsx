@@ -57,7 +57,7 @@ export default function LoginBtn() {
         className={cls.loginBtn}
       >
         <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
-        <h6 className={cls.name}>{isLoggedIn ? userName : "Login"}</h6>
+        <p className={cls.name}>{isLoggedIn ? userName : "Login"}</p>
       </button>
       {isModalOpen && (
         <ModalWindow setIsModalOpen={setIsModalOpen} closeBtn={false}>

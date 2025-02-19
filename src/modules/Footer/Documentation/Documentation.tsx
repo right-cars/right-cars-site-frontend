@@ -31,7 +31,7 @@ export default function Documentation() {
       {data.map(({ name, href }, index) => (
         <li key={index}>
           <Link href={href} className={cls.link}>
-            <h6>{name}</h6>
+            <p className="text">{name}</p>
           </Link>
         </li>
       ))}

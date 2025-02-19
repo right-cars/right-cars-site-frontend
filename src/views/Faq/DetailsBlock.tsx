@@ -17,7 +17,7 @@ export default function DetailsBlock({ block }: DetailsBlockProps) {
       {block.map(({ question, answer }, index) => (
         <details key={index} className={cls.details}>
           <summary className={cls.questionBlock}>
-            <h5 className={cls.question}>{question}</h5>
+            <p className={`${"titleTiny"} ${cls.question}`}>{question}</p>
             <Image
               src="/icons/arrow-left.svg"
               alt="icon"

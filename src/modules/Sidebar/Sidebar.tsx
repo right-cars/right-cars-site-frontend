@@ -45,7 +45,7 @@ const Sidebar = () => {
   return (
     <aside className={`${cls.aside} ${!isSidebarOpen && cls.tabAside}`}>
       <div className={cls.titleBlock}>
-        <h3>my Account</h3>
+        <p className="titleMedium">my Account</p>
         <button onClick={handleCloseSidebar}>
           <CloseSvg className={cls.closeSvg} />
         </button>
@@ -69,7 +69,7 @@ const Sidebar = () => {
                   } ${isDisabled && cls.disabled}`}
                 >
                   {item.svg}
-                  <h5 style={{ textTransform: "none" }}>{itemName}</h5>
+                  <p className="titleTiny" style={{ textTransform: "none" }}>{itemName}</p>
                 </div>
               </Link>
             );
