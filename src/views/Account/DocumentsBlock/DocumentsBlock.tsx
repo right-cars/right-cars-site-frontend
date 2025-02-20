@@ -9,6 +9,7 @@ import cls from "./styles.module.scss";
 
 interface Props {
   legalEntityType: string;
+  initialFiles?: Record<string, File | null>;
 }
 
 interface DocumentLabel {
@@ -17,10 +18,8 @@ interface DocumentLabel {
   tooltipVariant?: UploadTooltipType;
 }
 
-export default function DocumentsBlock({ legalEntityType }: Props) {
-  const [uploadedFiles, setUploadedFiles] = useState<
-    Record<string, File | null>
-  >({});
+export default function DocumentsBlock({ legalEntityType, initialFiles={} }: Props) {
+  const [uploadedFiles, setUploadedFiles] = useState<Record<string, File | null>>(initialFiles)
   console.log("🚀 ~ DocumentsBlock ~ uploadedFiles:", uploadedFiles);
 
   const handleFileUpload = (label: string, file: File | null) => {
@@ -84,6 +83,7 @@ export default function DocumentsBlock({ legalEntityType }: Props) {
             tooltipVariant={tooltipVariant}
             label={label}
             onFileUpload={(file) => handleFileUpload(label, file)}
+            file={uploadedFiles[label]} 
           />
         ))}
       </div>

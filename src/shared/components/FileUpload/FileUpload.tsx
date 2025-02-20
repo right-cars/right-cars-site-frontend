@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { UploadTooltipType } from "@/shared/types/uploadTooltipType";
@@ -11,22 +11,28 @@ import cls from "./styles.module.scss";
 
 interface FileUploadProps {
   label: string;
-    tooltip?: boolean;
+  tooltip?: boolean;
   tooltipVariant?: UploadTooltipType;
   onFileUpload: (file: File | null) => void;
+  file?: File | null;
 }
 
 export default function FileUpload({
   label,
   onFileUpload,
-    tooltip,
-  tooltipVariant
+  tooltip,
+  tooltipVariant,
+  file,
 }: FileUploadProps) {
-  const [fileUploaded, setFileUploaded] = useState(false);
+  const [fileUploaded, setFileUploaded] = useState<File | null>(file || null);
+
+  useEffect(() => {
+    setFileUploaded(file || null);
+  }, [file]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
-    setFileUploaded(!!file);
+    setFileUploaded(file);
     onFileUpload(file);
   };
 

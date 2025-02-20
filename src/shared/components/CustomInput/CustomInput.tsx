@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -19,6 +19,7 @@ export default function CustomInput(props: CustomInputProps) {
     password,
     phone,
     bordered,
+    disabled,
   } = props;
   const [showPassword, setShowPassword] = useState(false);
 
@@ -47,6 +48,7 @@ export default function CustomInput(props: CustomInputProps) {
           value={value}
           autoComplete="off"
           placeholder={placeholder}
+          disabled={disabled}
         />
       ) : (
         <input
@@ -58,6 +60,7 @@ export default function CustomInput(props: CustomInputProps) {
           value={value}
           autoComplete="off"
           placeholder={placeholder}
+          disabled={disabled}
         />
       )}
       {password && (

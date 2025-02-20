@@ -1,0 +1,12 @@
+@use "@/shared/styles/mixins" as m;
+
+.titleBlock {
+  margin-bottom: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @include m.mobile {
+    margin-bottom: 24px;
+  }
+}
