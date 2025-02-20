@@ -1,0 +1,47 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
+.wrapp {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
+}
+
+.applicationWrapp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.approved,
+.notApproved {
+  font-family: "Metrophobic", sans-serif;
+  font-size: 18px;
+  width: 130px;
+
+  @include m.large-tablet {
+    font-size: 17px;
+  }
+
+  @include m.mobile {
+    font-size: 16px;
+  }
+}
+
+.approved {
+  color: v.$accent;
+}
+
+.completeApplication {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

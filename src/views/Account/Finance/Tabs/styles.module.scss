@@ -1,0 +1,33 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
+.tabsWrapp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    background-color: v.$pure;
+    color: v.$primary;
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+
+    @include m.mobile {
+        grid-template-columns: 1fr;
+        height: 80px;
+        gap:0;
+    }
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color v.$transition, color v.$transition;
+}
+
+.active {
+    background-color: v.$primary;
+    color: v.$pure;
+}
