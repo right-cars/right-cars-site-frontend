@@ -8,20 +8,16 @@ const data = [
     href: "/privacy-policy",
   },
   {
-    name: "website Privacy Policy",
-    href: "/website-privacy-policy",
-  },
-  {
     name: "terms of use",
     href: "/terms-of-use",
   },
   {
-    name: "competition rules",
-    href: "/competition-rules",
+    name: "TERMS OF SALE",
+    href: "/terms-of-sale",
   },
   {
-    name: "return policy",
-    href: "/return-policy",
+    name: "auction rules",
+    href: "/auction-rules",
   },
 ];
 
