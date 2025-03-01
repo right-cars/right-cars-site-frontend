@@ -13,5 +13,6 @@ export interface CustomInputProps {
   type?: string;
   password?: boolean;
   phone?: boolean;
-  bordered?:boolean
+  bordered?: boolean;
+  disabled?: boolean
 }

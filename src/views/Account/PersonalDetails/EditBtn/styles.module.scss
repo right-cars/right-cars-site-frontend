@@ -1,0 +1,24 @@
+@use "@/shared/styles/mixins" as m;
+
+.btnsWrapp {
+  margin-top: 40px;
+}
+
+.btnsFlex {
+  display: flex;
+  gap: 16px;
+  width: 252px;
+
+  @include m.mobile {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.editBtn {
+  width: 85px;
+
+  @include m.mobile {
+    width: 100%;
+  }
+}

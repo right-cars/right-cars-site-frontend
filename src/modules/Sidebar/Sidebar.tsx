@@ -13,7 +13,7 @@ import cls from "./styles.module.scss";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const isProfileComplete = false;
+  const isProfileComplete = true;
 
   const pathname = usePathname();
 
