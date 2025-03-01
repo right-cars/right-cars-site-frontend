@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Logo from "@/shared/components/Logo/Logo";
-
-import CloseSvg from "@icons/close.svg"
+import CloseSvg from "@icons/close.svg";
 
 import BurgerNavigation from "./BurgerNavigation";
 
@@ -12,10 +12,10 @@ import cls from "./styles.module.scss";
 
 interface BurgerMenuProps {
   setIsMenuOpen: (isOpen: boolean) => void;
+  isMenuOpen: boolean;
 }
 
-export default function BurgerMenu (props: BurgerMenuProps) {
-  const { setIsMenuOpen } = props;
+export default function BurgerMenu({ setIsMenuOpen, isMenuOpen }: BurgerMenuProps) {
   const handleClick = () => {
     setIsMenuOpen(false);
   };
@@ -31,28 +31,53 @@ export default function BurgerMenu (props: BurgerMenuProps) {
   };
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", handleKeyDown);
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
     return () => {
       document.body.style.overflow = "auto";
-      document.body.style.overflowX = "hidden";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleKeyDown]);
+  }, [isMenuOpen]);
+
+
+const overlayVariants = {
+ hidden: { x: "100%", opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
+  exit: { x: "100%", opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } }, 
+};
+
 
   return (
-    <div className={cls.overlay}>
-      <div className={cls.menuContainer} onClick={handleMenuClick}>
+  <AnimatePresence mode="wait" >
+  {isMenuOpen && (
+    <motion.div
+      className={cls.overlay}
+      variants={overlayVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      
+    >
+      <div
+        className={cls.menuContainer}
+        onClick={handleMenuClick}
+      >
         <button className={cls.closeBtn} onClick={handleClick}>
           <CloseSvg className={cls.svg} />
         </button>
-          <BurgerNavigation handleClick={handleClick}/>
+        <BurgerNavigation handleClick={handleClick} />
         <div className={cls.logoWrapp}>
           <Logo variant="burger" />
         </div>
       </div>
-    </div>
-  );
-};
+    </motion.div>
+  )}
+</AnimatePresence>
 
+  );
+}

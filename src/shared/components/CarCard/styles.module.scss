@@ -37,11 +37,21 @@
   background-color: v.$primary;
   border-radius: 8px 8px 0px 0px;
   color: v.$pure;
+  transition: background-color v.$transition;
+
+  &:hover{
+    background-color: v.$accent;
+
+    .arr{
+      fill: v.$primary
+    }
+  }
 
   @include m.large-tablet {
     padding: 12px;
     padding-bottom: 28px;
   }
+
 }
 
 .modelWrap {
@@ -51,10 +61,13 @@
   gap: 8px;
   align-items: flex-end;
   justify-content: space-between;
+  transition: fill v.$transition;
 }
 
 .arr {
   margin-right: -8px;
+  flex-shrink: 0;
+  fill: v.$accent;
 
   @include m.small-desktop {
     margin-right: 0;

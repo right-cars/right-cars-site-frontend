@@ -23,7 +23,7 @@ export default function BurgerBtn() {
       >
         <Image src="/icons/menu.svg" alt="menu icon" width={40} height={40} />
       </button>
-      {isMenuOpen && <BurgerMenu setIsMenuOpen={setMenuOpen} />}
+      {isMenuOpen && <BurgerMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setMenuOpen} />}
     </>
   );
 }

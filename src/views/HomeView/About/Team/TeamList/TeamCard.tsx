@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import cls from "./styles.module.scss";
 
@@ -9,6 +12,14 @@ interface TeamCardProps {
   descr: string;
 }
 
+const itemVariants = {
+  hidden: { opacity: 0, y:-20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export default function TeamCard({
   img,
   position,
@@ -16,13 +27,12 @@ export default function TeamCard({
   descr,
 }: TeamCardProps) {
   return (
-    <li className={cls.card}>
+    <motion.li variants={itemVariants} className={cls.card}>
       <div className={cls.txtBlock}>
-        <p className="text" style={{ marginBottom: 4 }}>{position}</p>
-        <p
-          className="btnText"
-          style={{ color: "#5120B8", marginBottom: 24 }}
-        >
+        <p className="text" style={{ marginBottom: 4 }}>
+          {position}
+        </p>
+        <p className="btnText" style={{ color: "#5120B8", marginBottom: 24 }}>
           {name}
         </p>
         <p className="textSmall">{descr}</p>
@@ -36,6 +46,6 @@ export default function TeamCard({
           className={cls.img}
         />
       </div>
-    </li>
+    </motion.li>
   );
 }
