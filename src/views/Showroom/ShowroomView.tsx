@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { CarProps } from "@/shared/types/car";
 
@@ -19,6 +19,10 @@ export default function ShowroomView() {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAscending, setIsAscending] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   const handleSort = (): void => {
     if (isAscending === null) {
@@ -68,7 +72,7 @@ export default function ShowroomView() {
           <SortComponent onSort={handleSort} isLowestToHighest={isAscending} />
         </div>
         <div className={cls.content}>
-          <Gallery data={paginatedData} />
+          <Gallery data={paginatedData} currentPage={currentPage} />
         </div>
         <Pagination
           currentPage={currentPage}

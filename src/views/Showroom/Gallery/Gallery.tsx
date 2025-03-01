@@ -11,9 +11,10 @@ import cls from "./styles.module.scss";
 
 interface GalleryProps {
   data: CarProps[];
+  currentPage:number
 }
 
-export default function Gallery({ data }: GalleryProps) {
+export default function Gallery({ data, currentPage }: GalleryProps) {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -26,10 +27,11 @@ export default function Gallery({ data }: GalleryProps) {
 
   return (
     <motion.div
+      key={currentPage} 
       className={cls.gallery}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={listVariants}
     >
       {data.map((car) => (
