@@ -1,0 +1,13 @@
+@use "@/shared/styles/variables" as v;
+.transition {
+    transition: opacity v.$transition, transform v.$transition;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}

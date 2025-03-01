@@ -1,7 +1,9 @@
+@use "@/shared/styles/mixins" as m;
+
 .burgerBox {
   display: none;
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: flex;
   }
 }

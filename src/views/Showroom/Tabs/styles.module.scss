@@ -1,16 +1,21 @@
-.container {
-  margin: 0 232px;
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
 
-  @media (max-width: 1360px) {
-    margin: 0 48px;
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1170px;
+
+  @include m.large-tablet {
+    max-width: 860px;
   }
 
-  @media (max-width: 786px) {
-    margin: 0 40px;
+  @include m.tablet {
+    max-width: 688px;
   }
 
   @media (max-width: 660px) {
-    margin: 0;
+    padding: 0;
   }
 }
 
@@ -18,8 +23,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  background-color: var(--white);
-  color: var(--purple);
+  background-color: v.$pure;
+  color: v.$primary;
   border-radius: 8px;
   width: 100%;
   height: 40px;
@@ -35,10 +40,10 @@
   align-items: center;
   cursor: pointer;
   border-radius: 8px;
-  transition: background-color var(--transition), color var(--transition);
+  transition: background-color v.$transition, color v.$transition;
 }
 
 .active {
-  background-color: var(--purple);
-  color: var(--white);
+  background-color: v.$primary;
+  color: v.$pure;
 }

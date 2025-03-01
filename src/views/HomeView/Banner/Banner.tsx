@@ -1,5 +1,6 @@
 import AddBlock from "./AddBlock/AddBlock";
 import MainBlock from "./MainBlock/MainBlock";
+
 import cls from "./styles.module.scss";
 
 export default function Banner() {

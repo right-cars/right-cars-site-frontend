@@ -1,8 +1,10 @@
+@use "@/shared/styles/mixins" as m;
+
 .wrapper{
     margin: 40px 32px;
     padding-right: 32px;
 
-    @media (max-width:550px) {
+    @include m.mobile {
         padding-right: 0;
     }
 }

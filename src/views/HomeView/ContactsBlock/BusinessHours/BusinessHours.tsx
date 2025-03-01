@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "../styles.module.scss";
 
 export default function BusinessHours() {
@@ -12,12 +13,12 @@ export default function BusinessHours() {
           height={40}
           className={cls.svg}
         />
-        <h5 className={cls.txt}>Business Hours:</h5>
+        <p className={cls.txt}>Business Hours:</p>
       </div>
       <div className={cls.hours}>
-        <h5 className={cls.txt}>Monday to Friday: 9 AM - 6 PM</h5>
-        <h5 className={cls.txt}>Saturday: 9 AM - 3 PM</h5>
-        <h5 className={cls.txt}>Sunday: Closed</h5>
+        <p className={cls.txt}>Monday to Friday: 9 AM - 6 PM</p>
+        <p className={cls.txt}>Saturday: 9 AM - 3 PM</p>
+        <p className={cls.txt}>Sunday: Closed</p>
       </div>
     </div>
   );

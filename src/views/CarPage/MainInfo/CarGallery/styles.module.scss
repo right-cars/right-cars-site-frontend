@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -10,11 +13,11 @@
     width: 42vw;
   }
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     width: 57vw;
   }
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 100%;
     max-width: 100%;
   }
@@ -54,7 +57,7 @@
 }
 
 .active .miniImg {
-  border: 1px solid var(--purple);
+  border: 1px solid v.$primary;
 }
 
 .thumbnailContainer {
@@ -69,7 +72,7 @@
   scroll-behavior: smooth;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--purple) #bbb;
+  scrollbar-color: v.$primary #bbb;
 }
 
 .thumbnailContainer::-webkit-scrollbar {
@@ -82,7 +85,7 @@
 }
 
 .thumbnailContainer::-webkit-scrollbar-thumb {
-  background-color: var(--purple);
+  background-color: v.$primary;
   width: 8px;
   border-radius: 10px;
 }

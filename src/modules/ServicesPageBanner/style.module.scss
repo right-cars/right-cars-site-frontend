@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   margin-top: 99px;
   padding-top: 100px;
@@ -7,14 +10,14 @@
   gap: 16px;
   align-items: stretch;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 80px;
     grid-template-columns: 1fr;
     // align-items: flex-start;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 60px;
     padding-bottom: 56px;
@@ -23,11 +26,11 @@
 
 .txtBlock {
   border-radius: 16px;
-  background-color: var(--purple);
+  background-color: v.$primary;
   padding: 40px 32px;
-  color: var(--white);
+  color: v.$pure;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 32px 16px;
   }
 }
@@ -35,7 +38,7 @@
 .title {
   margin-bottom: 48px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-bottom: 40px;
   }
 }
@@ -45,7 +48,7 @@
   width: 303px;
   margin-top: 40px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
     margin-top: 36px;
   }
@@ -66,11 +69,11 @@
   object-fit: cover;
   object-position: top;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     height: revert-layer;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     height: auto;
   }
 }

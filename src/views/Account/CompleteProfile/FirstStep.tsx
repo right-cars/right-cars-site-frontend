@@ -1,6 +1,7 @@
 import { StepProps } from "@/shared/types/account";
 import CustomSelect from "@/shared/components/CustomSelect/CustomSelect";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
+
 import cls from "./styles.module.scss";
 
 export default function FirstStep({
@@ -10,7 +11,7 @@ export default function FirstStep({
 }: StepProps) {
   return (
     <>
-      <h4>Complete your profile</h4>
+      <h4 className="titleSmall">Complete your profile</h4>
       <div className={cls.wrapp}>
         <CustomSelect
           bordered

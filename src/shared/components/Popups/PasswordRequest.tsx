@@ -1,4 +1,7 @@
+"use client"
+
 import { useEffect } from "react";
+
 import cls from "./styles.module.scss";
 
 interface Props {

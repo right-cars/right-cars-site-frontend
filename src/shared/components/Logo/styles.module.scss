@@ -1,14 +1,17 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .headerLogo {
   fill: #7230ff;
   width: 174px;
   height: 55px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 160px;
     height: 51px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 136px;
     height: 39px;
   }
@@ -23,7 +26,7 @@
   fill: #7230ff;
   width: 464px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 424px;
   }
 
@@ -31,7 +34,7 @@
     width: 336px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
     height: auto;
   }
@@ -52,7 +55,7 @@
 }
 
 .foolWidthLink {
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }

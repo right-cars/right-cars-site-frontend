@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "./styles.module.scss";
 
 const svgs = [
@@ -23,7 +24,7 @@ export default function Partners() {
   return (
     <div className={cls.wrapper}>
       <div className={cls.titleBlock}>
-        <h3>We Are Part of The Following Organisations:</h3>
+        <h3 className="titleMedium">We Are Part of The Following Organisations:</h3>
       </div>
       <ul className={cls.partners}>
         {svgs.map(({ img, width, height }, index) => (

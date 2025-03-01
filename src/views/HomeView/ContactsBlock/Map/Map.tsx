@@ -1,4 +1,5 @@
 import cls from "../styles.module.scss";
+
 export default function Map() {
   return (
     <div className={cls.mapWrapp}>

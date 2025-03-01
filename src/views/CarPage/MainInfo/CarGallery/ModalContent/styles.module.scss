@@ -1,22 +1,25 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .modalWodalWrapp {
   width: 784px;
   height: 505px;
   overflow: hidden;
   border-radius: 32px;
   padding: 16px;
-  background-color: var(--white);
+  background-color: v.$pure;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 688px;
     height: 443px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     width: 90vw;
     height: 443px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 90vw;
     height: 330px;
   }

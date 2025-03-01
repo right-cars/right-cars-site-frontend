@@ -1,3 +1,5 @@
+@use "@/shared/styles/variables" as v;
+
 .titleAndBtnWrapp{
     display: flex;
     align-items: center;
@@ -36,8 +38,8 @@
         appearance: none;
         width: 16px;
         height: 16px;
-        background-color: var(--white);
-        border: 2px solid var(--purple);
+        background-color: v.$pure;
+        border: 2px solid v.$primary;
         border-radius: 50%;
         cursor: pointer;
         pointer-events: all;
@@ -48,8 +50,8 @@
     &::-moz-range-thumb {
         width: 16px;
         height: 16px;
-        background-color: var(--white);
-        border: 2px solid var(--purple);
+        background-color: v.$pure;
+        border: 2px solid v.$primary;
         border-radius: 50%;
         cursor: pointer;
         pointer-events: all;

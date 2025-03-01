@@ -1,13 +1,18 @@
 "use client";
+
 import { ChangeEvent, FormEvent, useState } from "react";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import Checkbox from "@/shared/components/Checkbox/Checkbox";
+
+import DocumentsBlock from "@/views/Account/DocumentsBlock/DocumentsBlock";
 import FirstStep from "@/views/Account/CompleteProfile/FirstStep";
 import SecondStep from "@/views/Account/CompleteProfile/SecondStep";
-import DocumentsBlock from "@/views/Account/DocumentsBlock/DocumentsBlock";
+
 import { formFields } from "./foormFields";
 import { formFieldsStep2 } from "./formFieldsStep2";
 import { formFieldsStep3 } from "./formFieldsStep3";
+
 import cls from "./styles.module.scss";
 
 type LegalEntityType = keyof typeof formFields;
@@ -78,7 +83,7 @@ export default function CompleteProfile() {
         {currentStep === 2 && (
           <>
             <div className={cls.wrapper}>
-              <h4 className={cls.title}>Physical Home Address</h4>
+              <h4 className={`${"titleSmall"} ${cls.title}`}>Physical Home Address</h4>
               <SecondStep
                 required
                 handleChange={handleChange}
@@ -87,7 +92,7 @@ export default function CompleteProfile() {
               />
             </div>
             <div className={cls.wrapper} style={{ marginTop: 16 }}>
-              <h4 className={cls.title}>Postal Address</h4>
+              <h4 className={`${"titleSmall"} ${cls.title}`}>Postal Address</h4>
               <Checkbox
                 id="postalAddress"
                 variant="square"

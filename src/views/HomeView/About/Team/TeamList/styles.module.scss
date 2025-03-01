@@ -1,10 +1,13 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .teamList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 40px;
 
-  @media (max-width: 1068px) {
+  @include m.large-tablet {
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 32px;
   }
@@ -21,7 +24,7 @@
   justify-content: space-between;
   border-radius: 8px;
   background: #f3f4f6;
-  box-shadow: var(--shadow);
+  box-shadow: v.$shadow;
 }
 
 .txtBlock {
@@ -32,7 +35,7 @@
     width: 80%;
   }
 
-  @media (max-width: 1068px) {
+  @include m.large-tablet {
     width: 62%;
   }
 
@@ -43,10 +46,14 @@
   @media (max-width: 660px) {
     width: 66%;
   }
+
+  @media (max-width: 340px) {
+    padding-left: 8px;
+  }
 }
 
 .imgBlock {
-  background-color: var(--white);
+  background-color: v.$pure;
   height: 100%;
   display: flex;
   align-items: flex-end;
@@ -65,7 +72,7 @@
 .btn {
   width: 259px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }

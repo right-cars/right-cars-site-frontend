@@ -1,6 +1,7 @@
 import Link from "next/link";
-import cls from "./styles.module.scss";
 import Image from "next/image";
+
+import cls from "./styles.module.scss";
 
 export default function BackBtn() {
   return (
@@ -11,7 +12,7 @@ export default function BackBtn() {
         width={24}
         height={24}
       />
-      <h6>back to search</h6>
+      <p className="text">back to search</p>
     </Link>
   );
 }

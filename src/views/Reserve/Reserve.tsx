@@ -1,7 +1,9 @@
 import Image from "next/image";
+
 import { temporary } from "./temporary";
 import FirstInfoBlock from "./InfoBlocks/FirstInfoBlock";
 import SecondInfoBlock from "./InfoBlocks/SecondInfoBlock";
+
 import cls from "./styles.module.scss";
 
 export default async function Reserve({ id }: { id: string }) {

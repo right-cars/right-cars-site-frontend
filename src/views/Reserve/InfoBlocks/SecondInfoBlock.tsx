@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import cls from "./styles.module.scss";
 
 export default function SecondInfoBlock() {

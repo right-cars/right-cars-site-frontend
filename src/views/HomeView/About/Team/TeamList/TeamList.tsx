@@ -1,8 +1,12 @@
 "use client";
+
 import { useEffect, useState } from "react";
+
 import Button from "@/shared/components/Buttons/Button/Button";
+
 import { data } from "./data";
 import TeamCard from "./TeamCard";
+
 import cls from "./styles.module.scss";
 
 export default function TeamList() {
@@ -13,7 +17,7 @@ export default function TeamList() {
     const updateItemsToShow = () => {
       if (window.innerWidth <= 660) {
         setItemsToShow(3);
-      } else if (window.innerWidth <= 1068) {
+      } else if (window.innerWidth <= 1024) {
         setItemsToShow(4);
       } else {
         setItemsToShow(data.length);

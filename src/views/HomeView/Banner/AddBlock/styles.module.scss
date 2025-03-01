@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .addBlock {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -5,12 +8,12 @@
   gap: 16px;
   align-items: stretch;
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: repeat(1, 100%);
     overflow-y: scroll;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width:550px) {
     display: none;
   }
 }
@@ -20,14 +23,14 @@
   height: 100%;
   padding: 28px 18px 16px 16px;
   border-radius: 16px;
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 15px 16px 19px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     padding-top: 9px;
   }
 }
@@ -38,7 +41,7 @@
   flex-direction: column;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 0;
     gap: 4px;
   }
@@ -52,7 +55,7 @@
   text-transform: uppercase;
   margin-top: 25px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     font-size: 24px;
     letter-spacing: -0.72px;
     margin-top: 20px;
@@ -71,11 +74,11 @@
   position: relative;
 
   border-radius: 16px;
-  background-color: var(--purple);
-  box-shadow: var(--purple-shadow);
+  background-color: v.$primary;
+  box-shadow: v.$primary-shadow;
   padding: 26px 34px 16px 32px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 0 15px 19px;
   }
 }
@@ -83,30 +86,30 @@
 .imgWrappSecond {
   position: relative;
   border-radius: 16px;
-  background-color: var(--purple);
-  box-shadow: var(--purple-shadow);
+  background-color: v.$primary;
+  box-shadow: v.$primary-shadow;
   padding: 32px 9px 16px 10px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 30px 8px 19px;
   }
 }
 
 .titleSecond {
-  color: var(--white);
+  color: v.$pure;
   margin-top: 18px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 14px;
   }
 }
 
 .titleThird {
-  color: var(--white);
+  color: v.$pure;
   padding-left: 6px;
   margin-top: 22px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding-left: 2px;
     margin-top: 13px;
   }
@@ -119,14 +122,14 @@
   width: 164px;
   height: 164px;
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     top: -18%;
     left: -42%;
     width: 135px;
     height: 135px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
@@ -139,7 +142,7 @@
   height: 164px;
   rotate: 341deg;
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     top: -36%;
     left: -36%;
     width: 135px;
@@ -147,7 +150,7 @@
     rotate: 341deg;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
@@ -160,7 +163,7 @@
   height: 164px;
   rotate: 162deg;
 
-  @media (max-width: 1360px) {
+  @include m.small-desktop {
     top: -36%;
     left: -34%;
     width: 135px;
@@ -168,7 +171,7 @@
     rotate: 162deg;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }

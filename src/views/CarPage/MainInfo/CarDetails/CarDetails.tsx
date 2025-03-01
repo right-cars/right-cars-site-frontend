@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { temporary } from "./temporary";
 import cls from "./styles.module.scss";
 
@@ -8,13 +9,13 @@ export default function CarDetails() {
     <ul className={cls.detailsContainer}>
       {temporary.map(({ title, details }, index) => (
         <li key={index} className={cls.detailsWrapper}>
-          <h3 style={{ marginBottom: 24 }}>{title}</h3>
+          <p className="titleMedium" style={{ marginBottom: 24 }}>{title}</p>
           <ul className={cls.detailsList}>
             {details.map(({ href, name, value }, index) => (
               <li key={index} className={cls.item}>
-                <h5 className={cls.itemName}>{name}</h5>
+                <p className={cls.itemName}>{name}</p>
                 <div className={cls.valueWrap}>
-                  <h4>{value}</h4>
+                  <p className="titleSmall">{value}</p>
                   {href && (
                     <Link href={href}>
                       <Image

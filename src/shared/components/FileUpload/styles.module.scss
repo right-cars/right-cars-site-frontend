@@ -1,15 +1,18 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   position: relative;
   padding: 16px;
   background-color: white;
-  box-shadow: var(--shadow);
+  box-shadow: v.$shadow;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -39,39 +42,39 @@
   gap: 8px;
   cursor: pointer;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }
 
 .yellowLabel {
-  background-color: var(--yellow);
-  border: 2px solid var(--yellow);
-  transition: background-color var(--transition), box-shadow var(--transition);
+  background-color: v.$accent;
+  border: 2px solid v.$accent;
+  transition: background-color v.$transition, box-shadow v.$transition;
 
   &:hover {
-    box-shadow: var(--yellow-shadow);
+    box-shadow: v.$accent-shadow;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: v.$accent-dark;
   }
 }
 
 .transparentLabel {
   background-color: transparent;
-  border: 2px solid var(--black);
-  transition: background-color var(--transition), border var(--transition),
-    box-shadow var(--transition);
+  border: 2px solid v.$text;
+  transition: background-color v.$transition, border v.$transition,
+    box-shadow v.$transition;
 
   &:hover {
-    background-color: var(--yellow);
-    border: 2px solid var(--yellow);
-    box-shadow: var(--yellow-shadow);
+    background-color: v.$accent;
+    border: 2px solid v.$accent;
+    box-shadow: v.$accent-shadow;
   }
 
   &:active {
-    background-color: var(--dark-yellow);
+    background-color: v.$accent-dark;
   }
 }
 
@@ -84,7 +87,7 @@
   align-items: center;
   gap: 12px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }
@@ -96,10 +99,10 @@
   right: 0;
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-purple);
+  background-color: v.$primary-light;
   width: 320px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 100%;
   }
 }
@@ -113,7 +116,7 @@
 .closeBtn {
   display: none;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     display: block;
   }
 }

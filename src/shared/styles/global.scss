@@ -1,3 +1,6 @@
+@use "./mixins" as m;
+@use "./variables" as v;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -34,8 +37,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: var(--black);
-  background-color: var(--bg);
+  color: v.$text;
+  background-color: v.$bg;
   scroll-behavior: smooth;
 }
 
@@ -57,31 +60,20 @@ a {
 }
 
 .container {
-  padding: 0 232px;
-  max-width: 100%;
-}
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1170px;
 
-@media (max-width: 1360px) {
-  .container {
-    padding: 0 48px;
+  @include m.large-tablet {
+    max-width: 860px;
   }
-}
 
-@media (max-width: 786px) {
-  .container {
-    padding: 0 40px;
+  @include m.tablet {
+    max-width: 688px;
   }
-}
 
-@media (max-width: 550px) {
-  .container {
-    padding: 0 22px;
-  }
-}
-
-@media (max-width: 360px) {
-  .container {
-    padding: 0 12px;
+  @include m.mobile {
+    width: 100%;
   }
 }
 
@@ -92,50 +84,41 @@ h2 {
   font-weight: 700;
   letter-spacing: -0.96px;
   margin-bottom: 80px;
-}
 
-@media (max-width: 550px) {
-  h2 {
+  @include m.mobile {
     font-size: 24px;
     letter-spacing: -0.72px;
-    margin-bottom: 54px;
-  }
-}
-
-@media (max-width: 360px) {
-  h2 {
     margin-bottom: 48px;
   }
 }
 
-h3 {
+.titleMedium,
+.titleSmall,
+.titleTiny,
+.text {
   font-family: "Work Sans", sans-serif;
-  font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.titleMedium {
+  font-size: 20px;
   letter-spacing: -0.6px;
 }
 
-h4 {
-  font-family: "Work Sans", sans-serif;
+.titleSmall {
   font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 700;
   letter-spacing: -0.42px;
 }
 
-h5 {
-  font-family: "Work Sans", sans-serif;
+.titleTiny {
   font-size: 16px;
-  text-transform: uppercase;
   font-weight: 500;
   letter-spacing: -0.48px;
 }
 
-h6 {
-  font-family: "Work Sans", sans-serif;
+.text {
   font-size: 14px;
-  text-transform: uppercase;
   font-weight: 500;
   letter-spacing: -0.42px;
 }
@@ -143,16 +126,12 @@ h6 {
 .textLarge {
   font-family: "Metrophobic", sans-serif;
   font-size: 18px;
-}
 
-@media (max-width: 989px) {
-  .textLarge {
+  @include m.large-tablet {
     font-size: 17px;
   }
-}
 
-@media (max-width: 550px) {
-  .textLarge {
+  @include m.mobile {
     font-size: 16px;
   }
 }
@@ -161,16 +140,12 @@ h6 {
   font-family: "Metrophobic", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-}
 
-@media (max-width: 989px) {
-  .textMedium {
+  @include m.large-tablet {
     line-height: 1.375;
   }
-}
 
-@media (max-width: 550px) {
-  .textMedium {
+  @include m.mobile {
     line-height: normal;
   }
 }
@@ -196,16 +171,12 @@ h6 {
 
 .section {
   padding-bottom: 120px;
-}
 
-@media (max-width: 989px) {
-  .section {
+  @include m.large-tablet {
     padding-bottom: 100px;
   }
-}
 
-@media (max-width: 550px) {
-  .section {
+  @include m.mobile {
     padding-bottom: 72px;
   }
 }

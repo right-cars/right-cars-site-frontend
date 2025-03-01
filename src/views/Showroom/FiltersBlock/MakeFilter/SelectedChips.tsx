@@ -1,4 +1,5 @@
-import CloseSvg from "../../../../../public/icons/close.svg";
+import CloseSvg from "@icons/close.svg";
+
 import cls from "./styles.module.scss";
 
 interface Props {

@@ -1,10 +1,15 @@
 "use client";
+
 import { useState, ChangeEvent, FormEvent } from "react";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
-import PrivacyPolicy from "../../../../modules/PrivacyPolicy/PrivacyPolicy";
+
+import PrivacyPolicy from "@/modules/PrivacyPolicy/PrivacyPolicy";
+
 import FeedbackForm from "./FeedbackForm/FeedbackForm";
+
 import cls from "./styles.module.scss";
 
 export default function FormBlock() {

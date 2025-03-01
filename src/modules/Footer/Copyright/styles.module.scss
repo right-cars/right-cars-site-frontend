@@ -1,11 +1,14 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
-  color: var(--white);
+  color: v.$pure;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     align-items: flex-start;
   }
 }
@@ -13,7 +16,7 @@
 .text {
   text-align: end;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     text-align: start;
   }
 }

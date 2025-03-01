@@ -1,4 +1,6 @@
 import { ChangeEvent } from "react";
+import classNames from "classnames";
+
 import cls from "./styles.module.scss";
 
 interface CheckboxProps {
@@ -20,25 +22,24 @@ export default function Checkbox({
   type = "checkbox",
   radioName,
 }: CheckboxProps) {
+  const inputId = id || label;
+  const name = radioName || inputId;
+
   return (
-    <div
-      className={cls.checkbox}
-      style={{ padding: variant === "square" ? 8 : "" }}
-    >
+    <div className={cls.checkbox} style={{ padding: variant === "square" ? 8 : undefined }}>
       <input
-        id={id ? id : label}
-        value={id}
-        name={radioName ? radioName : id ? id : label}
+        id={inputId}
+        value={inputId}
+        name={name}
         type={type}
         checked={checked}
-        className={variant === "circle" ? cls.hiddenInput : cls.squareCheckbox}
+        className={classNames({
+          [cls.hiddenInput]: variant === "circle",
+          [cls.squareCheckbox]: variant === "square",
+        })}
         onChange={onToggle}
       />
-      <label
-        htmlFor={id ? id : label}
-        className="textSmall"
-        style={{ cursor: "pointer" }}
-      >
+      <label htmlFor={inputId} className="textSmall" style={{ cursor: "pointer" }}>
         {label}
       </label>
     </div>

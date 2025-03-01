@@ -1,8 +1,11 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .linksList {
   display: flex;
   gap: 24px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 16px;
   }
 
@@ -10,16 +13,21 @@
     gap: 10px;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
 
 .link {
-  transition: color var(--transition);
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.42px;
+  transition: color v.$transition;
 
   &:hover {
-    color: var(--purple);
+    color: v.$primary;
   }
 
   @media (max-width: 868px) {
@@ -28,10 +36,11 @@
 }
 
 .isActive {
-  color: var(--purple);
+  color: v.$primary;
 }
 
 .dropdown {
+  padding-bottom: 6px;
   position: relative;
   cursor: pointer;
 }

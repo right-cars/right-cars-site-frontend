@@ -1,6 +1,8 @@
 import Image from "next/image";
+
 import { Media } from "@/shared/types/media";
 import { getVideoThumbnail } from "@/shared/utils/getVideoThumbnail";
+
 import cls from "../styles.module.scss";
 
 const Thumbnail = ({

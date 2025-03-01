@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "../styles.module.scss";
 
 const PaginationButtons = ({ handlePrev, handleNext }: { handlePrev: (e: React.MouseEvent<HTMLButtonElement>) => void, handleNext: (e: React.MouseEvent<HTMLButtonElement>) => void }) => (

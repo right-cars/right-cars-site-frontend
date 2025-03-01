@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -7,9 +10,9 @@
 .infoBlock {
   padding: 24px 16px;
   border-radius: 16px;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  color: var(--purple);
+  background: v.$pure;
+  box-shadow: v.$shadow;
+  color: v.$primary;
 }
 
 .titleBlock {
@@ -21,7 +24,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  color: var(--black);
+  color: v.$text;
 }
 
 .detailsItem {
@@ -31,7 +34,7 @@
   gap: 16px;
   width: 100%;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 48%;
   }
 
@@ -59,11 +62,11 @@
   grid-template-columns: 1fr;
   gap: 12px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     grid-template-columns: 1fr;
   }
 }

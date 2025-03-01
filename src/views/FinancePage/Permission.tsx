@@ -1,5 +1,7 @@
 import { ChangeEvent } from "react";
+
 import Checkbox from "@/shared/components/Checkbox/Checkbox";
+
 import cls from "./styles.module.scss";
 
 interface PermissionProps {
@@ -15,7 +17,7 @@ export default function Permission({
 }: PermissionProps) {
   return (
     <>
-      <h4 style={{ marginBottom: 16 }}>Permission and Consent</h4>
+      <h4 className="titleSmall" style={{ marginBottom: 16 }}>Permission and Consent</h4>
       <p className="textSmall" style={{ marginBottom: 8 }}>
         I hereby consent to the Credit Provider accessing my credit profile from
         the credit bureaus for the purposes of a credit assessment and in the

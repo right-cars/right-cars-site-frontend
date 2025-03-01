@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { CarProps } from "@/shared/types/car";
-import FavoriteBtn from "../Buttons/FavoriteBtn/FavoriteBtn";
+import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
+
 import cls from "./styles.module.scss";
 
 export default function CarCard(props: CarProps) {
@@ -32,7 +34,7 @@ export default function CarCard(props: CarProps) {
         />
       </div>
       <Link href={href} className={cls.firstInfo}>
-        <h4>{year}</h4>
+        <p className="titleSmall">{year}</p>
         <div className={cls.modelWrap}>
           <p className="btnText">
             {make} {model}
@@ -47,7 +49,7 @@ export default function CarCard(props: CarProps) {
         </div>
       </Link>
       <div className={cls.secondInfo}>
-        <h3>{price}</h3>
+        <p className="titleMedium">{price}</p>
         <ul className={cls.chips}>
           <li className={cls.chip}>
             <p className="textSmall">{mileage}</p>

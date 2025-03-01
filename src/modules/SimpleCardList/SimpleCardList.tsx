@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "./styles.module.scss";
 
 interface SimpleCardListProps {
@@ -31,7 +32,7 @@ export default function SimpleCardList({
               width={24}
               height={24}
             />
-            <h4 className={cls.title}>{title}</h4>
+            <h4 className={`${"smallTitle"} ${cls.title}`}>{title}</h4>
             <p className="textMedium" style={{ textTransform: "lowercase" }}>
               {descr}
             </p>

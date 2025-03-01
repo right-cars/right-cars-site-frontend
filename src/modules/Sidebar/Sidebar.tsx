@@ -1,11 +1,15 @@
 "use client";
-import Link from "next/link";
+
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import CloseSvg from "../../../public/icons/close.svg";
+import Link from "next/link";
+
+import CloseSvg from "@icons/close.svg";
+
 import LogOutBtn from "./LogOutBtn";
 import { menuItems } from "./menuItems";
+
 import cls from "./styles.module.scss";
-import { useEffect, useState } from "react";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -41,7 +45,7 @@ const Sidebar = () => {
   return (
     <aside className={`${cls.aside} ${!isSidebarOpen && cls.tabAside}`}>
       <div className={cls.titleBlock}>
-        <h3>my Account</h3>
+        <p className="titleMedium">my Account</p>
         <button onClick={handleCloseSidebar}>
           <CloseSvg className={cls.closeSvg} />
         </button>
@@ -65,7 +69,7 @@ const Sidebar = () => {
                   } ${isDisabled && cls.disabled}`}
                 >
                   {item.svg}
-                  <h5 style={{ textTransform: "none" }}>{itemName}</h5>
+                  <p className="titleTiny" style={{ textTransform: "none" }}>{itemName}</p>
                 </div>
               </Link>
             );

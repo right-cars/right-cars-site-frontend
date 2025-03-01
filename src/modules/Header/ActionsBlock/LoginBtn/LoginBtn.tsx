@@ -1,17 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
-import SignIn from "@/modules/AuthForms/SignIn/SignIn";
-import SignUp from "@/modules/AuthForms/SignUp/SignUp";
-import VerifyingPopup from "@/shared/components/Popups/VerifyingPopup";
+
 import ForgotPasswordPopup from "@/shared/components/Popups/ForgotPasswordPopup";
+import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import PasswordRequest from "@/shared/components/Popups/PasswordRequest";
 import SuccessResetPassword from "@/shared/components/Popups/SuccessReaetPassword";
-import cls from "../styles.module.scss";
-import { useRouter } from "next/navigation";
+import VerifyingPopup from "@/shared/components/Popups/VerifyingPopup";
 
-export default function LoginBtn() {
+import SignIn from "@/modules/AuthForms/SignIn/SignIn";
+import SignUp from "@/modules/AuthForms/SignUp/SignUp";
+
+import cls from "../styles.module.scss";
+
+export default function LoginBtn({isLoggedIn}:{isLoggedIn:boolean}) {
   const userName = "temp name";
 
   const router = useRouter()
@@ -22,14 +25,6 @@ export default function LoginBtn() {
   const [popupPasswordRequest, setPopupPasswordRequest] = useState(false);
   const [successResetPopup, setSuccessResetPopup] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(true);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    useEffect(() => {
-    // const user = localStorage.getItem("user");
-    //   setIsLoggedIn(!!user); 
-      setIsLoggedIn(true)
-  }, []); //тимчасова дічь
 
   const toggleForm = () => {
     setIsSignInOpen((prev) => !prev);
@@ -54,7 +49,7 @@ export default function LoginBtn() {
         className={cls.loginBtn}
       >
         <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
-        <h6 className={cls.name}>{isLoggedIn ? userName : "Login"}</h6>
+        <p className={cls.name}>{isLoggedIn ? userName : "Login"}</p>
       </button>
       {isModalOpen && (
         <ModalWindow setIsModalOpen={setIsModalOpen} closeBtn={false}>

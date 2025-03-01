@@ -1,9 +1,12 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .aside {
     width: 100%;
 }
 
 .tabAside {
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     display: none;
   }
 }
@@ -18,7 +21,7 @@
 .closeSvg {
   display: none;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     display: block;
     width: 24px;
     height: 24px;
@@ -28,10 +31,10 @@
 
 .nawWrapp {
   border-radius: 16px;
-  background-color: var(--purple);
-  box-shadow: var(--purple-shadow);
+  background-color: v.$primary;
+  box-shadow: v.$primary-shadow;
   padding: 16px 0;
-  color: var(--white);
+  color: v.$pure;
 }
 
 .nav {
@@ -47,19 +50,19 @@
   gap: 12px;
   padding: 12px;
   margin: 0 16px;
-  border-bottom: 2px solid var(--white);
-  transition: color var(--transition);
+  border-bottom: 2px solid v.$pure;
+  transition: color v.$transition;
 
   &:hover {
-    color: var(--yellow);
+    color: v.$accent;
   }
 }
 
 .active {
   padding: 12px 28px;
   margin: 0;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: v.$pure;
+  color: v.$text;
   border-radius: 4px;
 }
 
@@ -77,5 +80,5 @@
 
 .logOutBtn {
   width: 100%;
-  color: var(--white);
+  color: v.$pure;
 }

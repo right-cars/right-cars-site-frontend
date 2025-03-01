@@ -1,6 +1,8 @@
+@use "@/shared/styles/variables" as v;
+
 .info {
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
   border-radius: 8px;
   padding: 24px 16px;
   height: 100%;
@@ -21,6 +23,6 @@
 }
 
 .link {
-  color: var(--purple);
+  color: v.$primary;
   text-decoration: underline;
 }

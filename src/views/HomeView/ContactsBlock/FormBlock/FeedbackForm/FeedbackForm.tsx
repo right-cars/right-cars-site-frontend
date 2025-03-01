@@ -1,7 +1,9 @@
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 import CustomSelect from "@/shared/components/CustomSelect/CustomSelect";
 import CustomTextarea from "@/shared/components/CustomTextArea/CustomTextArea";
+
 import { fields } from "./fieldsData";
+
 import cls from "../styles.module.scss";
 
 interface FeedbackFormProps {

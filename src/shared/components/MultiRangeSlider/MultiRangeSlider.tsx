@@ -1,5 +1,9 @@
-import { useRef, useEffect, useCallback } from "react";
-import ClearBtn from "../Buttons/ClearBtn/ClearBtn";
+"use client";
+
+import { useRef, useEffect } from "react";
+
+import ClearBtn from "@/shared/components/Buttons/ClearBtn/ClearBtn";
+
 import cls from "./styles.module.scss";
 
 interface MultiRangeSliderProps {
@@ -28,16 +32,14 @@ export default function MultiRangeSlider({
   const range = useRef<HTMLDivElement | null>(null);
 
   // Convert to percentage
-  const getPercent = useCallback(
-    (val: number) => Math.round(((val - min) / (max - min)) * 100),
-    [min, max]
-  );
+  const getPercent = (val: number) =>
+    Math.round(((val - min) / (max - min)) * 100);
 
-  const getGradient = useCallback(() => {
+  const getGradient = () => {
     const minPercent = getPercent(value.min);
     const maxPercent = getPercent(value.max);
-    return `linear-gradient(to right, #D4D4D8 ${minPercent}%, var(--purple) ${minPercent}%, var(--purple) ${maxPercent}%, #D4D4D8 ${maxPercent}%)`;
-  }, [value, getPercent]);
+    return `linear-gradient(to right, #D4D4D8 ${minPercent}%, #5120B8 ${minPercent}%, #5120B8 ${maxPercent}%, #D4D4D8 ${maxPercent}%)`;
+  };
 
   useEffect(() => {
     if (range.current) {
@@ -51,9 +53,9 @@ export default function MultiRangeSlider({
   return (
     <div>
       <div className={cls.titleAndBtnWrapp}>
-        <h5 className={cls.title}>{title}</h5>
+        <h5 className={`${"titleTiny"} ${cls.title}`}>{title}</h5>
         {(value.min !== min || value.max !== max) && (
-         <ClearBtn handleClear={handleClear}/>
+          <ClearBtn handleClear={handleClear} />
         )}
       </div>
 

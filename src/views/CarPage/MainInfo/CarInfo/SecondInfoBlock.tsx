@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import Button from "@/shared/components/Buttons/Button/Button";
+
 import cls from "./styles.module.scss";
 
 interface SecondInfoProps {
@@ -11,7 +13,7 @@ export default function SecondInfoBlock({ price, pageId }: SecondInfoProps) {
   return (
     <div className={cls.infoBlock}>
       <div className={cls.secondTitleBlock}>
-        <h3>{price}</h3>
+        <p className="titleMedium">{price}</p>
         <p className="textMedium">including vat</p>
       </div>
       <div className={cls.brnsWrapp}>

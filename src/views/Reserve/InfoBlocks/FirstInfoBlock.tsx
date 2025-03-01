@@ -1,14 +1,17 @@
 "use client"
+
 import Image from "next/image";
+
 import Button from "@/shared/components/Buttons/Button/Button";
+
 import cls from "./styles.module.scss";
 
 export default function FirstInfoBlock({ price }: { price: string }) {
   return (
     <div className={cls.info}>
       <div className={cls.txtBlock}>
-        <h3>{price}</h3>
-        <h6>including vat</h6>
+        <p className="titleMedium">{price}</p>
+        <p className="text">including vat</p>
       </div>
       <div className={cls.txtBlock}>
         <Image
@@ -17,9 +20,9 @@ export default function FirstInfoBlock({ price }: { price: string }) {
           width={32}
           height={32}
         />
-        <h4 style={{ color: "var(--purple)" }}>
+        <p className="titleSmall" style={{ color: "#5120B8" }}>
           Pay&nbsp;R&nbsp;5,000&nbsp;to reserve this vehicle
-        </h4>
+        </p>
       </div>
       <p className="textMedium">
         pay&nbsp;yR&nbsp;5,000&nbsp;to reserve this vehicle secure your dream

@@ -1,8 +1,11 @@
 import Link from "next/link";
+
 import { CarProps } from "@/shared/types/car";
 import Button from "@/shared/components/Buttons/Button/Button";
 import CarCard from "@/shared/components/CarCard/CarCard";
+
 import Slider from "./Slider";
+
 import cls from "./styles.module.scss";
 
 interface CarListProps{

@@ -1,7 +1,9 @@
+@use "@/shared/styles/mixins" as m;
+
 .wrapp {
   margin-top: 32px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 24px;
   }
 }

@@ -1,7 +1,11 @@
-import FileUpload from "@/shared/components/FileUpload/FileUpload";
-import cls from "./styles.module.scss";
+"use client"
+
 import { useState } from "react";
+
+import FileUpload from "@/shared/components/FileUpload/FileUpload";
 import { UploadTooltipType } from "@/shared/types/uploadTooltipType";
+
+import cls from "./styles.module.scss";
 
 interface Props {
   legalEntityType: string;
@@ -71,7 +75,7 @@ export default function DocumentsBlock({ legalEntityType }: Props) {
 
   return (
     <section>
-      <h4 className={cls.title}>help us verify your identity</h4>
+      <h4 className={`${"titleSmall"} ${cls.title}`}>help us verify your identity</h4>
       <div className={cls.uploadBlock}>
         {documentLabels.map(({ label, tooltip, tooltipVariant }) => (
           <FileUpload

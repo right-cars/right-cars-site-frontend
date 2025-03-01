@@ -1,8 +1,12 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   position: fixed;
   width: 100%;
   top: 80%;
-  max-width: 1600px;
+  right: 50%;
+  transform: translateX(50%);
   z-index: 3;
 }
 
@@ -11,28 +15,28 @@
   width: 100%;
   padding: 24px 32px;
   padding-right: 67px;
-  background-color: var(--white);
+  background-color: v.$pure;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: v.$shadow;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
 
-@media (max-width: 750px) {
-   flex-direction: column;
-   padding: 40px 16px 16px;
-   gap:16px;
-    }
+  @media (max-width: 750px) {
+    flex-direction: column;
+    padding: 40px 16px 16px;
+    gap: 16px;
+  }
 }
 
 .close {
-cursor: pointer;
+  cursor: pointer;
   position: absolute;
   top: 24px;
   right: 32px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     top: 16px;
     right: 16px;
   }
@@ -43,7 +47,7 @@ cursor: pointer;
   align-items: center;
   gap: 25px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 16px;
     align-items: flex-start;
   }
@@ -53,14 +57,14 @@ cursor: pointer;
   width: 77.5px;
   height: auto;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 56px;
   }
 }
 
-.link{
-    color:var(--purple);
-    text-decoration: underline;
+.link {
+  color: v.$primary;
+  text-decoration: underline;
 }
 
 .btnWrapp {

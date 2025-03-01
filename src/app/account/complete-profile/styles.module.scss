@@ -1,16 +1,19 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   padding: 16px;
   border-radius: 16px;
-  background-color: var(--white);
-  box-shadow: var(--shadow);
+  background-color: v.$pure;
+  box-shadow: v.$shadow;
 }
 
 .title {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 
-    @media (max-width: 550px) {
-        margin-bottom: 24px;
-    }
+  @include m.mobile {
+    margin-bottom: 24px;
+  }
 }
 
 .btn {
@@ -18,12 +21,12 @@
   margin-left: auto;
   width: 91px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
   }
 }
 
-.checkboxWrapp{
-    padding: 0 8px;
-    margin-top: 24px;
+.checkboxWrapp {
+  padding: 0 8px;
+  margin-top: 24px;
 }

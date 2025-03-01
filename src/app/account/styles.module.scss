@@ -1,3 +1,5 @@
+@use "@/shared/styles/mixins" as m;
+
 .wrapper {
   position: relative;
   margin-top: 99px;
@@ -6,21 +8,21 @@
   grid-template-columns: 31% auto;
   gap: 32px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
-grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 54px;
   }
 }
 
-.main{
-    margin-top: 55px;
+.main {
+  margin-top: 55px;
 
-    @media (max-width:989px) {
-        margin-top: 0;
-    }
+  @include m.large-tablet {
+    margin-top: 0;
+  }
 }

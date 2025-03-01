@@ -1,8 +1,14 @@
+"use client"
+
 import { useState } from "react";
+
 import Image from "next/image";
+
 import Checkbox from "@/shared/components/Checkbox/Checkbox";
 import ClearBtn from "@/shared/components/Buttons/ClearBtn/ClearBtn";
+
 import SelectedChips from "./SelectedChips";
+
 import cls from "./styles.module.scss";
 
 interface MakeFilterProps {

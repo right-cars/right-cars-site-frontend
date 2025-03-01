@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "./styles.module.scss";
 
 type Details = {
@@ -21,17 +22,17 @@ export default function FirstInfoBlock({
   return (
     <div className={cls.infoBlock}>
       <div className={cls.titleBlock}>
-        <h3>{year}</h3>
-        <h3>{model}</h3>
+        <p className="titleMedium">{year}</p>
+        <p className="titleMedium">{model}</p>
       </div>
       <ul className={cls.details}>
         {details.map(({ img, title, value }, index) => (
           <li key={index} className={cls.detailsItem}>
             <div className={cls.titleDetailsBlock}>
               <Image src={img} alt="icon" width={44} height={44} />
-              <h5>{title}</h5>
+              <h5 className="titleTiny">{title}</h5>
             </div>
-            <h4>{value}</h4>
+            <p className="titleSmall">{value}</p>
           </li>
         ))}
       </ul>

@@ -1,27 +1,29 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import cls from "./styles.module.scss";
+
 import { CarProps } from "@/shared/types/car";
 import CarCard from "@/shared/components/CarCard/CarCard";
+
+import cls from "./styles.module.scss";
 
 export default function Slider({ data }: { data: CarProps[] }) {
   return (
     <Swiper
       slidesPerView={2.3}
-      slidesOffsetBefore={40}
+      slidesOffsetBefore={15}
       spaceBetween={16}
       loop
       breakpoints={{
-        551: {
-          slidesPerView: 2.3,
+        421: {
+          slidesPerView: 1.8,
         },
         769: {
           slidesPerView: 2.75,
-          slidesOffsetBefore: 48,
         },
 
-        1101: {
+        1025: {
           slidesOffsetBefore: 0,
           slidesPerView: 4,
           loop:false

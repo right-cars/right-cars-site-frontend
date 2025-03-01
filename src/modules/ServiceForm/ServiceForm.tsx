@@ -1,13 +1,19 @@
 "use client";
+
 import { ChangeEvent, FormEvent, useState } from "react";
-import { fieldsData } from "./fieldsData";
-import FormFieldsBlock from "../FormFieldsBlock/FormField";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import ThanksPopup from "@/shared/components/Popups/ThanksPopup/ThanksPopup";
-import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+
+import FormFieldsBlock from "@/modules/FormFieldsBlock/FormField";
+import PrivacyPolicy from "@/modules/PrivacyPolicy/PrivacyPolicy";
+
 import CheckboxBlock from "@/views/ServiceCar/CheckboxBlock";
+
+import { fieldsData } from "./fieldsData";
 import { checkboxData } from "./checkboxesData";
+
 import cls from "./styles.module.scss";
 
 interface ServiveProps {

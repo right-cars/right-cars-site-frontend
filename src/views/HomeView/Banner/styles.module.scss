@@ -1,14 +1,16 @@
+@use "@/shared/styles/mixins" as m;
+
 .wrapper {
   margin-top: 99px;
   padding-top: 65px;
   padding-bottom: 120px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 95px;
     padding-top: 60px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     margin-top: 84px;
     padding-top: 54px;
   }
@@ -21,12 +23,12 @@
   text-transform: uppercase;
   margin-bottom: 54px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     font-size: 52px;
     margin-bottom: 44px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     font-size: 36px;
     margin-bottom: 48px;
   }
@@ -37,7 +39,7 @@
   }
 }
 .br {
-  @media (max-width: 768px) {
+  @include m.tablet {
     display: none;
   }
 }
@@ -48,11 +50,11 @@
   height: 440px;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     height: 336px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     height: 400px;
   }
 }

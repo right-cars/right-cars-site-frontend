@@ -1,7 +1,13 @@
+"use client"
+
 import { useEffect } from "react";
-import BurgerNavigation from "./BurgerNavigation";
+
 import Logo from "@/shared/components/Logo/Logo";
-import CloseSvg from "../../../../../public/icons/close.svg"
+
+import CloseSvg from "@icons/close.svg"
+
+import BurgerNavigation from "./BurgerNavigation";
+
 import cls from "./styles.module.scss";
 
 interface BurgerMenuProps {

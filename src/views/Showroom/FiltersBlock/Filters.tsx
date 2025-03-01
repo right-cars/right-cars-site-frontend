@@ -1,13 +1,18 @@
-import { useState, useCallback } from "react";
+"use client"
+
+import { useState } from "react";
+
 import Button from "@/shared/components/Buttons/Button/Button";
 import MultiRangeSlider from "@/shared/components/MultiRangeSlider/MultiRangeSlider";
+
 import MakeFilter from "./MakeFilter/MakeFilter";
 import SelectFilter from "./SelectFilter/SelectFilter";
+
 import cls from "./styles.module.scss";
 
-interface FilterProps{
-setIsFilterVisible: (visible: boolean) => void;
-  isTablet: boolean
+interface FilterProps {
+  setIsFilterVisible: (visible: boolean) => void;
+  isTablet: boolean;
 }
 
 const defaultMultirangeValues = {
@@ -18,7 +23,7 @@ const defaultMultirangeValues = {
 
 const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
 
-export default function Filters({ setIsFilterVisible, isTablet }:FilterProps) {
+export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
   const [multirangeValues, setMultirangeValues] = useState(
     defaultMultirangeValues
   );
@@ -33,33 +38,27 @@ export default function Filters({ setIsFilterVisible, isTablet }:FilterProps) {
     setOpenFilter((prev) => (prev === filter ? null : filter));
   };
 
-  const handleRangeChange = useCallback(
-    (
-      multirangeKey: keyof typeof multirangeValues,
-      newValues: { min: number; max: number }
-    ) => {
-      setMultirangeValues((prev) => {
-        if (
-          prev[multirangeKey].min === newValues.min &&
-          prev[multirangeKey].max === newValues.max
-        ) {
-          return prev;
-        }
-        return { ...prev, [multirangeKey]: newValues };
-      });
-    },
-    []
-  );
+  const handleRangeChange = (
+    multirangeKey: keyof typeof multirangeValues,
+    newValues: { min: number; max: number }
+  ) => {
+    setMultirangeValues((prev) => {
+      if (
+        prev[multirangeKey].min === newValues.min &&
+        prev[multirangeKey].max === newValues.max
+      ) {
+        return prev;
+      }
+      return { ...prev, [multirangeKey]: newValues };
+    });
+  };
 
-  const handleClear = useCallback(
-    (multirangeKey: keyof typeof multirangeValues) => {
-      setMultirangeValues((prev) => ({
-        ...prev,
-        [multirangeKey]: defaultMultirangeValues[multirangeKey],
-      }));
-    },
-    []
-  );
+  const handleClear = (multirangeKey: keyof typeof multirangeValues) => {
+    setMultirangeValues((prev) => ({
+      ...prev,
+      [multirangeKey]: defaultMultirangeValues[multirangeKey],
+    }));
+  };
 
   const handleClearAll = () => {
     setMultirangeValues(defaultMultirangeValues);
@@ -135,7 +134,12 @@ export default function Filters({ setIsFilterVisible, isTablet }:FilterProps) {
           onClick={handleClearAll}
         />
         <div className={cls.btnWrapp}>
-          <Button text="apply filters" onClick={()=>{setIsFilterVisible(false)}}/>
+          <Button
+            text="apply filters"
+            onClick={() => {
+              setIsFilterVisible(false);
+            }}
+          />
         </div>
       </div>
     </div>

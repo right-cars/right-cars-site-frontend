@@ -1,9 +1,11 @@
-import cls from "../styles.module.scss";
-import Phone from "../../../../../public/icons/contacts/phone.svg";
-import WhatsApp from "../../../../../public/icons/contacts/whatsapp.svg";
-import Email from "../../../../../public/icons/contacts/email.svg";
-import Address from "../../../../../public/icons/contacts/address-marker.svg";
 import Link from "next/link";
+
+import Phone from "@icons/contacts/phone.svg";
+import WhatsApp from "@icons/contacts/whatsapp.svg";
+import Email from "@icons/contacts/email.svg";
+import Address from "@icons/contacts/address-marker.svg";
+
+import cls from "../styles.module.scss";
 
 const data = [
   {
@@ -41,7 +43,7 @@ export default function ContactsInfo() {
               className={`${cls.iconWithTextBlock} ${cls.link}`}
             >
               {img}
-              <h5 className={cls.txt}>{txt}</h5>
+              <p className={cls.txt}>{txt}</p>
             </Link>
           </li>
         ))}

@@ -1,10 +1,14 @@
 "use client";
+
 import { useState, useRef, useEffect } from "react";
+
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
+
 import { temporarymMediaList } from "./temporaryMediaList";
 import MediaDisplay from "./MediaDisplay/MediaDisplay";
 import ModalContent from "./ModalContent/ModalContent";
 import Thumbnail from "./Thumbnail/Thumbnail";
+
 import cls from "./styles.module.scss";
 
 export default function CarGallery({ pageId }: { pageId: string }) {

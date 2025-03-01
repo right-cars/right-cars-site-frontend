@@ -1,11 +1,14 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .linksList {
-  color: var(--white);
+  color: v.$pure;
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 12px 56px;
   padding: 16px 0;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     gap: 12px 32px;
   }
 
@@ -13,12 +16,12 @@
     gap: 12px 16px;
   }
 
-  @media (max-width: 767px) {
+  @include m.tablet {
     width: 100%;
     justify-content: space-around;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     width: 100%;
     justify-content: space-between;
     gap: 12px;
@@ -26,10 +29,10 @@
 }
 
 .item {
-  transition: color var(--transition);
+  transition: color v.$transition;
 
   &:hover {
-    color: var(--yellow);
+    color: v.$accent;
   }
 }
 

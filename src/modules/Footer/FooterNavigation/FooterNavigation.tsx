@@ -1,5 +1,7 @@
-import { footerNavLinks} from "@/shared/utils/routes";
 import Link from "next/link";
+
+import { footerNavLinks } from "@/shared/utils/routes";
+
 import cls from "./styles.module.scss";
 
 export default function FooterNavigation() {
@@ -9,7 +11,7 @@ export default function FooterNavigation() {
         {footerNavLinks.map(({ name, href }, index) => (
           <li key={index} className={cls.item}>
             <Link href={href}>
-              <h6 className={cls.link}>{name}</h6>
+              <p className={`${"text"} ${cls.link}`}>{name}</p>
             </Link>
           </li>
         ))}

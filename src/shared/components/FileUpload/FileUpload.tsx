@@ -1,7 +1,12 @@
+"use client"
+
 import { useState } from "react";
 import Image from "next/image";
+
 import { UploadTooltipType } from "@/shared/types/uploadTooltipType";
+
 import Tooltip from "./Tooltip";
+
 import cls from "./styles.module.scss";
 
 interface FileUploadProps {

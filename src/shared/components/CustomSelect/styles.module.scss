@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .selectContainer {
   position: relative;
   width: 100%;
@@ -7,7 +10,7 @@
 }
 
 .label {
-  color: var(--grey-600);
+  color: v.$neutral-dark;
   text-transform: lowercase;
 }
 
@@ -16,8 +19,8 @@
   width: 100%;
   padding: 4px 12px;
   border: none;
-  border-bottom: 2px solid var(--grey-200);
-  box-shadow: var(--input-shadow);
+  border-bottom: 2px solid v.$neutral-medium;
+  box-shadow: v.$input-shadow;
   background-color: transparent;
   outline: none;
 
@@ -31,9 +34,9 @@
 .borderedSelect {
   padding: 8px 20px;
   border-radius: 9999px;
-  border: 2px solid var(--grey-200);
+  border: 2px solid v.$neutral-medium;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding: 10px 20px;
   }
 }
@@ -42,7 +45,7 @@
   position: absolute;
   top: 50%;
   right: 12px;
-  transition: transform var(--transition);
+  transition: transform v.$transition;
 }
 
 .borderedSelect .svg {
@@ -56,7 +59,7 @@
 
 .dropdown {
   position: absolute;
-  background-color: var(--white);
+  background-color: v.$pure;
   width: 100%;
   border-radius: 14px;
   padding: 8px 0;
@@ -73,9 +76,9 @@
 
 .option {
   padding: 6px 16px;
-  transition: background-color var(--transition);
+  transition: background-color v.$transition;
 
   &:hover {
-    background-color: var(--grey-200);
+    background-color: v.$neutral-medium;
   }
 }

@@ -1,9 +1,12 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   display: flex;
   gap: 16px;
   margin-top: 80px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     margin-top: 54px;
   }
 
@@ -14,8 +17,8 @@
 }
 
 .titleBlock {
-  background-color: var(--purple);
-  color: var(--white);
+  background-color: v.$primary;
+  color: v.$pure;
   border-radius: 8px;
   padding: 24px 16px;
   display: flex;
@@ -23,11 +26,11 @@
   align-items: center;
   width: 48.4%;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     width: 40.8%;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     width: 55.8%;
   }
 
@@ -39,7 +42,7 @@
 
 .partners {
   border-radius: 8px;
-  background-color: var(--white);
+  background-color: v.$pure;
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-items: center;

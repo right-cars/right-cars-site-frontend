@@ -1,9 +1,11 @@
+@use "@/shared/styles/mixins" as m;
+
 .formWrapp {
   width: 568px;
   padding: 40px 32px;
   max-width: 90vw;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 24px 16px;
   }
 }
@@ -27,7 +29,7 @@
 }
 
 .br{
-  @media (max-width:550px) {
+  @include m.mobile {
     display: none;
   }
 }

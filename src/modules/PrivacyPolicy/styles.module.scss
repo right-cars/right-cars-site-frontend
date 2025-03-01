@@ -1,10 +1,13 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .titleBlock {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-bottom: 16px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     flex-direction: column;
     align-items: start;
   }

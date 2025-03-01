@@ -1,5 +1,5 @@
-import Container from "@/shared/layouts/Container/Container";
 import Sidebar from "@/modules/Sidebar/Sidebar";
+
 import cls from "./styles.module.scss";
 
 export default function AccountLayout({
@@ -9,11 +9,11 @@ export default function AccountLayout({
   }) {
    
   return (
-    <Container>
+    <>
       <div className={`${"container section"} ${cls.wrapper}`}>
         <Sidebar />
         <main className={cls.main}>{children}</main>
       </div>
-    </Container>
+    </>
   );
 }

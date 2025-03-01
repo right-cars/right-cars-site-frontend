@@ -1,8 +1,10 @@
 import { MouseEventHandler } from "react";
 import Image from "next/image";
+
 import { Media } from "@/shared/types/media";
 import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
 import { getVideoThumbnail } from "@/shared/utils/getVideoThumbnail";
+
 import PaginationButtons from "./PaginationButtons/PaginationButtons";
 import cls from "./styles.module.scss";
 

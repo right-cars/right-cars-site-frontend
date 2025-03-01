@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,7 +8,10 @@
 }
 
 .title {
-  text-transform: none;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
 }
 
 .searchBox {
@@ -43,7 +49,7 @@
   overflow-y: scroll;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--purple) #bbb;
+  scrollbar-color: v.$primary #bbb;
 }
 
 .optionsList::-webkit-scrollbar {
@@ -56,7 +62,7 @@
 }
 
 .optionsList::-webkit-scrollbar-thumb {
-  background-color: var(--purple);
+  background-color: v.$primary;
   width: 8px;
   border-radius: 10px;
 }
@@ -73,10 +79,10 @@
   gap: 4px;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--purple);
+  border: 1px solid v.$primary;
   padding: 4px 16px;
   border-radius: 34px;
-  color: var(--purple);
+  color: v.$primary;
 }
 
 .selectedItemTxt {
@@ -87,7 +93,7 @@
 }
 
 .svg {
-  stroke: var(--purple);
+  stroke: v.$primary;
   width: 8px;
   height: 7px;
   cursor: pointer;

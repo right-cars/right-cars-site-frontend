@@ -1,7 +1,11 @@
+"use client"
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import cls from "./styles.module.scss";
+
 import { navLinks } from "@/shared/utils/routes";
+
+import cls from "./styles.module.scss";
 
 export default function BurgerNavigation({handleClick}:{handleClick:()=>void}) {
   const pathname = usePathname();

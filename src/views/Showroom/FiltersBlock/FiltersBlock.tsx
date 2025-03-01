@@ -1,6 +1,10 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
+
 import Filters from "./Filters";
+
 import cls from "./styles.module.scss";
 
 export default function FiltersBlock() {
@@ -33,7 +37,7 @@ export default function FiltersBlock() {
   return (
     <div className={cls.wrapper}>
       <button className={cls.btn}>
-        <h4>filter my search</h4>
+        <p className="titleSmall">filter my search</p>
       </button>
       <button className={cls.filterBtn} onClick={handleFilterClick}>
         <Image

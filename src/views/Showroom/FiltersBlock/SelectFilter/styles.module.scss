@@ -1,3 +1,5 @@
+@use "@/shared/styles/variables" as v;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -13,11 +15,14 @@
 }
 
 .title {
-  text-transform: none;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
 }
 
 .svg {
-  transition: transform var(--transition);
+  transition: transform v.$transition;
 }
 
 .openSvg {

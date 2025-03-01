@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .wrapper {
   display: grid;
   grid-template-columns: 24% 1fr;
@@ -5,11 +8,11 @@
   gap: 16px;
   align-items: stretch;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     grid-template-columns: 28.7% 1fr;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: 31.8% 1fr;
   }
 
@@ -19,16 +22,16 @@
 }
 
 .leftBlock {
-  background-color: var(--purple);
-  color: var(--white);
+  background-color: v.$primary;
+  color: v.$pure;
   padding: 44px 16px 0px 16px;
   border-radius: 16px;
-  box-shadow: var(--purple-shadow);
+  box-shadow: v.$primary-shadow;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding-top: 45px;
   }
 
@@ -43,30 +46,30 @@
   grid-template-columns: 32% 1fr;
   gap: 16px;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     grid-template-columns: 41.4% 1fr;
   }
 
-  @media (max-width: 768px) {
+  @include m.tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     grid-template-columns: 1fr;
   }
 }
 
 .card {
-  background-color: var(--white);
+  background-color: v.$pure;
   padding: 44px 16px 16px;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: v.$shadow;
 
-  @media (max-width: 989px) {
+  @include m.large-tablet {
     padding-top: 32px;
   }
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     padding: 32px 16px;
     height: 218px;
   }
@@ -76,14 +79,14 @@
   grid-column: span 2;
   height: 208px;
 
-  @media (max-width: 550px) {
+  @include m.mobile {
     grid-column: auto;
     height: 218px;
   }
 }
 
 .card:first-child {
-  @media (max-width: 550px) {
+  @include m.mobile {
     height: 174px;
   }
 }
@@ -120,7 +123,7 @@
 }
 
 .cardTitle {
-  color: var(--purple);
+  color: v.$primary;
 }
 
 .svg {

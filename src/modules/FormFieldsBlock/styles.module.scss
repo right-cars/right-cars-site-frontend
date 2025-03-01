@@ -1,7 +1,10 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
 .container{
     width: 100%;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+    background-color: v.$pure;
+    box-shadow: v.$shadow;
     border-radius: 16px;
     padding: 24px 16px;
 

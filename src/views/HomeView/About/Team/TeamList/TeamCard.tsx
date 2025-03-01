@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import cls from "./styles.module.scss";
 
 interface TeamCardProps {
@@ -17,10 +18,10 @@ export default function TeamCard({
   return (
     <li className={cls.card}>
       <div className={cls.txtBlock}>
-        <h6 style={{ marginBottom: 4 }}>{position}</h6>
+        <p className="text" style={{ marginBottom: 4 }}>{position}</p>
         <p
           className="btnText"
-          style={{ color: "var(--purple)", marginBottom: 24 }}
+          style={{ color: "#5120B8", marginBottom: 24 }}
         >
           {name}
         </p>

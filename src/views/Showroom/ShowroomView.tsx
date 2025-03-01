@@ -1,12 +1,16 @@
 "use client";
+
 import { useState } from "react";
+
 import { CarProps } from "@/shared/types/car";
+
 import { temporaryData } from "./Gallery/temporaryData";
 import FiltersBlock from "./FiltersBlock/FiltersBlock";
 import Gallery from "./Gallery/Gallery";
 import Pagination from "./Pagination/Pagination";
 import Tabs from "./Tabs/Tabs";
 import SortComponent from "./SortComponent/SortComponent";
+
 import cls from "./styles.module.scss";
 
 const ITEMS_PER_PAGE = 12;
