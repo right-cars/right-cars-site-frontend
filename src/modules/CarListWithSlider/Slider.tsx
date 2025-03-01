@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
@@ -9,6 +10,15 @@ import CarCard from "@/shared/components/CarCard/CarCard";
 import cls from "./styles.module.scss";
 
 export default function Slider({ data }: { data: CarProps[] }) {
+  const slideVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+    }),
+  };
+
   return (
     <Swiper
       slidesPerView={2.3}
@@ -16,49 +26,35 @@ export default function Slider({ data }: { data: CarProps[] }) {
       spaceBetween={16}
       loop
       breakpoints={{
-        421: {
-          slidesPerView: 1.8,
-        },
-        769: {
-          slidesPerView: 2.75,
-        },
-
-        1025: {
-          slidesOffsetBefore: 0,
-          slidesPerView: 4,
-          loop:false
-        },
+        421: { slidesPerView: 1.8 },
+        769: { slidesPerView: 2.75 },
+        1025: { slidesOffsetBefore: 0, slidesPerView: 4, loop: false },
       }}
       className={cls.slider}
     >
-      {data.slice(0, 4).map(
-        ({
-          // href,
-          img,
-          year,
-          make,
-          model,
-          price,
-          mileage,
-          transmission,
-          id,
-        }) => (
-          <SwiperSlide key={id}>
+      {data.slice(0, 4).map((car, i) => (
+        <SwiperSlide key={car.id}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideVariants}
+            custom={i}
+          >
             <CarCard
-              // href={href}
-              href={`/showroom/${id}`}
-              img={img}
-              year={year}
-              price={price}
-              mileage={mileage}
-              make={make}
-              model={model}
-              transmission={transmission}
-              id={id}
+              href={`/showroom/${car.id}`}
+              img={car.img}
+              year={car.year}
+              price={car.price}
+              mileage={car.mileage}
+              make={car.make}
+              model={car.model}
+              transmission={car.transmission}
+              id={car.id}
             />
-          </SwiperSlide>
-        )
-      )}
+          </motion.div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

@@ -1,44 +1,55 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { CarProps } from "@/shared/types/car";
 import CarCard from "@/shared/components/CarCard/CarCard";
+
+import { listVariants } from "@/helpers/animation";
 
 import cls from "./styles.module.scss";
 
 interface GalleryProps {
   data: CarProps[];
+  currentPage:number
 }
 
-export default function Gallery({ data }: GalleryProps) {
+export default function Gallery({ data, currentPage }: GalleryProps) {
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className={cls.gallery}>
-      {data.map(
-        ({
-          id,
-          img,
-          year,
-          make,
-          model,
-          price,
-          mileage,
-          transmission,
-          // href,
-          reserved
-        }) => (
+    <motion.div
+      key={currentPage} 
+      className={cls.gallery}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={listVariants}
+    >
+      {data.map((car) => (
+        <motion.div key={car.id} variants={cardVariants}>
           <CarCard
-            key={id}
-            id={id}
-            img={img}
-            year={year}
-            make={make}
-            model={model}
-            price={price}
-            mileage={mileage}
-            transmission={transmission}
-            // href={href}
-            href={`/showroom/${id}`}
-            reserved={reserved}
+            id={car.id}
+            img={car.img}
+            year={car.year}
+            make={car.make}
+            model={car.model}
+            price={car.price}
+            mileage={car.mileage}
+            transmission={car.transmission}
+            href={`/showroom/${car.id}`}
+            reserved={car.reserved}
           />
-        )
-      )}
-    </div>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 }

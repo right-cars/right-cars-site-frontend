@@ -4,6 +4,8 @@ import Link from "next/link";
 import { CarProps } from "@/shared/types/car";
 import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
 
+import ArrowIcon from "@icons/home/car-card/arrow.svg"
+
 import cls from "./styles.module.scss";
 
 export default function CarCard(props: CarProps) {
@@ -39,9 +41,7 @@ export default function CarCard(props: CarProps) {
           <p className="btnText">
             {make} {model}
           </p>
-          <Image
-            src="/icons/home/car-card/arrow.svg"
-            alt="arrow icon"
+          <ArrowIcon
             width={18}
             height={18}
             className={cls.arr}

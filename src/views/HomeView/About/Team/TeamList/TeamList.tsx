@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import Button from "@/shared/components/Buttons/Button/Button";
 
@@ -8,6 +9,7 @@ import { data } from "./data";
 import TeamCard from "./TeamCard";
 
 import cls from "./styles.module.scss";
+import { listVariants } from "@/helpers/animation";
 
 export default function TeamList() {
   const [showAll, setShowAll] = useState(false);
@@ -32,7 +34,13 @@ export default function TeamList() {
 
   return (
     <>
-      <ul className={cls.teamList}>
+      <motion.ul
+        className={cls.teamList}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={listVariants}
+      >
         {visibleData.map(({ img, position, name, descr }, index) => (
           <TeamCard
             key={index}
@@ -42,7 +50,7 @@ export default function TeamList() {
             descr={descr}
           />
         ))}
-      </ul>
+      </motion.ul>
       <div className={cls.btn}>
         <Button
           text="view all team members"
