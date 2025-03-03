@@ -19,6 +19,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: start;
 
   @media (max-width: 660px) {
     grid-template-columns: 1fr;

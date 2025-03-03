@@ -92,5 +92,7 @@
 }
 
 .isActive {
+  display: flex;
+  width: fit-content;
   color: v.$accent;
 }

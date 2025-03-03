@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Logo from "@/shared/components/Logo/Logo";
@@ -12,13 +12,15 @@ import cls from "./styles.module.scss";
 
 interface BurgerMenuProps {
   setIsMenuOpen: (isOpen: boolean) => void;
+  isMenuOpen: boolean;
 }
 
-export default function BurgerMenu({ setIsMenuOpen }: BurgerMenuProps) {
-  const [isMenuVisible, setIsMenuVisible] = useState(true);
-
+export default function BurgerMenu({
+  setIsMenuOpen,
+  isMenuOpen,
+}: BurgerMenuProps) {
   const handleClick = () => {
-    setIsMenuVisible(false); 
+    setIsMenuOpen(false);
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -32,7 +34,7 @@ export default function BurgerMenu({ setIsMenuOpen }: BurgerMenuProps) {
   };
 
   useEffect(() => {
-    if (isMenuVisible) {
+    if (isMenuOpen) {
       document.body.style.overflow = "hidden";
       document.addEventListener("keydown", handleKeyDown);
     } else {
@@ -43,17 +45,25 @@ export default function BurgerMenu({ setIsMenuOpen }: BurgerMenuProps) {
       document.body.style.overflow = "auto";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isMenuVisible, handleKeyDown]);
+  }, [isMenuOpen, handleKeyDown]);
 
   const overlayVariants = {
     hidden: { x: "100%", opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
-    exit: { x: "100%", opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
+    exit: {
+      x: "100%",
+      opacity: 0,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
   };
 
   return (
     <AnimatePresence mode="wait" onExitComplete={() => setIsMenuOpen(false)}>
-      {isMenuVisible && (
+      {isMenuOpen && (
         <motion.div
           className={cls.overlay}
           variants={overlayVariants}

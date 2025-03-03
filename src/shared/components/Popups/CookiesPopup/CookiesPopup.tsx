@@ -8,15 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/shared/components/Buttons/Button/Button";
 
 import cls from "./styles.module.scss";
+import { fadeInAnimation } from "@/helpers/animation";
 
 export default function CookiesPopup() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(false); 
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsPopupOpen(true);
-      setIsPopupVisible(true); 
     }, 5000);
 
     return () => clearTimeout(timeout);
@@ -26,25 +25,20 @@ export default function CookiesPopup() {
     setIsPopupOpen(false);
   };
 
-  const overlayVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
-    exit: { scale: 0.9, opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } },
-  };
-
   return (
-    <AnimatePresence
-      mode="wait"
-      onExitComplete={() => setIsPopupVisible(false)}
-    >
-      {isPopupVisible && (
+    <AnimatePresence mode="wait" onExitComplete={() => setIsPopupOpen(false)}>
+      {isPopupOpen && (
         <div className={`${"container"} ${cls.wrapper}`}>
           <motion.div
             className={cls.modalContainer}
-            variants={overlayVariants}
-            initial="hidden"
-            animate={isPopupOpen ? "visible" : "hidden"} 
+            variants={fadeInAnimation({
+              scale: 0.9,
+              duration: 0.6,
+              withExit: true,
+            })}
             exit="exit"
+            initial="hidden"
+            animate={isPopupOpen ? "visible" : "hidden"}
           >
             <div className={cls.txtBlock}>
               <Image
@@ -55,8 +49,8 @@ export default function CookiesPopup() {
                 className={cls.svg}
               />
               <p className="textSmall">
-                Our website use cookies. By continuing navigating, we assume your
-                permission to deploy cookies as detailed in our{" "}
+                Our website use cookies. By continuing navigating, we assume
+                your permission to deploy cookies as detailed in our{" "}
                 <Link href={"/privacy-policy"} className={cls.link}>
                   privacy&nbsp;policy
                 </Link>

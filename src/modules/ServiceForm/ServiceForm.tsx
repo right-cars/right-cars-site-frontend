@@ -118,11 +118,13 @@ export default function ServiceForm({ isCarService }: ServiveProps) {
           </div>
         </div>
       </form>
-      {isModalOpen && (
-        <ModalWindow closeBtn setIsModalOpen={setIsModalOpen}>
-          <ThanksPopup text="Thank you! We have received your application and our team will contact you with further details" />
-        </ModalWindow>
-      )}
+      <ModalWindow
+        isModalOpen={isModalOpen}
+        closeBtn
+        setIsModalOpen={setIsModalOpen}
+      >
+        <ThanksPopup text="Thank you! We have received your application and our team will contact you with further details" />
+      </ModalWindow>
     </>
   );
 }

@@ -7,7 +7,7 @@ import LoginBtn from "./LoginBtn/LoginBtn";
 import cls from "./styles.module.scss";
 
 export default function ActionsBlock() {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
     <div className={cls.wrapper}>

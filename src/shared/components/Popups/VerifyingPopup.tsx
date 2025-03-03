@@ -9,7 +9,7 @@ import cls from "./styles.module.scss";
 
 interface Props {
   setPopupOpen: (isOpen: string | null) => void;
-  email: string;
+  email: string | null;
 }
 
 export default function VerifyingPopup({ email, setPopupOpen }: Props) {

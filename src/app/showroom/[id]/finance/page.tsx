@@ -117,11 +117,13 @@ export default function FinancePage() {
           </div>
         </form>
       </section>
-      {isModalOpen && (
-        <ModalWindow closeBtn setIsModalOpen={setIsModalOpen}>
-          <ThanksPopup text="Thank you! We have received your application and our team will contact you with further details" />
-        </ModalWindow>
-      )}
+      <ModalWindow
+        closeBtn
+        setIsModalOpen={setIsModalOpen}
+        isModalOpen={isModalOpen}
+      >
+        <ThanksPopup text="Thank you! We have received your application and our team will contact you with further details" />
+      </ModalWindow>
     </>
   );
 }

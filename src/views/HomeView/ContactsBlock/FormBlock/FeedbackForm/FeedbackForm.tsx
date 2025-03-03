@@ -21,12 +21,13 @@ export default function FeedbackForm({
 }: FeedbackFormProps) {
   return (
     <div className={cls.form}>
-      {fields.map(({ id, label, type, options, placeholder }) => {
+      {fields.map(({ id, label, type, options, placeholder, phone }) => {
         const inputElement =
           type === "input" ? (
             <CustomInput
               key={id}
               id={id}
+              phone={phone}
               label={label}
               required
               value={formData[id]}

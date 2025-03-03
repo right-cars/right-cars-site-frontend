@@ -11,10 +11,11 @@ import cls from "./styles.module.scss";
 
 interface GalleryProps {
   data: CarProps[];
-  currentPage:number
+  currentPage: number;
+  activeTab: string;
 }
 
-export default function Gallery({ data, currentPage }: GalleryProps) {
+export default function Gallery({ data, currentPage, activeTab }: GalleryProps) {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -27,7 +28,7 @@ export default function Gallery({ data, currentPage }: GalleryProps) {
 
   return (
     <motion.div
-      key={currentPage} 
+      key={`${currentPage}-${activeTab}`}
       className={cls.gallery}
       initial="hidden"
       whileInView="visible"

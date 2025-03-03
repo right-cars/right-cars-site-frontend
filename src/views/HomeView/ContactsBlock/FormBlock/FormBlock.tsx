@@ -63,11 +63,13 @@ export default function FormBlock() {
           </div>
         </div>
       </form>
-      {isModalOpen && (
-        <ModalWindow closeBtn setIsModalOpen={setIsModalOpen}>
-          <ThanksPopup text="Your message has been sent successfully!"/>
-        </ModalWindow>
-      )}
+      <ModalWindow
+        isModalOpen={isModalOpen}
+        closeBtn
+        setIsModalOpen={setIsModalOpen}
+      >
+        <ThanksPopup text="Your message has been sent successfully!" />
+      </ModalWindow>
     </>
   );
 }
