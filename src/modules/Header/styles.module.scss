@@ -9,9 +9,9 @@
   justify-content: center;
 
   width: 100%;
-  // transform: translateY(0);
-  // opacity: 1;
-  // transition: transform v.$transition, opacity v.$transition;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform v.$transition, opacity v.$transition;
 }
 
 .none {

@@ -78,10 +78,11 @@ export default function Filters({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -10 }}
+      initial={{ opacity: 0, y: -10, zIndex:-1 }}
       animate={{
         opacity: isFilterVisible ? 1 : 0,
         y: isFilterVisible ? 0 : -10,
+        zIndex:0
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={cls.container}

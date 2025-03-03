@@ -31,7 +31,7 @@ export default function Gallery({ data, currentPage, activeTab }: GalleryProps) 
       key={`${currentPage}-${activeTab}`}
       className={cls.gallery}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={listVariants}
     >

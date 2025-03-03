@@ -15,10 +15,11 @@
 
 .absoluteSvg {
   stroke: v.$primary;
-  transition: fill v.$transition;
+  transition: fill v.$transition, stroke v.$transition;
 
   &:hover {
-    fill: #5120b8;
+    fill: v.$accent !important;
+    stroke: v.$accent;
   }
 }
 
