@@ -15,7 +15,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+  }
 
   &:hover,
   &:focus {
@@ -39,12 +42,30 @@
 
 .question {
   text-transform: none;
+  text-align: start;
 }
 
 .svg {
   transition: transform v.$transition;
 }
 
-.details[open] > .questionBlock > .svg {
-  transform: rotate(-90deg);
+.listsWrapp {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.list {
+  margin-left: 6px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.numList {
+  list-style-type: decimal;
+}
+
+.link {
+  text-decoration: underline;
+  color: v.$primary;
 }

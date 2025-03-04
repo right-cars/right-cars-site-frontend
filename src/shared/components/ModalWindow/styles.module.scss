@@ -5,9 +5,9 @@
   position: fixed;
   background-color: v.$overlay;
   backdrop-filter: blur(3px);
-  top: -16px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
   width: 100vw;
   height: 100vh;
   display: flex;

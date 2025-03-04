@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -11,14 +11,16 @@ import cls from "./styles.module.scss";
 // import RevealComp from "@/shared/components/RevealComp/RevealComp";
 
 export default function Header() {
-   const [scrolledDown, setScrolledDown] = useState(false);
+  const [scrolledDown, setScrolledDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      if (scrollY > lastScrollY) {
+      if (scrollY < 60) {
+        setScrolledDown(false);
+      } else if (scrollY > lastScrollY) {
         setScrolledDown(true);
       } else {
         setScrolledDown(false);
@@ -28,23 +30,21 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
   return (
     // <RevealComp threshold={0.75} duration="0.3s" y={-20}>
-      <header
-        // className={cls.header}
+    <header
+      // className={cls.header}
       className={`${scrolledDown ? cls.none : cls.header}`}
-      >
-        <div className={cls.headerContainer}>
-          <Logo variant="header" />
-          <Navigation />
-          <ActionsBlock />
-        </div>
-      </header>
+    >
+      <div className={cls.headerContainer}>
+        <Logo variant="header" />
+        <Navigation />
+        <ActionsBlock />
+      </div>
+    </header>
     // </RevealComp>
   );
 }

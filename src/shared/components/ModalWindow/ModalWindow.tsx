@@ -1,29 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 import cls from "./styles.module.scss";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface ModalProps {
+  isModalOpen: boolean;
   setIsModalOpen: (isOpen: boolean) => void;
   children: React.ReactNode;
   closeBtn?: boolean;
 }
 
 export default function ModalWindow(props: ModalProps) {
-  const { setIsModalOpen, children, closeBtn } = props;
-
-  const [isVisible, setIsVisible] = useState(true);
+  const { setIsModalOpen, children, closeBtn, isModalOpen } = props;
 
   const handleClose = () => {
-    setIsVisible(false);
+    setIsModalOpen(false);
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
-      handleClose();
+      setIsModalOpen(false);
     }
   };
 
@@ -32,33 +32,32 @@ export default function ModalWindow(props: ModalProps) {
   };
 
   useEffect(() => {
-    if (isVisible) {
-      document.body.style.overflow = "hidden";
+    if (isModalOpen) {
       document.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "hidden";
     }
-
     return () => {
       document.body.style.overflow = "auto";
+      document.body.style.overflowX = "hidden";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isVisible, handleKeyDown]);
-
-    const overlayVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
-    exit: { opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } },
-  };
+  }, [handleKeyDown, setIsModalOpen]);
 
   return (
     <AnimatePresence mode="wait" onExitComplete={() => setIsModalOpen(false)}>
-      {isVisible && (
-        <motion.div  className={cls.overlay}
-          variants={overlayVariants}
+      {isModalOpen && (
+        <motion.div
+          variants={fadeInAnimation({
+            scale: 0.9,
+            duration: 0.6,
+            withExit: true,
+          })}
+          exit="exit"
           initial="hidden"
-          animate="visible"
-          exit="exit" onClick={handleClose}>
+          animate={isModalOpen ? "visible" : "hidden"}
+          className={cls.overlay}
+          onClick={handleClose}
+        >
           <div className={cls.modalContainer} onClick={handleClick}>
             {children}
             {closeBtn && (

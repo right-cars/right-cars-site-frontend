@@ -82,11 +82,9 @@ export default function CarGallery({ pageId }: { pageId: string }) {
         ))}
       </div>
 
-      {isModalOpen && (
-        <ModalWindow setIsModalOpen={setIsModalOpen}>
+        <ModalWindow isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
           <ModalContent currentMedia={currentMedia} />
         </ModalWindow>
-      )}
     </div>
   );
 }

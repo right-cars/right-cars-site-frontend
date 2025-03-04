@@ -24,6 +24,10 @@ export default function ShowroomView() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeTab]);
+
   const handleSort = (): void => {
     if (isAscending === null) {
       setIsAscending(true);
@@ -72,7 +76,11 @@ export default function ShowroomView() {
           <SortComponent onSort={handleSort} isLowestToHighest={isAscending} />
         </div>
         <div className={cls.content}>
-          <Gallery data={paginatedData} currentPage={currentPage} />
+          <Gallery
+            data={paginatedData}
+            currentPage={currentPage}
+            activeTab={activeTab}
+          />
         </div>
         <Pagination
           currentPage={currentPage}

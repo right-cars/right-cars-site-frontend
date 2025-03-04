@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -20,13 +20,13 @@ export default function FiltersBlock() {
 
   useEffect(() => {
     const handleResize = () => {
-      const isSmallScreen = window.innerWidth <= 989;
+      const isSmallScreen = window.innerWidth <= 1024;
       setIsTablet(isSmallScreen);
+
       setIsFilterVisible(!isSmallScreen);
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -47,7 +47,12 @@ export default function FiltersBlock() {
           height={24}
         />
       </button>
-      {isFiltersVisible && <Filters setIsFilterVisible={setIsFilterVisible} isTablet={isTablet}/>}
+
+      <Filters
+        isFilterVisible={isFiltersVisible}
+        setIsFilterVisible={setIsFilterVisible}
+        isTablet={isTablet}
+      />
     </div>
   );
 }

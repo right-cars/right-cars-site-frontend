@@ -19,6 +19,11 @@
 
 .filterBtn {
   position: relative;
+  cursor: default;
+
+  @include m.large-tablet {
+    cursor: pointer;
+  }
 }
 
 .container {
@@ -38,7 +43,7 @@
     height: 72vh;
     top: 50px;
   }
-  
+
   @include m.tablet {
     max-width: 688px;
     height: 80vh;

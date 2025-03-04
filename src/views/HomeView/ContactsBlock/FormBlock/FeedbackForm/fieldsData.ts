@@ -1,7 +1,7 @@
 export const fields = [
   { id: "firstName", label: "first name (required)", type: "input" },
   { id: "surname", label: "surname (required)", type: "input" },
-  { id: "contactNumber", label: "contact number (required)", type: "input" },
+  { id: "contactNumber", label: "contact number (required)", type: "input", phone:true },
   { id: "email", label: "email address (required)", type: "input" },
   {
     id: "subject",

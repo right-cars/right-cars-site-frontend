@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import Button from "@/shared/components/Buttons/Button/Button";
 import MultiRangeSlider from "@/shared/components/MultiRangeSlider/MultiRangeSlider";
@@ -11,6 +12,7 @@ import SelectFilter from "./SelectFilter/SelectFilter";
 import cls from "./styles.module.scss";
 
 interface FilterProps {
+  isFilterVisible: boolean;
   setIsFilterVisible: (visible: boolean) => void;
   isTablet: boolean;
 }
@@ -23,7 +25,11 @@ const defaultMultirangeValues = {
 
 const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
 
-export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
+export default function Filters({
+  setIsFilterVisible,
+  isTablet,
+  isFilterVisible,
+}: FilterProps) {
   const [multirangeValues, setMultirangeValues] = useState(
     defaultMultirangeValues
   );
@@ -71,7 +77,16 @@ export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
   };
 
   return (
-    <div className={cls.container}>
+    <motion.div
+      initial={{ opacity: 0, y: -10, zIndex:-1 }}
+      animate={{
+        opacity: isFilterVisible ? 1 : 0,
+        y: isFilterVisible ? 0 : -10,
+        zIndex:0
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={cls.container}
+    >
       <div className={cls.filtersWrapp}>
         <MultiRangeSlider
           handleClear={() => handleClear("price")}
@@ -110,7 +125,7 @@ export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
         />
         <SelectFilter
           title="Fuel type"
-          options={["diesel", "petrol", "hybrid"]}
+          options={["diesel", "gasoline", "hybrid"]}
           selected={selectedFuelTypes}
           onChange={setSelectedFuelTypes}
           onClear={() => setSelectedFuelTypes([])}
@@ -119,7 +134,7 @@ export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
         />
         <SelectFilter
           title="Transmission"
-          options={["manual", "automat"]}
+          options={["manual", "automatic"]}
           selected={selectedTransmission}
           onChange={setSelectedTransmission}
           onClear={() => setSelectedTransmission([])}
@@ -137,11 +152,13 @@ export default function Filters({ setIsFilterVisible, isTablet }: FilterProps) {
           <Button
             text="apply filters"
             onClick={() => {
-              setIsFilterVisible(false);
+              if (isTablet) {
+                setIsFilterVisible(false);
+              }
             }}
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
