@@ -19,27 +19,35 @@ const Sidebar = () => {
 
   useEffect(() => {
     const checkSidebar = () => {
-      const isSmallScreen = window.matchMedia("(max-width: 989px)").matches;
-      if (isSmallScreen) {
-        setIsSidebarOpen(localStorage.getItem("sidebarOpen") === "true");
-      } else {
-        setIsSidebarOpen(false);
+      if (typeof window !== "undefined") {
+        const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
+        if (isSmallScreen) {
+          setIsSidebarOpen(localStorage.getItem("sidebarOpen") === "true");
+        } else {
+          setIsSidebarOpen(false);
+        }
       }
     };
 
     checkSidebar();
-    window.addEventListener("storage", checkSidebar);
-    window.addEventListener("resize", checkSidebar);
+    if (typeof window !== "undefined") {
+      window.addEventListener("storage", checkSidebar);
+      window.addEventListener("resize", checkSidebar);
+    }
 
     return () => {
-      window.removeEventListener("storage", checkSidebar);
-      window.removeEventListener("resize", checkSidebar);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("storage", checkSidebar);
+        window.removeEventListener("resize", checkSidebar);
+      }
     };
   }, []);
 
   const handleCloseSidebar = () => {
-    localStorage.setItem("sidebarOpen", "false");
-    window.dispatchEvent(new Event("storage"));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("sidebarOpen", "false");
+      window.dispatchEvent(new Event("storage"));
+    }
   };
 
   return (
@@ -53,23 +61,33 @@ const Sidebar = () => {
 
       <div className={cls.nawWrapp}>
         <nav className={cls.nav}>
-          {menuItems.map((item,index) => {
+          {menuItems.map((item, index) => {
             const isDisabled = index !== 0 && !isProfileComplete;
-            const itemName = index === 0 && !isProfileComplete ? "Complete your profile" : item.name;
-             const itemPath = index === 0 && !isProfileComplete ? "/account/complete-profile" : item.path;
+            const itemName =
+              index === 0 && !isProfileComplete
+                ? "Complete your profile"
+                : item.name;
+            const itemPath =
+              index === 0 && !isProfileComplete
+                ? "/account/complete-profile"
+                : item.path;
             return (
               <Link
                 key={item.path}
-                href={isDisabled ? "#" : itemPath} onClick={isDisabled ? (e) => e.preventDefault() : handleCloseSidebar}
-                
+                href={isDisabled ? "#" : itemPath}
+                onClick={
+                  isDisabled ? (e) => e.preventDefault() : handleCloseSidebar
+                }
               >
                 <div
                   className={`${cls.item} ${
-                    pathname === item.path &&!isDisabled && cls.active
+                    pathname === item.path && !isDisabled && cls.active
                   } ${isDisabled && cls.disabled}`}
                 >
                   {item.svg}
-                  <p className="titleTiny" style={{ textTransform: "none" }}>{itemName}</p>
+                  <p className="titleTiny" style={{ textTransform: "none" }}>
+                    {itemName}
+                  </p>
                 </div>
               </Link>
             );

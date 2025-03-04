@@ -15,6 +15,7 @@ export default function Favorites() {
   const [favoriteCars, setFavoriteCars] = useState<CarProps[]>([]);
 
   const updateFavorites = () => {
+    if (typeof window === "undefined") return;
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     const filteredCars = temporaryData.filter((car) =>
       favorites.includes(car.id)
@@ -24,14 +25,19 @@ export default function Favorites() {
 
   useEffect(() => {
     updateFavorites();
-    window.addEventListener("storage", updateFavorites);
+ if (typeof window !== "undefined") {
+      window.addEventListener("storage", updateFavorites);
+    }
 
     return () => {
-      window.removeEventListener("storage", updateFavorites);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("storage", updateFavorites);
+      }
     };
   }, []);
 
   const handleRemoveFavorite = (id: string) => {
+    if (typeof window === "undefined") return;
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     const updatedFavorites = favorites.filter((favId: string) => favId !== id);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));

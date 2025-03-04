@@ -35,9 +35,12 @@ export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
       setIsModalOpen(true);
     }
     router.push("/account");
-    const sidebarState = localStorage.getItem("sidebarOpen") === "true";
-    localStorage.setItem("sidebarOpen", String(!sidebarState));
-    window.dispatchEvent(new Event("storage"));
+
+    if (typeof window !== "undefined") {
+      const sidebarState = localStorage.getItem("sidebarOpen") === "true";
+      localStorage.setItem("sidebarOpen", String(!sidebarState));
+      window.dispatchEvent(new Event("storage"));
+    }
   };
 
   return (

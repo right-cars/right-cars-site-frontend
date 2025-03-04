@@ -20,17 +20,23 @@ export default function FiltersBlock() {
 
   useEffect(() => {
     const handleResize = () => {
+      if (typeof window === "undefined") return;
+
       const isSmallScreen = window.innerWidth <= 1024;
       setIsTablet(isSmallScreen);
 
       setIsFilterVisible(!isSmallScreen);
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+    }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
     };
   }, []);
 

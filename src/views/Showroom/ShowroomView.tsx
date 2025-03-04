@@ -21,7 +21,9 @@ export default function ShowroomView() {
   const [isAscending, setIsAscending] = useState<boolean | null>(null);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [currentPage]);
 
   useEffect(() => {
