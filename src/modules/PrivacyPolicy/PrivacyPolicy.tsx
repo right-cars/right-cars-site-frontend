@@ -27,7 +27,7 @@ export default function PrivacyPolicy({
           />
         </div>
       </div>
-      <p className="textSmall">
+      <p className="textSmall" style={{fontWeight:400}}>
         I agree that Right Cars can use the information I provide, and may
         disclose it to its authorised Right Cars Staff, contractors and
         associated organisations, for the purpose of ensuring my request is

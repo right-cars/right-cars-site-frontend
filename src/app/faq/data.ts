@@ -262,7 +262,7 @@ You can request a refund when a Right Cars representative contacts you within 72
       },
     },
     {
-      question: "Where to find our auction rules:",
+      question: "Where to find our auction rules?",
       answer: {
         txt: "Our auction rules are available on our official website at ",
         link: { href: "/auction-rules", name: "auction rules." },

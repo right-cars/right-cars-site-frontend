@@ -27,6 +27,17 @@ export default function CustomInput(props: CustomInputProps) {
     setShowPassword((prevState) => !prevState);
   };
 
+  let mask = "";
+  if (id === "vehicleYear") {
+    mask = "____";
+  } else if (id === "currentVehicleKilometers") {
+    mask = "______"; 
+  } else if (id === "vehicleServiceDueDate") {
+    mask = "__/__/____";
+  } else if (phone) {
+    mask = "+38 (0__) ___-__-__"
+  }
+
   return (
     <div className={cls.inputContainer}>
       <label htmlFor={id} className={`${"textTiny"} ${cls.label}`}>
@@ -37,9 +48,9 @@ export default function CustomInput(props: CustomInputProps) {
           </span>
         )}
       </label>
-      {phone ? (
+      {mask ? (
         <InputMask
-          mask="+38 (0__) ___-__-__"
+          mask={mask}
           replacement={{ _: /\d/ }}
           className={`${cls.input} ${bordered && cls.borderedInput}`}
           onChange={handleChange}
