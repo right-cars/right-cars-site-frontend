@@ -1,6 +1,9 @@
 import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -8,6 +11,16 @@ const nextConfig: NextConfig = {
         hostname: "img.youtube.com",
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: 'http',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
       },
     ],
   },

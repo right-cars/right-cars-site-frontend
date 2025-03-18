@@ -50,7 +50,10 @@ export default function MakeFilter({
           type="text"
           placeholder="search"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            // onChange([...selected, e.target.value]);
+          }}
           className={cls.searchInput}
         />
         <Image

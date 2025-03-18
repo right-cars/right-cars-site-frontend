@@ -53,7 +53,7 @@ export default function CarCard(props: CarProps) {
           <p className="titleMedium">{price}</p>
           <ul className={cls.chips}>
             <li className={cls.chip}>
-              <p className="textSmall">{mileage}</p>
+              <p className="textSmall">{mileage}km</p>
             </li>
             <li className={cls.chip}>
               <p className="textSmall">{transmission}</p>

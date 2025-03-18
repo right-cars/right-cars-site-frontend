@@ -13,7 +13,7 @@ export default function SecondInfoBlock({ price, pageId }: SecondInfoProps) {
   return (
     <div className={cls.infoBlock}>
       <div className={cls.secondTitleBlock}>
-        <p className="titleMedium">{price}</p>
+        <p className="titleMedium">R {price}</p>
         <p className="textMedium">including vat</p>
       </div>
       <div className={cls.brnsWrapp}>

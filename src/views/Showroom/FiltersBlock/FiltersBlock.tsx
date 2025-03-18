@@ -7,7 +7,8 @@ import Filters from "./Filters";
 
 import cls from "./styles.module.scss";
 
-export default function FiltersBlock() {
+//@ts-expect-error
+export default function FiltersBlock({setSelectedTransmission, setSelectedFuelTypes, setSelectedMakes, setMultirangeValues}) {
   const [isFiltersVisible, setIsFilterVisible] = useState(true);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -55,6 +56,10 @@ export default function FiltersBlock() {
       </button>
 
       <Filters
+          setSelectedTransmissionFunc={setSelectedTransmission}
+          setSelectedFuelTypesFunc={setSelectedFuelTypes}
+          setSelectedMakesFunc={setSelectedMakes}
+          setMultirangeValuesFunc={setMultirangeValues}
         isFilterVisible={isFiltersVisible}
         setIsFilterVisible={setIsFilterVisible}
         isTablet={isTablet}

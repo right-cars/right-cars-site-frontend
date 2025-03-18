@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Media } from "@/shared/types/media";
 import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
-import { getVideoThumbnail } from "@/shared/utils/getVideoThumbnail";
+import { getVideoThumbnail, getYouTubeVideoID } from "@/shared/utils/getVideoThumbnail";
 
 import PaginationButtons from "./PaginationButtons/PaginationButtons";
 import cls from "./styles.module.scss";
@@ -41,7 +41,7 @@ const MediaDisplay = ({
       ) : (
         <div className={cls.videoImgBlock}>
           <Image
-            src={getVideoThumbnail(currentMedia.src)}
+            src={getVideoThumbnail(getYouTubeVideoID(currentMedia.src))}
             alt="Thumbnail"
             width={752}
             height={546}

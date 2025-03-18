@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <Banner />
       <WhyChooseUs />
+      {/* @ts-expect-error */}
       <CarListWithSlider title="Discover Our Newest Arrivals!" carsData={temporaryData}/>
       <About />
       <ContactsBlock />

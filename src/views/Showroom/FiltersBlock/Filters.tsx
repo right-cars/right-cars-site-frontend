@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Button from "@/shared/components/Buttons/Button/Button";
@@ -13,12 +13,16 @@ import cls from "./styles.module.scss";
 
 interface FilterProps {
   isFilterVisible: boolean;
+  setSelectedTransmissionFunc: () => void;
+  setMultirangeValuesFunc: () => void;
+  setSelectedMakesFunc: () => void;
+  setSelectedFuelTypesFunc: () => void;
   setIsFilterVisible: (visible: boolean) => void;
   isTablet: boolean;
 }
 
 const defaultMultirangeValues = {
-  price: { min: 30000, max: 230000 },
+  price: { min: 0, max: 230000 },
   kilometers: { min: 0, max: 500000 },
   year: { min: 2007, max: 2025 },
 };
@@ -27,18 +31,44 @@ const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
 
 export default function Filters({
   setIsFilterVisible,
+  setSelectedTransmissionFunc,
+  setSelectedFuelTypesFunc,
+  setSelectedMakesFunc,
+  setMultirangeValuesFunc,
   isTablet,
   isFilterVisible,
 }: FilterProps) {
   const [multirangeValues, setMultirangeValues] = useState(
     defaultMultirangeValues
   );
+
   const [selectedMakes, setSelectedMakes] = useState<string[]>([]);
   const [selectedFuelTypes, setSelectedFuelTypes] = useState<string[]>([]);
   const [selectedTransmission, setSelectedTransmission] = useState<string[]>(
     []
   );
+
   const [openFilter, setOpenFilter] = useState<string | null>(null);
+
+  useEffect(() => {
+    // @ts-expect-error
+    setMultirangeValuesFunc(multirangeValues);
+  }, [multirangeValues]);
+
+  useEffect(() => {
+    // @ts-expect-error
+    setSelectedMakesFunc(selectedMakes);
+  }, [selectedMakes]);
+
+  useEffect(() => {
+    // @ts-expect-error
+    setSelectedFuelTypesFunc(selectedFuelTypes);
+  }, [selectedFuelTypes]);
+
+  useEffect(() => {
+    // @ts-expect-error
+    setSelectedTransmissionFunc(selectedTransmission);
+  }, [selectedTransmission]);
 
   const toggleSelectFilter = (filter: string) => {
     setOpenFilter((prev) => (prev === filter ? null : filter));
@@ -53,8 +83,10 @@ export default function Filters({
         prev[multirangeKey].min === newValues.min &&
         prev[multirangeKey].max === newValues.max
       ) {
+
         return prev;
       }
+
       return { ...prev, [multirangeKey]: newValues };
     });
   };
@@ -90,7 +122,7 @@ export default function Filters({
       <div className={cls.filtersWrapp}>
         <MultiRangeSlider
           handleClear={() => handleClear("price")}
-          min={30000}
+          min={0}
           max={230000}
           step={1000}
           value={multirangeValues.price}

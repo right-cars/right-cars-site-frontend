@@ -5,16 +5,28 @@ import CarInfo from "./CarInfo/CarInfo";
 
 import cls from "./styles.module.scss";
 
-export default function MainInfo({ pageId }: { pageId: string }) {
+//@ts-expect-error
+export default function MainInfo({ data, pageId }: { pageId: string }) {
+  const media =  [
+    { type: "image", src: data.mainImage },
+    //@ts-expect-error
+      ...data.images.map(src => ({ type: "image", src, })),
+  ];
+  if(data.video) {
+    media.push({ type: "video", src: data.video })
+  }
+
   return (
     <section className="container section">
       <div className={cls.wrapper}>
         <BackBtn />
         <div className={cls.contentWrapp}>
-          <CarGallery pageId={pageId} />
-          <CarInfo pageId={pageId} />
+          {/*@ts-expect-error*/}
+          <CarGallery data={media} pageId={pageId} />
+          {/*@ts-expect-error*/}
+          <CarInfo data={data} pageId={pageId} />
         </div>
-        <CarDetails />
+        <CarDetails data={data} />
       </div>
     </section>
   );

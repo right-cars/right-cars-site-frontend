@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { CarProps } from "@/shared/types/car";
 
-import { temporaryData } from "./Gallery/temporaryData";
+// import { temporaryData } from "./Gallery/temporaryData";
 import FiltersBlock from "./FiltersBlock/FiltersBlock";
 import Gallery from "./Gallery/Gallery";
 import Pagination from "./Pagination/Pagination";
@@ -15,10 +15,79 @@ import cls from "./styles.module.scss";
 
 const ITEMS_PER_PAGE = 12;
 
-export default function ShowroomView() {
+const convertPriceToNumber = (price: string): number => {
+  const numericString = price.replace(/[^\d.-]/g, "");
+  return parseFloat(numericString);
+};
+
+//@ts-expect-error
+const filterFromRage = (data, filters)=> {
+  //@ts-expect-error
+  const priceFilteredData = data.filter(item => {
+    const price = convertPriceToNumber(item.price);
+        return price >= filters.price.min && price <= filters.price.max
+  });
+
+  //@ts-expect-error
+  const kmFilteredData = priceFilteredData.filter(item => {
+    return item.km >= filters.kilometers.min && item.km <= filters.kilometers.max
+  })
+//@ts-expect-error
+  const yearFilteredData = kmFilteredData.filter(item => {
+    return item.year >= filters.year.min && item.year <= filters.year.max
+  })
+
+  return yearFilteredData;
+}
+
+//@ts-expect-error
+const filterFromMakes = (data, makes)=> {
+  //@ts-expect-error
+  if(makes.length) return data.filter(item => {
+    const make = item.make.toLowerCase();
+    //@ts-expect-error
+    return makes.includes(make);
+  })
+  return data;
+}
+
+//@ts-expect-error
+const filterFromFuelTypes = (data, fuelTypes)=> {
+  //@ts-expect-error
+  if(fuelTypes.length) return data.filter(item => {
+    return fuelTypes.includes(item.fuel);
+  })
+  return data;
+}
+
+//@ts-expect-error
+const filterFromTransmission = (data, transmissions)=> {
+  //@ts-expect-error
+  if(transmissions.length) return data.filter(item => {
+    return transmissions.includes(item.transmission);
+  })
+  return data;
+}
+
+const defaultMultirangeValues = {
+  price: { min: 0, max: 230000 },
+  kilometers: { min: 0, max: 500000 },
+  year: { min: 2007, max: 2025 },
+};
+
+//@ts-expect-error
+export default function ShowroomView({data}) {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAscending, setIsAscending] = useState<boolean | null>(null);
+  const [multirangeValues, setMultirangeValues] = useState(
+      defaultMultirangeValues
+  );
+  const [selectedMakes, setSelectedMakes] = useState<string[]>([]);
+  const [selectedFuelTypes, setSelectedFuelTypes] = useState<string[]>([]);
+  const [selectedTransmission, setSelectedTransmission] = useState<string[]>(
+      []
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -38,15 +107,10 @@ export default function ShowroomView() {
     }
   };
 
-  const convertPriceToNumber = (price: string): number => {
-    const numericString = price.replace(/[^\d.-]/g, "");
-    return parseFloat(numericString);
-  };
-
   const sortedData: CarProps[] =
     isAscending === null
-      ? [...temporaryData]
-      : [...temporaryData].sort((a, b) => {
+      ? [...data]
+      : [...data].sort((a, b) => {
           const priceA = convertPriceToNumber(a.price);
           const priceB = convertPriceToNumber(b.price);
 
@@ -57,8 +121,15 @@ export default function ShowroomView() {
     activeTab === "all"
       ? sortedData
       : sortedData.filter((item) => item.type === activeTab);
-  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-  const paginatedData = filteredData.slice(
+
+  const rangeFilteredData = filterFromRage(filteredData, multirangeValues);
+
+  const makeFilteredData = filterFromMakes(rangeFilteredData, selectedMakes);
+  const fueleTypesFilteredData = filterFromFuelTypes(makeFilteredData, selectedFuelTypes);
+  const transmissionFilteredData = filterFromTransmission(fueleTypesFilteredData, selectedTransmission);
+
+  const totalPages = Math.ceil(transmissionFilteredData.length / ITEMS_PER_PAGE);
+  const paginatedData = transmissionFilteredData.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
@@ -74,7 +145,7 @@ export default function ShowroomView() {
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="container">
         <div className={cls.filtersWrapp}>
-          <FiltersBlock />
+          <FiltersBlock setSelectedTransmission={setSelectedTransmission} setSelectedFuelTypes={setSelectedFuelTypes} setSelectedMakes={setSelectedMakes} setMultirangeValues={setMultirangeValues} />
           <SortComponent onSort={handleSort} isLowestToHighest={isAscending} />
         </div>
         <div className={cls.content}>

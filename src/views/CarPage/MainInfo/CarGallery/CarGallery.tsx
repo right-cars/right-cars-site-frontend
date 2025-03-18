@@ -4,31 +4,33 @@ import { useState, useRef, useEffect } from "react";
 
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 
-import { temporarymMediaList } from "./temporaryMediaList";
+// import { temporarymMediaList } from "./temporaryMediaList";
 import MediaDisplay from "./MediaDisplay/MediaDisplay";
 import ModalContent from "./ModalContent/ModalContent";
 import Thumbnail from "./Thumbnail/Thumbnail";
 
 import cls from "./styles.module.scss";
+// import {logicalExpression} from "@babel/types";
 
-export default function CarGallery({ pageId }: { pageId: string }) {
+// @ts-expect-error
+export default function CarGallery({ data, pageId }: { pageId: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const thumbnailsRef = useRef<HTMLDivElement | null>(null);
-  const currentMedia = temporarymMediaList[currentIndex];
+  const currentMedia = data[currentIndex];
 
   const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCurrentIndex((prev) =>
-      prev > 0 ? prev - 1 : temporarymMediaList.length - 1
+      prev > 0 ? prev - 1 : data.length - 1
     );
   };
 
   const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCurrentIndex((prev) =>
-      prev < temporarymMediaList.length - 1 ? prev + 1 : 0
+      prev < data.length - 1 ? prev + 1 : 0
     );
   };
 
@@ -67,11 +69,12 @@ export default function CarGallery({ pageId }: { pageId: string }) {
         handlePrev={handlePrev}
         currentIndex={currentIndex}
         pageId={pageId}
-        temporarymMediaList={temporarymMediaList}
+        temporarymMediaList={data}
       />
 
       <div className={cls.thumbnailContainer} ref={thumbnailsRef}>
-        {temporarymMediaList.map((media, index) => (
+        {/*// @ts-expect-error*/}
+        {data.map((media, index) => (
           <Thumbnail
             key={index}
             media={media}

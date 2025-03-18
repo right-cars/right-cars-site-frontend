@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Media } from "@/shared/types/media";
-import { getVideoThumbnail } from "@/shared/utils/getVideoThumbnail";
+import {getYouTubeVideoID, getVideoThumbnail} from "@/shared/utils/getVideoThumbnail";
 
 import cls from "../styles.module.scss";
 
@@ -35,7 +35,7 @@ const Thumbnail = ({
       ) : (
         <div className={cls.videoImgBlock}>
           <Image
-            src={getVideoThumbnail(media.src)}
+            src={getVideoThumbnail(getYouTubeVideoID(media.src))}
             alt="Thumbnail"
             width={178}
             height={112}
