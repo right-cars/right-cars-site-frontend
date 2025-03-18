@@ -34,7 +34,7 @@ export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
     if (!isLoggedIn) {
       setIsModalOpen(true);
     }
-    router.push("/account");
+    // router.push("/account");
 
     if (typeof window !== "undefined") {
       const sidebarState = localStorage.getItem("sidebarOpen") === "true";

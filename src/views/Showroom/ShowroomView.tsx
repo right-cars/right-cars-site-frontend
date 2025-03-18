@@ -45,7 +45,6 @@ const filterFromMakes = (data, makes)=> {
   //@ts-expect-error
   if(makes.length) return data.filter(item => {
     const make = item.make.toLowerCase();
-    //@ts-expect-error
     return makes.includes(make);
   })
   return data;

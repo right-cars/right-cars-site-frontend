@@ -19,7 +19,6 @@ export default async function Showroom() {
     type,
     fuel,
   }));
-  console.log(data)
 
   return <ShowroomView data={transformData} />;
 }

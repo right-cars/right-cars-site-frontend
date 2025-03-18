@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 
-import GoogleBtn from "./GoogleBtn/GoogleBtn";
+// import GoogleBtn from "./GoogleBtn/GoogleBtn";
 
 import cls from "../styles.module.scss";
 
@@ -74,9 +74,9 @@ export default function SignIn({
         </p>
         <Button type="submit" text="log in" />
       </form>
-      <div style={{ marginTop: 12, marginBottom: 32 }}>
-        <GoogleBtn />
-      </div>
+      {/*<div style={{ marginTop: 12, marginBottom: 32 }}>*/}
+      {/*  <GoogleBtn />*/}
+      {/*</div>*/}
       <p className="btnText" style={{ marginBottom: 32 }}>
         DONʼT HAVE AN ACCOUNT?
       </p>

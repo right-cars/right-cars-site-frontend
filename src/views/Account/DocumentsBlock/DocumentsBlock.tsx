@@ -20,7 +20,7 @@ interface DocumentLabel {
 
 export default function DocumentsBlock({ legalEntityType, initialFiles={} }: Props) {
   const [uploadedFiles, setUploadedFiles] = useState<Record<string, File | null>>(initialFiles)
-  console.log("🚀 ~ DocumentsBlock ~ uploadedFiles:", uploadedFiles);
+  // console.log("🚀 ~ DocumentsBlock ~ uploadedFiles:", uploadedFiles);
 
   const handleFileUpload = (label: string, file: File | null) => {
     setUploadedFiles((prev) => ({ ...prev, [label]: file }));
@@ -83,7 +83,7 @@ export default function DocumentsBlock({ legalEntityType, initialFiles={} }: Pro
             tooltipVariant={tooltipVariant}
             label={label}
             onFileUpload={(file) => handleFileUpload(label, file)}
-            file={uploadedFiles[label]} 
+            file={uploadedFiles[label]}
           />
         ))}
       </div>
