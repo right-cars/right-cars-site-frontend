@@ -9,6 +9,8 @@ import MultiRangeSlider from "@/shared/components/MultiRangeSlider/MultiRangeSli
 import MakeFilter from "./MakeFilter/MakeFilter";
 import SelectFilter from "./SelectFilter/SelectFilter";
 
+import makes from "./makes";
+
 import cls from "./styles.module.scss";
 
 interface FilterProps {
@@ -24,10 +26,10 @@ interface FilterProps {
 const defaultMultirangeValues = {
   price: { min: 0, max: 230000 },
   kilometers: { min: 0, max: 500000 },
-  year: { min: 2007, max: 2025 },
+  year: { min: 1990, max: 2025 },
 };
 
-const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
+// const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
 
 export default function Filters({
   setIsFilterVisible,
@@ -142,7 +144,7 @@ export default function Filters({
         />
         <MultiRangeSlider
           handleClear={() => handleClear("year")}
-          min={2007}
+          min={1990}
           max={2025}
           step={1}
           value={multirangeValues.year}
@@ -157,7 +159,7 @@ export default function Filters({
         />
         <SelectFilter
           title="Fuel type"
-          options={["diesel", "gasoline", "hybrid"]}
+          options={["diesel", "petrol", "hybrid"]}
           selected={selectedFuelTypes}
           onChange={setSelectedFuelTypes}
           onClear={() => setSelectedFuelTypes([])}

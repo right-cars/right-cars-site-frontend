@@ -13,7 +13,7 @@ import SortComponent from "./SortComponent/SortComponent";
 
 import cls from "./styles.module.scss";
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 20;
 
 const convertPriceToNumber = (price: string): number => {
   const numericString = price.replace(/[^\d.-]/g, "");
@@ -71,7 +71,7 @@ const filterFromTransmission = (data, transmissions)=> {
 const defaultMultirangeValues = {
   price: { min: 0, max: 230000 },
   kilometers: { min: 0, max: 500000 },
-  year: { min: 2007, max: 2025 },
+  year: { min: 1990, max: 2025 },
 };
 
 //@ts-expect-error
@@ -124,8 +124,11 @@ export default function ShowroomView({data}) {
   const rangeFilteredData = filterFromRage(filteredData, multirangeValues);
 
   const makeFilteredData = filterFromMakes(rangeFilteredData, selectedMakes);
+
   const fueleTypesFilteredData = filterFromFuelTypes(makeFilteredData, selectedFuelTypes);
+
   const transmissionFilteredData = filterFromTransmission(fueleTypesFilteredData, selectedTransmission);
+
 
   const totalPages = Math.ceil(transmissionFilteredData.length / ITEMS_PER_PAGE);
   const paginatedData = transmissionFilteredData.slice(
