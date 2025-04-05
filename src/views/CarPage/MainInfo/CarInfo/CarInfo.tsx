@@ -11,7 +11,7 @@ export default function CarInfo({ data, pageId }: { pageId: string }) {
        {
            img:"/icons/car-page/details/img1.svg",
            title: "Mileage",
-           value: `${data.km} km`
+           value: `${data.mileageInKm} km`
        },
        {
            img:"/icons/car-page/details/img2.svg",
@@ -21,24 +21,29 @@ export default function CarInfo({ data, pageId }: { pageId: string }) {
        {
            img:"/icons/car-page/details/img3.svg",
            title: "Engine cap",
-           value: data.engine_capacity
-       },
-       {
-           img:"/icons/car-page/details/img4.svg",
-           title: "Consumption",
-           value: data.fuel_consumption
-       },
-       {
-           img:"/icons/car-page/details/img5.svg",
-           title: "Drive type",
-           value: data.drive_type
+           value: data.engineCapacityInCc
        },
        {
            img:"/icons/car-page/details/img6.svg",
            title: "Fuel",
-           value: data.fuel
+           value: data.fuelType
        }
    ];
+
+   if(data.fuelConsumption) {
+       details.push({
+           img:"/icons/car-page/details/img4.svg",
+           title: "Consumption",
+           value: data.fuelConsumption
+       });
+   }
+   if(data.driveType) {
+       details.push({
+           img:"/icons/car-page/details/img5.svg",
+           title: "Drive type",
+           value: data.driveType
+       });
+   }
 
   return (
     <div className={cls.wrapper}>

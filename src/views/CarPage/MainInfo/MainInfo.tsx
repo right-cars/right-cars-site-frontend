@@ -8,14 +8,13 @@ import cls from "./styles.module.scss";
 //@ts-expect-error
 export default function MainInfo({ data, pageId }: { pageId: string }) {
   const media =  [
-    { type: "image", src: data.mainImage },
     //@ts-expect-error
-      ...data.images.map(src => ({ type: "image", src, })),
+      ...data.imageUrls.map(src => ({ type: "image", src, })),
   ];
   if(data.video) {
     media.push({ type: "video", src: data.video })
   }
-
+  console.log(media)
   return (
     <section className="container section">
       <div className={cls.wrapper}>

@@ -7,9 +7,9 @@ import cls from "./styles.module.scss";
 
 const tabsData = [
   { name: "all vehicles", type: "all" },
-  { name: "Cars", type: "car" },
-  { name: "bakkie", type: "bakkie" },
-  { name: "commercial", type: "commercial" },
+  { name: "Cars", type: "Cars" },
+  { name: "bakkie", type: "Bakkie" },
+  { name: "commercial", type: "Commercial" },
 ];
 
 export default function Tabs({

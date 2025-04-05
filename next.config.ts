@@ -22,6 +22,16 @@ const nextConfig: NextConfig = {
         hostname: 'res.cloudinary.com',
         pathname: '**',
       },
+      {
+        protocol: 'http',
+        hostname: 'img.autotrader.co.za',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.autotrader.co.za',
+        pathname: '**',
+      },
     ],
   },
   webpack(config) {

@@ -159,7 +159,7 @@ export default function Filters({
         />
         <SelectFilter
           title="Fuel type"
-          options={["diesel", "petrol", "hybrid"]}
+          options={["diesel", "petrol", "hybrid", "electric"]}
           selected={selectedFuelTypes}
           onChange={setSelectedFuelTypes}
           onClear={() => setSelectedFuelTypes([])}

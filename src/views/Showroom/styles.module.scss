@@ -21,6 +21,10 @@
   margin-left: 288px;
   gap: 16px;
 
+  @media (min-width: 1200px) {
+    min-height: 790px;
+  }
+
   @include m.large-tablet {
     margin-left: 238px;
   }

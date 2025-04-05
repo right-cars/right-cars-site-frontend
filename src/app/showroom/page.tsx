@@ -6,19 +6,19 @@ export default async function Showroom() {
   const data = await getAllCars();
 
   //@ts-expect-error
-  const transformData = data.map(({_id, mainImage, year, make, model, price, km, transmission, type, fuel}) => ({
+  const transformData = data.map(({_id, imageUrls, year, make, model, price, mileageInKm, transmission, vehicleCategory, fuelType}) => ({
     id: _id,
-    img: mainImage,
+    img: imageUrls[0],
     year: Number(year),
     make,
     model,
     price: `R ${price}`,
-    mileage: `${km}`,
-    km: Number(km),
+    mileage: mileageInKm,
+    km: Number(mileageInKm),
     transmission,
     href: `/showroom/${_id}`,
-    type,
-    fuel,
+    type: vehicleCategory,
+    fuel: fuelType,
   }));
 
   return <ShowroomView data={transformData} />;

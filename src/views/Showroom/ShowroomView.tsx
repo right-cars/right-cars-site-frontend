@@ -13,21 +13,22 @@ import SortComponent from "./SortComponent/SortComponent";
 
 import cls from "./styles.module.scss";
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 12;
 
 const convertPriceToNumber = (price: string): number => {
-  const numericString = price.replace(/[^\d.-]/g, "");
+  const numericString = price.replace(/^R\s?|\,.*/g, "");
   return parseFloat(numericString);
 };
 
 //@ts-expect-error
-const filterFromRage = (data, filters)=> {
+const filterFromRange = (data, filters)=> {
   //@ts-expect-error
   const priceFilteredData = data.filter(item => {
     const price = convertPriceToNumber(item.price);
         return price >= filters.price.min && price <= filters.price.max
   });
-
+  // console.log(data)
+  // console.log(filters)
   //@ts-expect-error
   const kmFilteredData = priceFilteredData.filter(item => {
     return item.km >= filters.kilometers.min && item.km <= filters.kilometers.max
@@ -44,7 +45,7 @@ const filterFromRage = (data, filters)=> {
 const filterFromMakes = (data, makes)=> {
   //@ts-expect-error
   if(makes.length) return data.filter(item => {
-    const make = item.make.toLowerCase();
+    const {make} = item;
     return makes.includes(make);
   })
   return data;
@@ -54,7 +55,7 @@ const filterFromMakes = (data, makes)=> {
 const filterFromFuelTypes = (data, fuelTypes)=> {
   //@ts-expect-error
   if(fuelTypes.length) return data.filter(item => {
-    return fuelTypes.includes(item.fuel);
+    return fuelTypes.includes(item.fuel.toLowerCase());
   })
   return data;
 }
@@ -63,7 +64,7 @@ const filterFromFuelTypes = (data, fuelTypes)=> {
 const filterFromTransmission = (data, transmissions)=> {
   //@ts-expect-error
   if(transmissions.length) return data.filter(item => {
-    return transmissions.includes(item.transmission);
+    return transmissions.includes(item.transmission.toLowerCase());
   })
   return data;
 }
@@ -121,14 +122,13 @@ export default function ShowroomView({data}) {
       ? sortedData
       : sortedData.filter((item) => item.type === activeTab);
 
-  const rangeFilteredData = filterFromRage(filteredData, multirangeValues);
+  const rangeFilteredData = filterFromRange(filteredData, multirangeValues);
 
   const makeFilteredData = filterFromMakes(rangeFilteredData, selectedMakes);
 
-  const fueleTypesFilteredData = filterFromFuelTypes(makeFilteredData, selectedFuelTypes);
+  const fuelTypesFilteredData = filterFromFuelTypes(makeFilteredData, selectedFuelTypes);
 
-  const transmissionFilteredData = filterFromTransmission(fueleTypesFilteredData, selectedTransmission);
-
+  const transmissionFilteredData = filterFromTransmission(fuelTypesFilteredData, selectedTransmission);
 
   const totalPages = Math.ceil(transmissionFilteredData.length / ITEMS_PER_PAGE);
   const paginatedData = transmissionFilteredData.slice(
