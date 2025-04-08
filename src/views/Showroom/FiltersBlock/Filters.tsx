@@ -116,7 +116,7 @@ export default function Filters({
       animate={{
         opacity: isFilterVisible ? 1 : 0,
         y: isFilterVisible ? 0 : -10,
-        zIndex:1
+        zIndex:2
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={cls.container}
