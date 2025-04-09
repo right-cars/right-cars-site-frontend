@@ -6,13 +6,14 @@ import SecondInfoBlock from "./InfoBlocks/SecondInfoBlock";
 
 import cls from "./styles.module.scss";
 
-export default async function Reserve({ id }: { id: string }) {
-  console.log("🚀 ~ id:", id);
+// @ts-expect-error
+export default async function Reserve({ data }) {
+    console.log(data);
   return (
     <section className={`${"section container"} ${cls.wrapper}`}>
       <div className={cls.imgWrapp}>
         <Image
-          src={temporary.img}
+          src={data.imageUrls[0]}
           alt="car"
           width={752}
           height={551}
@@ -20,7 +21,7 @@ export default async function Reserve({ id }: { id: string }) {
         />
       </div>
       <div className={cls.infoBlcok}>
-        <FirstInfoBlock price={temporary.price} />
+        <FirstInfoBlock price={`R ${data.price}`} />
         <SecondInfoBlock />
       </div>
     </section>
