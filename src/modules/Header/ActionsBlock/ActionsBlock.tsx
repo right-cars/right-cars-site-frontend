@@ -12,7 +12,7 @@ export default function ActionsBlock() {
   return (
     <div className={cls.wrapper}>
       <div className={cls.actions}>
-        {isLoggedIn && (
+
           <Link href="/favorites" className={cls.link}>
             <Image
               src="/icons/heart.svg"
@@ -21,7 +21,7 @@ export default function ActionsBlock() {
               height={20}
             />
           </Link>
-        )}
+
 
         <LoginBtn isLoggedIn={isLoggedIn} />
       </div>

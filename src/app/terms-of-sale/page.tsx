@@ -32,24 +32,24 @@ export default function TermsOfSale() {
           title={termOfSaleData.pricingPayments.title}
           list={termOfSaleData.pricingPayments.list.items}
         />
-        <div>
-          <h3 className="titleSmall" style={{ marginBottom: 40 }}>
-            {termOfSaleData.additionalFees.title}
-          </h3>
-          <ul style={{ marginBottom: 80 }}>
-            {termOfSaleData.additionalFees.links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className="titleSmall"
-                  style={{ color: "#F31260" }}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/*<div>*/}
+        {/*  <h3 className="titleSmall" style={{ marginBottom: 40 }}>*/}
+        {/*    {termOfSaleData.additionalFees.title}*/}
+        {/*  </h3>*/}
+        {/*  <ul style={{ marginBottom: 80 }}>*/}
+        {/*    {termOfSaleData.additionalFees.links.map((link, index) => (*/}
+        {/*      <li key={index}>*/}
+        {/*        <Link*/}
+        {/*          href={link.href}*/}
+        {/*          className="titleSmall"*/}
+        {/*          style={{ color: "#F31260" }}*/}
+        {/*        >*/}
+        {/*          {link.name}*/}
+        {/*        </Link>*/}
+        {/*      </li>*/}
+        {/*    ))}*/}
+        {/*  </ul>*/}
+        {/*</div>*/}
         <div className={cls.addWrapp}>
           <h3 className="titleSmall">{termOfSaleData.notice.title}</h3>
           <Section

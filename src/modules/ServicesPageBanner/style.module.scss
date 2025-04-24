@@ -2,7 +2,7 @@
 @use "@/shared/styles/variables" as v;
 
 .wrapper {
-  margin-top: 99px;
+  //margin-top: 99px;
   padding-top: 100px;
   padding-bottom: 60px;
   display: grid;
@@ -11,14 +11,14 @@
   align-items: stretch;
 
   @include m.large-tablet {
-    margin-top: 95px;
+    //margin-top: 95px;
     padding-top: 80px;
     grid-template-columns: 1fr;
     // align-items: flex-start;
   }
 
   @include m.mobile {
-    margin-top: 84px;
+    //margin-top: 84px;
     padding-top: 60px;
     padding-bottom: 56px;
   }

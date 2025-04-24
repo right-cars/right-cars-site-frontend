@@ -69,16 +69,16 @@ export const termOfSaleData = {
       ],
     },
   },
-  additionalFees: {
-    title: "Additional fees and charges:",
-    links: [
-      { name: "spreadsheet", href: "#" },
-      { name: "spreadsheet", href: "#" },
-      { name: "spreadsheet", href: "#" },
-      { name: "spreadsheet", href: "#" },
-      { name: "spreadsheet", href: "#" },
-    ],
-  },
+  // additionalFees: {
+  //   title: "Additional fees and charges:",
+  //   links: [
+  //     { name: "spreadsheet", href: "#" },
+  //     { name: "spreadsheet", href: "#" },
+  //     { name: "spreadsheet", href: "#" },
+  //     { name: "spreadsheet", href: "#" },
+  //     { name: "spreadsheet", href: "#" },
+  //   ],
+  // },
   notice: {
     title: "IMPORTANT NOTICE AND DISCLAIMER",
     vehicleCondition: {

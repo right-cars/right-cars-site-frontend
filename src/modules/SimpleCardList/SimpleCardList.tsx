@@ -17,7 +17,7 @@ export default function SimpleCardList({
 }: SimpleCardListProps) {
   return (
     <section className="section container">
-      {title && <h2 style={{marginBottom:delivery?46:""}}>{title}</h2>}
+      {title && <h2 className={cls.title}>{title}</h2>}
 
       <ul className={cls.cardList}>
         {data.map(({ title, descr }, index) => (

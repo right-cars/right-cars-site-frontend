@@ -1,17 +1,17 @@
 @use "@/shared/styles/mixins" as m;
 
 .wrapper {
-  margin-top: 99px;
+  //margin-top: 99px;
   padding-top: 100px;
   padding-bottom: 120px;
 
   @include m.large-tablet {
-    margin-top: 95px;
+    //margin-top: 95px;
     padding-top: 60px;
   }
 
   @include m.mobile {
-    margin-top: 84px;
+    //margin-top: 84px;
     padding-top: 54px;
   }
 }

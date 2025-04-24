@@ -23,7 +23,7 @@ export default function FormFieldsBlock({
 }: FormFieldsBlockProps) {
   return (
     <div className={cls.container}>
-      {title && <h4 className="titleSmall" style={{ marginBottom: 32 }}>{title}</h4>}
+      {title && <h4 className="titleMedium" style={{ marginBottom: 32 }}>{title}</h4>}
 
       <div className={cls.inputsWrapp}>
         {fields.map(

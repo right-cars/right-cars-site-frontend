@@ -3,19 +3,19 @@
 
 .wrapper {
   position: relative;
-  margin-top: 99px;
+  //margin-top: 99px;
   padding-top: 64px;
   display: grid;
   grid-template-columns: 31% auto;
   gap: 32px;
 
   @include m.large-tablet {
-    margin-top: 95px;
+    //margin-top: 95px;
     grid-template-columns: 1fr;
   }
 
   @include m.mobile {
-    margin-top: 84px;
+    //margin-top: 84px;
     padding-top: 54px;
   }
 }

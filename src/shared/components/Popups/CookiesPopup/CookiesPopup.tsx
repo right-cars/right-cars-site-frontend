@@ -64,14 +64,14 @@ export default function CookiesPopup() {
                 text="Accept cookies"
               />
             </div>
-            <Image
-              src="/icons/closeDark.svg"
-              alt="close icon"
-              width={11}
-              height={11}
-              onClick={handleClose}
-              className={cls.close}
-            />
+            {/*<Image*/}
+            {/*  src="/icons/closeDark.svg"*/}
+            {/*  alt="close icon"*/}
+            {/*  width={11}*/}
+            {/*  height={11}*/}
+            {/*  onClick={handleClose}*/}
+            {/*  className={cls.close}*/}
+            {/*/>*/}
           </motion.div>
         </div>
       )}

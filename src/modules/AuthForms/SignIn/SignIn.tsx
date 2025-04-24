@@ -77,7 +77,7 @@ export default function SignIn({
       {/*<div style={{ marginTop: 12, marginBottom: 32 }}>*/}
       {/*  <GoogleBtn />*/}
       {/*</div>*/}
-      <p className="btnText" style={{ marginBottom: 32 }}>
+      <p className="btnText" style={{ marginBottom: 32, marginTop: 32 }}>
         DONʼT HAVE AN ACCOUNT?
       </p>
       <Button text="sign up" color="transparent" onClick={toggleForm} />

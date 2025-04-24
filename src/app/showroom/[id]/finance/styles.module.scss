@@ -2,16 +2,16 @@
 @use "@/shared/styles/variables" as v;
 
 .pageWrapp {
-  margin-top: 99px;
+  //margin-top: 99px;
   padding-top: 120px;
 
   @include m.large-tablet {
-    margin-top: 95px;
+    //margin-top: 95px;
     padding-top: 80px;
   }
 
   @include m.mobile {
-    margin-top: 84px;
+    //margin-top: 84px;
     padding-top: 72px;
   }
 }

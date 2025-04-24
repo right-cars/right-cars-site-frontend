@@ -1,14 +1,14 @@
 @use "@/shared/styles/mixins" as m;
 
 .wrapper {
-  margin-top: 99px;
+  //margin-top: 99px;
   padding-top: 120px;
   display: flex;
   align-items: stretch;
   gap: 16px;
 
   @include m.large-tablet {
-    margin-top: 95px;
+    //margin-top: 95px;
     padding-top: 100px;
     flex-direction: column;
     gap: 40px;
@@ -16,7 +16,7 @@
   }
 
   @include m.mobile {
-    margin-top: 84px;
+    //margin-top: 84px;
     padding-top: 72px;
     gap: 32px;
   }
