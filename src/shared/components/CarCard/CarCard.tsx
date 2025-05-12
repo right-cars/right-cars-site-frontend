@@ -43,7 +43,7 @@ export default function CarCard(props: CarProps) {
         <div className={cls.firstInfo}>
           <p className="titleSmall">{year}</p>
           <div className={cls.modelWrap}>
-            <p className="btnText">
+            <p className={`btnText ${cls.title}`}>
               {make} {model}
             </p>
             <ArrowIcon width={18} height={18} className={cls.arr} />
