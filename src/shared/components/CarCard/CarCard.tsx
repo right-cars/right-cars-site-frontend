@@ -50,7 +50,9 @@ export default function CarCard(props: CarProps) {
           </div>
         </div>
         <div className={cls.secondInfo}>
-          <p className="titleMedium">{price}</p>
+          <p className="titleMedium">
+            R {Number(price.split(",")[0]).toLocaleString("en-US")}
+          </p>
           <ul className={cls.chips}>
             <li className={cls.chip}>
               <p className="textSmall">{mileage}km</p>
