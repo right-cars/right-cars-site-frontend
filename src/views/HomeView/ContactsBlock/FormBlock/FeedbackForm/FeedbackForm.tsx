@@ -29,7 +29,7 @@ export default function FeedbackForm({
               id={id}
               phone={phone}
               label={label}
-              required
+              required={true}
               value={formData[id]}
               handleChange={handleChange}
             />
@@ -38,7 +38,7 @@ export default function FeedbackForm({
               key={id}
               id={id}
               label={label}
-              required
+              required={true}
               value={formData[id]}
               handleChange={handleChange}
               options={options || []}

@@ -31,11 +31,11 @@ export default function CustomInput(props: CustomInputProps) {
   if (id === "vehicleYear") {
     mask = "____";
   } else if (id === "currentVehicleKilometers") {
-    mask = "______"; 
+    mask = "______";
   } else if (id === "vehicleServiceDueDate") {
     mask = "__/__/____";
   } else if (phone) {
-    mask = "+38 (0__) ___-__-__"
+    mask = "+38 (0__) ___-__-__";
   }
 
   return (
@@ -60,6 +60,7 @@ export default function CustomInput(props: CustomInputProps) {
           autoComplete="off"
           placeholder={placeholder}
           disabled={disabled}
+          required={required}
         />
       ) : (
         <input
@@ -72,6 +73,7 @@ export default function CustomInput(props: CustomInputProps) {
           autoComplete="off"
           placeholder={placeholder}
           disabled={disabled}
+          required={required}
         />
       )}
       {password && (
