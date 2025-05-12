@@ -45,6 +45,8 @@
 }
 
 .contetntWrapp {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: stretch;
   height: 440px;
@@ -58,4 +60,3 @@
     height: 400px;
   }
 }
-
