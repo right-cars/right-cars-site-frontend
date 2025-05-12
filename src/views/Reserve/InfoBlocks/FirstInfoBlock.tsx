@@ -38,13 +38,13 @@ export default function FirstInfoBlock({ price }: { price: string }) {
             console.log("🥂");
           }}
         />
-        <Button
-          text="credit or debit card"
-          color="transparent"
-          onClick={() => {
-            console.log("🥂");
-          }}
-        />
+        {/*<Button*/}
+        {/*  text="credit or debit card"*/}
+        {/*  color="transparent"*/}
+        {/*  onClick={() => {*/}
+        {/*    console.log("🥂");*/}
+        {/*  }}*/}
+        {/*/>*/}
       </div>
     </div>
   );
