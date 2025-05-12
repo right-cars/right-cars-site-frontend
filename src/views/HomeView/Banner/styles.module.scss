@@ -28,12 +28,16 @@
     margin-bottom: 44px;
   }
 
-  @include m.mobile {
+  @media (max-width: 959px) {
+    margin-bottom: 44px;
+  }
+
+  @media (max-width: 767px) {
     font-size: 36px;
     margin-bottom: 48px;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 479px) {
     font-size: 36px;
     margin-bottom: 40px;
   }

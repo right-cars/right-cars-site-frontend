@@ -103,6 +103,7 @@ h2 {
 .textLarge {
   font-family: "Metrophobic", sans-serif;
   font-size: 18px;
+  font-weight: 400;
 
   @include m.large-tablet {
     font-size: 17px;
