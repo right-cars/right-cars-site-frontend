@@ -1,4 +1,4 @@
-"useclient"
+"useclient";
 
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ export default function CustomSelect({
   handleChange,
   options,
   placeholder,
-  bordered
+  bordered,
 }: CustomInputProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +38,10 @@ export default function CustomSelect({
           </span>
         )}
       </p>
-      <div onClick={() => setIsOpen(!isOpen)} className={`${cls.select} ${bordered && cls.borderedSelect}`}>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className={`${cls.select} ${bordered && cls.borderedSelect}`}
+      >
         <div className={cls.selected}>
           {value || (
             <p style={{ color: "rgba(17, 24, 28, 0.5)" }}>{placeholder}</p>
