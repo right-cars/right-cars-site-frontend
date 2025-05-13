@@ -7,7 +7,7 @@ export default function SecondInfoBlock() {
     <div className={cls.info} style={{ padding: 16 }}>
       <p className="textSmall">
         Please read the Right Cars&nbsp;
-        <Link href={"/"} className={cls.link}>
+        <Link href={"/terms-of-sale"} className={cls.link}>
           Terms of Sale&nbsp;
         </Link>
         carefully. By proceeding with the transaction, you (the buyer) are
