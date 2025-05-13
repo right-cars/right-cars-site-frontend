@@ -35,12 +35,15 @@
 }
 
 .title {
-  margin: 12px 0 48px;
+  margin: 0 0 48px;
+  font-size: 20px;
 }
 
 .titleShowroom {
+  font-size: 24px;
   @media (min-width: 768px) {
-    margin: 12px 0 80px;
+    font-size: 32px;
+    margin: 0 0 80px;
   }
 }
 
