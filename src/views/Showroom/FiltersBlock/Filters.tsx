@@ -114,6 +114,7 @@ export default function Filters({
       initial={{ opacity: 0, y: -10, zIndex: -1 }}
       animate={{
         opacity: isFilterVisible ? 1 : 0,
+        pointerEvents: isFilterVisible ? "auto" : "none",
         y: isFilterVisible ? 0 : -10,
         zIndex: 2,
       }}
