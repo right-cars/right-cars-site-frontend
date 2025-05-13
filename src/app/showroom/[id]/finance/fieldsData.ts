@@ -87,7 +87,7 @@ export const fieldsBlock = [
           label: "mobile number",
           type: "input",
           required: true,
-          phone:true
+          phone: true,
         },
 
         {
@@ -98,7 +98,12 @@ export const fieldsBlock = [
           placeholder: "Not Selected",
         },
 
-        { id: "phoneNumberH", label: "phone number (h)", type: "input", phone:true },
+        {
+          id: "phoneNumberH",
+          label: "phone number (h)",
+          type: "input",
+          phone: true,
+        },
 
         {
           id: "graduate",
@@ -392,7 +397,7 @@ export const fieldsBlock = [
           id: "netTakehomePay",
           label: "Net Take-home Pay",
           type: "input",
-          requited: true,
+          required: true,
         },
         {
           id: "totalMonthlyIncome",
@@ -403,6 +408,7 @@ export const fieldsBlock = [
           id: "grossRemuneration",
           label: "Gross Remuneration",
           type: "input",
+          required: true,
         },
       ],
     },
@@ -771,7 +777,7 @@ export const fieldsBlock = [
           id: "contactNumberRelative",
           label: "Contact Number",
           type: "input",
-          phone:true
+          phone: true,
         },
         {
           id: "relativeAddress1",
