@@ -8,6 +8,7 @@ interface SimpleCardListProps {
   minHeight?: number;
   delivery?: boolean;
   className?: string;
+  titleStyles?: string;
 }
 
 export default function SimpleCardList({
@@ -16,10 +17,11 @@ export default function SimpleCardList({
   minHeight,
   delivery,
   className = "",
+  titleStyles = "",
 }: SimpleCardListProps) {
   return (
     <section className={`section container ${className}`}>
-      {title && <h2 className={cls.title}>{title}</h2>}
+      {title && <h2 className={`${cls.title} ${titleStyles} `}>{title}</h2>}
 
       <ul className={cls.cardList}>
         {data.map(({ title, descr }, index) => (

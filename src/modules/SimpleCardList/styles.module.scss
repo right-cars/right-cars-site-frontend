@@ -35,7 +35,13 @@
 }
 
 .title {
-  margin: 12px 0 24px;
+  margin: 12px 0 48px;
+}
+
+.titleShowroom {
+  @media (min-width: 768px) {
+    margin: 12px 0 80px;
+  }
 }
 
 .deliveryPaddingFix {
