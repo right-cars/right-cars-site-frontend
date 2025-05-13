@@ -37,3 +37,9 @@
 .title {
   margin: 12px 0 24px;
 }
+
+.deliveryPaddingFix {
+  @media (min-width: 1024px) {
+    padding-bottom: 60px !important;
+  }
+}

@@ -5,6 +5,8 @@ import DeliveryList from "@/views/DeliveryPage/DeliveryList";
 
 import { cardListData } from "./cardListData";
 
+import cls from "../../modules/SimpleCardList/styles.module.scss";
+
 export default function DeliveryPage() {
   return (
     <>
@@ -19,6 +21,7 @@ export default function DeliveryPage() {
         data={cardListData}
         minHeight={260}
         delivery
+        className={cls.deliveryPaddingFix}
       />
       <DeliveryList />
     </>
