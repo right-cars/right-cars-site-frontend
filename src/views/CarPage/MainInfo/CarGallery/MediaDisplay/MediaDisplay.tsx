@@ -1,21 +1,24 @@
-import { MouseEventHandler } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 import { Media } from "@/shared/types/media";
 import FavoriteBtn from "@/shared/components/Buttons/FavoriteBtn/FavoriteBtn";
-import { getVideoThumbnail, getYouTubeVideoID } from "@/shared/utils/getVideoThumbnail";
+import {
+  getVideoThumbnail,
+  getYouTubeVideoID,
+} from "@/shared/utils/getVideoThumbnail";
 
 import PaginationButtons from "./PaginationButtons/PaginationButtons";
 import cls from "./styles.module.scss";
 
 interface MediaDisplayProps {
   currentMedia: Media;
-  handleMainMediaClick: MouseEventHandler<HTMLDivElement>;
+  handleMainMediaClick: React.MouseEventHandler<HTMLDivElement>;
   currentIndex: number;
   temporarymMediaList: Media[];
   pageId: string;
-  handlePrev: MouseEventHandler<HTMLButtonElement>;
-  handleNext: MouseEventHandler<HTMLButtonElement>;
+  handlePrev: React.MouseEventHandler<HTMLButtonElement>;
+  handleNext: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const MediaDisplay = ({
@@ -27,37 +30,59 @@ const MediaDisplay = ({
   handlePrev,
   handleNext,
 }: MediaDisplayProps) => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  // Логіка прокручування слайдів
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (container) {
+      const slideWidth = container.clientWidth;
+      // Скролл на відповідний слайд
+      container.scrollTo({
+        left: slideWidth * currentIndex,
+        behavior: "smooth",
+      });
+    }
+  }, [currentIndex]);
 
   return (
     <div className={cls.mainMedia} onClick={handleMainMediaClick}>
-      {currentMedia.type === "image" ? (
-        <Image
-          src={currentMedia.src}
-          alt="Car"
-          className={cls.mainImg}
-          width={752}
-          height={546}
-        />
-      ) : (
-        <div className={cls.videoImgBlock}>
-          <Image
-            src={getVideoThumbnail(getYouTubeVideoID(currentMedia.src))}
-            alt="Thumbnail"
-            width={752}
-            height={546}
-            className={cls.mainImg}
-          />
-          <div className={cls.mainVideoSvgBlock}>
-            <p className="textMedium">video</p>
-            <Image
-              src="/icons/youtube.svg"
-              alt="youtube icon"
-              width={22}
-              height={15}
-            />
+      <div className={cls.scrollableSlides} ref={scrollRef}>
+        {temporarymMediaList.map((media, index) => (
+          <div className={cls.slide} key={index}>
+            {/* Перевірка на тип медіа */}
+            {media.type === "image" ? (
+              <Image
+                src={media.src}
+                alt="Car"
+                className={cls.mainImg}
+                width={752}
+                height={546}
+              />
+            ) : media.type === "video" ? (
+              <div className={cls.videoImgBlock}>
+                <Image
+                  src={getVideoThumbnail(getYouTubeVideoID(media.src))}
+                  alt="Thumbnail"
+                  width={752}
+                  height={546}
+                  className={cls.mainImg}
+                />
+                <div className={cls.mainVideoSvgBlock}>
+                  <p className="textMedium">video</p>
+                  <Image
+                    src="/icons/youtube.svg"
+                    alt="youtube icon"
+                    width={22}
+                    height={15}
+                  />
+                </div>
+              </div>
+            ) : null}
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+
       <div className={cls.numeration}>
         <p className="textMedium">
           {currentIndex + 1} of {temporarymMediaList.length}
