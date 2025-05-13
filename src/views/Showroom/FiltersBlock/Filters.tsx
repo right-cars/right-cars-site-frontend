@@ -85,7 +85,6 @@ export default function Filters({
         prev[multirangeKey].min === newValues.min &&
         prev[multirangeKey].max === newValues.max
       ) {
-
         return prev;
       }
 
@@ -112,11 +111,11 @@ export default function Filters({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -10, zIndex:-1 }}
+      initial={{ opacity: 0, y: -10, zIndex: -1 }}
       animate={{
         opacity: isFilterVisible ? 1 : 0,
         y: isFilterVisible ? 0 : -10,
-        zIndex:2
+        zIndex: 2,
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={cls.container}
@@ -130,7 +129,8 @@ export default function Filters({
           value={multirangeValues.price}
           onChange={(values) => handleRangeChange("price", values)}
           title="Price"
-          textBefore="r "
+          textBeforeLeft="min r "
+          textBeforeRight="max "
         />
         <MultiRangeSlider
           handleClear={() => handleClear("kilometers")}
@@ -139,7 +139,9 @@ export default function Filters({
           step={10000}
           value={multirangeValues.kilometers}
           onChange={(values) => handleRangeChange("kilometers", values)}
-          title="kilometers"
+          title="Kilometers"
+          textBeforeLeft="min "
+          textBeforeRight="max "
           textAfter=" km"
         />
         <MultiRangeSlider
@@ -149,7 +151,7 @@ export default function Filters({
           step={1}
           value={multirangeValues.year}
           onChange={(values) => handleRangeChange("year", values)}
-          title="year"
+          title="Year"
         />
         <MakeFilter
           options={makes}
