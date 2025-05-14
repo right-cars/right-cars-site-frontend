@@ -21,13 +21,14 @@ export default function PrivacyPolicy({
           <Checkbox
             variant="square"
             id="privacyPolicy"
+            required={true}
             label=" I agree to the privacy policy"
             checked={privacyPolicyChecked}
             onToggle={handleChange}
           />
         </div>
       </div>
-      <p className="textSmall" style={{fontWeight:400}}>
+      <p className="textSmall" style={{ fontWeight: 400 }}>
         I agree that Right Cars can use the information I provide, and may
         disclose it to its authorised Right Cars Staff, contractors and
         associated organisations, for the purpose of ensuring my request is

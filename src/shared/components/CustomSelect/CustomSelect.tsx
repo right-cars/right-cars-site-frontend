@@ -80,7 +80,7 @@ export default function CustomSelect({
         id={id}
         required={required}
         value={value}
-        onChange={(e) => handleChange(e)} // Керування зміною значення
+        onChange={(e) => handleChange(e)}
         className={cls.nativeSelect}
       >
         <option value="" disabled hidden>
