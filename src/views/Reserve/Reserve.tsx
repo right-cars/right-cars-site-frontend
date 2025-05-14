@@ -8,7 +8,7 @@ import cls from "./styles.module.scss";
 
 // @ts-expect-error
 export default async function Reserve({ data }) {
-    console.log(data);
+  console.log(data);
   return (
     <section className={`${"section container"} ${cls.wrapper}`}>
       <div className={cls.imgWrapp}>
@@ -21,7 +21,11 @@ export default async function Reserve({ data }) {
         />
       </div>
       <div className={cls.infoBlcok}>
-        <FirstInfoBlock price={`R ${data.price}`} />
+        <FirstInfoBlock
+          price={`R ${Number(data.price.split(",")[0]).toLocaleString(
+            "en-US"
+          )}`}
+        />
         <SecondInfoBlock />
       </div>
     </section>
