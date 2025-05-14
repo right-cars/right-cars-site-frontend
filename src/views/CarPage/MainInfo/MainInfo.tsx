@@ -1,12 +1,17 @@
+"use client";
+import { useState } from "react";
 import BackBtn from "./BackBtn/BackBtn";
 import CarDetails from "./CarDetails/CarDetails";
 import CarGallery from "./CarGallery/CarGallery";
 import CarInfo from "./CarInfo/CarInfo";
 
 import cls from "./styles.module.scss";
+import Reserve from "@/views/Reserve/Reserve";
 
 //@ts-expect-error
 export default function MainInfo({ data, pageId }: { pageId: string }) {
+  const [isCarInfoShown, setIsCarInfoShown] = useState(true);
+
   const media = [
     //@ts-expect-error
     ...data.imageUrls.map((src) => ({ type: "image", src })),
@@ -23,7 +28,15 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
           {/*@ts-expect-error*/}
 
           <CarGallery data={media} pageId={pageId} />
-          <CarInfo data={data} pageId={pageId} />
+          {isCarInfoShown ? (
+            <CarInfo
+              data={data}
+              pageId={pageId}
+              setIsCarInfoShown={setIsCarInfoShown}
+            />
+          ) : (
+            <Reserve data={data} />
+          )}
           <CarDetails data={data} />
           {/*@ts-expect-error*/}
         </div>

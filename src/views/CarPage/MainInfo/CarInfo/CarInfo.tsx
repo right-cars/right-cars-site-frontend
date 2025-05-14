@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import FirstInfoBlock from "./FirstInfoBlock";
 import SecondInfoBlock from "./SecondInfoBlock";
 // import { temporaryData } from "./temporaryData";
@@ -5,7 +6,14 @@ import SecondInfoBlock from "./SecondInfoBlock";
 import cls from "./styles.module.scss";
 
 //@ts-expect-error
-export default function CarInfo({ data, pageId }: { pageId: string }) {
+export default function CarInfo({
+  data,
+  pageId,
+  setIsCarInfoShown,
+}: {
+  pageId: string;
+  setIsCarInfoShown: Dispatch<SetStateAction<boolean>>;
+}) {
   // const data = temporaryData;
   const details = [
     {
@@ -54,7 +62,7 @@ export default function CarInfo({ data, pageId }: { pageId: string }) {
         variant={data.variant}
         details={details}
       />
-      <SecondInfoBlock price={data.price} pageId={pageId} />
+      <SecondInfoBlock price={data.price} pageId={pageId} setIsCarInfoShown={setIsCarInfoShown}/>
     </div>
   );
 }
