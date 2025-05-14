@@ -50,7 +50,6 @@ const MediaDisplay = ({
       <div className={cls.scrollableSlides} ref={scrollRef}>
         {temporarymMediaList.map((media, index) => (
           <div className={cls.slide} key={index}>
-            {/* Перевірка на тип медіа */}
             {media.type === "image" ? (
               <Image
                 src={media.src}
@@ -89,9 +88,13 @@ const MediaDisplay = ({
         </p>
       </div>
 
-      <FavoriteBtn id={pageId} isCarPage />
+      <div className={cls.favoriteButton}>
+        <FavoriteBtn id={pageId} isCarPage />
+      </div>
 
-      <PaginationButtons handlePrev={handlePrev} handleNext={handleNext} />
+      <div className={cls.paginationButtons}>
+        <PaginationButtons handlePrev={handlePrev} handleNext={handleNext} />
+      </div>
     </div>
   );
 };

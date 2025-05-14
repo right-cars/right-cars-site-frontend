@@ -63,6 +63,17 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (min-width: 1600px) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mainMedia:hover .mainVideoSvgBlock {
+    opacity: 1;
+  }
 }
 
 .prevBtn,
@@ -90,4 +101,40 @@
   background: rgba(35, 35, 35, 0.5);
   color: v.$pure;
   padding: 8px;
+
+  @media (min-width: 1600px) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+@media (min-width: 1600px) {
+  .mainMedia:hover .numeration {
+    opacity: 1;
+  }
+}
+
+.paginationButtons {
+  @media (min-width: 1600px) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mainMedia:hover .paginationButtons {
+    opacity: 1;
+  }
+}
+
+.favoriteButton {
+  @media (min-width: 1600px) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mainMedia:hover .favoriteButton {
+    opacity: 1;
+  }
 }
