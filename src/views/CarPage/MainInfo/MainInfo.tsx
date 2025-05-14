@@ -21,11 +21,12 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
         <BackBtn />
         <div className={cls.contentWrapp}>
           {/*@ts-expect-error*/}
+
           <CarGallery data={media} pageId={pageId} />
-          {/*@ts-expect-error*/}
           <CarInfo data={data} pageId={pageId} />
+          <CarDetails data={data} />
+          {/*@ts-expect-error*/}
         </div>
-        <CarDetails data={data} />
       </div>
     </section>
   );
