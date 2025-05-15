@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
@@ -38,8 +38,8 @@ export default function Header() {
   return (
     // <RevealComp threshold={0.75} duration="0.3s" y={-20}>
     <header
-      // className={cls.header}
-      className={`${scrolledDown ? cls.none : cls.header}`}
+      className={cls.header}
+      // className={`${scrolledDown ? cls.none : cls.header}`}
     >
       <div className={cls.headerContainer}>
         <Logo variant="header" />

@@ -9,6 +9,16 @@
   gap: 12px;
 }
 
+.nativeSelect {
+  position: absolute;
+  inset: 0;
+  opacity: 0; 
+  pointer-events: none; 
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 .label {
   color: v.$neutral-dark;
   text-transform: lowercase;

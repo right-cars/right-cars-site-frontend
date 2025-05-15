@@ -13,7 +13,8 @@ interface MultiRangeSliderProps {
   onChange: (values: { min: number; max: number }) => void;
   title: string;
   step?: number;
-  textBefore?: string;
+  textBeforeLeft?: string;
+  textBeforeRight?: string;
   textAfter?: string;
   handleClear: () => void;
 }
@@ -24,7 +25,8 @@ export default function MultiRangeSlider({
   value,
   onChange,
   title,
-  textBefore,
+  textBeforeLeft,
+  textBeforeRight,
   textAfter,
   step,
   handleClear,
@@ -99,10 +101,12 @@ export default function MultiRangeSlider({
           <div className={cls.sliderTrack} />
           <div ref={range} className={cls.sliderRange} />
           <div className={`${"textSmall"} ${cls.sliderLeftValue}`}>
-            {textBefore && textBefore} {value.min} {textAfter && textAfter}
+            {textBeforeLeft && textBeforeLeft} {value.min}{" "}
+            {textAfter && textAfter}
           </div>
           <div className={`${"textSmall"} ${cls.sliderRightValue}`}>
-            {textBefore && textBefore} {value.max} {textAfter && textAfter}
+            {textBeforeRight && textBeforeRight} {value.max}{" "}
+            {textAfter && textAfter}
           </div>
         </div>
       </div>

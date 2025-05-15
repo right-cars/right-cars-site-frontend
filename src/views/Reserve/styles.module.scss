@@ -1,50 +1,16 @@
 @use "@/shared/styles/mixins" as m;
 
-.wrapper {
-  //margin-top: 99px;
-  padding-top: 120px;
-  display: flex;
-  align-items: stretch;
-  gap: 16px;
-
-  @include m.large-tablet {
-    //margin-top: 95px;
-    padding-top: 100px;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
-
-  @include m.mobile {
-    //margin-top: 84px;
-    padding-top: 72px;
-    gap: 32px;
-  }
-}
-
-.imgWrapp {
-  width: 66.2%;
-  border-radius: 8px;
-
-  @include m.large-tablet {
-    width: 100%;
-  }
-}
-
-.img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
 .infoBlcok {
+  position: sticky;
+  top: 0px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 32.4%;
+  height: fit-content;
 
   @include m.large-tablet {
+    position: static;
     width: 100%;
   }
 }

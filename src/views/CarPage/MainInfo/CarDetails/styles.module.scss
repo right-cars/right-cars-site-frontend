@@ -9,11 +9,11 @@
   gap: 16px;
 
   @media (max-width: 1470px) {
-    width: 42vw;
+    width: 66%;
   }
 
   @include m.small-desktop {
-    width: 57vw;
+    width: 66%;
   }
 
   @include m.large-tablet {

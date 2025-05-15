@@ -6,26 +6,26 @@ interface SimpleCardListProps {
   data: { title: string; descr: string }[];
   title?: string;
   minHeight?: number;
-  delivery?:boolean
+  delivery?: boolean;
+  className?: string;
+  titleStyles?: string;
 }
 
 export default function SimpleCardList({
   data,
   title,
   minHeight,
-  delivery
+  delivery,
+  className = "",
+  titleStyles = "",
 }: SimpleCardListProps) {
   return (
-    <section className="section container">
-      {title && <h2 className={cls.title}>{title}</h2>}
+    <section className={`section container ${className}`}>
+      {title && <h2 className={`${cls.title} ${titleStyles} `}>{title}</h2>}
 
       <ul className={cls.cardList}>
         {data.map(({ title, descr }, index) => (
-          <li
-            key={index}
-            className={cls.card}
-            style={{ minHeight: minHeight }}
-          >
+          <li key={index} className={cls.card} style={{ minHeight: minHeight }}>
             <Image
               src="/icons/car-page/arrow-yellow.svg"
               alt="arrow icon"

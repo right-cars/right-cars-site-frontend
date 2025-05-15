@@ -103,6 +103,7 @@ h2 {
 .textLarge {
   font-family: "Metrophobic", sans-serif;
   font-size: 18px;
+  font-weight: 400;
 
   @include m.large-tablet {
     font-size: 17px;
@@ -117,6 +118,7 @@ h2 {
   font-family: "Metrophobic", sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  font-weight: 400;
 
   @include m.large-tablet {
     line-height: 1.375;
@@ -131,12 +133,14 @@ h2 {
   font-family: "Metrophobic", sans-serif;
   font-size: 14px;
   line-height: 1.43;
+  font-weight: 400;
 }
 
 .textTiny {
   font-family: "Metrophobic", sans-serif;
   font-size: 12px;
   line-height: 1;
+  font-weight: 400;
 }
 
 .btnText {

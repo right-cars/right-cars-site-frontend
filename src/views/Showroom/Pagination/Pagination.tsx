@@ -1,11 +1,10 @@
 import Image from "next/image";
-
 import cls from "./styles.module.scss";
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
-  goToPage: (arr: number) => void;
+  goToPage: (page: number) => void;
 }
 
 export default function Pagination({
@@ -14,6 +13,63 @@ export default function Pagination({
   goToPage,
 }: PaginationProps) {
   if (totalPages <= 1) return null;
+
+  const getPageButtons = () => {
+    const pages: (number | string)[] = [];
+
+    if (totalPages <= 5) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    if (currentPage <= 3) {
+      pages.push(1, 2, 3);
+      if (currentPage === 3) pages.push(4);
+      pages.push("...", totalPages - 1, totalPages);
+    } else if (currentPage === 4) {
+      pages.push(1, "...", 3, 4, 5, "...", totalPages - 1, totalPages);
+    } else if (currentPage === totalPages - 3) {
+      // Наприклад, якщо totalPages = 13, currentPage = 10 → показати 9,10,11
+      pages.push(
+        1,
+        "...",
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+        "...",
+        totalPages - 1,
+        totalPages
+      );
+    } else if (currentPage === totalPages - 2) {
+      // Наприклад, currentPage = 11, total = 13 → показати 10,11,12,13
+      pages.push(
+        1,
+        "...",
+        totalPages - 3,
+        totalPages - 2,
+        totalPages - 1,
+        totalPages
+      );
+    } else if (currentPage >= totalPages - 1) {
+      // Наприклад, currentPage = 12 або 13 → показати лише останні 3
+      pages.push(1, "...", totalPages - 2, totalPages - 1, totalPages);
+    } else {
+      pages.push(
+        1,
+        "...",
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+        "...",
+        totalPages - 1,
+        totalPages
+      );
+    }
+
+    return pages;
+  };
+
+  const pageButtons = getPageButtons();
+
   return (
     <div className={cls.pagination}>
       <button
@@ -27,40 +83,27 @@ export default function Pagination({
           width={16}
           height={16}
         />
-        <p className={cls.txt}>
-          Previous
-        </p>
+        <p className={cls.txt}>Previous</p>
       </button>
+
       <div className={cls.mainWrapp}>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            className={currentPage === index + 1 ? cls.active : cls.pageBtn}
-            onClick={() => goToPage(index + 1)}
-          >
-            <p className="textMedium">{index + 1}</p>
-          </button>
-        )).slice(0, 3)}
-
-        {totalPages > 5 && currentPage < totalPages - 2 && (
-          <span className={`${"textMedium"} ${cls.dots}`}>...</span>
-        )}
-
-        {totalPages > 5 && (
-          <>
-            <button
-              onClick={() => goToPage(totalPages - 1)}
-              className={cls.pageBtn}
+        {pageButtons.map((item, index) =>
+          item === "..." ? (
+            <span
+              key={`dots-${index}`}
+              className={`${"textMedium"} ${cls.dots}`}
             >
-              <p className="textMedium">{totalPages - 1}</p>
-            </button>
+              ...
+            </span>
+          ) : (
             <button
-              onClick={() => goToPage(totalPages)}
-              className={cls.pageBtn}
+              key={item}
+              onClick={() => goToPage(Number(item))}
+              className={currentPage === item ? cls.active : cls.pageBtn}
             >
-              <p className="textMedium">{totalPages}</p>
+              <p className="textMedium">{item}</p>
             </button>
-          </>
+          )
         )}
       </div>
 
@@ -69,9 +112,7 @@ export default function Pagination({
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        <p className={cls.txt}>
-          Next
-        </p>
+        <p className={cls.txt}>Next</p>
         <Image
           src="/icons/showroom/arr-left.svg"
           alt="next icon"

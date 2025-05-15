@@ -1,4 +1,4 @@
-"useclient"
+"use client";
 
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ export default function CustomSelect({
   handleChange,
   options,
   placeholder,
-  bordered
+  bordered,
 }: CustomInputProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,19 +38,27 @@ export default function CustomSelect({
           </span>
         )}
       </p>
-      <div onClick={() => setIsOpen(!isOpen)} className={`${cls.select} ${bordered && cls.borderedSelect}`}>
+
+      {/* Стилізована обгортка */}
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className={`${cls.select} ${bordered ? cls.borderedSelect : ""}`}
+      >
         <div className={cls.selected}>
           {value || (
             <p style={{ color: "rgba(17, 24, 28, 0.5)" }}>{placeholder}</p>
           )}
         </div>
+
         <Image
           src="/icons/arrow.svg"
           alt="arrow icon"
           width={16}
           height={16}
-          className={`${cls.svg} ${isOpen && cls.openSvg}`}
+          className={`${cls.svg} ${isOpen ? cls.openSvg : ""}`}
         />
+
+        {/* Якщо відкритий, показуємо випадаючий список */}
         {isOpen && (
           <ul className={cls.dropdown}>
             {options?.map((option) => (
@@ -65,6 +73,25 @@ export default function CustomSelect({
           </ul>
         )}
       </div>
+
+      {/* Нативний селект для валідації */}
+      <select
+        name={id}
+        id={id}
+        required={required}
+        value={value}
+        onChange={(e) => handleChange(e)}
+        className={cls.nativeSelect}
+      >
+        <option value="" disabled hidden>
+          {placeholder}
+        </option>
+        {options?.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

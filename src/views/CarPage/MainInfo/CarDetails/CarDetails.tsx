@@ -5,14 +5,15 @@ import Link from "next/link";
 import cls from "./styles.module.scss";
 
 //@ts-expect-error
-export default function CarDetails({data}) {
+export default function CarDetails({ data }) {
   const infoData = [
     {
       title: "VEHICLE details",
-      details: [{
-        name: "Variant",
-        value: data.variant,
-      },
+      details: [
+        {
+          name: "Variant",
+          value: data.variant,
+        },
         {
           name: "Colour",
           value: data.colour,
@@ -20,7 +21,8 @@ export default function CarDetails({data}) {
         {
           name: "Stock Number",
           value: data.stockNumber,
-        }],
+        },
+      ],
     },
     {
       title: "VEHICLE CONDITION",
@@ -50,74 +52,76 @@ export default function CarDetails({data}) {
     },
   ];
 
-  if(data.seats) {
+  if (data.seats) {
     infoData[0].details.push({
       name: "No of Seats",
       value: data.seats,
-    })
+    });
   }
 
-  if(data.bodyType) {
+  if (data.bodyType) {
     infoData[0].details.push({
       name: "Body Type",
       value: data.bodyType,
-    })
+    });
   }
 
-  if(data.vehicleServiceHistory) {
+  if (data.vehicleServiceHistory) {
     infoData[1].details.push({
       name: "Body Type",
       value: data.vehicleServiceHistory,
-    })
+    });
   }
 
-  if(data.spareKey) {
+  if (data.spareKey) {
     infoData[1].details.push({
       name: "Spare key",
       value: data.spareKey ? "yes" : "no",
-    })
+    });
   }
 
-  if(data.dekraReport) {
+  if (data.dekraReport) {
     infoData[1].details.push({
       name: "Dekra Report",
       value: data.dekraReport ? "included" : "missing",
-    })
+    });
   }
 
-  if(data.conditionReport) {
+  if (data.conditionReport) {
     infoData[1].details.push({
       name: "Condition report",
       value: data.conditionReport ? "included" : "missing",
-    })
+    });
   }
 
-  if(data.cylinderLayout) {
+  if (data.cylinderLayout) {
     infoData[2].details.push({
       name: "Cylinder Layout",
       value: data.cylinderLayout,
-    })
+    });
   }
 
-  if(data.kilowatts) {
+  if (data.kilowatts) {
     infoData[2].details.push({
       name: "Kilowatts",
       value: data.kilowatts,
-    })
+    });
   }
 
-  if(data.gears) {
+  if (data.gears) {
     infoData[2].details.push({
       name: "Gears",
       value: data.gears,
-    })
+    });
   }
 
   return (
     <ul className={cls.detailsContainer}>
       {infoData.map(({ title, details }, index) => (
         <li key={index} className={cls.detailsWrapper}>
-          <p className="titleMedium" style={{ marginBottom: 24 }}>{title}</p>
+          <p className="titleMedium" style={{ marginBottom: 24 }}>
+            {title}
+          </p>
           <ul className={cls.detailsList}>
             {/*@ts-expect-error*/}
             {details.map(({ name, value }, index) => (
