@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { temporary } from "./temporary";
+// import { temporary } from "./temporary";
 import FirstInfoBlock from "./InfoBlocks/FirstInfoBlock";
 import SecondInfoBlock from "./InfoBlocks/SecondInfoBlock";
 
@@ -8,7 +8,7 @@ import cls from "./styles.module.scss";
 
 // @ts-expect-error
 export default async function Reserve({ data }) {
-    console.log(data);
+
   return (
     <section className={`${"section container"} ${cls.wrapper}`}>
       <div className={cls.imgWrapp}>
