@@ -11,9 +11,10 @@ import { listVariants } from "@/helpers/animation";
 
 export default function TeamList() {
   const getInitialItemsToShow = () => {
-  if (typeof window === "undefined") return data.length;
+    if (typeof window === "undefined") return data.length;
     if (window.innerWidth <= 660) return 3;
     if (window.innerWidth <= 1024) return 4;
+    if (window.innerWidth > 1024) return 6;
     return data.length;
   };
 
@@ -27,7 +28,7 @@ export default function TeamList() {
       }
     };
 
-if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }

@@ -112,7 +112,7 @@ export default function FinancePage() {
               sharingPreference={checkboxes.sharingPreference}
             />
             <div className={cls.submitBtnWrapp}>
-              <Button type="submit" text="submit" />
+              <Button type="submit" text="submit application" />
             </div>
           </div>
         </form>

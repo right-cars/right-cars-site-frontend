@@ -10,12 +10,16 @@ type Details = {
 
 interface FirstInfoProps {
   year: number;
+  make: string;
+  model: string;
   variant: string;
   details: Details[];
 }
 
 export default function FirstInfoBlock({
   year,
+  make,
+  model,
   variant,
   details,
 }: FirstInfoProps) {
@@ -23,7 +27,9 @@ export default function FirstInfoBlock({
     <div className={cls.infoBlock}>
       <div className={cls.titleBlock}>
         <p className="titleMedium">{year}</p>
-        <p className="titleMedium">{variant}</p>
+        <p className="titleMedium">
+          {make} {model} {variant}
+        </p>
       </div>
       <ul className={cls.details}>
         {details.map(({ img, title, value }, index) => (

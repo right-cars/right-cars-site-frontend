@@ -43,14 +43,16 @@ export default function CarCard(props: CarProps) {
         <div className={cls.firstInfo}>
           <p className="titleSmall">{year}</p>
           <div className={cls.modelWrap}>
-            <p className="btnText">
+            <p className={`btnText ${cls.title}`}>
               {make} {model}
             </p>
             <ArrowIcon width={18} height={18} className={cls.arr} />
           </div>
         </div>
         <div className={cls.secondInfo}>
-          <p className="titleMedium">{price}</p>
+          <p className="titleMedium">
+            R {Number(price.split(",")[0]).toLocaleString("en-US")}
+          </p>
           <ul className={cls.chips}>
             <li className={cls.chip}>
               <p className="textSmall">{mileage}km</p>

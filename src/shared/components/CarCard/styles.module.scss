@@ -3,6 +3,7 @@
 
 .wrapp {
   position: relative;
+  overflow: hidden;
   border-radius: 8px;
   background: v.$pure;
   box-shadow: v.$shadow;
@@ -39,11 +40,11 @@
   color: v.$pure;
   transition: background-color v.$transition;
 
-  &:hover{
+  &:hover {
     background-color: v.$accent;
 
-    .arr{
-      fill: v.$primary
+    .arr {
+      fill: v.$primary;
     }
   }
 
@@ -51,7 +52,6 @@
     padding: 12px;
     padding-bottom: 28px;
   }
-
 }
 
 .modelWrap {
@@ -86,6 +86,14 @@
   @include m.large-tablet {
     padding: 12px;
   }
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .chips {

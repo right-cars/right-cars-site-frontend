@@ -17,8 +17,10 @@
 }
 
 .title {
-  font-size: 20px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
   margin-bottom: 46px;
+  text-transform: uppercase;
 }
 
 .card {
@@ -33,5 +35,20 @@
 }
 
 .title {
-  margin: 12px 0 24px;
+  margin: 0 0 48px;
+  font-size: 20px;
+}
+
+.titleShowroom {
+  font-size: 24px;
+  @media (min-width: 768px) {
+    font-size: 32px;
+    margin: 0 0 80px;
+  }
+}
+
+.deliveryPaddingFix {
+  @media (min-width: 1024px) {
+    padding-bottom: 60px !important;
+  }
 }
