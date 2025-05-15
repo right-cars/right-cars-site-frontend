@@ -29,7 +29,6 @@ export default function FirstInfoBlock({ price }: { price: string }) {
             }
         }
         catch (error) {
-            // @ts-expect-error
             console.log(error);
         }
     }
