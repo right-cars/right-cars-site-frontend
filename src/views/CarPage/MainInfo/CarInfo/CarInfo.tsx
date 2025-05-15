@@ -6,11 +6,7 @@ import SecondInfoBlock from "./SecondInfoBlock";
 import cls from "./styles.module.scss";
 
 //@ts-expect-error
-export default function CarInfo({
-  data,
-  pageId,
-  setIsCarInfoShown,
-}: {
+export default function CarInfo({data, pageId, setIsCarInfoShown}: {
   pageId: string;
   setIsCarInfoShown: Dispatch<SetStateAction<boolean>>;
 }) {

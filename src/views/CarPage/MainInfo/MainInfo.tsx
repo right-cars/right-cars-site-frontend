@@ -26,10 +26,10 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
         <BackBtn />
         <div className={cls.contentWrapp}>
           {/*@ts-expect-error*/}
-
           <CarGallery data={media} pageId={pageId} />
           {isCarInfoShown ? (
             <CarInfo
+                // @ts-expect-error*
               data={data}
               pageId={pageId}
               setIsCarInfoShown={setIsCarInfoShown}
@@ -38,7 +38,6 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
             <Reserve data={data} />
           )}
           <CarDetails data={data} />
-          {/*@ts-expect-error*/}
         </div>
       </div>
     </section>
