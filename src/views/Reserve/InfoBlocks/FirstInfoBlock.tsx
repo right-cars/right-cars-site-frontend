@@ -25,7 +25,7 @@ export default function FirstInfoBlock({ price }: { price: string }) {
             if (data.redirectUrl) {
                 window.location.href = data.redirectUrl
             } else {
-                alert('Payment failed to initialize')
+                console.log(data);
             }
         }
         catch (error) {

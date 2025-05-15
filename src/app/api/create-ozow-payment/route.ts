@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ redirectUrl: data.redirectUrl });
     }
     catch (error) {
+        console.log(error);
         return NextResponse.json({ error })
     }
 
