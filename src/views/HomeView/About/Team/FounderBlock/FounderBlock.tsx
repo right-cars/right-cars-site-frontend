@@ -9,13 +9,7 @@ export default function FounderBlock() {
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image
-            src="/images/home/about/img1.png"
-            alt="founder photo"
-            width={238}
-            height={238}
-            className={cls.img}
-          />
+         
         </div>
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
