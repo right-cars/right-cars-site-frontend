@@ -10,7 +10,7 @@ export default function FounderBlock() {
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
           <Image
-            src="/images/home/about/owner.jpg"
+            src="/images/home/about/img1.png"
             alt="founder photo"
             width={238}
             height={238}
