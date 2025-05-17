@@ -9,7 +9,7 @@ import cls from "./styles.module.scss";
 export default function VideoBlock() {
   const [isVideoVisible, setIsVideoVisible] = useState<boolean>(false);
 
-  const videoId = "vlDOjTaaEdA";
+  const videoId = "-QwpK5lYiOg";
 
   const handlePlay = () => {
     setIsVideoVisible(true);
