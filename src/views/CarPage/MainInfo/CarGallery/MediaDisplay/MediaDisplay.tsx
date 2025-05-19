@@ -57,6 +57,7 @@ const MediaDisplay = ({
                 className={cls.mainImg}
                 width={752}
                 height={546}
+                unoptimized
               />
             ) : media.type === "video" ? (
               <div className={cls.videoImgBlock}>
@@ -66,6 +67,7 @@ const MediaDisplay = ({
                   width={752}
                   height={546}
                   className={cls.mainImg}
+                  unoptimized
                 />
                 <div className={cls.mainVideoSvgBlock}>
                   <p className="textMedium">video</p>
@@ -74,6 +76,7 @@ const MediaDisplay = ({
                     alt="youtube icon"
                     width={22}
                     height={15}
+                    unoptimized
                   />
                 </div>
               </div>

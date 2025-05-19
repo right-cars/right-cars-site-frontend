@@ -11,7 +11,7 @@ import SecondInfoBlock from "./InfoBlocks/SecondInfoBlock";
 import cls from "./styles.module.scss";
 
 //@ts-expect-error
-export default async function Reserve({ data }) {
+export default function Reserve({ data }) {
 
   return (
     <div className={cls.infoBlcok}>

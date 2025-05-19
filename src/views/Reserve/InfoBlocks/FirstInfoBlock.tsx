@@ -1,37 +1,37 @@
 "use client"
 import { useState } from 'react'
 import Image from "next/image";
-import axios from 'axios';
+// import axios from 'axios';
 
 import Button from "@/shared/components/Buttons/Button/Button";
 
 import cls from "./styles.module.scss";
 
 export default function FirstInfoBlock({ price }: { price: string }) {
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
 
-    const handlePayment = async () => {
-        try {
-            setLoading(true);
-            const payload = {
-                amount: 1.0,
-                reference: 'ORDER456',
-                buyerEmail: 'test@example.com',
-                returnUrl: 'https://right-cars.co.za/success',
-                cancelUrl: 'https://right-cars.co.za/cancel',
-                notifyUrl: 'https://right-cars.co.za/api/ozow-notify',
-            };
-            const {data} = await axios.post("/api/create-ozow-payment", payload);
-            if (data.redirectUrl) {
-                window.location.href = data.redirectUrl
-            } else {
-                console.log(data);
-            }
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
+    // const handlePayment = async () => {
+    //     try {
+    //         setLoading(true);
+    //         const payload = {
+    //             amount: 1.0,
+    //             reference: 'ORDER456',
+    //             buyerEmail: 'test@example.com',
+    //             returnUrl: 'https://right-cars.co.za/success',
+    //             cancelUrl: 'https://right-cars.co.za/cancel',
+    //             notifyUrl: 'https://right-cars.co.za/api/ozow-notify',
+    //         };
+    //         const {data} = await axios.post("/api/create-ozow-payment", payload);
+    //         if (data.redirectUrl) {
+    //             window.location.href = data.redirectUrl
+    //         } else {
+    //             console.log(data);
+    //         }
+    //     }
+    //     catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     return (
     <div className={cls.info}>
@@ -58,7 +58,7 @@ export default function FirstInfoBlock({ price }: { price: string }) {
       </p>
       <div className={cls.btnsWrapp}>
         <Button
-            onClick={handlePayment}
+            // onClick={handlePayment}
           text={loading ? 'Redirecting…' : 'pay with ozow'}
           img="/icons/reserve/svg2.svg"
 

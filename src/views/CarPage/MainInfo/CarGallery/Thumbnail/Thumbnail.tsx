@@ -31,6 +31,7 @@ const Thumbnail = ({
           width={178}
           height={112}
           className={cls.miniImg}
+          unoptimized
         />
       ) : (
         <div className={cls.videoImgBlock}>
@@ -40,6 +41,7 @@ const Thumbnail = ({
             width={178}
             height={112}
             className={cls.miniImg}
+            unoptimized
           />
           <Image
             src="/icons/youtube.svg"
@@ -47,6 +49,7 @@ const Thumbnail = ({
             width={50}
             height={35}
             className={cls.logoYoutube}
+            unoptimized
           />
         </div>
       )}

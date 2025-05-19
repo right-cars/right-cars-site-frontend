@@ -31,6 +31,7 @@ export default function SimpleCardList({
               alt="arrow icon"
               width={24}
               height={24}
+              unoptimized
             />
             <h4 className={`${"smallTitle"} ${cls.title}`}>{title}</h4>
             <p className="textMedium" style={{ textTransform: "lowercase" }}>

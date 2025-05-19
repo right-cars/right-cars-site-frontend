@@ -38,6 +38,7 @@ export default function CarCard(props: CarProps) {
             width={336}
             height={204}
             className={cls.img}
+            unoptimized
           />
         </div>
         <div className={cls.firstInfo}>
