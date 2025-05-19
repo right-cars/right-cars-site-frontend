@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import VideoBlock from "./VideoBlock/VideoBlock";
 
-// import img from "../../../../../../public/images/home/about/default.jpg";
-
 import cls from "./styles.module.scss";
 
 const data = {
@@ -24,7 +22,6 @@ export default function FounderBlock() {
             className={cls.img}
             unoptimized
           />
-          {/* <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/> */}
         </div>
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
