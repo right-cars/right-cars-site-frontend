@@ -1,17 +1,27 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 import VideoBlock from "./VideoBlock/VideoBlock";
 
-// import img from "../../../../../../public/images/home/about/default.jpg";
-
 import cls from "./styles.module.scss";
+
+const data = {
+  img: "/images/home/about/owner.png",
+  name: "Eugene Vulakh",
+};
 
 export default function FounderBlock() {
   return (
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <img src="/images/home/about/owner.png" alt="Eugene Vulakh" className={cls.img} />
+          <Image
+            src={data.img}
+            alt={data.name}
+            width={238}
+            height={238}
+            className={cls.img}
+            unoptimized
+          />
         </div>
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
