@@ -12,7 +12,7 @@ import PaginationButtons from "./PaginationButtons/PaginationButtons";
 import cls from "./styles.module.scss";
 
 interface MediaDisplayProps {
-  currentMedia: Media;
+  currentMedia?: Media;
   handleMainMediaClick: React.MouseEventHandler<HTMLDivElement>;
   currentIndex: number;
   temporarymMediaList: Media[];
@@ -22,7 +22,7 @@ interface MediaDisplayProps {
 }
 
 const MediaDisplay = ({
-  currentMedia,
+  // currentMedia,
   handleMainMediaClick,
   currentIndex,
   temporarymMediaList,
