@@ -17,14 +17,7 @@ export default function FounderBlock() {
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
           <Image src={data.img} alt={data.name} width={238} height={238} className={cls.img} />
-          {/*<Image src="/images/home/banner/img1.webp" alt="some text" width="238" height="238" />*/}
-          {/*<Image*/}
-          {/*  src="/images/home/car-page/img1.png"*/}
-          {/*  alt="Eugene Vulakh"*/}
-          {/*  width={238}*/}
-          {/*  height={238}*/}
-          {/*  className={cls.img}*/}
-          {/*/>*/}
+          <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/>
         </div>
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
