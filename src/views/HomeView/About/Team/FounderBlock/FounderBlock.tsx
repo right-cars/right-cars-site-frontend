@@ -2,12 +2,12 @@ import Image from "next/image";
 
 import VideoBlock from "./VideoBlock/VideoBlock";
 
-import img from "../../../../../../public/images/home/about/default.jpg";
+// import img from "../../../../../../public/images/home/about/default.jpg";
 
 import cls from "./styles.module.scss";
 
 const data = {
-  img: "/images/home/about/default.jpg",
+  img: "/images/home/about/default.png",
       name: "Eugene Vulakh",
 };
 
@@ -16,7 +16,7 @@ export default function FounderBlock() {
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image src={img} alt={data.name} />
+          <Image src={data.img} alt={data.name} width={238} height={246} className={cls.img} />
           {/*<Image src="/images/home/banner/img1.webp" alt="some text" width="238" height="238" />*/}
           {/*<Image*/}
           {/*  src="/images/home/car-page/img1.png"*/}
