@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   title: "RIGHTCARS",
   description: "Affordable Cars for Every Lifestyle!",
   keywords: "",
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://right-cars.co.za"),
   openGraph: {
     title: "RIGHTCARS",
     description: "Affordable Cars for Every Lifestyle!",
