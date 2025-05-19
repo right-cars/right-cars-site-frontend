@@ -5,7 +5,7 @@ import VideoBlock from "./VideoBlock/VideoBlock";
 import cls from "./styles.module.scss";
 
 const data = {
-  img: "/images/home/about/img1.png",
+  img: "/images/home/about/default.jpg",
       name: "Eugene Vulakh",
 };
 
