@@ -7,7 +7,7 @@ import VideoBlock from "./VideoBlock/VideoBlock";
 import cls from "./styles.module.scss";
 
 const data = {
-  img: "/images/home/about/img0.png",
+  img: "/images/home/about/owner.png",
       name: "Eugene Vulakh",
 };
 
@@ -16,7 +16,7 @@ export default function FounderBlock() {
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image src={data.img} alt={data.name} width={150} height={155} className={cls.img} />
+          <Image src={data.img} alt={data.name} width={238} height={238} className={cls.img} />
           {/*<Image src="/images/home/banner/img1.webp" alt="some text" width="238" height="238" />*/}
           {/*<Image*/}
           {/*  src="/images/home/car-page/img1.png"*/}
