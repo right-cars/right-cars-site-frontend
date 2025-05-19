@@ -6,17 +6,12 @@ import VideoBlock from "./VideoBlock/VideoBlock";
 
 import cls from "./styles.module.scss";
 
-const data = {
-  img: "/images/home/about/owner.png",
-      name: "Eugene Vulakh",
-};
-
 export default function FounderBlock() {
   return (
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image src={data.img} alt="Eugene Vulakh" width={238} height={238} className={cls.img} />
+          <Image src="/images/home/about/img0.png" alt="Eugene Vulakh" width={238} height={238} className={cls.img} />
           <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/>
         </div>
         <div className={cls.txtBlock}>
