@@ -18,6 +18,7 @@ export default function ModalContent({
           width={752}
           height={546}
           className={cls.modalContent}
+          unoptimized
         />
       ) : (
         <iframe
