@@ -22,6 +22,7 @@ export default function FounderBlock() {
             width={238}
             height={238}
             className={cls.img}
+            unoptimized
           />
           {/* <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/> */}
         </div>
