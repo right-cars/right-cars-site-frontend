@@ -8,7 +8,7 @@ import cls from "./styles.module.scss";
 
 const data = {
   img: "/images/home/about/owner.png",
-      name: "Eugene Vulakh",
+  name: "Eugene Vulakh",
 };
 
 export default function FounderBlock() {
@@ -16,8 +16,14 @@ export default function FounderBlock() {
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image src={data.img} alt={data.name} width={238} height={238} className={cls.img} />
-          <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/>
+          <Image
+            src={data.img}
+            alt={data.name}
+            width={238}
+            height={238}
+            className={cls.img}
+          />
+          {/* <img src="/images/home/about/owner.png" alt="Eugene Vulakh"/> */}
         </div>
         <div className={cls.txtBlock}>
           <h3 className={`${"btnText"} ${cls.title}`}>
