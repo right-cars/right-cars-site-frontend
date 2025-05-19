@@ -16,7 +16,7 @@ export default function FounderBlock() {
     <div className={cls.wrapper}>
       <div className={cls.infoBlock}>
         <div className={cls.imgBlock}>
-          <Image src={img} alt={data.name} className={cls.img} />
+          <Image src={img} alt={data.name} />
           {/*<Image src="/images/home/banner/img1.webp" alt="some text" width="238" height="238" />*/}
           {/*<Image*/}
           {/*  src="/images/home/car-page/img1.png"*/}
