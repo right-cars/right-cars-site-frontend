@@ -22,6 +22,7 @@ export default function FirstInfoBlock({ price }: { price: string }) {
                 notifyUrl: 'https://right-cars.co.za/api/ozow-notify',
             };
             const {data} = await axios.post("/api/create-ozow-payment", payload);
+            console.log("payment data", data);
             if (data.redirectUrl) {
                 window.location.href = data.redirectUrl
             } else {

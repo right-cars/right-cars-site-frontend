@@ -61,7 +61,6 @@ export default function CompleteProfile() {
     if (currentStep === 1) {
       setCurrentStep(2);
     } else {
-      console.log("Form Data:", formData);
       setCurrentStep(3);
       //   resetForm();
     }
