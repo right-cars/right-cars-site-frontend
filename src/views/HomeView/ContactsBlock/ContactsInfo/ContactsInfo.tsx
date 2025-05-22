@@ -15,8 +15,8 @@ const data = [
   },
   {
     img: <WhatsApp className={cls.svg} />,
-    href: "https://wa.me/0114629045",
-    txt: "011 462 9045",
+    href: "https://wa.me/27679990000",
+    txt: "+27 67 999 0000",
   },
   {
     img: <Email className={cls.svg} />,

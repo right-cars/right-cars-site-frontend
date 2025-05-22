@@ -6,7 +6,7 @@ import cls from "./styles.module.scss";
 const data = [
   {
     img: "/icons/socials/whatsapp.svg",
-    href: "https://wa.me/0114629045",
+    href: "https://wa.me/27679990000",
   },
   {
     img: "/icons/socials/facebook.svg",

@@ -1,7 +1,7 @@
 
-import { temporary } from "./temporary";
-
-import Image from "next/image";
+// import { temporary } from "./temporary";
+//
+// import Image from "next/image";
 
 // import { temporary } from "./temporary";
 
@@ -12,7 +12,6 @@ import cls from "./styles.module.scss";
 
 //@ts-expect-error
 export default function Reserve({ data }) {
-
   return (
     <div className={cls.infoBlcok}>
       <FirstInfoBlock
