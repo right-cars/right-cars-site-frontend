@@ -8,7 +8,7 @@ const carsInstance = axios.create({
 export const getNewestCars = async () => {
     const {data} = await carsInstance.get("/");
     //@ts-expect-error
-    const normalaizedData = data.map(item => ({...item, img: item.imageUrls[0], id: item._id, mileage: item.mileageInKm}));
+    const normalaizedData = data.map(item => ({...item, img: item.mainImage, id: item._id, mileage: item.mileageInKm}));
     if(normalaizedData.length > 3) return normalaizedData.slice(-4);
 
     return normalaizedData;

@@ -10,7 +10,7 @@ export default async function Showroom() {
          //@ts-expect-error
       _id,
          //@ts-expect-error
-      imageUrls,
+      mainImage,
          //@ts-expect-error
       year,
          //@ts-expect-error
@@ -29,7 +29,7 @@ export default async function Showroom() {
       fuelType,
     }) => ({
       id: _id,
-      img: imageUrls[0],
+      img: mainImage,
       year: Number(year),
       make,
       model,

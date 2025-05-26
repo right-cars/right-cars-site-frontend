@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 
 // import { temporary } from "./temporary";
 import cls from "./styles.module.scss";
@@ -45,10 +45,6 @@ export default function CarDetails({ data }) {
           value: data.variant,
         },
       ],
-    },
-    {
-      title: "VEHICLE FEATURES",
-      details: data.features,
     },
   ];
 
@@ -114,7 +110,14 @@ export default function CarDetails({ data }) {
       value: data.gears,
     });
   }
-
+ if(data.feature_1 || data.feature_2 || data.feature_3 || data.feature_4 || data.feature_5 || data.feature_6) {
+   infoData.push({
+     title: "VEHICLE FEATURES",
+     details: []
+   });
+   // const featuresKeys
+ }
+console.log(infoData);
   return (
     <ul className={cls.detailsContainer}>
       {infoData.map(({ title, details }, index) => (
@@ -123,7 +126,6 @@ export default function CarDetails({ data }) {
             {title}
           </p>
           <ul className={cls.detailsList}>
-            {/*@ts-expect-error*/}
             {details.map(({ name, value }, index) => (
               <li key={index} className={cls.item}>
                 <p className={cls.itemName}>{name}</p>

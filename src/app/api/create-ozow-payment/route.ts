@@ -17,7 +17,9 @@ export async function POST(req: NextRequest) {
     } = body;
 
     const payload = {
-        merchantCode: OZOW_MERCHANT_CODE,
+        // merchantCode: OZOW_MERCHANT_CODE,
+        siteCode:  "TSTSTE0001",
+        privateKey: "",
         amount: amount.toFixed(2),
         currencyCode: 'ZAR',
         transactionReference: reference,
@@ -32,9 +34,9 @@ export async function POST(req: NextRequest) {
     };
 
     try {
-        const {data} = await axios.post("https://api.ozow.com/api/v1/transactions", payload, {
+        const {data} = await axios.post("https://api.ozow.com/PostPaymentRequest", payload, {
             headers: {
-                'ApiKey': OZOW_API_KEY,
+                'ApiKey': "EB5758F2C3B4DF3FF4F2669D5FF5B",
             }
         });
         return NextResponse.json({ redirectUrl: data.redirectUrl });

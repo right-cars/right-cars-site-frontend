@@ -14,7 +14,7 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
 
   const media = [
     //@ts-expect-error
-    ...data.imageUrls.map((src) => ({ type: "image", src })),
+    ...data.images.map((src) => ({ type: "image", src })),
   ];
   if (data.video) {
     media.push({ type: "video", src: data.video });
