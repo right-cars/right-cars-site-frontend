@@ -25,7 +25,7 @@ export default function CarInfo({data, pageId, setIsCarInfoShown}: {
     {
       img: "/icons/car-page/details/img3.svg",
       title: "Engine cap",
-      value: data.engineCapacityInCc,
+      value: data.engineCapacity,
     },
     {
       img: "/icons/car-page/details/img6.svg",

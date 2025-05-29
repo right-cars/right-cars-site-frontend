@@ -110,10 +110,15 @@ export default function CarDetails({ data }) {
       value: data.gears,
     });
   }
- if(data.feature_1 || data.feature_2 || data.feature_3 || data.feature_4 || data.feature_5 || data.feature_6) {
+  const features = Object.keys(data).filter(key => key.includes("feature"));
+  // const features = Object.keys(data)
+ if(features.length) {
    infoData.push({
      title: "VEHICLE FEATURES",
-     details: []
+     // @ts-expect-error
+     details: features.map(key => ({
+       name: data[key],
+     }))
    });
    // const featuresKeys
  }
