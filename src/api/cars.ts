@@ -5,6 +5,11 @@ const carsInstance = axios.create({
     baseURL: `${process.env.NEXT_PUBLIC_API_URL}/cars`,
 })
 
+export const getFilters = async()=> {
+    const {data} = await carsInstance.get("/filters");
+    return data;
+}
+
 export const getNewestCars = async () => {
     const {data} = await carsInstance.get("/");
     //@ts-expect-error

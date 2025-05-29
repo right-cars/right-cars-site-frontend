@@ -76,7 +76,7 @@ const defaultMultirangeValues = {
 };
 
 //@ts-expect-error
-export default function ShowroomView({data}) {
+export default function ShowroomView({data, filters}) {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [isAscending, setIsAscending] = useState<boolean | null>(null);
@@ -147,14 +147,16 @@ export default function ShowroomView({data}) {
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className="container">
         <div className={cls.filtersWrapp}>
-          <FiltersBlock   setSelectedTransmission={setSelectedTransmission}
-  setSelectedFuelTypes={setSelectedFuelTypes}
-  setSelectedMakes={setSelectedMakes}
-  setMultirangeValues={setMultirangeValues}
-  selectedTransmission={selectedTransmission}
-  selectedFuelTypes={selectedFuelTypes}
-  selectedMakes={selectedMakes}
-  multirangeValues={multirangeValues} />
+          <FiltersBlock
+              filters={filters}
+              setSelectedTransmission={setSelectedTransmission}
+              setSelectedFuelTypes={setSelectedFuelTypes}
+              setSelectedMakes={setSelectedMakes}
+              setMultirangeValues={setMultirangeValues}
+              selectedTransmission={selectedTransmission}
+              selectedFuelTypes={selectedFuelTypes}
+              selectedMakes={selectedMakes}
+              multirangeValues={multirangeValues} />
           <SortComponent onSort={handleSort} isLowestToHighest={isAscending} />
         </div>
         <div className={cls.content}>

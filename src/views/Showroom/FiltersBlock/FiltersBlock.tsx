@@ -14,7 +14,7 @@ const defaultMultirangeValues = {
 };
 
 //@ts-expect-error
-export default function FiltersBlock({setSelectedTransmission, setSelectedFuelTypes, setSelectedMakes, setMultirangeValues, selectedTransmission, selectedFuelTypes, selectedMakes, multirangeValues,
+export default function FiltersBlock({filters, setSelectedTransmission, setSelectedFuelTypes, setSelectedMakes, setMultirangeValues, selectedTransmission, selectedFuelTypes, selectedMakes, multirangeValues,
 }) {
   const [isFiltersVisible, setIsFilterVisible] = useState(true);
   const [isTablet, setIsTablet] = useState(false);
@@ -96,6 +96,7 @@ export default function FiltersBlock({setSelectedTransmission, setSelectedFuelTy
       </div>
 
       <Filters
+          filters={filters}
         setSelectedTransmissionFunc={setSelectedTransmission}
         setSelectedFuelTypesFunc={setSelectedFuelTypes}
         setSelectedMakesFunc={setSelectedMakes}

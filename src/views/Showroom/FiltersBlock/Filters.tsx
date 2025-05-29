@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Button from "@/shared/components/Buttons/Button/Button";
@@ -23,16 +23,10 @@ interface FilterProps {
   isTablet: boolean;
 }
 
-const defaultMultirangeValues = {
-  price: { min: 0, max: 230000 },
-  kilometers: { min: 0, max: 500000 },
-  year: { min: 1990, max: 2025 },
-};
-
-// const makes = ["audi", "bmw", "chevrolet", "citroen", "daihatsu", "nissan"];
-
 export default function Filters({
-  setIsFilterVisible,
+  //@ts-expect-error
+                                  filters,
+                                  setIsFilterVisible,
   setSelectedTransmissionFunc,
   setSelectedFuelTypesFunc,
   setSelectedMakesFunc,
@@ -40,8 +34,13 @@ export default function Filters({
   isTablet,
   isFilterVisible,
 }: FilterProps) {
+  const defaultMultirangeValues = useMemo(() => ({
+    price: { min: filters.minPrice, max: filters.maxPrice },
+    kilometers: { min: filters.minMileage, max: filters.maxMileage },
+    year: { min: filters.minYear, max: filters.maxYear },
+  }), [filters]);
   const [multirangeValues, setMultirangeValues] = useState(
-    defaultMultirangeValues
+      defaultMultirangeValues
   );
 
   const [selectedMakes, setSelectedMakes] = useState<string[]>([]);
@@ -124,8 +123,8 @@ export default function Filters({
       <div className={cls.filtersWrapp}>
         <MultiRangeSlider
           handleClear={() => handleClear("price")}
-          min={0}
-          max={230000}
+          min={filters.minPrice}
+          max={filters.maxPrice}
           step={1000}
           value={multirangeValues.price}
           onChange={(values) => handleRangeChange("price", values)}
@@ -135,8 +134,8 @@ export default function Filters({
         />
         <MultiRangeSlider
           handleClear={() => handleClear("kilometers")}
-          min={0}
-          max={500000}
+          min={filters.minMileage}
+          max={filters.maxMileage}
           step={10000}
           value={multirangeValues.kilometers}
           onChange={(values) => handleRangeChange("kilometers", values)}
@@ -147,15 +146,15 @@ export default function Filters({
         />
         <MultiRangeSlider
           handleClear={() => handleClear("year")}
-          min={1990}
-          max={2025}
+          min={filters.minYear}
+          max={filters.maxYear}
           step={1}
           value={multirangeValues.year}
           onChange={(values) => handleRangeChange("year", values)}
           title="Year"
         />
         <MakeFilter
-          options={makes}
+          options={filters.makes}
           selected={selectedMakes}
           onChange={setSelectedMakes}
           onClear={() => setSelectedMakes([])}

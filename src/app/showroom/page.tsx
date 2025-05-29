@@ -1,9 +1,10 @@
-import { getAllCars } from "@/api/cars";
+import {getAllCars, getFilters} from "@/api/cars";
 
 import ShowroomView from "@/views/Showroom/ShowroomView";
 
 export default async function Showroom() {
   const data = await getAllCars();
+  const filters = await getFilters();
 
   const transformData = data.map(
     ({
@@ -43,5 +44,5 @@ export default async function Showroom() {
     })
   );
 
-  return <ShowroomView data={transformData} />;
+  return <ShowroomView data={transformData} filters={filters} />;
 }
