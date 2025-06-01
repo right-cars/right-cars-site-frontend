@@ -9,7 +9,7 @@ import MultiRangeSlider from "@/shared/components/MultiRangeSlider/MultiRangeSli
 import MakeFilter from "./MakeFilter/MakeFilter";
 import SelectFilter from "./SelectFilter/SelectFilter";
 
-import makes from "./makes";
+// import makes from "./makes";
 
 import cls from "./styles.module.scss";
 
@@ -24,7 +24,7 @@ interface FilterProps {
 }
 
 export default function Filters({
-  //@ts-expect-error
+    //@ts-expect-error
                                   filters,
                                   setIsFilterVisible,
   setSelectedTransmissionFunc,

@@ -96,6 +96,7 @@ export default function FiltersBlock({filters, setSelectedTransmission, setSelec
       </div>
 
       <Filters
+          //@ts-expect-error
           filters={filters}
         setSelectedTransmissionFunc={setSelectedTransmission}
         setSelectedFuelTypesFunc={setSelectedFuelTypes}
