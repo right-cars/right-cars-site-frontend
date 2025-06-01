@@ -10,7 +10,6 @@ import { cardListData } from "./cardListData";
 
 import cls from "../../../modules/SimpleCardList/styles.module.scss";
 
-export const dynamic = 'force-dynamic';
 
 export default async function CarPage({
   params,
