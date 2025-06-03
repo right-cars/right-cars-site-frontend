@@ -64,7 +64,7 @@ export default function CarDetails({ data }) {
 
   if (data.vehicleServiceHistory) {
     infoData[1].details.push({
-      name: "Body Type",
+      name: "Vehicle service history",
       value: data.vehicleServiceHistory,
     });
   }
@@ -122,7 +122,7 @@ export default function CarDetails({ data }) {
    });
    // const featuresKeys
  }
-console.log(infoData);
+
   return (
     <ul className={cls.detailsContainer}>
       {infoData.map(({ title, details }, index) => (
