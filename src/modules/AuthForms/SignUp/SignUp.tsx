@@ -30,6 +30,7 @@ export default function SignUp({
     phone: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState("");
 
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -54,7 +55,8 @@ export default function SignUp({
       setPopupOpen(formData.email ? formData.email : "test@mail");
     }
     catch(error) {
-      console.log(error);
+      //@ts-expect-error
+      setError(error?.response?.data?.message || error?.message);
     }
 
   };
@@ -121,7 +123,7 @@ export default function SignUp({
           By clicking &ldquo;Sign up&rdquo;, I agree to the terms and
           <br className={cls.br} /> conditions and privacy policy
         </p>
-
+        {error && <p className={cls.error}>{error}</p>}
         <Button type="submit" text="sign up" />
       </form>
       <p className="btnText" style={{ margin: "32px 0" }}>
