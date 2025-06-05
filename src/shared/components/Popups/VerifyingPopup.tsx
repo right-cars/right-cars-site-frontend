@@ -16,7 +16,8 @@ export default function VerifyingPopup({ email, setPopupOpen }: Props) {
   const router = useRouter();
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("account/complete-profile");
+      // router.push("account/complete-profile");
+      router.push("/");
       setPopupOpen(null);
     }, 2000);
 

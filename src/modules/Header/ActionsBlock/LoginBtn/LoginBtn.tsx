@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import ForgotPasswordPopup from "@/shared/components/Popups/ForgotPasswordPopup";
@@ -17,7 +17,7 @@ import cls from "../styles.module.scss";
 export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
   const userName = "temp name";
 
-  const router = useRouter();
+  // const router = useRouter();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [popupEmail, setPopupEmail] = useState<string | null>(null);

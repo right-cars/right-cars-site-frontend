@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react'
+// import {useRouter} from 'next/router'
 import Image from "next/image";
 import axios from 'axios';
 
@@ -9,28 +10,30 @@ import cls from "./styles.module.scss";
 
 export default function FirstInfoBlock({ price }: { price: string }) {
     const [loading, setLoading] = useState(false);
+    // const router = useRouter();
 
     const handlePayment = async () => {
         try {
             setLoading(true);
             const payload = {
                 amount: 1.0,
-                reference: 'ORDER456',
-                buyerEmail: 'buyer@right-cars.co.za',
-                returnUrl: 'https://right-cars.co.za/success',
-                cancelUrl: 'https://right-cars.co.za/cancel',
-                notifyUrl: 'https://right-cars.co.za/api/ozow-notify',
+                name: 'John Doe',
+                email: 'test@example.com',
+                phone: '0820000000'
             };
-            const {data} = await axios.post("/api/create-ozow-payment", payload);
+
+            const {data} = await axios.post("/api/ozow/initiate", payload);
+            setLoading(false);
             console.log("payment data", data);
             if (data.redirectUrl) {
+                // await router.push(data.redirectUrl);
                 window.location.href = data.redirectUrl
             } else {
                 console.log(data);
             }
         }
         catch (error) {
-            console.log(error);
+            console.log("error", error);
         }
     }
 

@@ -7,6 +7,8 @@ import CustomInput from "@/shared/components/CustomInput/CustomInput";
 
 import Tooltip from "./Tooltip/Tooltip";
 
+import {register} from "@/api/auth";
+
 import cls from "../styles.module.scss";
 
 interface SignupProps {
@@ -42,11 +44,19 @@ export default function SignUp({
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    setSignUpOpen(false);
-    setPopupOpen(formData.email ? formData.email : "test@mail");
+    // console.log("Form Data:", formData);
+    try {
+      const {phone, ...payload} = formData;
+      await register({...payload, mobileNumber: phone});
+      setSignUpOpen(false);
+      setPopupOpen(formData.email ? formData.email : "test@mail");
+    }
+    catch(error) {
+      console.log(error);
+    }
+
   };
 
   return (
