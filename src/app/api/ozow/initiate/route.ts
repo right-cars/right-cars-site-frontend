@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     const stringToHash = `${data.siteCode}${data.countryCode}${data.currencyCode}${data.amount}${data.transactionReference}${data.bankReference}${data.customer.email}${data.successUrl}${data.errorUrl}${data.cancelUrl}${data.notifyUrl}${privateKey}`;
     const hash = crypto.createHash('sha512').update(stringToHash.toLowerCase()).digest('hex');
-    console.log(hash);
+
     try {
         const payload = {
             countryCode: "ZA",

@@ -1,5 +1,13 @@
 @use "@/shared/styles/mixins" as m;
 
+.error {
+  font-size: 16px;
+  position: relative;
+  top: -10px;
+  margin-bottom: 15px;
+  color: red;
+}
+
 .formWrapp {
   width: 568px;
   padding: 40px 32px;

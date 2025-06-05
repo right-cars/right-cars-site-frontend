@@ -1,12 +1,14 @@
 "use client"
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 
 // import GoogleBtn from "./GoogleBtn/GoogleBtn";
+
+import {login} from "@/api/auth";
 
 import cls from "../styles.module.scss";
 
@@ -22,7 +24,8 @@ export default function SignIn({
   setPasswordPopupOpen,
 }: SigninProps) {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const router = useRouter()
+  // const router = useRouter()
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -35,11 +38,16 @@ export default function SignIn({
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    router.push("/account")
-    setSigninOpen(false)
+    try {
+      await login(formData);
+      setSigninOpen(false)
+    }
+    catch(error) {
+      //@ts-expect-error
+      setError(error?.response?.data?.message || error?.message);
+    }
   };
 
   return (
@@ -72,6 +80,7 @@ export default function SignIn({
         >
           forgot password
         </p>
+        {error && <p className={cls.error}>{error}</p>}
         <Button type="submit" text="log in" />
       </form>
       {/*<div style={{ marginTop: 12, marginBottom: 32 }}>*/}
