@@ -18,6 +18,18 @@ export const login = async payload => {
     return data;
 }
 
+//@ts-expect-error
+export const resendConfirmEmail = async payload => {
+    const {data} = await authInstance.post("/resend-confirmation", payload);
+    return data;
+}
+
+//@ts-expect-error
+export const verifyEmail = async token => {
+    const {data} = await authInstance.get(`/confirm?token=${token}`);
+    return data;
+}
+
 export const getCurrentUser = async () => {
     const res = await authInstance.get('/current');
     return res.data.user;
@@ -26,3 +38,4 @@ export const getCurrentUser = async () => {
 export const logout = async () => {
     return authInstance.post('/logout');
 };
+
