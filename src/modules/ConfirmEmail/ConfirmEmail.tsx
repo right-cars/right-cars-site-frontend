@@ -3,16 +3,15 @@
 import {useState, useEffect} from "react";
 import {useSearchParams} from "next/navigation";
 
-// import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
-// import SignIn from "@/modules/AuthForms/SignIn/SignIn";
-// import SignUp from "@/modules/AuthForms/SignUp/SignUp";
+import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
+import SignIn from "@/modules/AuthForms/SignIn/SignIn";
 
 import {verifyEmail} from "@/api/auth";
 
 const ConfirmEmail = ()=> {
+    const [isVerify, setIsVerify] = useState(false);
     const [verifyError, setVerifyError] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
-    // const [modalName, setModalName] = useState("signin");
     const searchParams = useSearchParams();
     const token = searchParams.get('token');
 
@@ -20,6 +19,7 @@ const ConfirmEmail = ()=> {
         const fetchVerifyEmail = async()=> {
             try {
                 await verifyEmail(token);
+                setIsVerify(true);
                 setModalOpen(true);
             }
             catch(error) {
@@ -30,17 +30,13 @@ const ConfirmEmail = ()=> {
         fetchVerifyEmail();
     }, []);
 
-    // const toggleForm = ()=> setModalName(prevName => prevName === "signin" ? "signup" : "signin");
-
     return  (
         <>
-            <h2>Congratulations, you have successfully verified your</h2>
+            <h2>{isVerify ? "Congratulations, you have successfully verified your" : "Start verify email..." }</h2>
             {verifyError && <p className="error">{verifyError}</p>}
-            {/*<ModalWindow isModalOpen={modalOpen} setIsModalOpen={setModalOpen}>*/}
-            {/*    /!*{modalName === "signin" ?*!/*/}
-            {/*    /!*    <SignIn toggleForm={toggleForm} setPasswordPopupOpen={()=> {}} setSigninOpen={} /> : <SignUp />}*!/*/}
-
-            {/*</ModalWindow>*/}
+            <ModalWindow isModalOpen={modalOpen} setIsModalOpen={setModalOpen}>
+                <SignIn toggleForm={()=> {}} setPasswordPopupOpen={()=> {}} setSigninOpen={setModalOpen} />
+            </ModalWindow>
         </>
 
     );
