@@ -32,7 +32,7 @@ const ConfirmEmail = ()=> {
 
     return  (
         <>
-            <h2>{isVerify ? "Congratulations, you have successfully verified your" : "Start verify email..." }</h2>
+            <h2>{isVerify ? "Congratulations, you have successfully verified" : "Start verify email..." }</h2>
             {verifyError && <p className="error">{verifyError}</p>}
             <ModalWindow isModalOpen={modalOpen} setIsModalOpen={setModalOpen}>
                 <SignIn toggleForm={()=> {}} setPasswordPopupOpen={()=> {}} setSigninOpen={setModalOpen} />

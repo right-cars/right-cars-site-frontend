@@ -2,11 +2,12 @@
 import { useState } from "react";
 // import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 import ForgotPasswordPopup from "@/shared/components/Popups/ForgotPasswordPopup";
 import ModalWindow from "@/shared/components/ModalWindow/ModalWindow";
 import PasswordRequest from "@/shared/components/Popups/PasswordRequest";
-import SuccessResetPassword from "@/shared/components/Popups/SuccessReaetPassword";
+import SuccessResetPassword from "@/shared/components/Popups/SuccessResetPassword";
 import VerifyingPopup from "@/shared/components/Popups/VerifyingPopup";
 
 import SignIn from "@/modules/AuthForms/SignIn/SignIn";
@@ -45,10 +46,14 @@ export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
 
   return (
     <>
-      <button onClick={handleLoginClick} type="button" className={cls.loginBtn}>
+        {isLoggedIn && <Link href="/account" className={cls.loginBtn}>
+            <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
+            <p className={cls.name}>{isLoggedIn ? userName : "Login"}</p>
+        </Link>}
+    {!isLoggedIn && <button onClick={handleLoginClick} type="button" className={cls.loginBtn}>
         <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
-        <p className={cls.name}>{isLoggedIn ? userName : "Login"}</p>
-      </button>
+        <p className={cls.name}>Login</p>
+      </button>}
       <ModalWindow
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
@@ -91,8 +96,8 @@ export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
         setIsModalOpen={setPopupPasswordRequest}
       >
         <PasswordRequest
-          setPopupOpen={setPopupPasswordRequest}
-          setSuccessPopupOpen={setSuccessResetPopup}
+          // setPopupOpen={setPopupPasswordRequest}
+          // setSuccessPopupOpen={setSuccessResetPopup}
         />
       </ModalWindow>
 

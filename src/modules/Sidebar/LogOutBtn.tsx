@@ -1,10 +1,27 @@
+"use client";
+
+import {useRouter} from "next/navigation";
+
 import Svg5 from "@icons/account/svg5.svg";
+
+import {logout} from "@/api/auth";
+
+import {removeAuthToken} from "@/shared/utils/storageEvents";
 
 import cls from "./styles.module.scss";
 
 export default function LogOutBtn() {
-  const handleLogOut = () => {
-    console.log("🍷");
+    const router = useRouter();
+
+  const handleLogOut = async () => {
+    try {
+        await logout();
+        removeAuthToken();
+        router.push("/");
+    }
+    catch(error) {
+        console.log(error);
+    }
   };
   return (
     <button className={cls.logOutBtn} onClick={handleLogOut}>

@@ -1,12 +1,12 @@
 export const step1 = [
-  { id: "firstName", label: "first name", value: "John" },
+  { id: "fullName", label: "full name", value: "" },
   { id: "surname", label: "surname", value: "Doe" },
-  { id: "idNumber", label: "id number", value: "9001015800087" },
+  { id: "email", label: "email", value: "" },
   {
     id: "mobileNumber",
     label: "mobile number",
     phone: true,
-    value: "+38 (000) 000-00-00",
+    value: "",
   },
 ];
 
@@ -14,20 +14,20 @@ export const step2 = [
   {
     id: "physicalAddress",
     label: "Physical Address",
-    value: "3905 14 Street",
+    value: "",
   },
-  { id: "suburb", label: "suburb", value: "Desainager" },
-  { id: "cityOrTown", label: "city/town", value: "Desainager" },
-  { id: "code", label: "code", value: "123" },
+  { id: "suburb", label: "suburb", value: "" },
+  { id: "cityOrTown", label: "city/town", value: "" },
+  { id: "code", label: "code", value: "" },
 ];
 
 export const step3 = [
   {
     id: "postalPhysicalAddress",
     label: "Physical Address",
-    value: "3905 14 Street",
+    value: "",
   },
-  { id: "postalSuburb", label: "suburb", value: "Desainager" },
-  { id: "postalCityOrTown", label: "city/town", value: "Desainager" },
-  { id: "postalCode", label: "code", value: "123" },
+  { id: "postalSuburb", label: "suburb", value: "" },
+  { id: "postalCityOrTown", label: "city/town", value: "" },
+  { id: "postalCode", label: "code", value: "" },
 ];

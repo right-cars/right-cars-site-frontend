@@ -17,6 +17,8 @@ interface SignupProps {
   setSignUpOpen: (isOpen: boolean) => void;
 }
 
+const passwordRegexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+
 export default function SignUp({
   toggleForm,
   setPopupOpen,
@@ -47,8 +49,15 @@ export default function SignUp({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log("Form Data:", formData);
+    if(formData.password !== formData.confirmPassword) {
+      return setError("password must match");
+    }
+    if(!passwordRegexp.test(formData.password)) {
+      return setError("password must have at least 6 characters, one upper case character, one lowe case character, one number and one special character");
+    }
+
     try {
+      setError("");
       const {phone, ...payload} = formData;
       await register({...payload, mobileNumber: phone});
       setSignUpOpen(false);

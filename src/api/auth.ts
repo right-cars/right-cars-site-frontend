@@ -15,6 +15,7 @@ export const register = async payload => {
 //@ts-expect-error
 export const login = async payload => {
     const {data} = await authInstance.post("/login", payload);
+    localStorage.setItem("token", data.accessToken);
     return data;
 }
 
@@ -30,12 +31,45 @@ export const verifyEmail = async token => {
     return data;
 }
 
-export const getCurrentUser = async () => {
-    const res = await authInstance.get('/current');
-    return res.data.user;
+//@ts-expect-error
+export const forgotPassword = async payload => {
+    const {data} = await authInstance.post(`/forgot`, payload);
+    return data;
+}
+
+//@ts-expect-error
+export const resetPassword = async payload => {
+    const {data} = await authInstance.post(`/reset`, payload);
+    return data;
+}
+
+//@ts-expect-error
+export const getCurrentUser = async (token) => {
+    const {data} = await authInstance.get('/current', {
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    });
+    return data;
+};
+
+//@ts-expect-error
+export const updateUser = async (payload) => {
+    const token = localStorage.getItem("token");
+    const {data} = await authInstance.post('/update', payload, {
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    });
+    return data;
 };
 
 export const logout = async () => {
-    return authInstance.post('/logout');
+    const token = localStorage.getItem("token");
+    return authInstance.post('/logout', {}, {
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    });
 };
 

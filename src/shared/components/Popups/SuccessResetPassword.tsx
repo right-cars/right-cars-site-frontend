@@ -17,7 +17,7 @@ export default function SuccessResetPassword({
     <div className={cls.wrapper}>
       <div className={cls.titleWrapp}>
         <Image src="/icons/verify.svg" alt="icon" width={61} height={61} />
-        <h2 style={{marginBottom:0}}>Your password has been reset successfully</h2>
+        <h2 style={{marginBottom:0}}>Your password has been reset successfully. Now you can log in</h2>
       </div>
 
       <Button

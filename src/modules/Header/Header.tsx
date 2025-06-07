@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import {useSearchParams} from "next/navigation";
 
 import Logo from "@/shared/components/Logo/Logo";
 
@@ -15,12 +14,6 @@ export default function Header() {
   const [scrolledDown, setScrolledDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // const searchParams = useSearchParams();
-  // const token = searchParams.get('token');
-  //
-  // useEffect(() => {
-  //   console.log(token);
-  // }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;

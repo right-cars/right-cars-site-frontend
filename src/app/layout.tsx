@@ -5,6 +5,8 @@ import { Metrophobic, Work_Sans } from "next/font/google";
 import Header from "@/modules/Header/Header";
 import Footer from "@/modules/Footer/Footer";
 
+import {getCurrentUser} from "@/api/auth";
+
 import "@/shared/styles/global.scss";
 
 const workSans = Work_Sans({
@@ -48,11 +50,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body

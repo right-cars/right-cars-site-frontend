@@ -1,13 +1,14 @@
-import ConfirmEmail from "@/modules/ConfirmEmail/ConfirmEmail";
+import ResetPassword from "@/modules/ResetPassword/ResetPassword";
+
 import { Suspense } from 'react'
 
 import cls from "./styles.module.scss";
 
-export default function Confirm() {
+export default function Reset() {
   return (
       <section className={`${"container section"} ${cls.wrapper}`}>
           <Suspense>
-              <ConfirmEmail />
+              <ResetPassword />
           </Suspense>
       </section>
   );

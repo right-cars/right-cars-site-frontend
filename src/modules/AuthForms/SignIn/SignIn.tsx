@@ -9,6 +9,7 @@ import CustomInput from "@/shared/components/CustomInput/CustomInput";
 // import GoogleBtn from "./GoogleBtn/GoogleBtn";
 
 import {login} from "@/api/auth";
+import {setAuthToken} from "@/shared/utils/storageEvents";
 
 import cls from "../styles.module.scss";
 
@@ -24,7 +25,7 @@ export default function SignIn({
   setPasswordPopupOpen,
 }: SigninProps) {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  // const router = useRouter()
+  // const router = useRouter();
   const [error, setError] = useState("");
 
   const handleChange = (
@@ -41,8 +42,9 @@ export default function SignIn({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await login(formData);
-      setSigninOpen(false)
+      const data = await login(formData);
+      setAuthToken(data.accessToken);
+      setSigninOpen(false);
     }
     catch(error) {
       //@ts-expect-error

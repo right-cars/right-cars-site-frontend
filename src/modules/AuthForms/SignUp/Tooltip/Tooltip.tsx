@@ -6,7 +6,7 @@ const tooltips = [
   "One Uper Case",
   "One number",
   "One lower Case",
-  "One specail symbol",
+  "One special symbol",
 ];
 
 export default function Tooltip() {

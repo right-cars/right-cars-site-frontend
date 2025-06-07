@@ -1,26 +1,23 @@
 "use client"
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import cls from "./styles.module.scss";
 
-interface Props {
-  setPopupOpen: (isOpen: boolean) => void;
-  setSuccessPopupOpen: (isOpen: boolean) => void;
-}
+// interface Props {
+//   setPopupOpen: (isOpen: boolean) => void;
+//   setSuccessPopupOpen: (isOpen: boolean) => void;
+// }
 
-export default function PasswordRequest({
-  setPopupOpen,
-  setSuccessPopupOpen,
-}: Props) {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setPopupOpen(false);
-      setSuccessPopupOpen(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [setPopupOpen, setSuccessPopupOpen]); // тимчасова штука
+export default function PasswordRequest() {
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setPopupOpen(false);
+  //     setSuccessPopupOpen(true);
+  //   }, 2000);
+  //
+  //   return () => clearTimeout(timer);
+  // }, [setPopupOpen, setSuccessPopupOpen]); // тимчасова штука
 
   return (
     <div className={cls.wrapper}>

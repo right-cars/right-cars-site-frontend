@@ -3,7 +3,11 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "@/shared/components/Buttons/Button/Button";
 import CustomInput from "@/shared/components/CustomInput/CustomInput";
 
+import {forgotPassword} from "@/api/auth";
+
 import cls from "./styles.module.scss";
+
+const emailRegexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 interface Props {
   setPopupOpen: (isOpen: boolean) => void;
@@ -12,6 +16,7 @@ interface Props {
 
 export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpen}:Props) {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -19,11 +24,21 @@ export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpe
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Email for password reset:", email);
-    setPopupOpen(false)
-    setPasswordRequestOpen(true)
+    if(!emailRegexp.test(email)) {
+      return setError("This is not email")
+    }
+    try {
+      setError("");
+      await forgotPassword({email});
+      setPopupOpen(false)
+      setPasswordRequestOpen(true)
+    }
+    catch(error) {
+      //@ts-expect-error
+      setError(error?.response?.data?.message || error?.message);
+    }
   };
 
   return (
@@ -37,6 +52,7 @@ export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpe
           id="email"
           handleChange={handleChange}
         />
+        {error && <p className="error">{error}</p>}
         <div style={{ marginTop: 32 }}>
           <Button type="submit" text="reset a password" />
         </div>

@@ -1,6 +1,26 @@
 @use "@/shared/styles/mixins" as m;
 @use "@/shared/styles/variables" as v;
 
+.status {
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.statusText {
+  color: #232323;
+}
+
+.statusDescription {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
 .wrapper {
   position: relative;
   //margin-top: 99px;
