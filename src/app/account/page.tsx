@@ -134,7 +134,9 @@ export default function Account() {
     redirect("/");
   }
 
-  if(!Object.keys(formData).length) return null;
+  if(!Object.keys(formData).length) {
+    return null;
+  }
 
   return (
       <section>
