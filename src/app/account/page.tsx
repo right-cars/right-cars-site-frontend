@@ -61,6 +61,7 @@ export default function Account() {
           }
         }
         setStatus(data.user.status);
+        console.log(initialFormData);
         setFormData(initialFormData);
       }
       catch(error) {
