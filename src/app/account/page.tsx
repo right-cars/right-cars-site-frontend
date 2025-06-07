@@ -211,7 +211,7 @@ export default function Account() {
                     required
                     handleChange={handleChange}
                     formData={formData}
-                    formFields2={step2}
+                    formFields2={step3}
                     disabled={!editingSteps.step3}
                 />
             )}
