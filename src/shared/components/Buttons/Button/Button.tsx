@@ -10,6 +10,7 @@ export interface ButtonProps {
   color?: "yellow" | "transparent";
   onClick?: () => void;
   img?: string;
+  disabled?: boolean;
 }
 
 export default function Button(props: ButtonProps) {
@@ -20,11 +21,13 @@ export default function Button(props: ButtonProps) {
     styles,
     color = "yellow",
     img,
+      disabled
   } = props;
 
   return (
     <div className={classNames(cls.btnWrapp, styles)}>
       <button
+          disabled={disabled}
         type={type}
         className={classNames(cls.btn, {
           [cls.yellow]: color === "yellow",

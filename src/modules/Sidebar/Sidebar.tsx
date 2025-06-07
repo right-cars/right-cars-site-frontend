@@ -13,7 +13,7 @@ import cls from "./styles.module.scss";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const isProfileComplete = false;
+  const isProfileComplete = true;
 
   const pathname = usePathname();
 
@@ -62,14 +62,14 @@ const Sidebar = () => {
       <div className={cls.nawWrapp}>
         <nav className={cls.nav}>
           {menuItems.map((item, index) => {
-            const isDisabled = index !== 0 && !isProfileComplete;
+            const isDisabled = item.path.includes("finance") || item.path.includes("auctions");
             const itemName =
               index === 0 && !isProfileComplete
                 ? "Complete your profile"
                 : item.name;
             const itemPath =
               index === 0 && !isProfileComplete
-                ? "/account/complete-profile"
+                ? "/account"
                 : item.path;
             return (
               <Link

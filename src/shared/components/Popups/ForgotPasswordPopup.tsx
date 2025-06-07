@@ -17,6 +17,7 @@ interface Props {
 export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpen}:Props) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -31,7 +32,9 @@ export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpe
     }
     try {
       setError("");
+      setIsSending(true);
       await forgotPassword({email});
+      setIsSending(false);
       setPopupOpen(false)
       setPasswordRequestOpen(true)
     }
@@ -54,7 +57,7 @@ export default function ForgotPasswordPopup({setPopupOpen, setPasswordRequestOpe
         />
         {error && <p className="error">{error}</p>}
         <div style={{ marginTop: 32 }}>
-          <Button type="submit" text="reset a password" />
+          <Button disabled={isSending} type="submit" text="reset a password" />
         </div>
       </form>
     </div>

@@ -96,6 +96,12 @@ export default function Account() {
     if (type === "checkbox") {
       const { checked } = e.target as HTMLInputElement;
       setPostalAdressChecked(checked);
+      if(checked) {
+        setFormData( prevFormData => {
+          //@ts-expect-error
+          return {...prevFormData, postalCityOrTown: prevFormData.cityOrTown, postalCode: prevFormData.code, postalPhysicalAddress: formData.physicalAddress, postalSuburb: formData.suburb};
+        })
+      }
     } else {
       setFormData((prev) => ({
         ...prev,
