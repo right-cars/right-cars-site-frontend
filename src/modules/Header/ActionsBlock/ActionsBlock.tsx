@@ -18,7 +18,7 @@ export default function ActionsBlock() {
     useEffect(() => {
         const fetchCurrent = async()=> {
             try {
-                if(typeof window !== "undefined") {
+                if(typeof window !== "undefined" && localStorage.getItem("token")) {
                     await getCurrentUser(localStorage.getItem("token"));
                     setIsLoggedIn(true);
                 }

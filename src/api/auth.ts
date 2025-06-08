@@ -64,6 +64,19 @@ export const updateUser = async (payload) => {
     return data;
 };
 
+//@ts-expect-error
+export const updateUserDoc = async (payload) => {
+    const token = localStorage.getItem("token");
+    const {data} = await authInstance.post('/update-doc', payload, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+        }
+    });
+    return data;
+};
+
+
 export const logout = async () => {
     const token = localStorage.getItem("token");
     return authInstance.post('/logout', {}, {

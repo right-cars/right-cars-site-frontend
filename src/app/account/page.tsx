@@ -50,19 +50,19 @@ export default function Account() {
   useEffect(() => {
     const fetchUser = async()=> {
       try {
-        const token = localStorage.getItem("token");;
-        const data = await getCurrentUser(token);
-        // console.log(data);
+        if(typeof window !== "undefined" && localStorage.getItem("token")) {
+          const token = localStorage.getItem("token");
+          const data = await getCurrentUser(token);
 
-        for(const key in initialFormData) {
-          const value = data.user[key];
-          if(value) {
-            initialFormData[key] = value;
+          for(const key in initialFormData) {
+            const value = data.user[key];
+            if(value) {
+              initialFormData[key] = value;
+            }
           }
+          setStatus(data.user.status);
+          setFormData(initialFormData);
         }
-        setStatus(data.user.status);
-        console.log(initialFormData);
-        setFormData(initialFormData);
       }
       catch(error) {
         console.log(error);
@@ -88,7 +88,7 @@ export default function Account() {
     step3.length === 0
   );
 
-  const handleChange = (
+  const handleChange = async (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
@@ -99,8 +99,22 @@ export default function Account() {
       if(checked) {
         setFormData( prevFormData => {
           //@ts-expect-error
-          return {...prevFormData, postalCityOrTown: prevFormData.cityOrTown, postalCode: prevFormData.code, postalPhysicalAddress: formData.physicalAddress, postalSuburb: formData.suburb};
-        })
+          return {...prevFormData, postalCityOrTown: prevFormData.cityOrTown, postalCode: prevFormData.code, postalPhysicalAddress: prevFormData.physicalAddress, postalSuburb: prevFormData.suburb};
+        });
+        try {
+          //@ts-expect-error
+          const data = await updateUser({...formData, postalCityOrTown: formData.cityOrTown, postalCode: formData.code, postalPhysicalAddress: formData.physicalAddress, postalSuburb: formData.suburb});
+          console.log(data);
+          setStatus(data.status);
+        }
+        catch(error) {
+          console.log(error);
+        }
+        setEditingSteps({
+          step1: false,
+          step2: false,
+          step3: false,
+        });
       }
     } else {
       setFormData((prev) => ({
@@ -124,7 +138,7 @@ export default function Account() {
     e.preventDefault();
     try {
       const data = await updateUser(formData);
-      console.log(data);
+      setStatus(data.status);
     }
     catch(error) {
       console.log(error);
@@ -172,11 +186,11 @@ export default function Account() {
                   />
                 </div>
             ))}
-            <EditBtn
+            {status === "unverified" && <EditBtn
                 isEditing={editingSteps.step1}
                 onEdit={() => handleEdit("step1")}
                 onCancel={() => handleCancel("step1")}
-            />
+            />}
           </div>
 
           {/* Step 2 */}
@@ -195,11 +209,11 @@ export default function Account() {
                 disabled={!editingSteps.step2}
             />
 
-            <EditBtn
+            {status === "unverified" && <EditBtn
                 isEditing={editingSteps.step2}
                 onEdit={() => handleEdit("step2")}
                 onCancel={() => handleCancel("step2")}
-            />
+            />}
           </div>
 
           {/* Step 3 */}
@@ -223,11 +237,11 @@ export default function Account() {
                     disabled={!editingSteps.step3}
                 />
             )}
-            <EditBtn
+            {status === "unverified" && <EditBtn
                 isEditing={editingSteps.step3}
                 onEdit={() => handleEdit("step3")}
                 onCancel={() => handleCancel("step3")}
-            />
+            />}
           </div>
         </form>
       </section>

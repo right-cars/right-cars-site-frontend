@@ -15,6 +15,8 @@ interface FileUploadProps {
   tooltipVariant?: UploadTooltipType;
   onFileUpload: (file: File | null) => void;
   file?: File | null;
+  name?: string;
+  status: string;
 }
 
 export default function FileUpload({
@@ -23,7 +25,10 @@ export default function FileUpload({
   tooltip,
   tooltipVariant,
   file,
+  name,
+  status,
 }: FileUploadProps) {
+
   const [fileUploaded, setFileUploaded] = useState<File | null>(file || null);
 
   useEffect(() => {
@@ -52,13 +57,14 @@ export default function FileUpload({
       <div className={cls.inputWithTooltip}>
         {tooltip && <Tooltip tooltipVariant={tooltipVariant} />}
 
-        <label
+        {status === "unverified" && <label
           className={`${cls.label} ${
             fileUploaded ? cls.transparentLabel : cls.yellowLabel
           }`}
         >
           <input
             type="file"
+            name={name}
             className={cls.input}
             onChange={handleFileUpload}
           />
@@ -69,7 +75,7 @@ export default function FileUpload({
             height={20}
           />
           <p className="btnText"> {fileUploaded ? "REPLACE" : "UPLOAD"}</p>
-        </label>
+        </label>}
       </div>
     </div>
   );
