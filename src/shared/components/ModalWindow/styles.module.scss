@@ -5,7 +5,7 @@
   position: fixed;
   background-color: v.$overlay;
   backdrop-filter: blur(3px);
-  top: 0;
+  top: -17px;
   left: 50%;
   transform: translateX(-50%) !important;
   width: 100vw;
@@ -26,6 +26,7 @@
   background-color: v.$pure;
   border-radius: 16px;
   margin: 0 36px;
+  top: 8px;
 }
 
 .close {

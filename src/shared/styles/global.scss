@@ -19,6 +19,11 @@ body {
   scroll-behavior: smooth;
 }
 
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 a {
   color: inherit;
   text-decoration: none;
