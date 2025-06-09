@@ -1,8 +1,9 @@
 "use client"
+
 import { useState } from 'react'
-// import {useRouter} from 'next/router'
 import Image from "next/image";
-import axios from 'axios';
+
+import {getPaymentUrl} from "@/api/ozow";
 
 import Button from "@/shared/components/Buttons/Button/Button";
 
@@ -10,30 +11,28 @@ import cls from "./styles.module.scss";
 
 export default function FirstInfoBlock({ price }: { price: string }) {
     const [loading, setLoading] = useState(false);
-    // const router = useRouter();
 
     const handlePayment = async () => {
         try {
             setLoading(true);
             const payload = {
                 amount: 1.0,
-                name: 'John Doe',
-                email: 'test@example.com',
-                phone: '0820000000'
             };
 
-            const {data} = await axios.post("/api/ozow/initiate", payload);
-            setLoading(false);
-            console.log("payment data", data);
-            if (data.redirectUrl) {
-                // await router.push(data.redirectUrl);
-                window.location.href = data.redirectUrl
+            const paymentUrl = await getPaymentUrl(payload);
+            console.log(paymentUrl);
+            if (paymentUrl) {
+                // window.location.href = paymentUrl;
+                window.open(paymentUrl, '_blank');
             } else {
-                console.log(data);
+                console.log(paymentUrl);
             }
         }
         catch (error) {
             console.log("error", error);
+        }
+        finally {
+            setLoading(false);
         }
     }
 
