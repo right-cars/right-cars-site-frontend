@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Metrophobic, Work_Sans } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import Header from "@/modules/Header/Header";
 import Footer from "@/modules/Footer/Footer";
@@ -64,6 +65,7 @@ export default async function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID as string} />
       </body>
     </html>
   );
