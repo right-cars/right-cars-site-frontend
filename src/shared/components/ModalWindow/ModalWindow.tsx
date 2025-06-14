@@ -47,11 +47,18 @@ export default function ModalWindow(props: ModalProps) {
     <AnimatePresence mode="wait" onExitComplete={() => setIsModalOpen(false)}>
       {isModalOpen && (
         <motion.div
-          variants={fadeInAnimation({
-            scale: 0.9,
-            duration: 0.6,
-            withExit: true,
-          })}
+          // variants={fadeInAnimation({
+          //   scale: 0.9,
+          //   duration: 0.6,
+          //   withExit: true,
+          // })}
+            variants={{
+              hidden: { opacity: 0, x: 0, y: 0, scale: 0.9 },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
           exit="exit"
           initial="hidden"
           animate={isModalOpen ? "visible" : "hidden"}

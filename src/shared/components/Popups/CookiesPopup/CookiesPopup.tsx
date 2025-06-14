@@ -31,11 +31,18 @@ export default function CookiesPopup() {
         <div className={`${"container"} ${cls.wrapper}`}>
           <motion.div
             className={cls.modalContainer}
-            variants={fadeInAnimation({
-              scale: 0.9,
-              duration: 0.6,
-              withExit: true,
-            })}
+            // variants={fadeInAnimation({
+            //   scale: 0.9,
+            //   duration: 0.6,
+            //   withExit: true,
+            // })}
+            variants={{
+              hidden: { opacity: 0, x: 0, y: 0, scale: 0.9 },
+              visible: {
+                opacity: 1,
+                y: 0,
+              },
+            }}
             exit="exit"
             initial="hidden"
             animate={isPopupOpen ? "visible" : "hidden"}
