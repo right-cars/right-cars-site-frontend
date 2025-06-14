@@ -35,7 +35,7 @@ export default function CustomInput(props: CustomInputProps) {
   } else if (id === "vehicleServiceDueDate") {
     mask = "__/__/____";
   } else if (phone) {
-    mask = "+_____ ___-__-__";
+    mask = "+27___ ___-__-__";
   }
 
   return (
