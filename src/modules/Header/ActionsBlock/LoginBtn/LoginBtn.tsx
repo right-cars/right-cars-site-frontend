@@ -15,8 +15,7 @@ import SignUp from "@/modules/AuthForms/SignUp/SignUp";
 
 import cls from "../styles.module.scss";
 
-export default function LoginBtn({ isLoggedIn }: { isLoggedIn: boolean }) {
-  const userName = "temp name";
+export default function LoginBtn({ userName, isLoggedIn }: { userName: string, isLoggedIn: boolean }) {
 
   // const router = useRouter();
 

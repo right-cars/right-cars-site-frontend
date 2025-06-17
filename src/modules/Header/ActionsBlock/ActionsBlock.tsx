@@ -14,12 +14,14 @@ import cls from "./styles.module.scss";
 
 export default function ActionsBlock() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userName, setUserName] = useState("");
 
     useEffect(() => {
         const fetchCurrent = async()=> {
             try {
                 if(typeof window !== "undefined" && localStorage.getItem("token")) {
-                    await getCurrentUser(localStorage.getItem("token"));
+                    const data = await getCurrentUser(localStorage.getItem("token"));
+                    setUserName(data.user.fullName);
                     setIsLoggedIn(true);
                 }
             }
@@ -62,7 +64,7 @@ export default function ActionsBlock() {
           </Link>
 
 
-        <LoginBtn isLoggedIn={isLoggedIn} />
+        <LoginBtn userName={userName} isLoggedIn={isLoggedIn} />
       </div>
 
       <BurgerBtn />
