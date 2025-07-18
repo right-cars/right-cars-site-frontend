@@ -70,7 +70,7 @@ export default function BurgerMenu({
       {isMenuOpen && (
         <motion.div
           className={cls.overlay}
-          variants={overlayVariants}
+          // variants={overlayVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
