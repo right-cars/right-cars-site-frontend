@@ -55,4 +55,11 @@ export const data = [
     descr:
         "driven negotiator delivering tailored solutions with precision",
   },
+  {
+    img: "/images/home/about/img10.jpg",
+    position: "Sales Manager:",
+    name: "JP",
+    descr:
+        "driven negotiator delivering tailored solutions with precision",
+  },
 ];
