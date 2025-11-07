@@ -8,6 +8,9 @@ import CarListWithSlider from "../modules/CarListWithSlider/CarListWithSlider";
 import ContactsBlock from "@/views/HomeView/ContactsBlock/ContactsBlock";
 import WhyChooseUs from "@/views/HomeView/WhyChooseUs/WhyChooseUs";
 
+
+
+
 export default function Home() {
   return (
     <>
