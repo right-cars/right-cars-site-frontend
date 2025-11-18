@@ -4,8 +4,6 @@ import ShowroomView from "@/views/Showroom/ShowroomView";
 
 export const dynamic = 'force-dynamic';
 
-
-
 export default async function Showroom() {
   const data = await getAllCars();
   const filters = await getFilters();
