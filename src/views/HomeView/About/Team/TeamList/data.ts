@@ -41,13 +41,13 @@ export const data = [
     descr:
       "results-oriented closer combining strategy with a personal touch",
   },
-  {
-    img: "/images/home/about/img7.png",
-    position: "Sales Manager:",
-    name: "Riaan",
-    descr:
-      "driven negotiator delivering tailored solutions with precision",
-  },
+  // {
+  //   img: "/images/home/about/img7.png",
+  //   position: "Sales Manager:",
+  //   name: "Riaan",
+  //   descr:
+  //     "driven negotiator delivering tailored solutions with precision",
+  // },
   {
     img: "/images/home/about/img9.jpg",
     position: "Sales Manager:",
