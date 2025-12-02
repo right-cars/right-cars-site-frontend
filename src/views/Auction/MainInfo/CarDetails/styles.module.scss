@@ -1,0 +1,62 @@
+@use "@/shared/styles/mixins" as m;
+@use "@/shared/styles/variables" as v;
+
+.detailsContainer {
+  width: 47vw;
+  max-width: 560px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (max-width: 1470px) {
+    width: 66%;
+  }
+
+  @include m.small-desktop {
+    width: 66%;
+  }
+
+  @include m.large-tablet {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailsWrapper {
+  background-color: v.$primary;
+  padding: 24px 16px;
+  border-radius: 16px;
+  box-shadow: v.$shadow;
+  color: v.$pure;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.itemName {
+  font-family: "Work Sans", sans-serif;
+  width: 60%;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+}
+
+.valueWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 38%;
+}

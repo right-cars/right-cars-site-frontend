@@ -1,0 +1,54 @@
+@use "@/shared/styles/mixins" as m;
+
+.wrapper {
+  //margin-top: 99px;
+  padding-top: 80px;
+
+  @include m.large-tablet {
+    //margin-top: 95px;
+    padding-top: 60px;
+  }
+
+  @include m.mobile {
+    //margin-top: 84px;
+    padding-top: 54px;
+  }
+}
+
+.content {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  // margin-left: 288px;
+  gap: 16px;
+
+  @media (min-width: 1200px) {
+    min-height: 790px;
+  }
+
+  @include m.large-tablet {
+    margin-left: 238px;
+  }
+
+  @include m.large-tablet {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: 0;
+  }
+
+  @include m.mobile {
+    margin-bottom: 48px;
+  }
+}
+
+.filtersWrapp {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+
+  @include m.mobile {
+    margin-top: 32px;
+  }
+}
