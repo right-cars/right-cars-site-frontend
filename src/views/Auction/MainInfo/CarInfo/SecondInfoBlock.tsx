@@ -15,8 +15,8 @@ function getTimeLeft(endDate: string, endTime: string) {
   // создаём объект даты
   const target = new Date(`${endDate}T${endTime}`);
   const now = new Date();
-
-  let diff = target - now;
+  //@ts-expect-error
+  const diff = target - now;
 
   if (diff <= 0) return "00h 00m 00s";
 
