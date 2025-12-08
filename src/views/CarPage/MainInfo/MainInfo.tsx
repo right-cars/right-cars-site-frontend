@@ -17,7 +17,7 @@ export default function MainInfo({ data, pageId }: { pageId: string }) {
     ...data.images.map((src) => ({ type: "image", src })),
   ];
   if (data.video) {
-    media.push({ type: "video", src: data.video });
+    media.unshift({ type: "video", src: data.video });
   }
 
   return (

@@ -48,7 +48,7 @@ export default function CarInfo({auction, data, pageId, setIsCarInfoShown}: {
       value: data.driveType,
     });
   }
-console.log(data)
+
   return (
     <div className={cls.wrapper}>
       <FirstInfoBlock

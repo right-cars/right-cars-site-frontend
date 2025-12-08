@@ -60,26 +60,14 @@ const MediaDisplay = ({
                 unoptimized
               />
             ) : media.type === "video" ? (
-              <div className={cls.videoImgBlock}>
-                <Image
-                  src={getVideoThumbnail(getYouTubeVideoID(media.src))}
-                  alt="Thumbnail"
-                  width={752}
-                  height={546}
-                  className={cls.mainImg}
-                  unoptimized
-                />
-                <div className={cls.mainVideoSvgBlock}>
-                  <p className="textMedium">video</p>
-                  <Image
-                    src="/icons/youtube.svg"
-                    alt="youtube icon"
-                    width={22}
-                    height={15}
-                    unoptimized
-                  />
+                <div className={cls.videoFrameBlock}>
+                  <iframe
+                      src={`https://www.youtube.com/embed/${getYouTubeVideoID(media.src)}?playsinline=1`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className={cls.videoFrame}
+                  ></iframe>
                 </div>
-              </div>
             ) : null}
           </div>
         ))}
@@ -92,7 +80,7 @@ const MediaDisplay = ({
       </div>
 
       <div className={cls.favoriteButton}>
-        <FavoriteBtn id={pageId} isCarPage />
+        <FavoriteBtn id={pageId} isCarPage/>
       </div>
 
       <div className={cls.paginationButtons}>

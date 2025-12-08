@@ -49,7 +49,7 @@ export default function LoginBtn({ userName, isLoggedIn }: { userName: string, i
             <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
             <p className={cls.name}>{isLoggedIn ? userName : "Login"}</p>
         </Link>}
-    {!isLoggedIn && <button onClick={handleLoginClick} type="button" className={cls.loginBtn}>
+    {!isLoggedIn && <button id="login-btn" onClick={handleLoginClick} type="button" className={cls.loginBtn}>
         <Image src="/icons/user.svg" alt="login icon" width={29} height={22} />
         <p className={cls.name}>Login</p>
       </button>}

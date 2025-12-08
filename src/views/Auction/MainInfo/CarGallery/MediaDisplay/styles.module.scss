@@ -1,6 +1,19 @@
 @use "@/shared/styles/mixins" as m;
 @use "@/shared/styles/variables" as v;
 
+.videoFrameBlock {
+  width: 752px;
+  height: 546px;
+  position: relative;
+}
+
+.videoFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
 .mainMedia {
   position: relative;
   cursor: pointer;

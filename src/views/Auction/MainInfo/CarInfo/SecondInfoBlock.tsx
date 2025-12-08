@@ -40,6 +40,10 @@ export default function SecondInfoBlock({
   // pageId,
   // setIsCarInfoShown,
 }: SecondInfoProps) {
+    const openLoginModal = () => {
+        const btn = document.getElementById("login-btn");
+        btn?.click();
+    }
   return (
     <>
      <div className={cls.auctionInfo}>
@@ -66,12 +70,13 @@ export default function SecondInfoBlock({
           <Button text="+ R 2000" color="transparent" />
         </div>
         <Button
+            onClick={openLoginModal}
           // onClick={() => setIsCarInfoShown(false)}
           text="place bid"
           img="/icons/endContent.svg"
         />
         {/* <Link href={`/showroom/${pageId}/finance`}>
-          
+
         </Link> */}
       </div>
     </div>

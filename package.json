@@ -16,7 +16,7 @@
     "classnames": "^2.5.1",
     "crypto": "^1.0.1",
     "framer-motion": "^12.4.7",
-    "next": "15.1.6",
+    "next": "15.1.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
