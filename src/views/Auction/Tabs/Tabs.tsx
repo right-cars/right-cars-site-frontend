@@ -8,7 +8,7 @@ import cls from "./styles.module.scss";
 const tabsData = [
   { name: "ending soon", type: "ending soon" },
   { name: "playing now", type: "playing now" },
-  { name: "newly listed", type: "newly listed" },
+  // { name: "newly listed", type: "newly listed" },
 ];
 
 export default function Tabs({
@@ -25,7 +25,7 @@ export default function Tabs({
         spaceBetween={16}
         breakpoints={{
           661: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
         }}
         className={cls.tabsWrapp}
