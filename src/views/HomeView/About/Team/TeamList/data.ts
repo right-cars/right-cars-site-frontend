@@ -1,11 +1,11 @@
 export const data = [
-  {
-    img: "/images/home/about/img1.png",
-    position: "hr Manager:",
-    name: "janene",
-    descr:
-      "empathetic leader fostering growth and a thriving workplace culture",
-  },
+  // {
+  //   img: "/images/home/about/img1.png",
+  //   position: "hr Manager:",
+  //   name: "janene",
+  //   descr:
+  //     "empathetic leader fostering growth and a thriving workplace culture",
+  // },
   {
     img: "/images/home/about/img2.png",
     position: "marketing Manager:",
@@ -27,20 +27,20 @@ export const data = [
     descr:
       "skilled coordinator ensuring seamless operations and top-notch service",
   },
-  {
-    img: "/images/home/about/img5.png",
-    position: "Sales Manager:",
-    name: "Valdo",
-    descr:
-      "charismatic connector building relationships that drive results",
-  },
-  {
-    img: "/images/home/about/img6.png",
-    position: "Sales Manager:",
-    name: "Thabo",
-    descr:
-      "results-oriented closer combining strategy with a personal touch",
-  },
+  // {
+  //   img: "/images/home/about/img5.png",
+  //   position: "Sales Manager:",
+  //   name: "Valdo",
+  //   descr:
+  //     "charismatic connector building relationships that drive results",
+  // },
+  // {
+  //   img: "/images/home/about/img6.png",
+  //   position: "Sales Manager:",
+  //   name: "Thabo",
+  //   descr:
+  //     "results-oriented closer combining strategy with a personal touch",
+  // },
   // {
   //   img: "/images/home/about/img7.png",
   //   position: "Sales Manager:",
@@ -48,18 +48,18 @@ export const data = [
   //   descr:
   //     "driven negotiator delivering tailored solutions with precision",
   // },
-  {
-    img: "/images/home/about/img9.jpg",
-    position: "Sales Manager:",
-    name: "Dumsani",
-    descr:
-        "driven negotiator delivering tailored solutions with precision",
-  },
-  {
-    img: "/images/home/about/img11.jpg",
-    position: "Sales Manager:",
-    name: "Thato",
-    descr:
-        "driven negotiator delivering tailored solutions with precision",
-  },
+  // {
+  //   img: "/images/home/about/img9.jpg",
+  //   position: "Sales Manager:",
+  //   name: "Dumsani",
+  //   descr:
+  //       "driven negotiator delivering tailored solutions with precision",
+  // },
+  // {
+  //   img: "/images/home/about/img11.jpg",
+  //   position: "Sales Manager:",
+  //   name: "Thato",
+  //   descr:
+  //       "driven negotiator delivering tailored solutions with precision",
+  // },
 ];

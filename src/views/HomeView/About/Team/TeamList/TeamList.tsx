@@ -64,13 +64,13 @@ export default function TeamList() {
         )}
       </motion.ul>
 
-      <div className={cls.btn}>
+      {(itemsToShow < data.length) && (<div className={cls.btn}>
         <Button
           text={buttonText}
           color="transparent"
           onClick={() => setShowAll((prev) => !prev)}
         />
-      </div>
+      </div>)}
     </>
   );
 }
