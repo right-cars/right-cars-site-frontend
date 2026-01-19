@@ -120,7 +120,7 @@ export default function ShowroomView({data, filters}) {
   const filteredData =
     activeTab === "all"
       ? sortedData
-      : sortedData.filter((item) => item.type === activeTab);
+      : sortedData.filter((item) => item.type?.toLowerCase() === activeTab.toLowerCase());
 
   const rangeFilteredData = filterFromRange(filteredData, multirangeValues);
 

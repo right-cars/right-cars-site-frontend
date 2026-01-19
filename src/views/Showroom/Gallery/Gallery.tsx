@@ -30,13 +30,13 @@ export default function Gallery({ data, currentPage, activeTab }: GalleryProps) 
     <motion.div
       key={`${currentPage}-${activeTab}`}
       className={cls.gallery}
-      initial="hidden"
+      initial={false}
       animate="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={listVariants}
     >
       {data.map((car) => (
-        <motion.div key={car.id} variants={cardVariants}>
+        <motion.div key={car.id} variants={cardVariants} layout>
           <CarCard
             id={car.id}
             img={car.img}
