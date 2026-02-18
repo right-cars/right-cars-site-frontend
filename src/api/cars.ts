@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const carsInstance = axios.create({
-    // baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
     baseURL: `${process.env.NEXT_PUBLIC_API_URL}/cars`,
 })
 
